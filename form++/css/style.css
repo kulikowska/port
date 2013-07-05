@@ -1,0 +1,64 @@
+body {
+    background; #ccc;
+}
+
+div.wrapper {
+    -webkit-border-radius: 5px;
+    border:1px solid #aaa;
+    margin:0 auto;
+    min-width:550px;
+    max-width:600px;
+}
+
+fieldset {
+    -webkit-border-radius: 5px;
+    margin:16px 16px 0 16px;
+}
+
+form fieldset ul {
+    margin:4px;
+    padding:4px;
+}
+
+li {
+    list-style:none;
+    font-family:Georgia;
+    font-size:0.9em;
+    margin-top:5px;
+}
+
+label, li.lab {
+    font-style:italic;
+    float:left;
+    min-width:90px;
+}
+
+li.sub {
+    margin-left:20px;
+}
+
+li.sub span {
+    margin-right:12px;
+}
+
+textarea {
+    -webkit-border-radius: 8px;
+    border:1px solid #abc;
+}
+
+input {
+    -webkit-border-radius: 5px;
+    border:1px solid #abc;
+}
+
+select {
+    border:1px solid #abc;
+}
+
+textarea, input[type="text"] {
+    padding:3px;
+    background:#fff;
+    max-width:374px;
+    width:374px;
+    -webkit-box-shadow: 3px 4px 6px 1px #ccc;
+}
