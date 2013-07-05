@@ -18,4 +18,4 @@ Once you get a decent command of css you will start moving in the direction of j
 <h4>jQuery</h4>
 I am adding jQuery library so that we can test if the forms save data correctly.
 
-<h4>&lt;link&gt; and &ltscript&gt; tags pointing to various directories</h4>
+<h4>&lt;link&gt; and &lt; script&gt; tags pointing to various directories</h4>
