@@ -33,7 +33,9 @@
     <li><code>git clone git@github.com:kotemaster/port.git</code> - this should pull all the files from github and put them in directory called <code>port</code></li>
     <li><code>git pull</code> - once have a clone (which you have) you can pull from git any changes that somebody else (i.e. Tuć) made to</li>
     <li><code>git status</code> - when you made changes to some files this command tells you which files have been changed</li>
+    <li><i>option 1</i>
     <li><code>git commit -am'say something here'</code> - you need this before you push, it prepares file for the push
     <li><code>git push</code> - once you did <code>commit</code> you can push it to git.  At that point the files can be viewed and downloaded from git</li>
-
+    <li><i>option 2</i>
+    <li><code>gitpush</code> - I made this command on your computer, it does commit and push at the same time.  Use it for now and ignore option 1.</li>
 </ul>
