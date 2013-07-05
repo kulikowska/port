@@ -21,21 +21,27 @@
     <li>
         <ul>
             <li><code>cp a.html b.html</code> - copies file a.html to a new file called b.html in the same directory</li>
-            <li><code>cp a.html new</code> - if directory <code>new</code> exists in your current directory then the command copies file a.html to that directory keeping the name a.html.</li>
-            <li><code>cp a.html new/b.htm</code> - copies file a.html to a directory called <code>new</code> then new file name is b.html in the new directory.</li>
+            <li><code>cp a.html new</code> - if directory <code>new</code> exists in your current directory then the command copies file a.html to that directory keeping the name a.html. If directory <code>new</code> does not exist then file 'a.html' will be copied to file called 'new'</li>
+            <li><code>cp a.html new/b.html</code> - copies file a.html to a directory called <code>new</code> then new file name is b.html in the new directory.</li>
         </ul>
     </li>
     <li><i>Moving/renaming files:</i></li>
     <li>Exactly the same as <code>cp</code> except you use <code>mv</code></li>
+    <li><i>Deleting files:</i></li>
+    <li><code>rm &lt;file name&gt;</code> deletes file specified. Example <code>rm a.html</code><li>
 </ul>
 <h3>Git</h3>
 <ul>
-    <li><code>git clone git@github.com:kotemaster/port.git</code> - this should pull all the files from github and put them in directory called <code>port</code></li>
-    <li><code>git pull</code> - once have a clone (which you have) you can pull from git any changes that somebody else (i.e. Tuć) made to</li>
+    <li><code>git clone git@github.com:kotemaster/port.git</code> - this should pull all the files from github and put them in directory called <code>port</code>. This needs to be done once, but you already have local copy so all you need to do is <code>git pull, git status and gitpush</li>
+    <li><code>git pull</code> - once you have a clone (which you have) you can pull from git any changes that somebody else (i.e. Tuć) made to it.</li>
     <li><code>git status</code> - when you made changes to some files this command tells you which files have been changed</li>
-    <li><i>option 1</i>
-    <li><code>git commit -am'say something here'</code> - you need this before you push, it prepares file for the push
+    <li><i>option 1 (don't use it but it will be good to know in the future)</i></li>
+    <li><code>git commit -am'say something here'</code> - you need this before you push, it prepares file for the push</li>
     <li><code>git push</code> - once you did <code>commit</code> you can push it to git.  At that point the files can be viewed and downloaded from git</li>
-    <li><i>option 2</i>
+    <li><i>option 2</i></li>
     <li><code>gitpush</code> - I made this command on your computer, it does commit and push at the same time.  Use it for now and ignore option 1.</li>
+    <li><i>Adding files/directories to git</i></li>
+    <li>When you add a new file or directory to git you need to use:<br />
+    <code>git add &lt;file name&gt;</code> or <code>git add &lt;directory name&gt;</code> before you commit and push.<b r/>
+    If you added an empty directory git will ignore it until some files are placed in there.</li>
 </ul>
