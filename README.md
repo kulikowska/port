@@ -28,7 +28,10 @@
     <li><i>Moving/renaming files:</i></li>
     <li>Exactly the same as <code>cp</code> except you use <code>mv</code></li>
     <li><i>Deleting files:</i></li>
-    <li><code>rm &lt;file name&gt;</code> deletes file specified. Example <code>rm a.html</code><li>
+    <li><code>rm &lt;file name&gt;</code> deletes file specified. Example <code>rm a.html</code><br />
+        Sometimes you need to delete the entire directory with all its contents. In those cases use the most DANGEROUS Unix command:<br />
+        <code>rm -rf &lt;directory name&gt;</code> When you do it, make sure to do <code>pwd</code> to make sure you are in the right place.
+    </li>
 </ul>
 <h3>Git</h3>
 <ul>
