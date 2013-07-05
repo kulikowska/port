@@ -1,0 +1,30 @@
+body {
+    background; #ccc;
+}
+
+div.wrapper {
+    -webkit-border-radius: 5px;
+    border:1px solid #aaa;
+}
+
+fieldset {
+    -webkit-border-radius: 5px;
+    margin:16px 16px 0 16px;
+}
+
+form fieldset ul {
+    margin:4px;
+    padding:4px;
+}
+
+li {
+    list-style:none;
+}
+
+li.lab {
+    font-style:italic;
+}
+
+li.sub {
+    margin-left:20px;
+}
