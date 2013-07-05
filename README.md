@@ -44,7 +44,8 @@
     <li><i>option 2</i></li>
     <li><code>gitpush</code> - I made this command on your computer, it does commit and push at the same time.  Use it for now and ignore option 1.</li>
     <li><i>Adding files/directories to git</i></li>
-    <li>When you add a new file or directory to git you need to use:<br />
+    <li>After you've added a new file or directory you need to use:<br />
     <code>git add &lt;file name&gt;</code> or <code>git add &lt;directory name&gt;</code> before you commit and push.<b r/>
+    This is to tell git that a new file from the filesystem needs to be added to the repository.<br />
     If you added an empty directory git will ignore it until some files are placed in there.</li>
 </ul>
