@@ -6,7 +6,7 @@
     <li><code>/</code> - root directory, there is nothing above it</li>
     <li><code>.</code> - current directory</li> 
     <li><code>..</code> - parent directory of the directory you are currently in.  Example: when you are in <code>dev</code> then <code>..</code> points to <code>Desktop</code></li> 
-    <li><code>~</code> - home directory (on your mac it is <code>/Users</code>, on linux it is usually <code>/home</code>)</li>
+    <li><code>~</code> - home directory (on your mac it is <code>/Users/tuc</code>, on linux it is usually <code>/home/tuc</code>)</li>
 </ul>
 <h3>Unix commands</h3>
 <ul>
