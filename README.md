@@ -13,6 +13,6 @@
     <li><code>pwd</code> - print working directory, use it if you don't know where you are in the directory structure</li>
     <li><code>ls</code> - list content of the current directory same as <code>ls .</code></li> 
     <li><code>ls &lt;directory name&gt;</code> - list specified of the current directory. Example <code>ls /Users/tuc/Desktop/dev or ls ..</code></li>
-    <li><code>cd &lt;directory name&gt;</code> - change to specified directory. Example <code>cd /</code> or <code>cd ~</code> or <code>cd new</code></li>
-    <li><code>cd &lt;directory name&gt;</code> - <code>cd</code>without arguments puts you in your home directory <code>~</code></li>
+    <li><code>cd</code> - (equivalent to <code>cd ~</code>or<code>cd /Users/tuc</code> - without arguments puts you in your home directory <code>~</code>same as<code>/Users/tuc</code></li>
+    <li><code>cd &lt;directory name&gt;</code> - change to specified directory. Example <code>cd /</code>or<code>cd ~</code>or<code>cd new</code></li>
 </ul>
