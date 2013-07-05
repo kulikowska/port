@@ -15,7 +15,7 @@
     <li><code>ls &lt;directory name&gt;</code> - list specified of the current directory. Example <code>ls /Users/tuc/Desktop/dev or ls ..</code></li>
     <li><code>cd</code> - (equivalent to <code>cd ~</code>or<code>cd /Users/tuc</code>) - without arguments puts you in your home directory.</li>
     <li><code>cd &lt;directory name&gt;</code> - change to specified directory. Example <code>cd /</code>or<code>cd ~</code>or<code>cd new</code></li>
-    <li><i>Copying and moving files</i>li>
+    <li><i>Copying and moving files</i></li>
     <li><code>cp &lt;file name&gt; &lt;new location&gt;</code> - create a copy of a file in a new location. Examples:<li>
     <li>
         <ul>
