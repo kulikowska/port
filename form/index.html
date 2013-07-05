@@ -1,0 +1,32 @@
+<html>	
+    <head>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="../lib/js/jquery.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <form action="javascript:false" onsubmit="saveFormData(this)">
+                <fieldset>
+                    Last Name:  <input type="text" value="Blo"/>
+                    First Name: <input type="text" value="Jo"/> 
+                    Description : <textarea rows="5" cols="50">One good dude.</textarea>
+                    Country : 
+                    <select>
+                        <option>Canada</option>
+                        <option>U.S.</option>
+                        <option selected>Japan</option>
+                        <option>China</option>
+                    </select>
+                    User Active:<input checked type="checkbox" />
+                    User Has Root Access:<input type="checkbox" />
+                    User Type:
+                    Manager: <input name="userType" type="radio">
+                    Coordinator: <input checked name="userType" type="radio">
+                    User: <input name="userType" type="radio">
+                    <input type="submit" value="Save Data" />
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
