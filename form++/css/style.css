@@ -31,6 +31,7 @@ label, li.lab {
     font-style:italic;
     float:left;
     min-width:90px;
+    margin-top:4px;
 }
 
 li.sub {
@@ -43,7 +44,7 @@ li.sub span {
 
 textarea {
     -webkit-border-radius: 8px;
-    border:1px solid #abc;
+    border:1px solid #cde;
 }
 
 input {
@@ -57,8 +58,10 @@ select {
 
 textarea, input[type="text"] {
     padding:3px;
-    background:#fff;
+    background:#f8f8f8;
     max-width:374px;
     width:374px;
     -webkit-box-shadow: 3px 4px 6px 1px #ccc;
+    border-bottom:0px;
+    border-right:0px;
 }
