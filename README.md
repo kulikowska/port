@@ -19,8 +19,8 @@
     <li><code>cp &lt;file name&gt; &lt;new location&gt;</code> - create a copy of a file in a new location. Examples:<li>
     <li>
         <ul>
-            <li><code>cp a.html b.html</code></li> - copies file a.html to a new file called b.html</li>
-            <li><code>cp a.html new</code></li> - copies file a.html to a directory called <code>new</code> then new file name is a.html in the new directory</li>
-            <li><code>cp a.html new/b.htm</code></li> - copies file a.html to a directory called <code>new</code> then new file name is b.html in the new directory</li>
+            <li><code>cp a.html b.html</code> - copies file a.html to a new file called b.html</li>
+            <li><code>cp a.html new</code> - copies file a.html to a directory called <code>new</code> then new file name is a.html in the new directory</li>
+            <li><code>cp a.html new/b.htm</code> - copies file a.html to a directory called <code>new</code> then new file name is b.html in the new directory</li>
         </ul>
 </ul>
