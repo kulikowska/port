@@ -1,0 +1,133 @@
+body {
+    background; #ccc;
+}
+
+div.wrapper {
+    -webkit-border-radius: 5px;
+    border:1px solid #aaa;
+    margin:0 auto;
+    width:540px;
+}
+
+input {
+    -webkit-border-radius: 5px;
+    border:1px solid #abc;
+}
+
+textarea {
+    -webkit-border-radius: 8px;
+    border:1px solid #cde;
+}
+
+select {
+    border:1px solid #abc;
+}
+
+textarea, input[type="text"] {
+    padding:3px;
+    background:#f8f8f8;
+    max-width:374px;
+    width:374px;
+    -webkit-box-shadow: 3px 4px 6px 1px #ccc;
+    border-bottom:0px;
+    border-right:0px;
+}
+
+fieldset {
+    -webkit-border-radius: 5px;
+    margin:16px 16px 0 16px;
+    border:3px solid #eee;
+}
+
+fieldset legend {
+    font-family:Helvetica;
+    padding:0 5px;
+}
+
+fieldset ul {
+    margin:0px;
+    padding:0px;
+}
+
+li {
+    list-style:none;
+    font-family:Georgia;
+    font-size:0.9em;
+    margin-top:2px;
+    border-top:1px solid transparent;
+    border-right:1px solid transparent;
+    padding:3px 0 3px 3px;
+    -webkit-border-radius:5px;
+}
+
+li label {
+    color:#888;
+}
+
+li:hover label {
+    color:#000;
+}
+
+li.sub {
+    width:auto;
+    float:right;
+    margin-right:10px
+}
+
+li.sub label {
+    width:auto;
+    min-width:45px;
+}
+
+li.sub:hover {
+    background:#f8f8f8;
+    border-top:1px solid #def;;
+    border-right:1px solid #def;
+    -webkit-box-shadow: 3px 4px 6px 1px #ccc;
+}
+
+li.button {
+    float:right;
+    width:auto;
+    margin:50px 8px -2px 0;
+}
+
+li.button input {
+    background:#fff;
+    border:3px solid #eee;
+}
+
+li.button input:hover {
+    background:#e8e8e8;
+}
+
+li.boxes fieldset {
+    float:left;
+    max-width:200px;
+    margin:2px 12px 0 0;
+    padding:8px;
+}
+
+li.boxes fieldset legend {
+    font-size:0.9em;
+    color:#888;
+    font-style:italic;
+}
+
+li.boxes fieldset:hover {
+    -webkit-box-shadow: 3px 4px 6px 1px #ccc;
+    background:#f8f8f8;
+}
+
+li.boxes fieldset div {
+    float:left;
+    clear:both;
+    margin:4px 8px 4px 4px;
+}
+
+label, div.lab {
+    font-style:italic;
+    float:left;
+    min-width:90px;
+    margin-top:2px;
+}

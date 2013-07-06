@@ -1,0 +1,49 @@
+<html>	
+    <head>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="../lib/js/jquery.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <form action="javascript:false" onsubmit="saveFormData(this)">
+                <fieldset>
+                <legend>Users</legend>
+                    <ul>
+                        <li><label>Last Name: </label><input type="text" value="Blo"/></li>
+                        <li><label>First Name:</label><input type="text" value="Jo"/></li>
+                        <li>
+                            <label for="ta">Description:</label>
+                            <textarea id='ta' rows="5" cols="50">One good dude.</textarea>
+                        </li>
+                        <li class='boxes'>
+                            <fieldset>
+                                <legend>User Status</legend>
+                                    <div><input checked type="checkbox" /><span>Active</span></div>
+                                    <div><input type="checkbox" /><span>Has Root Access</span></div>
+                                </legend>
+                            </fieldset>
+                            <fieldset>
+                                <legend>User Type</legend>
+                                    <div><input name="userType" type="radio"><span>Manager</span></div>
+                                    <div><input checked name="userType" type="radio"><span>Coordinator</span></div>
+                                    <div><input name="userType" type="radio"><span>User</span></div>
+                                </legend>
+                            </fieldset>
+                        </li>
+                        <li class='sub'>
+                            <label>Country:</label>
+                            <select>
+                                <option>Canada</option>
+                                <option>U.S.</option>
+                                <option selected>Japan</option>
+                                <option>China</option>
+                            </select>
+                        </li>
+                        <li class='button'><input type="submit" value="Save Data" /></li>
+                    </ul>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
