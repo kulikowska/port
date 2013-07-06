@@ -33,6 +33,10 @@ textarea, input[type="text"] {
     border-right:0px;
 }
 
+textarea:hover, input[type="text"]:hover {
+    -webkit-box-shadow: 3px 4px 5px 3px #ccc;
+}
+
 fieldset {
     -webkit-border-radius: 5px;
     margin:16px 16px 0 16px;
@@ -95,10 +99,8 @@ li.button {
 li.button input {
     background:#fff;
     border:3px solid #eee;
-}
-
-li.button input:hover {
-    background:#e8e8e8;
+    color:#888;
+    font-weight:bold;
 }
 
 li.boxes fieldset {
@@ -114,9 +116,16 @@ li.boxes fieldset legend {
     font-style:italic;
 }
 
+li.button input:hover,
 li.boxes fieldset:hover {
     -webkit-box-shadow: 3px 4px 6px 1px #ccc;
+    border-bottom:3px solid #f8f8f8;
+    border-right:3px solid #f8f8f8;
     background:#f8f8f8;
+}
+
+li.button input:hover {
+    color:#000;
 }
 
 li.boxes fieldset div {
