@@ -5,8 +5,9 @@ body {
 div.wrapper {
     width:540px;
     margin:0 auto;
-    border:1px solid #aaa;
+    border:1px solid #eee;
     -webkit-border-radius: 5px;
+    -webkit-box-shadow: 9px 9px 24px 6px #ccc;
 }
 
 input {
