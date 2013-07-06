@@ -3,20 +3,20 @@ body {
 }
 
 div.wrapper {
-    -webkit-border-radius: 5px;
-    border:1px solid #aaa;
-    margin:0 auto;
     width:540px;
+    margin:0 auto;
+    border:1px solid #aaa;
+    -webkit-border-radius: 5px;
 }
 
 input {
-    -webkit-border-radius: 5px;
     border:1px solid #abc;
+    -webkit-border-radius: 5px;
 }
 
 textarea {
-    -webkit-border-radius: 8px;
     border:1px solid #cde;
+    -webkit-border-radius: 8px;
 }
 
 select {
@@ -24,13 +24,13 @@ select {
 }
 
 textarea, input[type="text"] {
-    padding:3px;
-    background:#f8f8f8;
-    max-width:374px;
     width:374px;
-    -webkit-box-shadow: 3px 4px 6px 1px #ccc;
+    max-width:374px;
     border-bottom:0px;
     border-right:0px;
+    padding:3px;
+    background:#f8f8f8;
+    -webkit-box-shadow: 3px 4px 6px 1px #ccc;
 }
 
 textarea:hover, input[type="text"]:hover {
@@ -38,9 +38,9 @@ textarea:hover, input[type="text"]:hover {
 }
 
 fieldset {
-    -webkit-border-radius: 5px;
     margin:16px 16px 0 16px;
     border:3px solid #eee;
+    -webkit-border-radius: 5px;
 }
 
 fieldset legend {
@@ -54,13 +54,13 @@ fieldset ul {
 }
 
 li {
-    list-style:none;
     font-family:Georgia;
     font-size:0.9em;
     margin-top:2px;
+    padding:3px 0 3px 3px;
     border-top:1px solid transparent;
     border-right:1px solid transparent;
-    padding:3px 0 3px 3px;
+    list-style:none;
     -webkit-border-radius:5px;
 }
 
@@ -73,8 +73,8 @@ li:hover label {
 }
 
 li.sub {
-    width:auto;
     float:right;
+    width:auto;
     margin-right:10px
 }
 
@@ -84,21 +84,22 @@ li.sub label {
 }
 
 li.sub:hover {
-    background:#f8f8f8;
     border-top:1px solid #def;;
     border-right:1px solid #def;
+    background:#f8f8f8;
     -webkit-box-shadow: 3px 4px 6px 1px #ccc;
 }
 
 li.button {
     float:right;
     width:auto;
-    margin:50px 8px -2px 0;
+    margin:54px 8px -2px 0;
 }
 
 li.button input {
-    background:#fff;
     border:3px solid #eee;
+    margin:0;
+    background:#fff;
     color:#888;
     font-weight:bold;
 }
@@ -118,10 +119,10 @@ li.boxes fieldset legend {
 
 li.button input:hover,
 li.boxes fieldset:hover {
-    -webkit-box-shadow: 3px 4px 6px 1px #ccc;
     border-bottom:3px solid #f8f8f8;
     border-right:3px solid #f8f8f8;
     background:#f8f8f8;
+    -webkit-box-shadow: 3px 4px 6px 1px #ccc;
 }
 
 li.button input:hover {
@@ -135,8 +136,8 @@ li.boxes fieldset div {
 }
 
 label, div.lab {
-    font-style:italic;
     float:left;
     min-width:90px;
     margin-top:2px;
+    font-style:italic;
 }
