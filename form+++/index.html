@@ -19,26 +19,39 @@
                         <li class='boxes'>
                             <fieldset>
                                 <legend>User Type</legend>
-                                    <div><input name="userType" type="radio"><span>Manager</span></div>
-                                    <div><input name="userType" type="radio" checked><span>Coordinator</span></div>
-                                    <div><input name="userType" type="radio"><span>User</span></div>
-                                </legend>
+                                <div>
+                                    <label for="r0">Manager</label>
+                                    <input id= "r0" name="userType" type="radio">
+                                </div>
+                                <div>
+                                    <label for="r1">Coordinator</label>
+                                    <input id= "r1" name="userType" type="radio" checked>
+                                </div>
+                                <div>
+                                    <label for="r2">User</label>
+                                    <input id= "r2" name="userType" type="radio">
+                                </div>
                             </fieldset>
                             <fieldset>
                                 <legend>User Status</legend>
-                                    <div><input type="checkbox" checked /><span>Active</span></div>
-                                    <div><input type="checkbox"         /><span>Has Root Access</span></div>
-                                </legend>
+                                <div>
+                                    <label for="c0">Active</label>
+                                    <input id= "c0" type="checkbox" checked />
+                                </div>
+                                <div>
+                                    <label for="c1">Has Root Access</label>
+                                    <input id= "c1" type="checkbox"/>
+                                </div>
                             </fieldset>
                         </li>
                         <li class='sub'>
                             <label>Country:</label>
                             <select>
+                                <option selected>Poland</option>
                                 <option         >Canada</option>
                                 <option         >U.S.</option>
-                                <option selected>Japan</option>
+                                <option         >Japan</option>
                                 <option         >China</option>
-                                <option         >Poland</option>
                             </select>
                         </li>
                         <li class='button'><input type="submit" value="Save Data" /></li>
