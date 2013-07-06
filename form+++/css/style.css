@@ -82,6 +82,7 @@ li.sub {
 li.sub label {
     width:auto;
     min-width:45px;
+    margin-right:5px;
 }
 
 li.sub:hover {
