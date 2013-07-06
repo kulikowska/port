@@ -18,26 +18,27 @@
                         </li>
                         <li class='boxes'>
                             <fieldset>
-                                <legend>User Status</legend>
-                                    <div><input checked type="checkbox" /><span>Active</span></div>
-                                    <div><input type="checkbox" /><span>Has Root Access</span></div>
+                                <legend>User Type</legend>
+                                    <div><input name="userType" type="radio"><span>Manager</span></div>
+                                    <div><input name="userType" type="radio" checked><span>Coordinator</span></div>
+                                    <div><input name="userType" type="radio"><span>User</span></div>
                                 </legend>
                             </fieldset>
                             <fieldset>
-                                <legend>User Type</legend>
-                                    <div><input name="userType" type="radio"><span>Manager</span></div>
-                                    <div><input checked name="userType" type="radio"><span>Coordinator</span></div>
-                                    <div><input name="userType" type="radio"><span>User</span></div>
+                                <legend>User Status</legend>
+                                    <div><input type="checkbox" checked /><span>Active</span></div>
+                                    <div><input type="checkbox"         /><span>Has Root Access</span></div>
                                 </legend>
                             </fieldset>
                         </li>
                         <li class='sub'>
                             <label>Country:</label>
                             <select>
-                                <option>Canada</option>
-                                <option>U.S.</option>
+                                <option         >Canada</option>
+                                <option         >U.S.</option>
                                 <option selected>Japan</option>
-                                <option>China</option>
+                                <option         >China</option>
+                                <option         >Poland</option>
                             </select>
                         </li>
                         <li class='button'><input type="submit" value="Save Data" /></li>
