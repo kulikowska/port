@@ -1,0 +1,65 @@
+<style>
+
+div.page { 
+    min-width:500px;
+    max-width:700px;
+    margin:0 auto;
+}
+
+div.big	{
+    border:1px solid blue;
+    background-color:#cde;
+    border-left: 170px solid gray;
+    border-right:160px solid gray;
+}
+
+div.big:after {
+    content:'X';
+    height:0;
+    visibility:hidden;
+    display:block;
+    clear:left;
+}
+
+div.center	{	
+    width:100%;
+    float:left;
+}
+
+div.left	{
+    float:left;
+    position:relative;
+    width:170px;
+    margin-left: -170px;
+    left:-100%;
+}
+
+div.right	{
+    position:relative;
+    float:left;
+    width:160px;
+    margin-right:-160px;
+}
+
+</style>
+
+<html>
+<body>
+    <div class='page'>
+        <div class="big">
+            <div class="center"> <center><b> Cool Wolfies </b></center>
+			            <br>
+						            <img src=http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Howlsnow.jpg/220px-Howlsnow.jpg>
+									
+									            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi consequat purus eget vestibulum vestibulum. Praesent iaculis posuere metus et auctor. Aenean massa lorem, aliquet non sem ut, faucibus elementum turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec lacinia vehicula molestie. Integer ante nunc, cursus eget urna vel, euismod imperdiet urna. Morbi quis mauris urna. Vestibulum quis dui sit amet tellus volutpat aliquam nec vel enim.
+												            <p>
+															            Suselementum risus et, commodo risus. Aliquam blandit, enim eget condimentum laoreet, odio nulla laoreet tortor, vitae venenatis mi elit eget ligula. Mauris vehicula tempor risus, ac venenatis lorem sodales vitae. Nunc sed varius quam. Vivamus iaculis aliquam erat, in dictum nunc pretium eget. Cras faucibus ipsum sit amet tempus consectetur. Aliquam porta purus ut dolor consectetur, in rhoncus turpis bibendum. Sed quis orci dolor. Sed et ullamcorper lacus, non sagittis tellus.
+																		
+																		            <img src=http://www.groaction.com/discover/wp-content/uploads/2010/10/gray_wolf.jpg 
+																					            style="float:left; border:3px solid black; height="40%"; width="40%";"></div>
+            <div class="left"> Left </div>
+            <div class="right"> Right </div>
+        </div>
+    </div>
+</body>
+</style>
