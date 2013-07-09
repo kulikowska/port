@@ -1,0 +1,57 @@
+<style>
+
+div.page { 
+    display:block;
+    min-width:500px;
+    max-width:700px;
+    margin:0 auto;
+}
+
+div.big	{
+    border:1px solid blue;
+    background-color:#cde;
+    border-left: 170px solid #ef9;
+    border-right:160px solid #cce844;
+}
+
+div.big:after{
+    content:'X';
+    height:0;
+    visibility:hidden;
+    display:block;
+    clear:left;
+}
+
+div.center	{	
+    width:100%;
+    float:left;
+}
+
+div.left	{
+    float:left;
+    position:relative;
+    width:170px;
+    margin-left: -170px;
+    left:-100%;
+}
+
+div.right	{
+    position:relative;
+    float:left;
+    width:160px;
+    margin-right:-160px;
+}
+
+</style>
+
+<html>
+<body>
+    <div class='page'>
+        <div class="big">
+            <div class="center"> Center </div>
+            <div class="left"> Left </div>
+            <div class="right"> Right </div>
+        </div>
+    </div>
+</body>
+</style>
