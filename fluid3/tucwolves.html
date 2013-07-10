@@ -1,0 +1,104 @@
+<style>
+
+div.page { 
+    min-width:500px;
+    max-width:900px;
+    margin:0 auto;
+}
+
+div.big	{
+    background-color:#cde;
+    border-left: 300px solid #6aa3c8;
+    border-right:160px solid #6aaec8;
+}
+
+not_used_div.big:after {
+    content:'&nbsp;';
+    height:0;
+    visibility:hidden;
+    display:block;
+    clear:left;
+}
+
+div.center	{	
+    width:100%;
+    float:left;
+}
+
+div.big div div {
+    margin:12px;
+}
+
+div.left	{
+    float:left;
+    position:relative;
+    width:300px;
+    margin-left: -300px;
+    left:-100%;
+}
+
+div.left div, div.right div {
+    margin:12px;
+}
+
+div.right	{
+    position:relative;
+    float:left;
+    width:160px;
+    margin-right:-160px;
+}
+
+p.imgLeft {
+    float:left;
+    margin-right:12px;
+}
+p.imgRight{
+    float:right;
+    margin-left:12px;
+}
+</style>
+
+<html>
+<body>
+    <div class='page'>
+        <div class="big">
+            <div class="center"> 
+                <div>
+                    <center><b> Cool Wolfies </b></center>
+
+                    <p class='imgLeft'><img src=http://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Howlsnow.jpg/220px-Howlsnow.jpg></p>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Morbi consequat purus eget vestibulum vestibulum. Praesent iaculis posuere metus et auctor. 
+                    Aenean massa lorem, aliquet non sem ut, faucibus elementum turpis. 
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                    Donec lacinia vehicula molestie. Integer ante nunc, cursus eget urna vel, euismod imperdiet urna. Morbi quis mauris urna. Vestibulum quis dui sit amet tellus volutpat aliquam nec vel enim.
+                    Aenean massa lorem, aliquet non sem ut, faucibus elementum turpis. 
+                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+                    Donec lacinia vehicula molestie. Integer ante nunc, cursus eget urna vel, euismod imperdiet urna. Morbi quis mauris urna. Vestibulum quis dui sit amet tellus volutpat aliquam nec vel enim.
+                    </p>
+                    <p class='imgRight'><img src=http://www.groaction.com/discover/wp-content/uploads/2010/10/gray_wolf.jpg width="190"/> 
+                    </p>
+                    <p id="sl">
+                Suselementum risus et, commodo risus. Aliquam blandit, enim eget condimentum laoreet, odio nulla laoreet tortor, vitae venenatis mi elit eget ligula. Mauris vehicula tempor risus, ac venenatis lorem sodales vitae. Nunc sed varius quam. Vivamus iaculis aliquam erat, in dictum nunc pretium eget. Cras faucibus ipsum sit amet tempus consectetur. Aliquam porta purus ut dolor consectetur, in rhoncus turpis bibendum. Sed quis orci dolor. Sed et ullamcorper lacus, non sagittis tellus.
+                    </p>
+                </div>
+            </div><!-- .center -->
+            <div class="left"> 
+                <div>
+                    <ul>
+                        <li><a href="#sl">SL</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div>
+                    Right on.
+                </div>
+            </div>
+&nbsp;
+        </div><!-- .big -->
+    </div><!-- .page -->
+</body>
+</style>
