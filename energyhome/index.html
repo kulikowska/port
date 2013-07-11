@@ -5,7 +5,7 @@ body {
 
 .wrapper {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1000px;
     min-width: 400px;
     background-color:#ede;
 }
@@ -18,11 +18,24 @@ body {
 }
 
 .header ul {
+    background:#bbb;
     margin:0;
+    height:20px;
+    margin-left:300px;
+}
+
+.header ul li {
+    list-style :none;
+    float:left;
+    cursor:pointer;
+    margin-right:12px;
+    border:1px solid red;
+    border-bottom:none;
+    padding:1px 8px 0px 5px;
 }
 
 .outer {
-    margin-left: 200px;
+    margin-left: 450px;
     border-left: 1px solid #000;
     background-color: #def;
 }
@@ -40,9 +53,15 @@ body {
 .left {
     float:left;
     position:relative;
-    width:200px;
-    margin-left:-201px;
+    width:450px;
+    margin-left:-451px;
     margin-right:2px;
+}
+
+.left div {
+    margin:20px;
+    border:2px solid green;
+    padding:12px;
 }
 
 .outer:after {
@@ -74,16 +93,27 @@ body {
             <div class="outer">
                 <div class="center">
                     <div>
-                        <img src='img/edgehill_house_1.jpg' />
+                        <p>
+                            <img src='img/edgehill_house_1.jpg' />
+                        </p>
+                        caption
                     </div>
                 </div>
                 <div class="left">
-                Welcome to the new Home Energy, Inc. website.
-                At Home Energy, our goal is to make your home as energy-efficient as possible. We use building science to find the best alternative energy technologies for each home. We install both solar and geothermal systems and also perform low-cost, small-scale renovations.
+                    <div>
+                        <h2>Welcome to the new Home Energy, Inc. website.</h2>
+                        <p>
+                            At Home Energy, our goal is to make your home as energy-efficient as possible. We use building science to find the best alternative energy technologies for each home. We install both solar and geothermal systems and also perform low-cost, small-scale renovations.
 
-                Check out our featured projects: Willow Spring Vineyards and Jalbert DER
+                        </p>
+                        <p>
+                        Check out our featured projects: Willow Spring Vineyards and Jalbert DER
+                        </p>
+                        <p>
 
-                This site is currently under construction. Visit our facebook page and check our blog for updates.
+                        This site is currently under construction. Visit our facebook page and check our blog for updates.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
