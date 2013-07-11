@@ -1,0 +1,91 @@
+<style>
+body {
+    margin:20px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    min-width: 400px;
+    background-color:#ede;
+}
+
+.header , .footer{
+    background-color: #89a;
+}
+.header img {
+    height:180px;
+}
+
+.header ul {
+    margin:0;
+}
+
+.outer {
+    margin-left: 200px;
+    border-left: 1px solid #000;
+    background-color: #def;
+}
+
+.outer .center {
+    float:right;
+    width:100%;
+    margin-left:-1px;
+}
+
+.outer .center img {
+    height:360px;
+}
+
+.left {
+    float:left;
+    position:relative;
+    width:200px;
+    margin-left:-201px;
+    margin-right:2px;
+}
+
+.outer:after {
+    content:'X';
+    height:0;
+    visibility:hidden;
+    display:block;
+    clear:left;
+}
+
+
+</style>
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <img src='img/heincLogo3.jpg'/></img>
+                <ul>
+                    <li>
+                        Home
+                    </li>
+                    <li>
+                        About Us
+                    </li>
+                </ul>
+            </div>
+            <div class="outer">
+                <div class="center">
+                    <div>
+                        <img src='img/edgehill_house_1.jpg' />
+                    </div>
+                </div>
+                <div class="left">
+                Welcome to the new Home Energy, Inc. website.
+                At Home Energy, our goal is to make your home as energy-efficient as possible. We use building science to find the best alternative energy technologies for each home. We install both solar and geothermal systems and also perform low-cost, small-scale renovations.
+
+                Check out our featured projects: Willow Spring Vineyards and Jalbert DER
+
+                This site is currently under construction. Visit our facebook page and check our blog for updates.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
