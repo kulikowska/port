@@ -20,18 +20,29 @@ body {
 .header ul {
     background:#bbb;
     margin:0;
-    height:20px;
-    margin-left:300px;
+    height:28px;
+    margin-left:255px;
 }
 
 .header ul li {
     list-style :none;
     float:left;
     cursor:pointer;
-    margin-right:12px;
-    border:1px solid red;
+    margin-right:0;
     border-bottom:none;
-    padding:1px 8px 0px 5px;
+    padding:4px 8px 0px 5px;
+	color:black;
+}
+
+.header ul li:visited {
+	color:black;
+	text-decoration:none;
+}
+
+.header ul li:hover {
+	background-color:purple;
+	text-decoration:underline; 
+	font-size:110%;
 }
 
 .outer {
@@ -44,6 +55,10 @@ body {
     float:right;
     width:100%;
     margin-left:-1px;
+}
+
+.outer .center div {
+	margin:20px;	
 }
 
 .outer .center img {
@@ -83,11 +98,32 @@ body {
                 <img src='img/heincLogo3.jpg'/></img>
                 <ul>
                     <li>
-                        Home
+                        <a href=http://www.homeenergyinc.com/home.php> Home </a>
                     </li>
                     <li>
                         About Us
                     </li>
+					<li>
+						Feature Project
+					</li>
+					<li>
+						DER 
+					</li>
+					<li>
+						Solar 
+					</li>
+					<li>
+						Heat Pumps
+					</li>
+					<li>
+						Energy Star Homes
+					</li>
+					<li>
+						Contact Us
+					</li>
+					<li>
+						Blog
+					</li>
                 </ul>
             </div>
             <div class="outer">
