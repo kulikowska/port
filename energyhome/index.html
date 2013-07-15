@@ -10,7 +10,7 @@ body {
 }
 
 .header , .footer{
-    background-color: ccccff;
+    background-color: #ccccff;
 }
 .header img {
     height:180px;
@@ -20,11 +20,19 @@ body {
 .form {
 	position:relative;
 	float:right;
-	margin:5px 5px 5px 5px;
+	margin:0px 5px 0px 5px;
+	padding:0px 5px 0px 5px;
+}
+
+.header ul {
+	background:#bbb;
+	cursor:pointer;
+	list-style:none;
+	color:black;
+	font-family:"didot";
 }
 
 .header ul.menu {
-    background:#bbb;
 	padding-left:6px;
     margin:0;
     height:26px;
@@ -35,18 +43,17 @@ body {
 
 .header ul.menu li {
     height:100%;
-    list-style :none;
     float:left;
-    cursor:pointer;
     margin-right:0;
     border-bottom:none;
     padding:4px 8px 0px 5px;
-	color:black;
-	font-family:"didot";
 }
 
 .header .form ul li {
-	color:white;
+	float:left;
+	margin:0px 5px 0px 5px;
+	font-size:14px;
+	font-style:italic;
 }
 
 .header ul.menu a:visited, a:link {
@@ -55,8 +62,8 @@ body {
 	text-decoration:none;
 }
 
-.header ul li:hover {
-	background-color: 9999ff;
+.header ul.menu li:hover {
+	background-color: #9999ff;
 	text-decoration:underline; 
 }
 
@@ -96,7 +103,7 @@ body {
 
 .left div {
     margin:20px;
-    border:2px solid 333366;
+    border:2px solid #333366;
 	border-radius: 10px;
     padding:12px;
 }
@@ -120,12 +127,11 @@ body {
                 <img src='img/heincLogo3.jpg'/></img>
 					<div class="form"> 
 						<form action="javascript:false" onsubmit="saveFormData(this)">
-							<fieldset>
 								<ul>
 									<li><label>Username </label><input type="text" value="yo"/> </li>
-									<li><label><Password </label><input type="text" value="dude"/> </li>
+									<li><label>Password </label><input type="text" value="dude"/> </li>
+									<li class='button'><input type="submit" value="Login" /></li>
 								</ul>
-							</fieldset>
 						</form>
 					</div>
                 <ul class="menu">
