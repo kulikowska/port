@@ -17,6 +17,11 @@ body {
 	border-bottom-right-radius:5px;
 }
 
+.form {
+	position:relative;
+	float:right;
+	margin:5px 5px 5px 5px;
+}
 
 .header ul {
     background:#bbb;
@@ -109,6 +114,16 @@ body {
         <div class="wrapper">
             <div class="header">
                 <img src='img/heincLogo3.jpg'/></img>
+					<div class="form"> 
+						<form action="javascript:false" onsubmit="saveFormData(this)">
+							<fieldset>
+								<ul>
+									<li><label>Username </label><input type="text" value="yo"/> </li>
+									<li><label><Password </label><input type="text" value="dude"/> </li>
+								</ul>
+							</fieldset>
+						</form>
+					</div>
                 <ul>
                     <li>
                         <a href=http://www.homeenergyinc.com/home.php> Home </a>
