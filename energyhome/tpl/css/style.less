@@ -6,13 +6,13 @@
 @bannerBorder: #9EB8CA;
 @tabMenuColor: #024E68;
 */
-
 @pageBg: #1F6B42;
-@mainBg: lighten(#AFB477, 0%);
+@mainBg: #d2eab2;
 @bannerBg: lighten(#D2EAB4, 0%);
 @bannerHeadBg: #A61A00;
-@bannerBorder: #d8d8d8;
+@bannerBorder: #899f6d;
 @tabMenuColor: #024E68;
+@tabMenuBg: #ddd;
 
 * {
 margin:0;
@@ -155,7 +155,7 @@ padding:0px 0px 0px 25px;
 #dvbanner img {
     height:212px;
     width:534px;
-    border:2px solid #ddd;
+    border:2px solid @bannerBorder;
     border-radius:12px;
 }
 #dvbodycontainer #dvleftpanel
@@ -168,7 +168,7 @@ padding:26px 0px 4px 25px;
 #dvleftpanel #topimage
 {
 float:left;
-width:259px;
+width:261px;
 font-size:17px;
 margin:0px;
 padding:8px 0px 0px 15px;
@@ -188,9 +188,11 @@ float:left;
 width:247px;
 margin:0px;
 padding:25px 0px 4px 25px;
-border-bottom:1px solid @bannerBorder;
-border-left:1px solid @bannerBorder;
-border-right:1px solid @bannerBorder;
+border-bottom:2px solid @bannerBorder;
+border-left:2px solid @bannerBorder;
+border-right:2px solid @bannerBorder;
+border-bottom-left-radius:8px;
+border-bottom-right-radius:8px;
 }
 #midcont p
 {
@@ -370,7 +372,7 @@ float:left;
 width:556px;
 height:59px;
 background: @bannerBg;
-border:2px solid #ddd;
+border:2px solid @bannerBorder;
 margin:20px 0px 0px 0px;
 padding:11px 0px 5px 0px;
 border-radius:12px;
@@ -451,6 +453,7 @@ padding-top:13px;
 
 
     #tabs1 {
+      background:@tabMenuBg;
       float:left;
     
 	  background:#FAF6DB;
@@ -498,7 +501,7 @@ padding-top:13px;
     #tabs1 a span {
       float:left;
       display:block;
-      background:url("../images/tabright1.gif") no-repeat right top;
+      background:@tabMenuBg;
 	  color:@tabMenuColor;
       padding:3px 9px 6px 5px; 
 	  voice-family:"\"}\"";
