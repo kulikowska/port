@@ -1,0 +1,47 @@
+<style>
+
+body {
+	background: #ccc;
+}
+
+div.wrapper {
+	-webkit-border-radius:5px;
+	border:1px solid #aaa;
+}
+
+fieldset {
+	-webkit-border-radius:5px;
+	margin:16px 16px 0 16px;
+}
+
+</style>
+
+<html>
+	<body>
+		<div class='wrapper'>
+			<form action="javascript:false" onsubmit="saveFormData(this)">
+			<fieldset>
+				Dog Name: <input type="text" value="Lassie"/>
+				Owner Name: <input type="text" value="Bob">
+				<label for="ta"> Description: </label><textarea id='ta' rows="5" cols="40"> Chillin dog </textarea>
+				Breed:
+				<select>
+					<option> Pitty </option>
+					<option> Rottie </option>
+					<option selected> Husky </option>
+					<option> Lab </option>
+					<option> Golden Retriever </option>
+					<option> German Shepheard </option>
+					<option> Mutt </option>
+				</select>
+				Friendly: <input checked type="checkbox"/>
+				House Trained: <input type="checkbox"/>
+				Size:
+				Big: <input name="userType" type="radio">
+				Medium: <input checked name="userType" type="radio">
+				Small: <input name="userType" type="radio">
+				<input type="submit" value="Save Data"/>
+			</fieldset>
+		</div>
+	</body>
+</html>
