@@ -1,5 +1,3 @@
-
-
 body {
     background: #ccc;
 	}
@@ -8,45 +6,133 @@ div.wrapper {
 	-webkit-border-radius:5px;
      border:1px solid #aaa;
 	 margin:0 auto;
+	 -webkit-border-radius: 5px;
+	 -webkit-box-shadow: 9px 9px 24px 6px #ccc;
 	 min-width:550px;
 	 max-width:600px;
 }
 
+input {
+	border:1px solid #abc;
+	-webkit-border-radius:5px;
+}
+
+input[type="checkbox"], input[type="radio"] { cursor:pointer; }
+
+
 fieldset {
+	padding-bottom:14px;
+	border:3px solid #eee;
    -webkit-border-radius:5px;
    margin:16px 16px 0 16px;
  }
- 
- form fieldset ul {
- 	margin:4px;
-	padding:4px;
+
+fieldset legend {
+	font-family:Helvetica;
+	padding:0 5px;
+	color:#888;
 }
 
+fieldset ul {
+	margin:0px;
+	padding:0px;
+}
+ 
 li {
+	font-family:Georgia;
 	list-style:none;
 	font-family:Georgia;
 	font-size:0.9em;
-	margin-top:5px;
+	margin-top:2px;
+	padding:3px 0 3px 3px;
+	border-top:1px solid transparent;
+	-webkit-border-radius:5px; 
 }
 
-label, li.lab {
-	font-style:italic;
-	float:left;
-	min-width:90px;
-	margin-top:4px;
-}
-
-lib.sub {
-	margin-left:20px;
-}
+li		label { color:#888 }
+li:hover label { color:#000 }
 
 li.sub {
-	margin-left:20px;
+	float:right;
+	width:auto;
+	margin:2px 6px 0 0;
+	padding-left:6px;
 }
 
-li.sub span {
-	margin-right:12px;
+li.sub label {
+	width:auto;
+	min-width:45px;
+	margin-right:5px;
 }
+
+li.sub:hover {
+	border-top:1px solid #def;
+	border-right:1px solid #def;
+	background:#f8f8f8;
+	-webkit-box-shadow: 3px 4px 6px 1px #ecc;
+}
+
+li.button {
+	float:right;
+	width:auto;
+	margin:36px 8px -2px 0;
+}
+
+li.button input {
+	border:3px solid #eee;
+	margin:0;
+	background:#fff;
+	color:#888;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+li.boxes fieldset {
+	float:left;
+	max-width:200px;
+	margin:2px 12px 0 0;
+	padding:8px;
+}
+
+li.boxes fieldset legend {
+	font-size:0.9m;
+	font-style:italic;
+	font-family:Georgia;
+}
+
+li.button input:hover,
+li.boxes fieldset:hover {
+	border-bottom:3px solid #f8f8f8;
+	border-right:3px solid #f8f8f8;
+	background:#f8f8f8;
+	-webkit-box-shadow: 3px 4px 6px 1px #ecc;
+}
+
+li.button input:hover {
+	color:#000;
+}
+
+li.boxes fieldset div {
+	float:left;
+	clear:both;
+	margin:1px;
+}
+
+li.boxes fieldset span { margin-left:4px; }
+li.boxes label {
+	float:right;
+	padding-left:5px;
+	font-style:normal;
+	color:#000;
+}
+
+label, div.lab {
+	font-style:italic;
+	float:left;
+	min-width:84px;
+	margin-top:2px;
+}
+
  textarea {
  	-webkit-border-radius: 8px;
 	border:1px solid #cde;
@@ -64,9 +150,12 @@ select {
 textarea, input[type="text"] {
 	padding:3px;
 	background:#f8f8f8;
-	max-width:374px;
-	width:374px;
+	width:382px;
 	-webkit-box-shadow: 3px 4px 6px 1px #cdc;
 	border-bottom:0px;
 	border-right:0px;
+}
+
+textarea:hover, input[type="text"]:hover {
+	-webkit-box-shadow: 3px 4px 5px 3px #ecc;
 }

@@ -16,8 +16,36 @@
 						    <textarea id='ta' rows="5" cols="40"> Chillin dog </textarea>
                         </li>
 						<li class='boxes'>
-								Breed:
-							<select>
+				<fieldset>	
+					<legend> Size: </legend>
+						<div>
+							<label for="r0"> Big </label>
+							<input id= "r0" name="userType" type="radio">
+						</div>
+						<div>	
+							 <label for="r1"> Medium </label>
+							 <input id= "r1" name="userType" type="radio">
+						</div>
+						<div> 
+							<label for="r2"> Small </label>
+							<input id= "r2" name="userType" type="radio" checked>
+						</div>
+				</fieldset>
+				<fieldset>
+						<legend> Misc </legend>
+						<div>
+							 <label for="c0"> Friendly </label>
+							 <input id="c0" name="userStatus" type="checkbox" checked />
+						</div>
+						<div> 
+							<label for="c1"> House Trained </label>
+							<input id= "c1" name="userStatus" type="checkbox"/>
+						</div>
+					</fieldset>
+						</li>
+						<li class="sub">
+								<label>Breed:</label>
+							<select name="breed">
 								<option> Pitty </option>
 								<option> Rottie </option>
 								<option selected> Husky </option>
@@ -27,21 +55,10 @@
 								<option> Mutt </option>
 							</select>
 						</li>
-						
-			 			<li class='lab'> Misc </li>
-						<li class='sub'> 
-							 <input checked type="checkbox"/><span> Friendly:</span>
-							 <input type="checkbox"/><span> House Trained: </span>
-						</li>
-						<li class='lab'> Size: </li>
-						<li class='sub'>
-							 <input name="userType" type="radio"><span> Big </span>
-							 <input checked name="userType" type="radio"><span> Medium </span>
-							 <input name="userType" type="radio"><span> Small </span>
-						</li>
-						<li><input type="submit" value="Save Data"/></li>
+						<li class='button'><input type="submit" value="Save Data"/></li>
 					</ul>
 			</fieldset>
+		</form>
 		</div>
 	</body>
 </html>
