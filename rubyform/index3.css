@@ -8,8 +8,7 @@ div.wrapper {
 	 margin:0 auto;
 	 -webkit-border-radius: 5px;
 	 -webkit-box-shadow: 9px 9px 24px 6px #ccc;
-	 min-width:550px;
-	 max-width:600px;
+	 width:540px;
 }
 
 input {
