@@ -1,38 +1,37 @@
+<style>
+    div { 
+        margin:10px; 
+        border:1px solid #abc; 
+        padding:8px; 
+    }
+    div:first-child {cursor:pointer;}
+
+    .redBorder { 
+        border:1px solid red; 
+        font-style:italic; 
+    }
+</style>
+
+<script>
+    /*
+        New jQuery functions for adding/removing CSS class to/from DOM element
+            addClass()
+            removeClass()
+    */
+    function LG() { console.log(arguments); }
+
+    function doClick( el ) {
+        if ( $(el).html() == 'Make red!' ) {
+            $(el).text('Back to #abc!');
+            $('#info div').addClass('redBorder');
+        } else {
+            $(el).text('Make red!');
+            $('#info div').removeClass('redBorder');
+        }
+    }
+</script>
+
 <html>
-
-    <style>
-        div { 
-            margin:10px; 
-            border:1px solid #abc; 
-            padding:8px; 
-        }
-        div:first-child {cursor:pointer;}
-
-        .redBorder { 
-            border:1px solid red; 
-            font-style:italic; 
-        }
-    </style>
-
-    <script>
-        /*
-            New jQuery functions for adding/removing CSS class to/from DOM element
-                addClass()
-                removeClass()
-        */
-        function LG() { console.log(arguments); }
-
-        function doClick( el ) {
-            if ( $(el).html() == 'Make red!' ) {
-                $(el).text('Back to #abc!');
-                $('#info div').addClass('redBorder');
-            } else {
-                $(el).text('Make red!');
-                $('#info div').removeClass('redBorder');
-            }
-        }
-    </script>
-
     <head>
         <script src='../lib/js/jquery.js'></script>
     </head>
