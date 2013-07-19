@@ -1,82 +1,81 @@
+<style>
+   div {
+        margin:0px;
+        border:1px solid #abc;
+        padding:8px; 
+   }
+
+    div.tabs, div.tabs div { 
+        float:left; 
+        cursor:pointer;
+    }
+
+    div.tabs div {
+        width:80px;
+    }   
+
+    #content, div.tabs { 
+        border:none; 
+        margin:0; 
+        padding:0; 
+    }
+
+    #content > div {
+        border-top:none;
+        width:276px;
+        background:#eee;
+    }
+
+    #content > div { 
+        clear:both;
+    }
+
+    .hide { 
+        display:none; 
+    }
+
+    .selected {
+        background: #eee;
+        border:1px solid red;
+        border-bottom:none;
+    }
+</style>
+
+<script>
+    function LG() { console.log(arguments); }
+
+    /*
+        javascript concatenation of strings: it uses '+' to join two strings together.
+        Example:
+        'abc' + 'def' will produce a string 'abcdef'
+
+        var string1='I am string1';
+        var string2='I am string2';
+
+        string1 + string2 will produce 'I am string1I am string2'
+        ... you see the problem with not adding a space between two strings, to fix do this:
+        string1 + ' ' + string2 will now prduce 'I am string1 I am string2'
+        or
+        var string1='I am string1 ' (notice the extra space at the end)
+    */
+    function toggle( el, whichOne ) {
+        var par      = 'div#content';
+        var children = 'div#content div';
+        var selector = par + ' .' + whichOne;
+
+        LG( 'Parent is: ' + par);
+        LG( 'Children are: ' + children);
+        LG( 'Selector is: ' + selector);
+
+        $(children).addClass('hide');
+        $(selector).removeClass('hide');
+
+        $(el).parent().find('div').removeClass('selected');
+        $(el).addClass('selected');
+    }
+</script>
+
 <html>
-
-    <style>
-       div {
-            margin:0px;
-            border:1px solid #abc;
-            padding:8px; 
-       }
-
-        div.tabs, div.tabs div { 
-            float:left; 
-            cursor:pointer;
-        }
-
-        div.tabs div {
-            width:80px;
-        }   
-
-        #content, div.tabs { 
-            border:none; 
-            margin:0; 
-            padding:0; 
-        }
-
-        #content > div {
-            border-top:none;
-            width:276px;
-            background:#eee;
-        }
-
-        #content > div { 
-            clear:both;
-        }
-
-        .hide { 
-            display:none; 
-        }
-
-        .selected {
-            background: #eee;
-            border:1px solid red;
-            border-bottom:none;
-        }
-    </style>
-
-    <script>
-        function LG() { console.log(arguments); }
-
-        /*
-            javascript concatenation of strings: it uses '+' to join two strings together.
-            Example:
-            'abc' + 'def' will produce a string 'abcdef'
-
-            var string1='I am string1';
-            var string2='I am string2';
-
-            string1 + string2 will produce 'I am string1I am string2'
-            ... you see the problem with not adding a space between two strings, to fix do this:
-            string1 + ' ' + string2 will now prduce 'I am string1 I am string2'
-            or
-            var string1='I am string1 ' (notice the extra space at the end)
-        */
-        function toggle( el, whichOne ) {
-            var par      = 'div#content';
-            var children = 'div#content div';
-            var selector = par + ' .' + whichOne;
-
-            LG( 'Parent is: ' + par);
-            LG( 'Children are: ' + children);
-            LG( 'Selector is: ' + selector);
-
-            $(children).addClass('hide');
-            $(selector).removeClass('hide');
-
-            $(el).parent().find('div').removeClass('selected');
-            $(el).addClass('selected');
-        }
-    </script>
-
     <head>
         <script src='../lib/js/jquery.js'></script>
     </head>
