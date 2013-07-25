@@ -6,6 +6,10 @@
         padding:8px; 
     }
     div:first-child {cursor:pointer;}
+
+    .redBg {
+        background:red;
+    }
 </style>
 
 <script>
@@ -16,6 +20,7 @@
         var bird = 'chicken';  
 	    console.log( guy + ' is ' + bird );
 		$(domEl).text(' I am changed');
+        $(domEl).addClass('redBg');
 	}
 </script>
 
