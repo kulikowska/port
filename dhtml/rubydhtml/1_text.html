@@ -53,16 +53,25 @@
             $('#info div').html('<ul><li>you unclicked</li></ul>');
         }
     }
+
+    function test5(arg) {
+        if ( arg == 5 ) {
+            alert( 'it is 5');
+        } else {
+            alert(' not 5');
+        }
+    }
 </script>
 
 <html>
     <head>
-        <script src='../lib/js/jquery.js'></script>
+        <script src='../../lib/js/jquery.js'></script>
     </head>
 
     <body>
-        <div id='clickDiv' onclick='doClick(this)'>Click Me!</div>
+        <div id='testArg' onclick='test5(5)'>Is it 5</div>
 
+        <div id='clickDiv' onclick='doClick(this)'>Click Me!</div>
         <div id='info'>
             <span>Info:</span>
             <div>Nothing happened yet</div>
