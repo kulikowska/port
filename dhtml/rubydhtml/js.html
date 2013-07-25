@@ -10,7 +10,9 @@
 
 <script>
     function LG() { console.log(arguments); }
-	function dude(guy) {
+	function dude ( domEl, guy) {
+	console.log( domEl );
+	console.log( guy );
         var bird = 'chicken';  
 	    console.log( guy + ' is ' + bird );
 	}
@@ -22,7 +24,7 @@
     </head>
 
     <body>
-        <div id='test1' onclick='dude(5)'>I am in a div.</div>
+        <div id='test1' onclick='dude( this, 5);'>I am in a div.</div>
 		<div id='test2' onclick='dude(7)'> Something New </div>
     </body>
 </html>
