@@ -65,8 +65,9 @@
         }
     }
 
-    function testJQ(el) {
+    function testJQ(el, arg2) {
         console.log( el );
+        console.log( arg2 );
         console.log('html of the div' + ' that you just clicked is: ' + $(el).html());
     }
 
@@ -83,7 +84,7 @@
 
     <body>
         <div id='testArg' onclick='test5(5)'>Is it 5</div>
-        <div id='htmlTest' onclick='testJQ( this )'>text content of this div</div>
+        <div id='htmlTest' onclick='testJQ( this, 6 )'>text content of this div</div>
         <div id='writeTest' onclick='writeJQ( this )'>change me to chicken</div>
 
         <div id='clickDiv' onclick='doClick(this)'>Click Me!</div>
