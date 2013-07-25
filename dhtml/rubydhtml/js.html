@@ -10,8 +10,8 @@
 
 <script>
     function LG() { console.log(arguments); }
-	function dude() {
-	console.log('I am dude');
+	function dude(guy) {
+	console.log( guy );
 	}
 </script>
 
@@ -21,6 +21,6 @@
     </head>
 
     <body>
-        <div id='test1' onclick='dude()'>I am in a div.</div>
+        <div id='test1' onclick='dude(5)'>I am in a div.</div>
     </body>
 </html>
