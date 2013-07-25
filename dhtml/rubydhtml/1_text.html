@@ -1,0 +1,71 @@
+<style>
+    div { 
+        margin:10px; 
+        border:1px 
+        solid #abc; 
+        padding:8px; 
+    }
+    div:first-child {cursor:pointer;}
+</style>
+
+<script>
+    /*
+        jQuery is regular javascript function which may perform some action 
+            and usually returns a javascript object
+
+        jQuery is called like this: $(argument);
+
+        jQuery understands CSS selectors when passed as arguments.  Example:
+
+            $('#info div'); - in this case jQuery will return a bunch of other functions
+                              that operate on #info div element(s).  This way of calling
+                              jQuery is actually useless, but it is 'correct'.
+
+            jQuery can be useful:
+                One of the functions jQuery will return is html().  You can call it like this:
+                $('#info div).html(); - will give you the whole html content of the DOM element
+                                        when you call .html() function without arguments
+                $('#info div).html('I am now the new content of #info div');
+                                    - will set the html content of the selected DOM element
+
+        jQuery also understands DOM elements passed as arguments.  Example:
+            $(el).html(); - will give you the whole html content of the DOM element
+
+            this is usually called from inside html using onclick (or on{something else}), like
+                <div onclick='showMyHtml(this);'>...</div>
+                - when you pass 'this' as an argument it will correspond to the DOM element
+                  on which the onclick function was defined; in this case it is <div> delement.
+                  Then in javascript you have to define showMyHtml() function like this:
+
+                  function showMyHtml( element ) {
+                    // this will print the html content of whatever called it inside debugger console
+                    console.log( $(element).html() ); 
+                  }
+    */
+    function LG() { console.log(arguments); }
+
+    function doClick( el ) {
+        if ( $(el).html() == 'Click Me!' ) {
+            $(el).html('Unclick Me Now!');
+            $('#info div').text('<ul><li>you clicked</li></ul>');
+        } else {
+            $(el).html('Click Me!');
+            $('#info div').html('<ul><li>you unclicked</li></ul>');
+        }
+    }
+</script>
+
+<html>
+    <head>
+        <script src='../lib/js/jquery.js'></script>
+    </head>
+
+    <body>
+        <div id='clickDiv' onclick='doClick(this)'>Click Me!</div>
+
+        <div id='info'>
+            <span>Info:</span>
+            <div>Nothing happened yet</div>
+        </div>
+    </body>
+</html>
