@@ -61,6 +61,11 @@
             alert(' not 5');
         }
     }
+
+    function testJQ(el) {
+        console.log('html of the div that you just clicked is: ' + $(el).html());
+        
+    }
 </script>
 
 <html>
@@ -70,6 +75,7 @@
 
     <body>
         <div id='testArg' onclick='test5(5)'>Is it 5</div>
+        <div id='htmlTest' onclick='testJQ( this )'>text content of this div</div>
 
         <div id='clickDiv' onclick='doClick(this)'>Click Me!</div>
         <div id='info'>
