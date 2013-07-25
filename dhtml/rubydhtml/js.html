@@ -22,6 +22,10 @@
 		$(domEl).text(' I am changed');
         $(domEl).addClass('redBg');
 	}
+
+    function restore(domEl) {
+        $(domEl).removeClass('redBg');
+    }
 </script>
 
 <html>
@@ -30,7 +34,7 @@
     </head>
 
     <body>
-        <div id='test1' onmouseover='dude( this, 5);'>I am in a div.</div>
+        <div id='test1' onmouseover='dude( this, 5);' onmouseout='restore(this)';>I am in a div.</div>
 		<div id='test2' onclick='dude(7)'> Something New </div>
     </body>
 </html>
