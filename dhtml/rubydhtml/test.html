@@ -5,30 +5,30 @@
 
 <script>
 $(document).ready(function(){
-  $("#hide").click(function(){
+    $("#hide").click(function(){
       $("p").hide();
-	    });
-  $("#show").click(function(){
-  	$("p").show();
-		});
-	$("#gone").click(function(){
+	});
+
+    $("#show").click(function(){
+  	    $("p").show();
+	});
+    
+	$(".gone").click(function(){
 		$(this).hide();
-		});
-		});
-		</script>
-		</head>
+	});
+});
+</script>
 
-		<body>
-		<h2>This is a heading</h2>
-		<p>This is a paragraph.</p>
-		<p>This is another paragraph.</p>
-		<button id="hide">Disappear</button>
-		<button id="show">Bring me Back </button>
+</head>
+	<body>
+        <h2>This is a heading</h2>
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+        <button id="hide">Disappear</button>
+        <button id="show">Bring me Back </button>
 
-		<p id="gone"> Click me and I go </p>
-		<p id="gone"> Never to return </p>
-		<p id="gone"> Unless you code something new </p>
-		</body>
-		</html>
-
-
+        <p class="gone"> Click me and I go </p>
+        <p class="gone"> Never to return </p>
+        <p class="gone"> Unless you code something new </p>
+	</body>
+</html>
