@@ -85,10 +85,16 @@
             $('.kendo').hide();
             $('.soccer').show();
             $('.soccer.first').addClass('selected');
+
+            $('div#content div').hide();
+            $('div#content .left').show();
         } else {
             $('.soccer').hide();
             $('.kendo').show();
             $('.kendo.first').addClass('selected');
+
+            $('div#content div').hide();
+            $('div#content .right').show();
 	    }
     }
 
