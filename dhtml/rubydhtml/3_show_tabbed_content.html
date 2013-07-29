@@ -86,15 +86,15 @@
             $('.soccer').show();
             $('.soccer.first').addClass('selected');
 
-            $('div#content div').hide();
-            $('div#content .left').show();
+            $('div#content div').addClass('hide');
+            $('div#content .left').removeClass('hide');
         } else {
             $('.soccer').hide();
             $('.kendo').show();
             $('.kendo.first').addClass('selected');
 
-            $('div#content div').hide();
-            $('div#content .right').show();
+            $('div#content div').addClass('hide');
+            $('div#content .right').removeClass('hide');
 	    }
     }
 
