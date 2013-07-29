@@ -82,17 +82,16 @@
     }
 	function sport(whichOne) {
 		if ( whichOne == 'Soccer Alert' ) {
-		$('.kendo').hide();
-		$('.soccer').show();
-		}
-		else {
-		$('.soccer').hide();
-		$('.kendo').show();
-	}
+            $('.kendo').hide();
+            $('.soccer').show();
+            $('.soccer').addClass('selected');
+        } else {
+            $('.soccer').hide();
+            $('.kendo').show();
+            $('.kendo').addClass('selected');
+	    }
     }
 
-	sport('nothing');
-	
 </script>
 
 <html>
