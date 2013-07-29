@@ -84,11 +84,11 @@
 		if ( whichOne == 'Soccer Alert' ) {
             $('.kendo').hide();
             $('.soccer').show();
-            $('.soccer').addClass('selected');
+            $('.soccer.first').addClass('selected');
         } else {
             $('.soccer').hide();
             $('.kendo').show();
-            $('.kendo').addClass('selected');
+            $('.kendo.first').addClass('selected');
 	    }
     }
 
@@ -106,9 +106,9 @@
 		</div>
         <div class='tabs'>
             <!-- This time toggle is called with a simple string argument -->
-            <div class='soccer selected' onclick='toggle(this, "left")'>Soccer Equipment</div>
+            <div class='soccer first selected' onclick='toggle(this, "left")'>Soccer Equipment</div>
             <div class='soccer' onclick='toggle(this, "center")'>Soccer Rules</div>
-            <div class='kendo' onclick='toggle(this, "right")'>Kendo Equipment</div>
+            <div class='kendo first' onclick='toggle(this, "right")'>Kendo Equipment</div>
 			<div class='kendo' onclick='toggle(this, "right1")'>Kendo Rules</div>
 			
         </div>
