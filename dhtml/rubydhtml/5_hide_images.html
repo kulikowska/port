@@ -19,13 +19,15 @@
 </style>
 
 <script>
-	function cub () {
-	$('.bear1')
+	function cub (yo) {
+	$('.bear1').addClass('show');
+	$('.bear2').removeClass('hide');
+	}
 </script>
 
 <html>
 	<div class='radiobutton'> 
-		Cute Bear 1 <input name="Choose" type="radio">
+		Cute Bear 1 <input name="Choose" type="radio" onClick="cub('yo')">
 		Cute Bear 2 <input name="Choose" type="radio">
 	</div>
 	<div class='bear1'>
