@@ -81,8 +81,15 @@
         $(el).addClass('selected');
     }
 	function sport(whichOne) {
-		alert( whichOne );	
+		if ( whichOne == 'Soccer Alert' ) {
+		$('.kendo').hide();
+		$('.soccer').show();
+		}
+		else {
+		$('.soccer').hide();
+		$('.kendo').show();
 	}
+    }
 
 	sport('nothing');
 	
