@@ -22,7 +22,7 @@
 
     #content > div {
         border-top:none;
-        width:276px;
+        width:374px;
         background:#eee;
     }
 
@@ -77,21 +77,44 @@
 
 <html>
     <head>
-        <script src='../lib/js/jquery.js'></script>
+        <script src='../../lib/js/jquery.js'></script>
     </head>
 
     <body>
         <div class='tabs'>
             <!-- This time toggle is called with a simple string argument -->
-            <div class='selected' onclick='toggle(this, "left")'>Show left</div>
-            <div onclick='toggle(this, "center")'>Show center</div>
-            <div onclick='toggle(this, "right")'>Show right</div>
+            <div class='selected' onclick='toggle(this, "left")'>Soccer Equipment</div>
+            <div onclick='toggle(this, "center")'>Soccer Rules</div>
+            <div onclick='toggle(this, "right")'>Kendo Equipment</div>
+			<div onclick='toggle(this, "right1")'>Kendo Rules</div>
+			
         </div>
 
         <div id='content'>
-            <div class='left'>Left div</div>
-            <div class='center hide'>Center div</div>
-            <div class='right hide'>Right div</div>
+            <div class='left'>
+				<ul><li> Cleats </li>
+					<li> Field </li>
+					<li> Ball </li>
+				</ul>
+			</div>
+            <div class='center hide'>
+				<ul><li> Two 45 Minute Halves</li>
+					<li> Throw ins when out of bounds </li>
+					<li> No hands except for goalie </li>
+				</ul>
+			</div>
+            <div class='right hide'>
+				<ul><li> Shinai</li>
+					<li> Bogu </li>
+					<li> Uniform </li>
+				<ul>
+			</div>
+			<div class='right1 hide'>
+				<ul><li> Feet cannot cross out of court </li>
+					<li> No Dropping Shinai </li>
+					<li> Two points wins, or one after time is up </li>
+				</ul>
+			</div>
         </div>
     </body>
 </html>
