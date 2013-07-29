@@ -39,6 +39,13 @@
         border:1px solid red;
         border-bottom:none;
     }
+
+	.radioselect {
+		width:374px;
+		background:#eee;
+		margin-bottom:5px;
+		word-spacing:5px;
+	}
 </style>
 
 <script>
@@ -81,6 +88,10 @@
     </head>
 
     <body>
+		<div class='radioselect'> 
+			Soccer <input name="Choose" type="radio" onClick="alert('Soccer Alert')"> 
+			Kendo <input name="Choose" type="radio" onClick="alert('Kendo Alert')">  
+		</div>
         <div class='tabs'>
             <!-- This time toggle is called with a simple string argument -->
             <div class='selected' onclick='toggle(this, "left")'>Soccer Equipment</div>
