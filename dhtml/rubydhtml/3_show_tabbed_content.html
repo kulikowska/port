@@ -70,32 +70,34 @@
         var children = 'div#content div';
         var selector = par + ' .' + whichOne;
 
-        LG( 'Parent is: ' + par);
-        LG( 'Children are: ' + children);
-        LG( 'Selector is: ' + selector);
-
         $(children).addClass('hide');
         $(selector).removeClass('hide');
 
         $(el).parent().find('div').removeClass('selected');
         $(el).addClass('selected');
     }
+
 	function sport(whichOne) {
-		if ( whichOne == 'Soccer Alert' ) {
-            $('.kendo').hide();
-            $('.soccer').show();
-            $('.soccer.first').addClass('selected');
-
-            $('div#content div').addClass('hide');
-            $('div#content .left').removeClass('hide');
+        if ( whichOne == 'both' ) {
+            $('.tabs div').removeClass('hide'); 
         } else {
-            $('.soccer').hide();
-            $('.kendo').show();
-            $('.kendo.first').addClass('selected');
+            $('.tabs div').addClass('hide'); 
+            $('.soccer, .kendo').addClass('hide');
 
-            $('div#content div').addClass('hide');
-            $('div#content .right').removeClass('hide');
-	    }
+            if ( whichOne == 'soccer' ) {
+                $('.soccer').removeClass('hide');
+                $('.soccer.first').addClass('selected');
+
+                $('div#content div').addClass('hide');
+                $('div#content .left').removeClass('hide');
+            } else {
+                $('.kendo').removeClass('hide');
+                $('.kendo.first').addClass('selected');
+
+                $('div#content div').addClass('hide');
+                $('div#content .right').removeClass('hide');
+            }
+        }
     }
 
 </script>
@@ -107,8 +109,9 @@
 
     <body>
 		<div class='radioselect'> 
-			Soccer <input name="Choose" type="radio" onClick="sport('Soccer Alert')"> 
-			Kendo <input name="Choose" type="radio" onClick="sport('Kendo Alert')">  
+			Soccer <input name="Choose" type="radio" onClick="sport('soccer')"> 
+			Kendo <input name="Choose" type="radio" onClick="sport('kendo')">  
+			Soccer & Kendo <input name="Choose" type="radio" onClick="sport('both')">  
 		</div>
         <div class='tabs'>
             <!-- This time toggle is called with a simple string argument -->
