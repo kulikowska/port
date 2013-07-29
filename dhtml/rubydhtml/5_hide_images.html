@@ -16,6 +16,10 @@
 		float:left;
 		margin-left:5px;
 		}
+
+	.hidden {
+		display:none;
+	}
 </style>
 
 <script>
@@ -28,18 +32,20 @@
             $('.bear2').show(); 
         }
     }
+	cub('dude1');
+
 </script>
 
 <html>
 <script src='../../lib/js/jquery.js'></script>
 	<div class='radiobutton'> 
-		Cute Bear 1 <input name="Choose" type="radio" onClick="cub('dude1')">
+		Cute Bear 1 <input checked name="Choose" type="radio" onClick="cub('dude1')">
 		Cute Bear 2 <input name="Choose" type="radio" onClick="cub('dude2')">
 	</div>
 	<div class='bear1'>
 		<img src=http://t2.gstatic.com/images?q=tbn:ANd9GcRDRRqVZIsX_ZlekYaCVv9VI8sYIMw18d-VrSw5L3xUspZ5GzJx-w>
 	</div>
-	<div class='bear2'>
+	<div class='bear2 hidden'>
  		<img src=http://t3.gstatic.com/images?q=tbn:ANd9GcQAbnMWNtqgOJ-Nc1wWCiOSb2i7Gb2Qf0OeTIYD5DCVOzjfh3FlOg>
 	</div>
 </html>
