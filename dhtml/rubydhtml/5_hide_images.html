@@ -40,7 +40,7 @@
             }
             $(document).ready( 
                 function () { 
-                    $('.radiobutton input:first-child').trigger('click'); 
+                    $('#radio2').trigger('click'); 
                 } 
             );
         </script>
@@ -48,9 +48,9 @@
 
     <body>
         <div class='radiobutton'> 
-            Cute Bear 1 <input name="Choose" type="radio" onClick="cub('dude1')">
-            Cute Bear 2 <input name="Choose" type="radio" onClick="cub('dude2')">
-			Both Cute Bears <input name="Choose" type="radio" onClick="cub('bothdudes')">
+            Cute Bear 1 <input id='radio1' name="Choose" type="radio" onClick="cub('dude1')">
+            Cute Bear 2 <input id='radio2' name="Choose" type="radio" onClick="cub('dude2')">
+			Both Cute Bears <input id='radio3'  name="Choose" type="radio" onClick="cub('bothdudes')">
         </div>
         <div class='bear1'>
             <img src=http://t2.gstatic.com/images?q=tbn:ANd9GcRDRRqVZIsX_ZlekYaCVv9VI8sYIMw18d-VrSw5L3xUspZ5GzJx-w>
