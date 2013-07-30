@@ -30,11 +30,11 @@
                 $('.bears').addClass('hidden');
 
                 if ( yo == 'dude1' ) { 
-                    $('.bear1').removeClass('hidden');
+                    $('#bear1').removeClass('hidden');
                  } else {
-                    $('.bear2').removeClass('hidden'); 
+                    $('#bear2').removeClass('hidden'); 
                     if ( yo == 'bothdudes' ) {
-                        $('.bear1').removeClass('hidden');
+                        $('#bear1').removeClass('hidden');
                     }
                 }
             }
@@ -52,10 +52,10 @@
             Cute Bear 2 <input id='radio2' name="Choose" type="radio" onClick="cub('dude2')">
 			Both Cute Bears <input id='radio3'  name="Choose" type="radio" onClick="cub('bothdudes')">
         </div>
-        <div class='bears bear1'>
+        <div id='bear1' class='bears'>
             <img src=http://t2.gstatic.com/images?q=tbn:ANd9GcRDRRqVZIsX_ZlekYaCVv9VI8sYIMw18d-VrSw5L3xUspZ5GzJx-w>
         </div>
-        <div class='bears bear2'>
+        <div id='bear2' class='bears'>
             <img src=http://t3.gstatic.com/images?q=tbn:ANd9GcQAbnMWNtqgOJ-Nc1wWCiOSb2i7Gb2Qf0OeTIYD5DCVOzjfh3FlOg>
         </div>
     </body>
