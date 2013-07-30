@@ -38,13 +38,13 @@
                     }
                 }
             }
-            $(document).ready( function () { cub('dude1'); } );
+            $(document).ready( function () { $('.radiobutton input:first-child').trigger('click'); } );
         </script>
     </head>
 
     <body>
         <div class='radiobutton'> 
-            Cute Bear 1 <input checked name="Choose" type="radio" onClick="cub('dude1')">
+            Cute Bear 1 <input name="Choose" type="radio" onClick="cub('dude1')">
             Cute Bear 2 <input name="Choose" type="radio" onClick="cub('dude2')">
 			Both Cute Bears <input name="Choose" type="radio" onClick="cub('bothdudes')">
         </div>
