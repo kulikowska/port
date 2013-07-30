@@ -20,6 +20,9 @@
 	.hidden {
 		display:none;
 	}
+    #jo span {
+        background:red;
+    }
 </style>
 
 <html>
@@ -59,7 +62,7 @@
             var obj = { 'first' : 'Jo', 'phone' : '555-555-5555' };
             console.log( 'Phone number of ' + obj.first + ' is ' + obj.phone);
             $(document).ready( function() {
-                $('#jo').text( 'Phone number of ' + obj.first + ' is ' + obj.phone);
+                $('#jo').text( '<span>Phone number of ' + obj.first + ' is ' + obj.phone + '</span>');
             });
         </script>
     </head>
