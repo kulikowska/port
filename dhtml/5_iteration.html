@@ -1,0 +1,23 @@
+<style>
+    div { border:1px solid #ccc; }
+    div img { width:200px; height:200px; }
+</style>
+<html>
+    <head>
+        <script src='../lib/js/jquery.js'></script>
+        <script>
+            var pics = [
+                'http://images.nationalgeographic.com/wpf/media-live/photos/000/005/cache/grey-wolf_565_600x450.jpg',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRKPyIzOunTX5u7USMtBvfpHefPNR86ie8pjM-pfG-z-f5Wr5n'
+            ];
+            $(document).ready( function() {
+                for ( var i=0; i<pics.length; i++ ) {
+                    $('#jo').append('<img src="' + pics[i] + '" ></img>');
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id='jo' />        
+    </body>
+</html>
