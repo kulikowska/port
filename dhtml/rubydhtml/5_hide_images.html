@@ -26,6 +26,10 @@
     <head>
         <script src='../../lib/js/jquery.js'></script>
         <script>
+            function moreBullshit() {
+                alert('MORE BULLSHIT');
+            }
+
             function cub (yo) {
                 $('.bears').addClass('hidden');
 
@@ -37,7 +41,7 @@
                         $('#bear1').removeClass('hidden');
                     }
                 }
-                $('#radio1').attr('onClick', 'moreBullshit');
+                $('#radio1').attr('onClick', 'moreBullshit()');
                 console.log( $('#radio1').attr('name') );
             }
             $(document).ready( 
