@@ -28,11 +28,11 @@
         <script>
             function cub (yo) {
                 if ( yo == 'dude1' ) { 
-                    $('.bear1').show();
-                    $('.bear2').hide(); 
+                    $('.bear1').removeClass('hidden');
+                    $('.bear2').addClass('hidden'); 
                  } else {
-                    $('.bear1').hide();
-                    $('.bear2').show(); 
+                    $('.bear1').addClass('hidden');
+                    $('.bear2').removeClass('hidden'); 
                 }
             }
             $(document).ready( function () { cub('dude1'); } );
