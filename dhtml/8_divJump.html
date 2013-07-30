@@ -1,0 +1,85 @@
+<style>
+    div { 
+        border:1px solid #aaa;
+        solid #ccc; 
+        position:relative;
+        float:left;
+        border-radius:8px;
+        padding:12px;
+        min-width:200px;
+        min-height:200px;
+    }
+
+    div#jo2 {
+        float:right;
+    }
+
+    iframe { opacity: 0; }
+
+    div img { 
+        position:relative;
+        float:left;
+        clear:both;
+        width:200px; 
+        height:200px; 
+        border-radius:5px;
+        padding:8px;
+        margin:5px 0;
+        border:2px solid #ddd;
+    }
+
+</style>
+<html>
+    <head>
+        <script src='../lib/js/jquery.js'></script>
+        <script>
+            var pics = [
+                'http://images.nationalgeographic.com/wpf/media-live/photos/000/005/cache/grey-wolf_565_600x450.jpg',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRKPyIzOunTX5u7USMtBvfpHefPNR86ie8pjM-pfG-z-f5Wr5n',
+                'http://www.thecamreport.com/images/kendo.gif',
+                'http://fc02.deviantart.net/fs71/f/2010/111/6/8/Husaria_bmp_by_Erebus201.jpg'
+            ];
+
+            // 80, 82
+            function ricky( start, end ) {
+                $('body').append( '<iframe type="text/html" width="400" height="300" src="http://www.youtube.com/v/Jfq3c4Cf1Fs&autoplay=true&start=' + start + '&end=' + end + '" autoplay ></iframe>');
+                setTimeout(function() {
+                    $('body iframe').remove()
+                }, 5000);
+            }
+
+            function jumpJo( el ) {
+                var moveTo = {
+                    'jo'  : '#jo2',
+                    'jo2' : '#jo'
+                };
+                var easy = true;
+
+                if ( easy ) {
+                    var parentId          = $(el).parent().attr('id');
+                    var newParentDiv      = moveTo[parentId];
+                    var removedAndStashed = $(el).remove();
+
+                    $(newParentDiv).prepend( removedAndStashed );
+                } else {
+                    // same as above but in one shot
+                    $(moveTo[$(el).parent().attr('id')]).append($(el).remove());
+                }
+
+                if ( $(el).parent().find('img').length == 4)
+                    if ( $(el).parent().attr('id') == 'jo' )    ricky(80,82);
+                    else                                        ricky(94,97);
+            }
+
+            $(document).ready( function() {
+                for ( var i=0; i<pics.length; i++ ) {
+                    $('#jo').append('<img src="' + pics[i] + '" onclick="jumpJo(this);" />');
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id='jo'></div>
+        <div id='jo2'></div>
+    </body>
+</html>

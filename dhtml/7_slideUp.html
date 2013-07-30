@@ -1,5 +1,11 @@
 <style>
-    div { border:1px solid #ccc; }
+    div { 
+        border:1px 
+        solid #ccc; 
+        position:relative;
+        float:left;
+    }
+
     div img { 
         width:200px; 
         height:200px; 
@@ -7,6 +13,7 @@
         float:left;
         clear:both;
     }
+
 </style>
 <html>
     <head>
@@ -18,9 +25,15 @@
                 'http://www.thecamreport.com/images/kendo.gif',
                 'http://fc02.deviantart.net/fs71/f/2010/111/6/8/Husaria_bmp_by_Erebus201.jpg'
             ];
+            function oneDown( el ) {
+                var below = $(el).next();
+               console.log ( below );
+               below.after($(el).remove());
+            }
+
             $(document).ready( function() {
                 for ( var i=0; i<pics.length; i++ ) {
-                    $('#jo').append('<img src="' + pics[i] + '" ></img>');
+                    $('#jo').append('<img src="' + pics[i] + '" onclick="oneDown(this);" />');
                 }
             });
         </script>

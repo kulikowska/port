@@ -18,9 +18,15 @@
                 'http://www.thecamreport.com/images/kendo.gif',
                 'http://fc02.deviantart.net/fs71/f/2010/111/6/8/Husaria_bmp_by_Erebus201.jpg'
             ];
+            function moveTop( el ) {
+                var imgToMove = $(el).remove();
+                $('#jo').prepend(imgToMove);
+                imgToMove.hide().fadeIn('slow');
+            }
+
             $(document).ready( function() {
                 for ( var i=0; i<pics.length; i++ ) {
-                    $('#jo').append('<img src="' + pics[i] + '" ></img>');
+                    $('#jo').append('<img src="' + pics[i] + '" onclick="moveTop(this);" />');
                 }
             });
         </script>
