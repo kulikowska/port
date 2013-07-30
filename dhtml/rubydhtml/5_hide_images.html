@@ -27,11 +27,11 @@
         <script src='../../lib/js/jquery.js'></script>
         <script>
             function cub (yo) {
+                $('.bear1, .bear2').addClass('hidden');
+
                 if ( yo == 'dude1' ) { 
                     $('.bear1').removeClass('hidden');
-                    $('.bear2').addClass('hidden'); 
                  } else {
-                    $('.bear1').addClass('hidden');
                     $('.bear2').removeClass('hidden'); 
                     if ( yo == 'bothdudes' ) {
                         $('.bear1').removeClass('hidden');
