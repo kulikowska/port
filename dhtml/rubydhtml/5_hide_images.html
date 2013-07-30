@@ -58,10 +58,15 @@
 
             var obj = { 'first' : 'Jo', 'phone' : '555-555-5555' };
             console.log( 'Phone number of ' + obj.first + ' is ' + obj.phone);
+            $(document).ready( function() {
+                $('#jo').text( 'Phone number of ' + obj.first + ' is ' + obj.phone);
+            });
         </script>
     </head>
 
     <body>
+        <div id='jo'>
+        </div>
         <div class='radiobutton'> 
             Cute Bear 1 <input id='radio1' name="Choose" type="radio" onClick="cub('dude1')">
             Cute Bear 2 <input id='radio2' name="Choose" type="radio" onClick="cub('dude2')">
