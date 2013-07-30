@@ -4,7 +4,7 @@
 		margin:5px 5px 5px 5px;
 		padding:5px 5px 5px 5px;
 		height:30px;
-		width:200px;
+		width:350px;
 		color:brown;
 		}
 
@@ -33,6 +33,9 @@
                  } else {
                     $('.bear1').addClass('hidden');
                     $('.bear2').removeClass('hidden'); 
+                    if ( yo == 'bothdudes' ) {
+                        $('.bear1').removeClass('hidden');
+                    }
                 }
             }
             $(document).ready( function () { cub('dude1'); } );
