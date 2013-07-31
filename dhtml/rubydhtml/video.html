@@ -9,7 +9,7 @@
 
         function playVid( url, start, end) {
             $('body').append( '<iframe type="text/html" width="905" height="700" src="http://www.youtube.com/v/' + url + '&autoplay=true&start=' + start + '&end=' + end + '" autoplay ></iframe>');
-           //setTimeout(function() { $('body iframe').remove() }, 5000); 
+           setTimeout(function() { $('body iframe').remove() }, 20000); 
        }
        $(document).ready( function() { playVid('Jfq3c4Cf1Fs',1,20);} );
     </script> 
