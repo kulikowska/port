@@ -8,9 +8,9 @@
 <head>
     <script src='../../lib/js/jquery.js'></script>
     <script>
-       function playVid( url, start, end) {
+       function playVid( url, start, end, duration) {
             $('#video').append( '<iframe type="text/html" width="905" height="700" src="http://www.youtube.com/v/' + url + '&autoplay=true&start=' + start + '&end=' + end + '" autoplay ></iframe>');
-           setTimeout(function() { $('#video iframe').remove() }, 20000); 
+           setTimeout(function() { $('#video iframe').remove() }, duration); 
        }
     </script> 
 </head>
@@ -19,7 +19,7 @@
     <div id='container'>
         <div id='list'>
             <ul>
-                <li onclick='playVid("Jfq3c4Cf1Fs", 2, 18);'>first video</li>
+                <li onclick='playVid("Jfq3c4Cf1Fs", 2, 18, 20000);'>first video</li>
             </ul>
         </div>
         <div id='video'></div>
