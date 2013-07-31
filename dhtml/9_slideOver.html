@@ -51,7 +51,7 @@
 
             // 80, 82
             function ricky( start, end ) {
-                $('body').append( '<iframe type="text/html" width="895" height="700" src="http://www.youtube.com/v/Jfq3c4Cf1Fs&autoplay=true&start=' + start + '&end=' + end + '" autoplay ></iframe>');
+                $('body').append( '<iframe type="text/html" width="905" height="700" src="http://www.youtube.com/v/Jfq3c4Cf1Fs&autoplay=true&start=' + start + '&end=' + end + '" autoplay ></iframe>');
                 setTimeout(function() { $('body iframe').remove() }, 5000); }
 
             function jumpJo( el ) {
@@ -61,20 +61,40 @@
                 };
                 var easy = true;
 
-                if ( easy ) {
-                    var parentId          = $(el).parent().attr('id');
-                    var newParentDiv      = moveTo[parentId];
-                    var removedAndStashed = $(el).remove();
+                
+                var vector = ($(el).parent().attr('id')) !== 'jo' ? -5 : 5;
+                function finish() {
+                    if ( easy ) {
+                        var parentId          = $(el).parent().attr('id');
+                        var newParentDiv      = moveTo[parentId];
+                        var removedAndStashed = $(el).remove();
 
-                    $(newParentDiv).prepend( removedAndStashed );
-                } else {
-                    // same as above but in one shot
-                    $(moveTo[$(el).parent().attr('id')]).append($(el).remove());
+                        $(newParentDiv).prepend( removedAndStashed );
+                    } else {
+                        // same as above but in one shot
+                        finish();
+                    }
+                    $(el).css({'left':0, 'z-index':0});
                 }
+                
+                function slideIt(count) {
+                    if ( typeof count == 'undefined' ) count = 1;
+                    setTimeout( function() { 
+                        $(el).css({'left':(vector*count), 'top':0, 'z-index' : 10});
+                        if ( count<133) slideIt(++count);
+                        else finish();
+                    }, 5);
+                }
+
+                slideIt();
 
                 if ($(el).parent().find('img').length == 4)
                     if ( $(el).parent().attr('id') == 'jo' )    ricky(94,96);
                     else                                        ricky(18.8,22);
+
+                if ($(el).parent().find('img').length == 2)
+                    if ( $(el).parent().attr('id') == 'jo' )    ricky(52,54.6);
+                    else                                        ricky(118.8,122);
             }
 
             $(document).ready( function() {
