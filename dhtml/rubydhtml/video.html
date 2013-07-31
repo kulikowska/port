@@ -11,7 +11,7 @@
        function playVid( url, start, end, duration) {
             $('#video').append( '<iframe type="text/html" width="905" height="700" src="http://www.youtube.com/v/' + url + '&autoplay=true&start=' + start + '&end=' + end + '" autoplay ></iframe>');
            setTimeout(function() { 
-                $('#video iframe').remove() 
+                $('#video iframe').remove(); 
             }, duration); 
        }
     </script> 
