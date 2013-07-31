@@ -50,7 +50,7 @@
             ];
 
             // 80, 82
-            function ricky( url, start, end) {
+            function playVid( url, start, end) {
                 $('body').append( '<iframe type="text/html" width="905" height="700" src="http://www.youtube.com/v/Jfq3c4Cf1Fs&autoplay=true&start=' + start + '&end=' + end + '" autoplay ></iframe>');
                 setTimeout(function() { $('body iframe').remove() }, 5000); 
             }
@@ -90,12 +90,12 @@
                 slideIt();
 
                 if ($(el).parent().find('img').length == 4)
-                    if ( $(el).parent().attr('id') == 'jo' )    ricky('Jfq3c4Cf1Fs',94,96);
-                    else                                        ricky('Jfq3c4Cf1Fs',18.8,22);
+                    if ( $(el).parent().attr('id') == 'jo' )    playVid('Jfq3c4Cf1Fs',94,96);
+                    else                                        playVid('Jfq3c4Cf1Fs',18.8,22);
 
                 if ($(el).parent().find('img').length == 2)
-                    if ( $(el).parent().attr('id') == 'jo' )    ricky('Jfq3c4Cf1Fs',52,54.6);
-                    else                                        ricky('Jfq3c4Cf1Fs',118.8,122);
+                    if ( $(el).parent().attr('id') == 'jo' )    playVid('Jfq3c4Cf1Fs',52,54.6);
+                    else                                        playVid('Jfq3c4Cf1Fs',118.8,122);
             }
 
             $(document).ready( function() {
