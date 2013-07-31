@@ -9,9 +9,11 @@
     <script src='../../lib/js/jquery.js'></script>
     <script>
        function playVid( url, start, end, duration) {
+	   			$('#notify').text('Video Opened'); 
             $('#video').append( '<iframe type="text/html" width="905" height="700" src="http://www.youtube.com/v/' + url + '&autoplay=true&start=' + start + '&end=' + end + '" autoplay ></iframe>');
            setTimeout(function() { 
                 $('#video iframe').remove(); 
+				$('#notify').text('video closed');
             }, duration); 
        }
     </script> 
@@ -25,7 +27,7 @@
             </ul>
         </div>
         <div id='video'></div>
-        <div id='notify'></div>
+        <div id='notify'> </div>
     </div>
 </body>
 </html>
