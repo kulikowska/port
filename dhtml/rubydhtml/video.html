@@ -1,7 +1,30 @@
 <style>
+	body {
+		background-color:#660000;
+		color:#ffffcc;
+		font-family:'georgia';
+	}
+	h1 {
+		font-size:18pt;
+		text-align:center;
+		padding:10px 0px 0px 0px;
+	}
+
     li {
         cursor:pointer;
+		text-decoration:none;
+		list-style-type:none;
     }
+
+	#container {
+		border:1px solid white;
+		width:300px;
+	}
+
+	#video, #notify {
+		padding-top:10px
+		font-size:22px;
+	}
 </style>
 
 <html>
@@ -20,19 +43,26 @@
 				$('#notify').text('video closed');
             }, duration); 
        }
+	   function endAlert() {
+	   		alert("Video Ended")
+		}
+		
     </script> 
 </head>
 
 <body>
+	<h1> Ruby's Video Collection </h1>
     <div id='container'>
         <div id='list'>
             <ul>
-                <li onclick='playVid("Jfq3c4Cf1Fs", 2, 40, 20000);'>first video</li>
+                <li> <input type="button"  onclick='playVid("Jfq3c4Cf1Fs", 2, 200, 20000)'; value="First Video"></li>
+				<li onclick='playVid("TR3QHoqfhX8", 2, 11, 20000);'>second video </li>
+				<li onclick='playVid("TR3QHoqfhX8", 40, 120, 65000);'>third video </li>
             </ul>
         </div>
+	</div>
         <div id='video'></div>
         <div id='notify'> </div>
-    </div>
 </body>
 </html>
 
