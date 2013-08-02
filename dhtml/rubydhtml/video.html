@@ -26,6 +26,7 @@
 
 	div.leftmenu {
 		float:left;
+		position:relative;
 		width:200px;
 		height:100%;
 		color:#222222;
@@ -36,6 +37,13 @@
 		float:left;
 		width:600px;
 		height:100%;
+		padding:15px 15px 5px 15px;
+	}
+
+	div.page {
+		max-width:1040px;
+		min-width:1040px;
+		margin:0 auto;
 	}
 
     li {
@@ -87,6 +95,7 @@
 <body>
 	<div class='fixedheader'>
 	<input name='first' type="text" value="Search"/></li> </div>
+	<div class='page'>
     <div class='leftmenu'>
         <div id='list'>
             <ul>
@@ -100,6 +109,7 @@
 		<div class='content'> content 
         <div id='video'></div>
         <div id='notify'> </div>
+	</div>
 	</div>
 </body>
 </html>
