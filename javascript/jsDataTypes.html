@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+            span { color: red; }
+            span span  { color: blue; }
+        </style>
+    </head>
+    <body>
+        <div id='out'></div>
+        <input type='button' onclick='document.getElementById("out").innerHTML=""' value='Clear output'/>
+    </body>
+
+    <script>
+        /*
+            Just a function that will print its argument in a div with id='out'
+        */
+        function write(msg, desc) {
+            //jQuery equivalent of $('#out').html( arg );
+            document.getElementById('out').innerHTML += 
+                        '<br/><span>' + msg 
+                        + '<span> - of type ' + typeof msg 
+                        + '</span></span> - <i>' + desc + '</i>';
+        }
+
+        /*
+            There are two equivalent ways of defining a function:
+        */
+        function test( arg ) { return arg; };
+
+        var test1 = function( arg ) { return arg; }
+
+        var returnedFromTest = test('test function called');
+        write(returnedFromTest,'');
+
+        var returnedFromTest1 = test('test1 function called');
+        write(returnedFromTest1,'<hr/>');
+
+        /*
+            Objects can contain any data types including other (nested) objects and functions
+        */
+        var o1 = {
+            str : 'main string',
+            nbr : 123,
+            arr : [1,2,3, 'a', 'b', 'c'],
+            fn : function( arg ) {
+                return arg + ' ' + this.str;
+            },
+            obj : { 
+                       str : 'string inside',
+                       nbr: 12345,
+                       fn   : function(arg) {
+                            return arg + ' ' + this.str;
+                       }
+            }
+        };
+
+        write(o1.str, 'o1.str<br/>');
+        write(o1.nbr, ' o1.nbr</br/>');
+        write(o1.arr, ' o1.arr<br/>');
+        write(o1.obj, ' o1.obj');
+        write(JSON.stringify(o1.obj), ' strigify object o1<br/>');
+        write(o1.obj.str, ' o1.obj.str');
+        write( o1.fn, ' o1.fn<br/>');
+        write(o1.fn('Function returned:'),'calling function o1.fn (inside object)');
+        write(o1.obj.fn('Inside function returned:'), 'calling inside function o1.obj.fn');
+    </script>
+</html>
