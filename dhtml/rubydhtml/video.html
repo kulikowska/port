@@ -1,13 +1,41 @@
 <style>
 	body {
-		background-color:#660000;
-		color:#ffffcc;
+		background-color:#ffffcc;
+		color:gray;
 		font-family:'georgia';
 	}
-	h1 {
-		font-size:18pt;
-		text-align:center;
-		padding:10px 0px 0px 0px;
+
+	div.fixedheader {
+		background-color:#4c66a4;
+		width:100%;
+		height:40px;
+		border:1px solid #333333;
+	}
+
+	.fixedheader input {
+		color:gray;
+		font-size:14pt;
+		padding-left:10px;
+		margin:5px 0px 5px 35px;
+		-webkit-border-radius:5px;
+		cursor:auto;
+		border:1px solid #333333;
+		height:30px;
+		width:300px;
+	}
+
+	div.leftmenu {
+		float:left;
+		width:200px;
+		height:100%;
+		color:#222222;
+		border-right:1px solid gray;
+	}
+
+	div.content {
+		float:left;
+		width:600px;
+		height:100%;
 	}
 
     li {
@@ -25,6 +53,11 @@
 		padding-top:10px
 		font-size:22px;
 	}
+
+	iframe {
+		width:300px;
+		height:250px;
+	}
 </style>
 
 <html>
@@ -33,7 +66,7 @@
     <script>
        function playVid( url, start, end, duration) {
 	   			$('#notify').text('Video Opened'); 
-            $('#video').append( '<iframe type="text/html" width="905" height="700"' 
+            $('#video').append( '<iframe type="text/html" width="650" height="500"' 
                                 + 'src="http://www.youtube.com/v/' + url 
                                 + '&autoplay=true&start=' + start 
                                 + '&end=' + end 
@@ -41,6 +74,7 @@
            setTimeout(function() { 
                 $('#video iframe').remove(); 
 				$('#notify').text('video closed');
+				endAlert(); 
             }, duration); 
        }
 	   function endAlert() {
@@ -51,8 +85,9 @@
 </head>
 
 <body>
-	<h1> Ruby's Video Collection </h1>
-    <div id='container'>
+	<div class='fixedheader'>
+	<input name='first' type="text" value="Search"/></li> </div>
+    <div class='leftmenu'>
         <div id='list'>
             <ul>
                 <li> <input type="button"  onclick='playVid("Jfq3c4Cf1Fs", 2, 200, 20000)'; value="First Video"></li>
@@ -62,8 +97,10 @@
             </ul>
         </div>
 	</div>
+		<div class='content'> content 
         <div id='video'></div>
         <div id='notify'> </div>
+	</div>
 </body>
 </html>
 
