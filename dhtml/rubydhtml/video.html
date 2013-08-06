@@ -116,6 +116,10 @@
 		font-weight:bold;
 	}
 
+	#video input {
+		display:none;
+	}
+
 </style>
 
 <html>
@@ -137,8 +141,8 @@
 				$('#notify').text('video closed');
             }, duration); 
        }
-	    	function closevid() {
-				('#video iframe').remove();
+	    function closevid() {
+			$('#video iframe').remove();
 			}
 
     </script> 
