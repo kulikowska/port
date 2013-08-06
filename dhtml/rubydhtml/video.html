@@ -1,202 +1,61 @@
-<style>
-	body {
-		background-color:#ffffcc;
-		color:gray;
-		font-family:'lucida grande';
-		margin:0 0 0 0;
-		padding:0 0 0 0;
-	}
-
-	div.fixedheader {
-		position:fixed;
-		z-index:4;
-		background-color:#4c66a4;
-		width:100%;
-		min-width:700px;
-		height:40px;
-		border:1px solid #333333;
-	}
-
-	.fixedheader input {
-		font-size:14pt;
-		padding-left:10px;
-		margin:5px 0px 5px 35px;
-		-webkit-border-radius:5px;
-		cursor:auto;
-		border:1px solid #333333;
-		height:30px;
-		width:300px;
-	}
-
-	.headerright {
-		float:right;
-		margin:10px 35px 5px 0px;
-		color:#cccccc;
-		font-size:9pt;
-		cursor:pointer;
-		font-weight:bold;
-	}
-
-	div.leftmenu {
-		float:left;
-		position:relative;
-		width:200px;
-		height:100%;
-		border-right:1px solid gray;
-	}
-	
-	div.donkeypic {
-		margin-top:15px;
-		margin-left:25px;
-		font-size:9pt;
-		height:75px;
-	}
-	
-	.donkeypic img {
-		float:left;
-		margin:5px 5px 0px 15px;
-	}
-
-	div.donkeytext {
-		padding:15px 2px 2px 5px;
-		}
-
-	div.content {
-		float:left;
-		width:600px;
-		height:100%;
-		padding:15px 15px 5px 15px;
-	}
-
-	div.page {
-		padding-top:40px;
-		width:1040px;
-		margin:0 auto;
-	}
-
-	h2 {
-		color:gray;
-		font-size:8pt;
-		text-transform:uppercase;
-	}
-
-    li {
-		text-decoration:none;
-		list-style-type:none;
-		color:black;
-		font-size:8pt;
-		padding:0px 5px 1px 0px;
-    }
-
-	#list li {
-		font-style:italic;
-	}
-
-	li:hover {
-		cursor:pointer;
-		background-color:#bbb;
-	}
-
-	#container {
-		border:1px solid white;
-		width:300px;
-	}
-
-	#video, #notify {
-		padding-top:10px
-		font-size:22px;
-	}
-
-	iframe {
-		width:300px;
-		height:250px;
-	}
-
-	.selected {
-		font-weight:bold;
-	}
-
-	#video input {
-		display:none;
-	}
-
-</style>
-
 <html>
 <head>
+    <link href="./video.css" rel="stylesheet">
     <script src='../../lib/js/jquery.js'></script>
-    <script>
-        function playVid( el, url, start, end ) {
-			 $('#list li').removeClass('selected');
-             $(el).addClass('selected');
-             $('#notify').text('Video Opened'); 
-             $('#video input').show();
-             $('#video iframe').remove(); 
-             $('#video').append( '<iframe type="text/html" width="650" height="500"' 
-                                 + 'src="http://www.youtube.com/v/' + url 
-                                 + '&autoplay=true&start=' + start 
-                                 + '&end=' + end 
-                                 + '" autoplay ></iframe>');
-        }
-	    function closevid() {
-			$('#video iframe').remove();
-			$('#video input').hide();
-			$('#list li').removeClass('selected');
-		}
-    </script> 
+    <script src="./video.js"></script>
 </head>
 
 <body>
 	<div class='fixedheader'>
-		<input name='first' type="text" value="Search"/></li> 
+		<input name='first' type="text" value="Search"/>
 		<div class='headerright'>
 			Home
-				<img src='https://mail.google.com/mail/e/1E3'>
-				<img src='https://mail.google.com/mail/e/1E3'>
-				<img src='https://mail.google.com/mail/e/1E3'>
-			</div>
+			<img src='https://mail.google.com/mail/e/1E3'>
+			<img src='https://mail.google.com/mail/e/1E3'>
+			<img src='https://mail.google.com/mail/e/1E3'>
 		</div>
+	</div>
 	<div class='page'>
     	<div class='leftmenu'>
 			<div class='donkeypic'>
 				<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSEAbULEdGjSuatyezHg6xDh_D90jR4dHmtyn-jjZsRzA6KhqB9' width="60"  height="60">
 				<div class='donkeytext'>
-				<b> Small Donkey</b>
+				    <b> Small Donkey</b>
 					Smaller Donkey
 				</div>
 			</div>
-        <div id='list'>
-            <ul>
-			 <h2> trailer park boys </h2>
-                <li onclick='playVid(this, "Jfq3c4Cf1Fs", 2, 200);'>First video </li>
-				<li onclick='playVid(this, "TR3QHoqfhX8", 2, 11);'>second video </li>
-				<li onclick='playVid(this, "TR3QHoqfhX8", 40, 120);'>third video </li>
-            </ul>
-			<ul>
-				<h2> Kendo </h2>
-				<li> Video 1 </li>
-				<li> Video 2 </li>
-				<li> Video 3 </li>
-				<li> Video 4 </li>
-				<li> Video 5 </li>
-			</ul>
-			<ul>
-				<h2> Music </h2>
-				<li> Video 1 </li>
-				<li> Video 2 </li>
-				<li> Video 3 </li>
-				<li> Video 4 </li>
-				<li> Video 5 </li>
-			</ul>
+            <div id='list'>
+                <ul>
+                 <h2> trailer park boys </h2>
+                    <li onclick='playVid(this, "Jfq3c4Cf1Fs", 2, 200);'>Properly Different, ... fuck</li>
+                    <li onclick='playVid(this, "TR3QHoqfhX8", 2, 11);'>Investiment</li>
+                    <li onclick='playVid(this, "TR3QHoqfhX8", 40, 120);'>Sweet & Power, Jalapeno</li>
+                </ul>
+                <ul>
+                    <h2> Kendo </h2>
+                    <li> Video 1 </li>
+                    <li> Video 2 </li>
+                    <li> Video 3 </li>
+                    <li> Video 4 </li>
+                    <li> Video 5 </li>
+                </ul>
+                <ul>
+                    <h2> Music </h2>
+                    <li> Video 1 </li>
+                    <li> Video 2 </li>
+                    <li> Video 3 </li>
+                    <li> Video 4 </li>
+                    <li> Video 5 </li>
+                </ul>
+            </div>
         </div>
-	</div>
-	<div class='content'> <center> The Small Donkey Video Collection </center><br>  
-        <div id='video'>
-            <input onclick='closevid();' type='button' value='close video'/>
+        <div class='content'> <center> The Small Donkey Video Collection </center><br>  
+            <div id='video'>
+                <input onclick='closeVid();' type='button' value='X'/>
+                <div class='rickyVids'></div>
+            </div>
+            <div id='notify'></div>
         </div>
-        <div id='notify'> </div>
-	</div>
 	</div>
 </body>
 </html>
-
