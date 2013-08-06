@@ -118,7 +118,7 @@
 <head>
     <script src='../../lib/js/jquery.js'></script>
     <script>
-       function playVid( url, start, end, duration) {
+       function playVid( el, url, start, end, duration) {
 	   			$('#notify').text('Video Opened'); 
             $('#video').append( '<iframe type="text/html" width="650" height="500"' 
                                 + 'src="http://www.youtube.com/v/' + url 
@@ -131,12 +131,9 @@
 				endAlert(); 
             }, duration); 
        }
-	   function endAlert() {
-	   		alert("Video Ended")
-		}
 		
 		function getBold() {
-			$('#li').addClass('selected');
+			$(this).addClass('selected');
 			}
     </script> 
 </head>
@@ -163,7 +160,7 @@
         <div id='list'>
             <ul>
 			 <h2> trailer park boys </h2>
-                <li onclick='playVid("Jfq3c4Cf1Fs", 2, 200, 20000);'>First video </li>
+                <li onclick='playVid(this, "Jfq3c4Cf1Fs", 2, 200, 20000);'>First video </li>
 				<li onclick='playVid("TR3QHoqfhX8", 2, 11, 20000);'>second video </li>
 				<li onclick='playVid("TR3QHoqfhX8", 40, 120, 65000);'>third video </li>
             </ul>
