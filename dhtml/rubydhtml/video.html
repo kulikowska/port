@@ -127,6 +127,7 @@
     <script src='../../lib/js/jquery.js'></script>
     <script>
         function playVid( el, url, start, end ) {
+			 $('#list li').removeClass('selected');
              $(el).addClass('selected');
              $('#notify').text('Video Opened'); 
              $('#video input').show();
