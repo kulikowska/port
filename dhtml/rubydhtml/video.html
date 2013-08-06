@@ -123,6 +123,7 @@
     <script src='../../lib/js/jquery.js'></script>
     <script>
        function playVid( el, url, start, end, duration) {
+	   		$('#list li').removeClass('selected');
 	   		$(el).addClass('selected');
 	   		$('#notify').text('Video Opened'); 
             $('#video').append( '<iframe type="text/html" width="650" height="500"' 
