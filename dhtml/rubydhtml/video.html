@@ -127,7 +127,6 @@
     <script src='../../lib/js/jquery.js'></script>
     <script>
         function playVid( el, url, start, end, duration) {
-             $('#list li').removeClass('selected');
              $(el).addClass('selected');
              $('#notify').text('Video Opened'); 
              $('#video input').show();
@@ -145,6 +144,7 @@
 	    function closevid() {
 			$('#video iframe').remove();
 			$('#video input').hide();
+			$('#list li').removeClass('selected');
 		}
     </script> 
 </head>
