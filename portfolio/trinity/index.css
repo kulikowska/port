@@ -7,3 +7,86 @@ body {
 	margin-top:0;
 	width:100%:
 }
+
+#container-wrap-wrap {
+	position:relative;
+}
+
+#container-wrap {
+	margin: 0 auto;
+	width: 960px;
+	border:1px solid blue;
+}
+
+#container {
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	height:200px;
+	position:relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+#header h1 {
+	position:relative;
+	width:260px;
+	height:104px;
+	margin:0
+	display:block;
+	top:64px;
+}
+
+#header h2 {
+	display:none;
+	margin:0;
+	padding:0;
+}
+
+#search-top-box {
+	position:absolute;
+	right:0px;
+	top:50px;
+	height:32px;
+	width:auto;
+	text-align:right;
+	border-left:1px solid #ddd;
+	-webkit-transition:all 500ms ease 
+	transition: all 500ms ease;
+}
+
+#search-top-box-form {
+	margin:0;
+	padding:0;
+}
+
+#search-top-box input.text {
+	margin:0;
+	padding:7px 25px 7px 5px;
+	width:16px;
+	background:none;
+	color:transparent;
+	-webkit-transition:all 500ms ease;
+	border:1px solid transparent;
+	z-index:60;
+	top:-1px;
+}
+
+#search-top-box input.button {
+	position:absolute;
+	top:3px;
+	right:0px;
+	border:none;
+	display:block;
+	width:22px;
+	height:25px;
+	padding:0;
+	background:transparent url(http://www.icondeposit.com/local--files/test-categ:_1/search.png) no-repeat top left;
+	color:transparent;
+	text-indent:-9999px;
+	line-height:0;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+	z-index:-1;
+}
