@@ -38,6 +38,23 @@ body {
 	top:64px;
 }
 
+#header h1 a {
+	display:block;
+	position:relative;
+	margin-top:10px;
+	height:104px;
+	width:260px;
+	background: url(http://www.icondeposit.com/local--files/start/l.PNG) no-repeat 0px 0px;
+	opacity:1;
+	-webkit-transition:opacity .17s ease;
+	transition:opacity .17s ease:
+	margin-bottom:10px;
+}
+
+#header h1 a span {
+	display:none;
+}
+
 #header h2 {
 	display:none;
 	margin:0;
