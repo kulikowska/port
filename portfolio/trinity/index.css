@@ -136,7 +136,7 @@ body {
 	padding:0;
 	height:42px;
 	margin:0;
-	padding-right:25px;
+	padding-right:0px;
 	border:none;
 	list-style:none;
 	-webkit-margin-before:1em;
@@ -175,11 +175,16 @@ body {
 	font-weight:bold;
 	text-align:center;
 	text-decoration:none;
-	padding-left:45px;
+	padding-left:23px;
+	padding-right:23px;
+	padding-bottom:9px;
 }
 
 #top-bar ul li:hover a {
 	color:#2ba09e;
+	border-bottom:1px solid #2ba09e;
+	-webkit-border-radius:0;
+	border-radius:0;
 }
 
 #social-container {
@@ -246,8 +251,8 @@ a.login-status-create-account, a.login-status-sign-in {
 	box-shadow:inset 0px 10px 10px rgba(255,255,255,0.69);
 }
 
-a.login-status-create-account:hover a {
-	color:#555555;
+#login-status a:hover {
+	color:#555;
 }
 
 a.login-status-sign-in {
