@@ -259,12 +259,155 @@ a.login-status-sign-in {
 	margin-left:-15px;
 }
 
-#extra-div-3 {
-	background:transparent url(http://icondeposit.wdfiles.com/local--files/our-clients/header_dashed.png) 0 0 repeat-x;
-	position:absolute;
-	width:100%;
-	top:50px;
-	height:5px;
-	margin-top:0;
+#content-wrap {
+	top: 69px;
+	margin-top:15px;
+	margin:0 auto;
+	width:960px;
+	min-height:800px;
+	overflow:visible;
+	position:relative;
+	padding:0px;
+	clear:both;
+}
+
+#side-bar {
+	display:none;
+	float:right;
+	padding:10px;
+	width:220px;
+	margin:0;
+}
+
+#main-content {
+	margin-bottom:90px;
+	left:0px;
+	padding:0px;
+	width:960px;
+	margin:0 auto;
+	font-family:"Helvetica Neue", Helvetica, Tahoma, sans serif;
+	font-weight:normal;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased;
+	position:relative;
+	overflow:visible;
+	top:-80px;
+	color:#222;
+	z-index:0;
+	float:left;
+	-webkit-border-radius:2px;
+}
+
+#action-area-top {
 	display:block;
+	color:rgba(255, 255, 255, .85);
+	background:#EA4C88;
+}
+
+#page-title {
+	display:none;
+	font-size:170%;
+	-webkit-border-radius:2px;
+	-webkit-box-shadow:0 0 5px rgba(0, 0, 0, 0.6);
+	text-shadow:1px 1px 1px rgba(0, 0, 0, 1);
+	color:#e5e5e5;
+	line-height:20px;
+	font-weight:normal;
+	letter-spacing:-1px;
+	margin-top:-52px;
+	background-color:#2191d1;
+	background-image: -webkit-gradient(linear, 0%, 0%, 0%, 100%, from(#25a6ef), to(#2191d1));
+	width:500px;
+	height:19px;
+	padding:3px 20px 10px 10px;
+	position:relative;
+	top:55px;
+	left:-10px;
+	text-indent:10px;
+	background:url(http://icondeposit.wdfiles.com/local--files/admin%3Amanage/horizontalrule.gif) repeat-x 0 bottom;
+	border-bottom:1px solid #666;
+}
+
+#page-title:after {
+	margin-top:6px;
+	border-color:#050505 transparent;
+	content:"\00a0";
+	display:block;
+	position:relative;
+	top:2px;
+	margin-left:-10px;
+	width:0;
+	height:0;
+	border-width:10px 0 10px 10px;
+	border-style:solid;
+	z-index:-1;
+	border-top-width:7px;
+	opacity:.70;
+}
+
+#page-content {
+	overflow:visible;
+	padding:0px;
+	width:960px;
+	margin:0 auto;
+	position:relative;
+}
+
+.breadcrumbs {
+	border:1px solid #ddd;
+	overflow:hidden;
+	background:rgba(0, 0, 0, 0.05);
+	position:relative;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	height:26px;
+	font-size:100%;
+	margin-top:-10px;
+}
+
+.breadcrumbs p {
+	margin:0;
+	line-height:2.2em;
+	display:inline;
+	text-shadow:none;
+	font-family:Helvetica; 
+	font-size:75%;
+}
+
+.breadcrumbs a {
+	color:#7e7e7e;
+	float:left;
+	margin:0px 10px 1px 0;
+	background: transparent url(http://icondeposit.wdfiles.com/local--files/theicondeposit%3A_start/breads.png) no-repeat right center;
+	padding:0px 28px 0px 0;
+	text-decoration:none;
+	font-size:110%;
+	height:auto;
+	background-position:33px -17px;
+	text-shadow:none;
+}
+
+.breadcrumbs a:hover {
+	color:#111;
+	opacity:1;
+}
+
+.breadcrumbs span.bread-home {
+	text-indent:-9999px;
+}
+
+.breadcrumbs span.bread-home a {
+	text-indent:-9999px;
+	display:inline-block;
+	background-repeat:no-repeat;
+	background-image:url(http://www.icondeposit.com/local--files/theicondeposit:_start/home-icon.png), url(http://www.icondeposit.com/local--files/theicondeposit:_start/breads.png);
+	background-position:left 4px, right center;
+	padding:2px 32px 0px 0px;
+	margin:0 10px 0 10px;
+	color:transparent;
+	text-shadow:none;
+}
+
+.breadcrumbs span.bread-home a:hover {
+	background-position:left -30px, right center;
 }
