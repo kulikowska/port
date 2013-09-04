@@ -8,6 +8,10 @@ body {
 	width:100%:
 }
 
+a {
+	text-decoration:none;
+}
+
 #container-wrap-wrap {
 	position:relative;
 }
@@ -382,6 +386,7 @@ a.login-status-sign-in {
 	padding:0px 28px 0px 0;
 	text-decoration:none;
 	font-size:110%;
+	background-size:0 100% 0 0;
 	height:auto;
 	background-position:33px -17px;
 	text-shadow:none;
@@ -390,6 +395,7 @@ a.login-status-sign-in {
 .breadcrumbs a:hover {
 	color:#111;
 	opacity:1;
+	text-decoration:none;
 }
 
 .breadcrumbs span.bread-home {
@@ -416,15 +422,11 @@ a.login-status-sign-in {
 	position:absolute;
 	z-index:80;
 	right:10px;
-	top:-1px;
+	top:-10px;
 	overflow:visible;
 	width:16px;
 	display:block;
 	height:16px;
-}
-
-.rssbox img {
-	opacity:.5;
 }
 
 .rssbox span.rss {
@@ -437,6 +439,7 @@ a.login-status-sign-in {
 	height:auto;
 	background:rgba(0, 0, 0, .75);
 	border-radius:3px;
+	-webkit-border-radius:3px;
 	color:#fff;
 	opacity:0;
 	visibility:hidden;
@@ -472,6 +475,105 @@ a.login-status-sign-in {
 	top:32px;
 }
 
+.rssbox img {
+	opacity:.5;
+}
+
 .rssbox img:hover {
 	opacity:.90;
+}
+
+.rssbox span.rss a, .rssbox span.rss a:hover {
+	text-shadow:none;
+	color:white;
+}
+
+.tmimg {
+	width:590px;
+	height:443px;
+	background:transparent url(http://www.icondeposit.com/local--files/dev:_start/transparency%20pixel%20pattern.png) 0 0 repeat;
+	overflow:hidden;
+	border:10px solid #fff;
+	position:relative;
+	left:0px;
+	margin:0;
+	margin-top:12px;
+}
+
+.tmimg {
+	box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px, rgba(0, 0, 0, 0.17);
+	border-radius:1px;
+}
+
+.favratetweetshare {
+	border-radius:1px;
+	box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px, rgba(0, 0, 0, 0.17);
+}
+
+.page-rate-widget-box {
+	width:56px;
+	height:56px;
+	display:block;
+	position:absolute;
+	top:18px;
+	text-align:center;
+	left:12px;
+}
+
+.page-rate-widget-box .rate-points {
+	text-indent:-9999px;
+	display:block;
+	position:absolute;
+	height:auto;
+	width:56px;
+	border:none;
+	background:none;
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	text-align:center;
+	top:8%;
+	padding:0;
+	margin:0;
+	font-weight:bold;
+}
+
+.page-rate-widget-box .number.prw54353 {
+	text-indent:34px;
+	display:block;
+	position:absolute;
+	text-align:left;
+	width:100%;
+	height:100%;
+	color:#666;
+	font-size:15px;
+	background:url(http://www.icondeposit.com/local--files/idbt:_template/socsprite.png) 12px 0px no-repeat;
+	font-family:"Helvetica Neue";
+}
+
+.page-rate-widget-box:hover {
+	opacity:.69;
+}
+
+.comment-count a {
+	position:absolute;
+	padding:24px 0 9px 0;
+	width:56px;
+	height:auto;
+	top:0;
+	left:0;
+	color:#666;
+	font-size:12px;
+	background:url(http://www.icondeposit.com/local--files/idbt:_template/socsprite.png) 9px -44px no-repeat;
+}
+
+.c-count a {
+	padding:0px 0px 38px 0px;
+	display:block;
+	font-size:15px;
+	font-weight:bold;
+	text-indent:22px;
+}
+
+.comment-count:hover {
+	opacity:.69;
 }
