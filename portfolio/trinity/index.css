@@ -498,9 +498,6 @@ a.login-status-sign-in {
 	left:0px;
 	margin:0;
 	margin-top:12px;
-}
-
-.tmimg {
 	box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px, rgba(0, 0, 0, 0.17);
 	border-radius:1px;
 }
@@ -576,4 +573,15 @@ a.login-status-sign-in {
 
 .comment-count:hover {
 	opacity:.69;
+}
+
+iframe[frameborder] {
+	border:none;
+}
+
+iframe.html-block-iframe {
+	width:100%;
+	margin:0;
+	padding:0;
+	background:transparent;
 }
