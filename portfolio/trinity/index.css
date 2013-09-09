@@ -1,4 +1,5 @@
 body {
+	background:#f6f6ff;
 	position:relative;
 	z-index:-1;
 	top:-60px;
@@ -357,6 +358,17 @@ a.login-status-sign-in {
 	position:relative;
 }
 
+.bsa-banner {
+	z-index:999;
+	position:absolute;
+	left:-9999px;
+}
+
+.home-design-template {
+	width:100%;
+	height:auto;
+}
+
 .breadcrumbs {
 	border:1px solid #ddd;
 	overflow:hidden;
@@ -488,6 +500,13 @@ a.login-status-sign-in {
 	color:white;
 }
 
+.trinity-content {
+	width:590px;
+	float:left;
+	height:auto;
+	overflow:visible;
+}
+
 .tmimg {
 	width:590px;
 	height:443px;
@@ -498,13 +517,24 @@ a.login-status-sign-in {
 	left:0px;
 	margin:0;
 	margin-top:12px;
-	box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px, rgba(0, 0, 0, 0.17);
+	box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px rgba(0, 0, 0, 0.17);
 	border-radius:1px;
 }
 
 .favratetweetshare {
-	border-radius:1px;
-	box-shadow:0px 1px 3px rgba(0, 0, 0, 0.1), 0px 0px 1px, rgba(0, 0, 0, 0.17);
+	display:block;
+	height:463px;
+	padding-top:0px;
+	padding-bottom:0px;
+	top:40px;
+	overflow:visible;
+	width:93px;
+	background:#fff;
+	border-radius:2px;
+	box-shadow:0 0px 3px rgba(0, 0, 0, .35), inset 0 0 1px #fff;
+	border:none;
+	position:absolute;
+	left:633px;
 }
 
 .page-rate-widget-box {
@@ -547,8 +577,19 @@ a.login-status-sign-in {
 	font-family:"Helvetica Neue";
 }
 
-.page-rate-widget-box:hover {
+.page-rate-widget-box:hover, .comment-count:hover {
 	opacity:.69;
+}
+
+.comment-count {
+	position:absolute;
+	display:block;
+	width:56px;
+	height:56px;
+	left:18px;
+	text-align:center;
+	padding:0;
+	top:106px;
 }
 
 .comment-count a {
@@ -563,6 +604,12 @@ a.login-status-sign-in {
 	background:url(http://www.icondeposit.com/local--files/idbt:_template/socsprite.png) 9px -44px no-repeat;
 }
 
+.c-count {
+	height:auto;
+	display:block;
+	margin-bottom:-30px;
+}
+
 .c-count a {
 	padding:0px 0px 38px 0px;
 	display:block;
@@ -571,10 +618,37 @@ a.login-status-sign-in {
 	text-indent:22px;
 }
 
-.comment-count:hover {
-	opacity:.69;
+.emptyspace {
+	width:56px;
+	height:56px;
+	position:absolute;
+	display:block;
+	top:190px;
+	text-align:center;
+	left:18px;
+	padding:0;
 }
 
+.tweet-gplus-boxes {
+	display:block;
+	left:15px;
+	top:271px;
+	width:62px;
+	position:absolute;
+	z-index:101;
+	height:auto;
+}
+
+.gplus-box {
+	display:inline-block;
+	left:20px;
+	top:363px;
+	width:51px;
+	position:absolute;
+	height:76px;
+	z-index:100;
+	overflow:hidden;
+}	
 iframe[frameborder] {
 	border:none;
 }
