@@ -581,6 +581,20 @@ a.login-status-sign-in {
 	opacity:.69;
 }
 
+.rage-rate-down {
+	position:absolute;
+	top:62px;
+	left:30px;
+	font-weight:bold;
+}
+
+.page-rate-up {
+	position:absolute;
+	top:62px;
+	left:60px;
+	font-weight:bold;
+}
+
 .comment-count {
 	position:absolute;
 	display:block;
