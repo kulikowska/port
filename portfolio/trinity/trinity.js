@@ -1,3 +1,7 @@
+	$(document).ready( function() {
+		$('.rate-points .number').text('+' + getRating());
+	});
+
 	function addRating() {
 		var currentRating = $('.rate-points .number').text();
 		var intRating = parseInt(currentRating);
@@ -6,6 +10,7 @@
 		    intRating = '+' + intRating;
         }
 		$('.rate-points .number').text(intRating);
+		saveRating(intRating);
 	}
 
 	function subtractRating() {
@@ -16,4 +21,17 @@
 		    intRating = '+' + intRating;
         }
 		$('.rate-points .number').text(intRating);
+		saveRating(intRating);
+	}
+
+	function saveRating ( val ) {
+		localStorage['ratingValue'] = val;
+	}
+
+	function getRating() {
+		if (typeof localStorage['ratingValue'] == 'undefined' ) {
+			return 20;
+		} else {
+			return localStorage['ratingValue'];
+		}
 	}
