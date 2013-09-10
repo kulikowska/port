@@ -26,6 +26,7 @@
 
 	function clearLocal() {
 		localStorage.clear();
+		document.location = document.location;
 	}
 
 	function saveRating ( val ) {
@@ -39,3 +40,12 @@
 			return localStorage['ratingValue'];
 		}
 	}
+
+
+	console.log ( 'Console log starts here' );
+	 
+	var myObject = {};
+
+	myObject.hi = 'First one';
+	console.log( myObject );
+
