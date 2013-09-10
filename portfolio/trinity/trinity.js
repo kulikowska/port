@@ -24,8 +24,12 @@
 		saveRating(intRating);
 	}
 
+	function clearLocal() {
+		localStorage.clear();
+	}
+
 	function saveRating ( val ) {
-		localStorage['ratingValue'] = val;
+		localStorage['ratingValue'] = parseInt(val);
 	}
 
 	function getRating() {

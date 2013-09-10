@@ -584,14 +584,21 @@ a.login-status-sign-in {
 .rage-rate-down {
 	position:absolute;
 	top:62px;
-	left:30px;
+	left:25px;
 	font-weight:bold;
 }
 
 .page-rate-up {
 	position:absolute;
 	top:62px;
-	left:60px;
+	left:50px;
+	font-weight:bold;
+}
+
+.clear-local {
+	position:absolute;
+	top:62px;
+	left:75px;
 	font-weight:bold;
 }
 
