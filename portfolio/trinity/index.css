@@ -686,5 +686,29 @@ iframe.html-block-iframe {
 	width:610px;
 	height:auto;
 	margin:0;
-	padding:10px 10px 10px 10px;
+	margin-bottom:25px;
+	margin-top:15px;
+}
+
+.tagstagstags a {
+	padding:6px 13px 6px 13px;
+	border:1px solid #ccc;
+	background-color: rgba(0, 0, 0, .07);
+	text-decoration:none;
+	position:relative;
+	height:auto;
+	width:auto;
+	margin:0px 3px 3px 0px;
+	border-radius:30px;
+	line-height:34px;
+	color:#777;
+	text-shadow:none;
+	font-weight:bold;
+	font-size:11px;
+}
+
+.tagstagstags a:hover {
+	border:1px solid #bbb;
+	background-color: rgba(0, 0, 0, .1);
+	color:#555;
 }
