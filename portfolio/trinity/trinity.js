@@ -2,7 +2,7 @@
 		$('.rate-points .number').text('+' + getRating());
 		var tags = [{"name" : "css"}, {"name" : "css2"}, {"name" : "css3"}, {"name" : "moreStuff"}];
 			for (var i=0; i<tags.length; i++){
-			$('.tagstagstags').append('<li>' + tags[0].name + '</li>');
+			$('.tagstagstags').append('<li>' + tags[i].name + '</li>');
 	}	});
 
 	function addRating() {
