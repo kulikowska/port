@@ -1,9 +1,15 @@
 	$(document).ready( function() {
 		$('.rate-points .number').text('+' + getRating());
-		var tags = [{"name" : "css"}, {"name" : "css2"}, {"name" : "css3"}, {"name" : "moreStuff"}];
-			for (var i=0; i<tags.length; i++){
+
+		var tags = [ {"name" : "css", "href" : "http://abc.com"}, 
+                     {"name" : "css2"}, 
+                     {"name" : "css3"}, 
+                     {"name" : "moreStuff"}
+        ];
+		for (var i=0; i<tags.length; i++){
 			$('.tagstagstags').append('<li>' + tags[i].name + '</li>');
-	}	});
+	    }	
+    });
 
 	function addRating() {
 		var currentRating = $('.rate-points .number').text();
