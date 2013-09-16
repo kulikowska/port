@@ -1,6 +1,9 @@
 	$(document).ready( function() {
 		$('.rate-points .number').text('+' + getRating());
-	});
+		var tags = [{"name" : "css"}, {"name" : "css2"}, {"name" : "css3"}, {"name" : "moreStuff"}];
+			for (var i=0; i<tags.length; i++){
+			$('.tagstagstags').append('<li>' + tags[0].name + '</li>');
+	}	});
 
 	function addRating() {
 		var currentRating = $('.rate-points .number').text();
@@ -40,11 +43,4 @@
 			return localStorage['ratingValue'];
 		}
 	}
-
-	var tags = ['css', 'css2', 'css3', 'moreStuff'];
-
-	for (var i=0; i<tags.length; i++) 
-
-	$('.tagstagstags').append('<li>' + tags[i] + '</li>');
-
 	
