@@ -670,6 +670,7 @@ a.login-status-sign-in {
 	z-index:100;
 	overflow:hidden;
 }	
+
 iframe[frameborder] {
 	border:none;
 }
@@ -679,4 +680,11 @@ iframe.html-block-iframe {
 	margin:0;
 	padding:0;
 	background:transparent;
+}
+
+.tagstagstags {
+	width:610px;
+	height:auto;
+	margin:0;
+	padding:10px 10px 10px 10px;
 }
