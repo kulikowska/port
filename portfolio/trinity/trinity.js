@@ -1,13 +1,13 @@
 	$(document).ready( function() {
 		$('.rate-points .number').text('+' + getRating());
 
-		var tags = [ {"name" : "css", "href" : "http://abc.com"}, 
+		var tags = [ {"name" : "css", "href" : "http://www.shidokanmontreal.ca/"}, 
                      {"name" : "css2"}, 
                      {"name" : "css3"}, 
                      {"name" : "moreStuff"}
         ];
 		for (var i=0; i<tags.length; i++){
-			$('.tagstagstags').append('<li>' + tags[i].name + '</li>');
+			$('.tagstagstags').append('<a href="' + tags[i].href + '">' + tags[i].name + '</a>');
 	    }	
     });
 
