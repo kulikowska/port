@@ -1,10 +1,7 @@
 <script>
-    console.log(this);
     var i = 3;
 
     function first() {
-        console.log( ' scope in first' );
-        console.log(this);
         var i = 5;
         var j = 8;
         k = 12;
@@ -13,9 +10,9 @@
     }
 
     function second() {
-        console.log( ' scope in second' );
-        console.log(this);
         console.log(i);
+        console.log( 'In scope of second()');
+        console.log(k);
     }
 
     console.log(i);
