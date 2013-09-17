@@ -1,23 +1,12 @@
-console.log( localStorage );
 dataObj = {};
 
-var storedData = JSON.parse( localStorage['ourData'] );
-console.log( storedData );
-console.log(storedData.first); 
+var storedData = JSON.parse(localStorage['ourData']);
 
 $(document).ready( function() {
     $('form [name="first"]').val(storedData.first);
 });
 
-
 function saveform(){
-/*
-    dataObj.first = $('form [name="first"]').val();
-    dataObj["first"] = $('form [name="first"]').val();
-    dataObj.last  = $('form .last').val();
-    dataObj.email = $('form #email').val();
-*/
-
     dataObj = {
         "first" : $('form [name="first"]').val(),
         "last"  : $('form .last').val(),
@@ -25,8 +14,4 @@ function saveform(){
     };
 
     localStorage['ourData'] = JSON.stringify(dataObj);
-
-
-	console.log( dataObj );
-	console.log( localStorage );
 }
