@@ -1,13 +1,13 @@
-$(document).ready( function() {
 console.log( localStorage );
 dataObj = {};
 
 var storedData = JSON.parse( localStorage['ourData'] );
 console.log( storedData );
 console.log(storedData.first); 
-$('form [name="first']).val('some crap');
-}
-);
+
+$(document).ready( function() {
+    $('form [name="first"]').val('some crap');
+});
 
 
 function saveform(){
