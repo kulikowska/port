@@ -3,11 +3,15 @@
     var i = 3;
 
     function first() {
+        console.log( ' scope in first' );
+        console.log(this);
         var i = 5;
         console.log(i);
     }
 
     function second() {
+        console.log( ' scope in second' );
+        console.log(this);
         console.log(i);
     }
 
