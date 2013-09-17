@@ -32,7 +32,7 @@
     second();
     console.log(k);
 
-    for (var i=0; i<50; i += 10 ){
+    for (var i=0; i<50; i += 10) {
         console.log( i + ' in for loop');
         increment();
     }
@@ -44,10 +44,11 @@
     }
 
     do {
-      i++;
-      console.log( ' in do loop' );
-      console.log (i);
-
+      if ( i<120 )  {
+          i++;
+          console.log( ' in do loop' );
+          console.log (i);
+      }
     }
     while (i<120);
 
