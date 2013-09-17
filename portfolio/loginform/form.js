@@ -1,3 +1,4 @@
+console.log( localStorage );
 dataObj = {};
 
 function saveform(){
@@ -14,5 +15,9 @@ function saveform(){
         "email" : $('form #email').val()
     };
 
+    localStorage['ourData'] = JSON.stringify(dataObj);
+
+
 	console.log( dataObj );
+	console.log( localStorage );
 }
