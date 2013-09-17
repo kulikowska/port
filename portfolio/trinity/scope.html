@@ -14,10 +14,18 @@
         console.log( 'In scope of second()');
         console.log(k);
     }
+    
+    function increment() {
+        i++;
+    }
 
     console.log(i);
     first();
     second();
     console.log(k);
-    console.log(j);
+
+    for (var i=0 ;i<5 ;i++) {
+        console.log( i + ' in for loop');
+        increment();
+    }
 </script>
