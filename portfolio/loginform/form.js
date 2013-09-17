@@ -6,7 +6,7 @@ console.log( storedData );
 console.log(storedData.first); 
 
 $(document).ready( function() {
-    $('form [name="first"]').val('some crap');
+    $('form [name="first"]').val(storedData.first);
 });
 
 
