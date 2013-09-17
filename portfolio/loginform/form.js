@@ -1,6 +1,9 @@
 console.log( localStorage );
 dataObj = {};
 
+var storedData = JSON.parse( localStorage['ourData'] );
+console.log( storedData );
+
 function saveform(){
 /*
     dataObj.first = $('form [name="first"]').val();
