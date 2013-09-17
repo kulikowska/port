@@ -3,6 +3,7 @@ dataObj = {};
 
 var storedData = JSON.parse( localStorage['ourData'] );
 console.log( storedData );
+console.log(storedData.first); 
 
 function saveform(){
 /*
