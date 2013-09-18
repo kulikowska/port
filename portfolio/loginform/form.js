@@ -8,7 +8,11 @@
 //
 $(document).ready( function() {
     var dataObj = JSON.parse(localStorage['ourData']);
-    $('form [name="first"]').val(dataObj.first);
+    if ( typeof dataObj == 'object' ) {
+        $('form [name="first"]').val(dataObj.first);
+        $('form [name="last"]').val(dataObj.last);
+        $('form [name="email"]').val(dataObj.email);
+    }
 });
 
 function saveform() {
@@ -17,13 +21,13 @@ function saveform() {
         "last"  : $('form .last').val(),
         "email" : $('form #email').val()
     };
-
     localStorage['ourData'] = JSON.stringify(dataObj);
 }
 //
 //   The acutal code ENDS HERE the rest is an explaination and some very advanced JS syntax stuff
 //
-if (false) {  //This means the the following code will not be executed
+//if (false) {  //This means the the following code will not be executed
+if (true) {  //This means the the following code will not be executed
     $(document).ready( function() {
         // First access local storage and get 'ourData' item of localStorage
         var storedData = localStorage['ourData'];
@@ -59,7 +63,7 @@ if (false) {  //This means the the following code will not be executed
         var dataObj = {};
         dataObj.first = firstName;
         dataObj.last  = lastName;
-        dataObj.email = email
+        dataObj.email = email;
         // The two methods of creating data object are equivalent.
 
         // Now we need to save this object into localStorage so that the next time
@@ -69,6 +73,7 @@ if (false) {  //This means the the following code will not be executed
         var convertedObject = JSON.stringify(dataObj);
         // Now that we have a string that represents our object we can write it directly
         // into local storage
+        console.log( [convertedObject, JSON.stringify(dataObj), dataObj]);
         localStorage['ourData'] = convertedObject;
     }
 
@@ -86,12 +91,25 @@ if (false) {  //This means the the following code will not be executed
     //
     // Functions can return values:
     function someFunc() {
-        return 'I am returning this string so you can see it in the console log');
+        return 'I am returning this string so you can see it in the console log';
     }
     console.log( someFunc() );
     // or
     var heyFunctionReturnMeSomeValue = someFunc();
     console.log(heyFunctionReturnMeSomeValue);
+    //
+    // But this value doesn't have to be a string
+    //
+    function populateObject( first, last ) {
+        var returnObj = {};
+        returnObj.first = first;
+        returnObj.last  = last;
+        return returnObj;
+    }
+
+    var nameObject = populateObject('Jo', 'Blo');
+
+    console.log(nameObject);
 
     //
     //
@@ -142,7 +160,7 @@ if (false) {  //This means the the following code will not be executed
     // That is how we call jQuery and JSON functions. They are defined inside an object somehow.
     // Think of a JSON object.  
     // It has two methods (that is usually what we call functions that are members of objects).
-    JSON = {
+    myJSON = {
         'parse' : function(someString) {
             // ... do some coding to covert sting to an object and return that object
         },
@@ -154,5 +172,25 @@ if (false) {  //This means the the following code will not be executed
     var someObject = {"first" : "Jo", "last" : "dunnoYet"};
     someObject.last = 'Blo';
 
-    JSON.stringify( someObject );
+    myJSON.stringify( someObject );
+
+    // 
+    // If you are actually insane enough to get to this point here are a couple of good ones
+    //
+    FuncObj = {
+        'count' : 0,
+        'getCount' : function() {
+            return this.count;
+        }
+    };
+
+    FuncObj.trimSpaces = function(inString) {
+        this.count++;
+        return inString.trim() 
+    }
+
+    console.log( FuncObj.trimSpaces('    a string with leading and trailing spaces we don`t need           ') );
+    console.log( FuncObj.trimSpaces('    another  string with leading and trailing spaces we don`t need           ') );
+    console.log( FuncObj.trimSpaces('    and one more string with leading and trailing spaces we don`t need           ') );
+    console.log( 'Function FuncObj.trimSpaces was called ' +  FuncObj.getCount() + ' times');
 }
