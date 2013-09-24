@@ -163,11 +163,9 @@ if (true) {  //This means the the following code will not be executed
     myJSON = {
         'parse' : function(someString) {
             return JSON.parse(someString);
-            // ... do some coding to covert sting to an object and return that object
         },
         'stringify' : function(someObject) {
             return JSON.stringify(someObject);
-            // ... do some coding to covert object to a string and return that string
        }
     }
     // Then we can call a function from inside a json object like we did above.
