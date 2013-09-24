@@ -181,6 +181,10 @@ if (true) {  //This means the the following code will not be executed
         'count' : 0,
         'getCount' : function() {
             return this.count;
+        },
+        'trimSpaces' : function(inString) {
+            this.count--;
+            return inString.trim() 
         }
     };
 
