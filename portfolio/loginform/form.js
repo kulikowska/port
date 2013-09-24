@@ -162,9 +162,11 @@ if (true) {  //This means the the following code will not be executed
     // It has two methods (that is usually what we call functions that are members of objects).
     myJSON = {
         'parse' : function(someString) {
+            return JSON.parse(someString);
             // ... do some coding to covert sting to an object and return that object
         },
-        'stringify' : function(someString) {
+        'stringify' : function(someObject) {
+            return JSON.stringify(someObject);
             // ... do some coding to covert object to a string and return that string
        }
     }
