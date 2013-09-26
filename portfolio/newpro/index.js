@@ -1,3 +1,5 @@
+var currentMusicanId = -1;
+
 var list = [    {"position" : "Guitarist", "name" : "Robbie", "last" : "Robertson", "email" : "Robbie@band.com"},
 	            {"position" : "Pianist", "name" : "Richard", "last" : "Emmanuel", "email" : "Richard@band.com"},
 			    {"position" : "Drummer", "name" : "Levon", "last" : "Helm", "email" : "Levon@band.com"},
@@ -12,6 +14,7 @@ $(document).ready( function() {
 });
 
 function musicianInfo(i){
+    currentMusicianId = i;
 	$('.content form [name="first"]').val(list[i].name);
 	$('.content form [name="last"]').val(list[i].last);
 	$('.content form [name="email"]').val(list[i].email);
