@@ -25,5 +25,6 @@ function clearfield(){
 }
 
 function savefield(){
-	alert('working');
+	var first=$('.content form [name="first"]').val();
+		console.log(first);
 }
