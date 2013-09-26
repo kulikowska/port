@@ -23,3 +23,7 @@ function musicianInfo(i){
 function clearfield(){
 	$('.content form [name="first"]').val('');
 }
+
+function savefield(){
+	alert('working');
+}
