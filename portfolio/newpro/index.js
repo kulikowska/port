@@ -22,9 +22,15 @@ function musicianInfo(i){
 
 function clearfield(){
 	$('.content form [name="first"]').val('');
+	$('.content form [name="last"]').val('');
+	$('.content form [name="email"]').val('');
 }
 
 function savefield(){
 	var first=$('.content form [name="first"]').val();
 		console.log(first);
+	var last=$('.content form [name="last"]').val();
+		console.log(last);
+	var email=$('.content form [name="email"]').val();
+		console.log(email);
 }
