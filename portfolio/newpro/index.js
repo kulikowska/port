@@ -5,7 +5,6 @@ $(document).ready( function() {
 				 {"position" : "Drummer", "name" : "Levon", "last" : "Helm", "email" : "Levon@band.com"},
 				 {"position" : "Bassist", "name" : "Rick", "last" : "Danko", "email" : "Rick@band.com"},
 				 {"position" : "Organist", "name" : "Garth", "last" : "Hudson", "email" : "Garth@band.com"}
-
     ]; 
 
     for (var i=0; i<list.length; i++){
