@@ -7,11 +7,11 @@ var list = [    {"position" : "Guitarist", "name" : "Robbie", "last" : "Robertso
 
 $(document).ready( function() {
     for (var i=0; i<list.length; i++){
-        $('.menu').append("<li onClick='musicianInfo()'>" +  list[i].position + "</li> ");
+        $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
     }
 });
 
-function musicianInfo(){
+function musicianInfo(i){
 	$('.content form [name="first"]').val(list[i].name);
 }
 
