@@ -20,3 +20,6 @@ function musicianInfo(i){
 	$('.content form [name="email"]').val(list[i].email);
 }
 
+function clearfield(){
+	alert('working');
+}
