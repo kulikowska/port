@@ -13,5 +13,7 @@ $(document).ready( function() {
 
 function musicianInfo(i){
 	$('.content form [name="first"]').val(list[i].name);
+	$('.content form [name="last"]').val(list[i].last);
+	$('.content form [name="email"]').val(list[i].email);
 }
 
