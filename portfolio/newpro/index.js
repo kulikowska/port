@@ -21,5 +21,5 @@ function musicianInfo(i){
 }
 
 function clearfield(){
-	alert('working');
+	$('.content form [name="first"]').val('');
 }
