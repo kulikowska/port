@@ -1,4 +1,4 @@
-var currentMusicanId = -1;
+var currentMusicianId = -1;
 
 var list = [    {"position" : "Guitarist", "name" : "Robbie", "last" : "Robertson", "email" : "Robbie@band.com"},
 	            {"position" : "Pianist", "name" : "Richard", "last" : "Emmanuel", "email" : "Richard@band.com"},
