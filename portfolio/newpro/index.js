@@ -18,6 +18,7 @@ var listO = { 'a' : {"position" : "Guitarist", "name" : "Robbie", "last" : "Robe
 }; 
 
 $(document).ready( function() {
+    console.log(localStorage);
     for (var i=0; i<list.length; i++){
         $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
     }
@@ -62,5 +63,10 @@ function addfield (){
 	newList.last=$('.content form [name="last"]').val();
 	newList.email=$('.content form [name="email"]').val();
 	list.push( newList);
+	localStorage['musicianStorage'] = JSON.stringify(list);
+}
+
+function del() {
+    delete list[currentMusicianId];
 	localStorage['musicianStorage'] = JSON.stringify(list);
 }
