@@ -29,7 +29,7 @@ function clearfield(){
 function savefield(){
 	var i = currentMusicianId;
 	var first=$('.content form [name="first"]').val();
-		list[i].name = 'first';
+		list[i].name = first;
 	var last=$('.content form [name="last"]').val();
 		console.log(last);
 	var email=$('.content form [name="email"]').val();
