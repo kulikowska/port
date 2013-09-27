@@ -19,12 +19,16 @@ var listO = { 'a' : {"position" : "Guitarist", "name" : "Robbie", "last" : "Robe
 
 $(document).ready( function() {
     console.log(localStorage);
+    setMenu();
+});
+
+function setMenu() {
     for (var i=0; i<list.length; i++){
         if ( list[i] != null ) {
             $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
         }
     }
-});
+}
 
 function musicianInfo(i){
     currentMusicianId = i;
