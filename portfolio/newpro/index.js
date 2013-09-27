@@ -38,9 +38,9 @@ function savefield(){
 	var first=$('.content form [name="first"]').val();
 		list[i].name = first;
 	var last=$('.content form [name="last"]').val();
-		console.log(last);
+		list[i].last = last;
 	var email=$('.content form [name="email"]').val();
-		console.log(email);
+		list[i].email = email;
 }
 
 function savefieldDfferent(){
