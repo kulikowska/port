@@ -71,14 +71,12 @@ function addfield (){
 	newList.email=$('.content form [name="email"]').val();
 	list.push( newList);
 	localStorage['musicianStorage'] = JSON.stringify(list);
-	//document.location = document.location
     setMenu();
 }
 
 function del() {
     delete list[currentMusicianId];
 	localStorage['musicianStorage'] = JSON.stringify(list);
-//	document.location = document.location
     clearfield();
     setMenu();
 }
