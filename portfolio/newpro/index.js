@@ -1,4 +1,5 @@
 var currentMusicianId = -1;
+if ( typeof localStorage['musicianStorage'] == 'undefined' )
 
 var list = [    {"position" : "Guitarist", "name" : "Robbie", "last" : "Robertson", "email" : "Robbie@band.com"},
 	            {"position" : "Pianist", "name" : "Richard", "last" : "Emmanuel", "email" : "Richard@band.com"},
