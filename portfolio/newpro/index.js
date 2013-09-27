@@ -79,5 +79,6 @@ function del() {
     delete list[currentMusicianId];
 	localStorage['musicianStorage'] = JSON.stringify(list);
 //	document.location = document.location
+    clearfield();
     setMenu();
 }
