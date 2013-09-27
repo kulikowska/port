@@ -41,6 +41,8 @@ function savefield(){
 		list[i].last = last;
 	var email=$('.content form [name="email"]').val();
 		list[i].email = email;
+	
+	localStorage['musicianStorage'] = JSON.stringify(list);
 }
 
 function savefieldDfferent(){
