@@ -23,11 +23,12 @@ $(document).ready( function() {
 });
 
 function setMenu() {
-    $('.menu').html('');
+    $('.menu').html('').hide();
     for (var i=0; i<list.length; i++){
         if ( list[i] != null ) {
             $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
         }
+        $('.menu').fadeIn();
     }
 }
 
