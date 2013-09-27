@@ -62,5 +62,6 @@ function addfield (){
 	newList.last=$('.content form [name="last"]').val();
 	newList.email=$('.content form [name="email"]').val();
 	list.push( newList);
+	localStorage['musicianStorage'] = JSON.stringify(list);
 }
 
