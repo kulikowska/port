@@ -58,6 +58,7 @@ function savefieldDfferent(){
 function addfield (){
 	var newList = {}
 	var first=$('.content form [name="first"]').val();
+	newList.first = first;
 	list.push( newList);
 }
 
