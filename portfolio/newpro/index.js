@@ -23,6 +23,7 @@ $(document).ready( function() {
 });
 
 function setMenu() {
+    $('.menu').html('');
     for (var i=0; i<list.length; i++){
         if ( list[i] != null ) {
             $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
@@ -70,11 +71,13 @@ function addfield (){
 	newList.email=$('.content form [name="email"]').val();
 	list.push( newList);
 	localStorage['musicianStorage'] = JSON.stringify(list);
-	document.location = document.location
+	//document.location = document.location
+    setMenu();
 }
 
 function del() {
     delete list[currentMusicianId];
 	localStorage['musicianStorage'] = JSON.stringify(list);
-	document.location = document.location
+//	document.location = document.location
+    setMenu();
 }
