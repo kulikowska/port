@@ -33,12 +33,14 @@ function setMenu() {
 
 function musicianInfo(i){
     currentMusicianId = i;
+	$('.content form [name="position"]').val(list[i].position);
 	$('.content form [name="first"]').val(list[i].name);
 	$('.content form [name="last"]').val(list[i].last);
 	$('.content form [name="email"]').val(list[i].email);
 }
 
 function clearfield(){
+	$('.content form [name="position"]').val('');
 	$('.content form [name="first"]').val('');
 	$('.content form [name="last"]').val('');
 	$('.content form [name="email"]').val('');
