@@ -64,4 +64,3 @@ function addfield (){
 	list.push( newList);
 	localStorage['musicianStorage'] = JSON.stringify(list);
 }
-
