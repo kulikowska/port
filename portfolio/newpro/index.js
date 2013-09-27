@@ -28,7 +28,7 @@ function setMenu() {
         if ( list[i] != null ) {
             $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
         }
-        $('.menu').fadeIn();
+        $('.menu').fadeIn('slow');
     }
 }
 
