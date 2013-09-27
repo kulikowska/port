@@ -35,3 +35,10 @@ function savefield(){
 	var email=$('.content form [name="email"]').val();
 		console.log(email);
 }
+
+function savefieldDfferent(){
+	
+	list[currentMusicianId].name  = $('.content form [name="first"]').val();
+	list[currentMusicianId].last  = $('.content form [name="last"]').val();
+	list[currentMusicianId].email = $('.content form [name="email"]').val();
+}
