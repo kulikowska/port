@@ -10,7 +10,6 @@ if ( typeof localStorage['musicianStorage'] == 'undefined' ) {
     var list = JSON.parse(localStorage['musicianStorage']);
 }
 
-
 var listO = { 'a' : {"position" : "Guitarist", "name" : "Robbie", "last" : "Robertson", "email" : "Robbie@band.com"},
 	          'b' : {"position" : "Pianist", "name" : "Richard", "last" : "Emmanuel", "email" : "Richard@band.com"},
 			  'c' : {"position" : "Drummer", "name" : "Levon", "last" : "Helm", "email" : "Levon@band.com"},
@@ -55,3 +54,10 @@ function savefieldDfferent(){
 	list[currentMusicianId].last  = $('.content form [name="last"]').val();
 	list[currentMusicianId].email = $('.content form [name="email"]').val();
 }
+
+function addfield (){
+	var newList = {}
+	var first=$('.content form [name="first"]').val();
+	list.push( newList);
+}
+
