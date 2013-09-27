@@ -29,7 +29,7 @@ function setMenu() {
             $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
         }
     }
-    $('.menu').fadeIn('slow');
+    $('.menu').fadeIn(2000);
 }
 
 function musicianInfo(i){
