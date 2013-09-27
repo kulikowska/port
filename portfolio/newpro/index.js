@@ -20,7 +20,9 @@ var listO = { 'a' : {"position" : "Guitarist", "name" : "Robbie", "last" : "Robe
 $(document).ready( function() {
     console.log(localStorage);
     for (var i=0; i<list.length; i++){
-        $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
+        if ( list[i] != null ) {
+            $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
+        }
     }
 });
 
