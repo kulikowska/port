@@ -37,7 +37,7 @@ function setMenu() {
 var wrapper = 'form .content';
 
 function musicianInfo(el){
-	$('.content').show();
+	$('.content').fadeIn(2000);
     console.log(el);
 	//$('.menu li').removeClass('selected');
 	$(el).parent().find('>li').removeClass('selected');

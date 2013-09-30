@@ -10,9 +10,10 @@ li {
 }
 
 .page {
-	width:700px;
-	height:400px;
+	width:600px;
+	height:auto;
 	margin:0 auto;
+	padding:15px 15px 15px 15px;	
 }
 
 .menu {
@@ -28,10 +29,19 @@ li {
 
 .content {
 	float:left;
-	width:530px;
-	margin-left:15px;
+	width:400px;
+	padding:15px 15px 15px 15px;
 }
 
 .selected {
-	color:blue;
+	color:#777777;
+}
+
+.page form {
+	wekbit-border-radius:4px;
+}
+
+fieldset {
+	border:1px solid #ffffff;
+	-webkit-border-radius:5px;
 }
