@@ -21,6 +21,7 @@ li {
 	position:relative;
 	border-right:1px solid #555;
 	padding:15px 15px 15px 15px;
+	font-size:15px;
 }
 
 .menu li {
@@ -31,17 +32,34 @@ li {
 	float:left;
 	width:400px;
 	padding:15px 15px 15px 15px;
+	font-size:14px;
 }
 
 .selected {
-	color:#777777;
+	color:#999999;
 }
 
 .page form {
-	wekbit-border-radius:4px;
+	-wekbit-border-radius:4px;
 }
 
 fieldset {
 	border:1px solid #ffffff;
 	-webkit-border-radius:5px;
+}
+
+.content li label {
+	float:left;
+	width:90px;
+}
+
+.content li input {
+	background:transparent;
+	border:transparent;
+	color:#ffffff;
+	-webkit-border-radius:4px;
+}
+
+.content li input:hover {
+	background:#ddd;
 }
