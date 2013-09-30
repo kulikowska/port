@@ -62,4 +62,6 @@ fieldset {
 
 .content li input:hover {
 	background:#ddd;
+	color:#000000;
+	border:2px solid black;
 }
