@@ -49,19 +49,19 @@ function musicianInfo(el){
 }
 
 function clearfield(){
-	$('.content form [name="position"]').val('');
-	$('.content form [name="first"]').val('');
-	$('.content form [name="last"]').val('');
-	$('.content form [name="email"]').val('');
+	$(wrapper + ' [name="position"]').val('');
+	$(wrapper + ' [name="first"]').val('');
+	$(wrapper + ' [name="last"]').val('');
+	$(wrapper + ' [name="email"]').val('');
 }
 
 function savefield(){
 	var i = currentMusicianId;
-	var first=$('.content form [name="first"]').val();
+	var first=$(wrapper + ' [name="first"]').val();
 		list[i].name = first;
-	var last=$('.content form [name="last"]').val();
+	var last=$(wrapper + ' [name="last"]').val();
 		list[i].last = last;
-	var email=$('.content form [name="email"]').val();
+	var email=$(wrapper + ' [name="email"]').val();
 		list[i].email = email;
 	
 	localStorage['musicianStorage'] = JSON.stringify(list);
@@ -69,17 +69,17 @@ function savefield(){
 
 function savefieldDfferent(){
 	
-	list[currentMusicianId].name  = $('.content form [name="first"]').val();
-	list[currentMusicianId].last  = $('.content form [name="last"]').val();
-	list[currentMusicianId].email = $('.content form [name="email"]').val();
+	list[currentMusicianId].name  = $(wrapper + ' [name="first"]').val();
+	list[currentMusicianId].last  = $(wrapper + ' [name="last"]').val();
+	list[currentMusicianId].email = $(wrapper + ' [name="email"]').val();
 }
 
 function addfield (){
 	var newList = {};
-	newList.position=$('.content form [name="position"]').val();
-	newList.name=$('.content form [name="first"]').val();
-	newList.last=$('.content form [name="last"]').val();
-	newList.email=$('.content form [name="email"]').val();
+	newList.position=$(wrapper + ' [name="position"]').val();
+	newList.name=$(wrapper + ' [name="first"]').val();
+	newList.last=$(wrapper + ' [name="last"]').val();
+	newList.email=$(wrapper + ' [name="email"]').val();
 	list.push( newList);
 	localStorage['musicianStorage'] = JSON.stringify(list);
     setMenu();
