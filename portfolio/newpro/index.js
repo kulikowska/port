@@ -20,6 +20,7 @@ var listO = { 'a' : {"position" : "Guitarist", "name" : "Robbie", "last" : "Robe
 $(document).ready( function() {
     console.log(localStorage);
     setMenu();
+    $('.menu li[musicianid="0"]').trigger('click');
 });
 
 function setMenu() {
