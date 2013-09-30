@@ -26,17 +26,17 @@ function setMenu() {
     $('.menu').html('').hide();
     for (var i=0; i<list.length; i++){
         if ( list[i] != null ) {
-            $('.menu').append("<li onClick='musicianInfo(" + i + ")' musicianId='" + i +  "'>" +
+            $('.menu').append("<li onClick='musicianInfo(this)' musicianId='" + i +  "'>" +
                 list[i].position + "</li> ");
         }
     }
     $('.menu').fadeIn(2000);
 }
 
-function musicianInfo(i){
+function musicianInfo(el){
 	$('.menu li').removeClass('selected');
-    currentMusicianId = i;
-	$('.menu >li[musicianId="' + i + '"]').addClass('selected');
+    currentMusicianId = $(el).attr('musicianid');
+	$(el).addClass('selected');
 	$('.content form [name="position"]').val(list[i].position);
 	$('.content form [name="first"]').val(list[i].name);
 	$('.content form [name="last"]').val(list[i].last);
