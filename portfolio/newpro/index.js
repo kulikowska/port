@@ -34,9 +34,7 @@ function setMenu() {
 }
 
 function musicianInfo(i){
-    // Use on or the other
 	$('.menu li').removeClass('selected');
-	$('.menu [musicianId="' + currentMusicianId + '"]').removeClass('selected');
     currentMusicianId = i;
 	$('.menu >li[musicianId="' + i + '"]').addClass('selected');
 	$('.content form [name="position"]').val(list[i].position);
