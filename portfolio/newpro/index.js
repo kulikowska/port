@@ -36,7 +36,7 @@ function setMenu() {
 function musicianInfo(el){
     console.log(el);
 	//$('.menu li').removeClass('selected');
-	$(el).parent().find('li').removeClass('selected');
+	$(el).parent().find('>li').removeClass('selected');
     var i = $(el).attr('musicianid');
 	currentMusicianId = i;
 	$(el).addClass('selected');
