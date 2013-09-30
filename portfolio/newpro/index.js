@@ -33,6 +33,8 @@ function setMenu() {
     $('.menu').fadeIn(2000);
 }
 
+var wrapper = 'form .content';
+
 function musicianInfo(el){
     console.log(el);
 	//$('.menu li').removeClass('selected');
@@ -40,10 +42,10 @@ function musicianInfo(el){
     var i = $(el).attr('musicianid');
 	currentMusicianId = i;
 	$(el).addClass('selected');
-	$('.content form [name="position"]').val(list[i].position);
-	$('.content form [name="first"]').val(list[i].name);
-	$('.content form [name="last"]').val(list[i].last);
-	$('.content form [name="email"]').val(list[i].email);
+	$(wrapper + ' [name="position"]').val(list[i].position);
+	$(wrapper + ' [name="first"]').val(list[i].name);
+	$(wrapper + ' [name="last"]').val(list[i].last);
+	$(wrapper + ' [name="email"]').val(list[i].email);
 }
 
 function clearfield(){
