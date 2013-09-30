@@ -10,15 +10,14 @@ li {
 }
 
 .page {
-	width:1040px;
+	width:700px;
+	height:400px;
 	margin:0 auto;
 }
 
 .menu {
 	float:left;
 	position:relative;
-	width:200px;
-	height:500px;
 	border-right:1px solid #555;
 	padding:15px 15px 15px 15px;
 }
@@ -29,13 +28,10 @@ li {
 
 .content {
 	float:left;
-	width:610px;
-	height:500px;
-	position:relative;
-	padding:15px 15px 15px 15px;
+	width:530px;
+	margin-left:15px;
 }
 
 .selected {
-	font-weight:bold;
 	color:blue;
 }

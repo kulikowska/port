@@ -5,10 +5,12 @@
 		<script src="index.js"></script>
 	</head>
 	<div class="page">
+		<form action="javascript:false">
+			<fieldset>
+				<legend> Performers </legend>
 		<div class="menu"> 
 		</div>
 		<div class="content">
-			<form action="javascript:false">
 				<label>Position:</label><input name='position' type='text' value='' />
 				<label>First Name:</label><input name='first' type='text' value='' />
 				<label>Last Name:</label><input name='last' type='text' value='' />
@@ -18,7 +20,7 @@
 				<input onClick='addfield()' type="submit" value="Add" />
 				<input onClick='del()' type="submit" value="Del" />
 				<input onClick='localStorage.clear(); document.location=document.location;' type="submit" value="Clear Local Storage" />
-
+				</fieldset>
 			</form>
 		</div>
 	</div>
