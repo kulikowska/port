@@ -55,7 +55,7 @@ fieldset {
 
 .content li input {
 	background:transparent;
-	border:transparent;
+	border:2px solid transparent;
 	color:#ffffff;
 	-webkit-border-radius:4px;
 }
