@@ -26,7 +26,8 @@ function setMenu() {
     $('.menu').html('').hide();
     for (var i=0; i<list.length; i++){
         if ( list[i] != null ) {
-            $('.menu').append("<li onClick='musicianInfo(" + i + ")'>" +  list[i].position + "</li> ");
+            $('.menu').append("<li onClick='musicianInfo(" + i + ")' musicianId='" + i +  "'>" +
+                list[i].position + "</li> ");
         }
     }
     $('.menu').fadeIn(2000);
@@ -34,7 +35,7 @@ function setMenu() {
 
 function musicianInfo(i){
     currentMusicianId = i;
-	$('.menu').addClass('selected');
+	$('.menu [musicianId="' + i + '"]').addClass('selected');
 	$('.content form [name="position"]').val(list[i].position);
 	$('.content form [name="first"]').val(list[i].name);
 	$('.content form [name="last"]').val(list[i].last);
