@@ -20,7 +20,7 @@ var listO = { 'a' : {"position" : "Guitarist", "name" : "Robbie", "last" : "Robe
 $(document).ready( function() {
     console.log(localStorage);
     setMenu();
-    $('.menu li[musicianid="0"]').trigger('click');
+	$('.content').hide();
 });
 
 function setMenu() {
@@ -37,6 +37,7 @@ function setMenu() {
 var wrapper = 'form .content';
 
 function musicianInfo(el){
+	$('.content').show();
     console.log(el);
 	//$('.menu li').removeClass('selected');
 	$(el).parent().find('>li').removeClass('selected');
