@@ -23,6 +23,10 @@ li {
 	padding:15px 15px 15px 15px;
 }
 
+.menu li {
+	cursor:pointer;
+}
+
 .content {
 	float:left;
 	width:610px;
@@ -31,3 +35,7 @@ li {
 	padding:15px 15px 15px 15px;
 }
 
+.selected {
+	font-weight:bold;
+	color:blue;
+}
