@@ -31,13 +31,13 @@ function setMenu() {
                 list[i].position + "</li> ");
         }
     }
-    $('.menu').fadeIn(2000);
+    $('.menu').fadeIn(600);
 }
 
 var wrapper = 'form .content';
 
 function musicianInfo(el){
-	$('.content').fadeIn(2000);
+	$('.content').fadeIn(600);
     console.log(el);
 	//$('.menu li').removeClass('selected');
 	$(el).parent().find('>li').removeClass('selected');

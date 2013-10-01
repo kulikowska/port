@@ -21,7 +21,11 @@ li {
 	position:relative;
 	border-right:1px solid #555;
 	padding:15px 15px 15px 15px;
-	font-size:15px;
+	font-size:14px;
+}
+
+.menu li:hover {
+	color:#555;
 }
 
 .menu li {
@@ -46,6 +50,7 @@ li {
 fieldset {
 	border:1px solid #ffffff;
 	-webkit-border-radius:5px;
+	-webkit-box-shadow:7px 7px 15px 6px #555;
 }
 
 .content li label {
@@ -63,5 +68,18 @@ fieldset {
 .content li input:hover {
 	background:#ddd;
 	color:#000000;
-	border:2px solid black;
+	border:2px solid #999999;
+}
+
+#buttons input {
+	margin-top:10px;
+	-webkit-border-radius:3px;
+	-webkit-box-shadow:1px 2px 2px 3px #444;
+	background-color:#222;
+	color:#ffffff;
+	border:1px solid #ddd;
+}
+
+#buttons input:hover {
+	-webkit-box-shadow:3px 3px 3px 3px #555;
 }
