@@ -1,7 +1,7 @@
 body {
 	color:#ffffff;
 	font-family:'georgia';
-	background-color:#333333;
+	background-color:#222;
 }
 
 li {
@@ -10,7 +10,7 @@ li {
 }
 
 .page {
-	width:600px;
+	width:580px;
 	height:auto;
 	margin:0 auto;
 	padding:15px 15px 15px 15px;	
@@ -25,11 +25,12 @@ li {
 }
 
 .menu li:hover {
-	color:#555;
+	color:#cc99ff;
 }
 
 .menu li {
 	cursor:pointer;
+	padding:2px 3px 2px 3px;
 }
 
 .content {
@@ -40,7 +41,8 @@ li {
 }
 
 .selected {
-	color:#999999;
+	font-style:italic;
+	color:#cc99ff;
 }
 
 .page form {
@@ -51,6 +53,7 @@ fieldset {
 	border:1px solid #ffffff;
 	-webkit-border-radius:5px;
 	-webkit-box-shadow:7px 7px 15px 6px #555;
+	background-color:#333;
 }
 
 .content li label {
@@ -60,15 +63,15 @@ fieldset {
 
 .content li input {
 	background:transparent;
-	border:2px solid transparent;
+	border:1px solid transparent;
 	color:#ffffff;
 	-webkit-border-radius:4px;
 }
 
 .content li input:hover {
-	background:#ddd;
-	color:#000000;
-	border:2px solid #999999;
+	background:#222;
+	color:#ffffff;
+	border:1px solid #ffffff;
 }
 
 #buttons input {
@@ -81,5 +84,5 @@ fieldset {
 }
 
 #buttons input:hover {
-	-webkit-box-shadow:3px 3px 3px 3px #555;
+	-webkit-box-shadow:0px 1px 1px 2px #cc99ff;
 }
