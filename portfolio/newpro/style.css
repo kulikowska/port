@@ -20,6 +20,7 @@ li {
 	float:left;
 	position:relative;
 	border-right:1px solid #555;
+	-webkit-box-shadow:1px 0px 0px 0px #cc99ff;
 	padding:15px 15px 15px 15px;
 	font-size:14px;
 }
@@ -33,7 +34,7 @@ li {
 	padding:2px 3px 2px 3px;
 }
 
-.content {
+.formcontent {
 	float:left;
 	width:400px;
 	padding:15px 15px 15px 15px;
@@ -56,19 +57,19 @@ fieldset {
 	background-color:#333;
 }
 
-.content li label {
+.formcontent li label {
 	float:left;
 	width:90px;
 }
 
-.content li input {
+.formcontent li input {
 	background:transparent;
 	border:1px solid transparent;
 	color:#ffffff;
 	-webkit-border-radius:4px;
 }
 
-.content li input:hover {
+.formcontent li input:hover {
 	background:#222;
 	color:#ffffff;
 	border:1px solid #ffffff;

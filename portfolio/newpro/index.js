@@ -20,7 +20,7 @@ var listO = { 'a' : {"position" : "Guitarist", "name" : "Robbie", "last" : "Robe
 $(document).ready( function() {
     console.log(localStorage);
     setMenu();
-	$('.content').hide();
+	$('.formcontent').hide();
 });
 
 function setMenu() {
@@ -34,10 +34,10 @@ function setMenu() {
     $('.menu').fadeIn(600);
 }
 
-var wrapper = 'form .content';
+var wrapper = 'form .formcontent';
 
 function musicianInfo(el){
-	$('.content').fadeIn(600);
+	$('.formcontent').fadeIn(600);
     console.log(el);
 	//$('.menu li').removeClass('selected');
 	$(el).parent().find('>li').removeClass('selected');
