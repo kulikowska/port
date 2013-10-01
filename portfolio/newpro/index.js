@@ -61,7 +61,7 @@ function clearfield(){
 
 function savefield(){
 	setTimeout( function() {
-	$('.saved').addClass('savebox')}, 200);
+	$('.saved').addClass('savebox')},1200);
 	var i = currentMusicianId;
 	var first=$(wrapper + ' [name="first"]').val();
 		list[i].name = first;
