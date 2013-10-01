@@ -94,6 +94,6 @@ function del() {
     setMenu();
 }
 
-function funkyStyle() {
-	$('#fields input').addClass('.funky');
+function funkyStyle(el) {
+	$(el).addClass('funky');
 }
