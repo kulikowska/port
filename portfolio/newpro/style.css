@@ -90,5 +90,17 @@ fieldset {
 
 .formcontent li input.funky {
 	background-color:#222;
-	color:blue;
+	border:1px solid #ffffff;
+	-webkit-box-shadow:0 0 0 0 #000;
+	outline:none;
+}
+
+.savebox {
+	position:absolute;
+	top:181px;
+	left:253px;
+	height:20px;
+	width:70px;
+	background-color:#333;
+	border:1px solid white;
 }

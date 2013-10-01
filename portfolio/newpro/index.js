@@ -38,6 +38,7 @@ var wrapper = 'form .formcontent';
 
 function musicianInfo(el){
 	$('.formcontent').fadeIn(600);
+	$('.formcontent #fields input').removeClass('funky');
     console.log(el);
 	//$('.menu li').removeClass('selected');
 	$(el).parent().find('>li').removeClass('selected');
@@ -51,6 +52,7 @@ function musicianInfo(el){
 }
 
 function clearfield(){
+	$('.formcontent #fields input').removeClass('funky');
 	$(wrapper + ' [name="position"]').val('');
 	$(wrapper + ' [name="first"]').val('');
 	$(wrapper + ' [name="last"]').val('');
@@ -58,6 +60,7 @@ function clearfield(){
 }
 
 function savefield(){
+	$('.saved').addClass('savebox');
 	var i = currentMusicianId;
 	var first=$(wrapper + ' [name="first"]').val();
 		list[i].name = first;
@@ -95,5 +98,6 @@ function del() {
 }
 
 function funkyStyle(el) {
+	$('.formcontent #fields input').removeClass('funky');
 	$(el).addClass('funky');
 }

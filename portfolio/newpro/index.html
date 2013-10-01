@@ -13,9 +13,9 @@
 		<div class="formcontent">
 			<div id="fields">
 				<li><label>Position:</label><input onClick='funkyStyle(this)' name='position' type='text' value='' /></li>
-				<li><label>First Name:</label><input name='first' type='text' value='' /></li>
-				<li><label>Last Name:</label><input name='last' type='text' value='' /></li>
-				<li><label>Email:</label><input name='email' type='text' value='' /></li>
+				<li><label>First Name:</label><input onClick='funkyStyle(this)' name='first' type='text' value='' /></li>
+				<li><label>Last Name:</label><input onClick='funkyStyle(this)' name='last' type='text' value='' /></li>
+				<li><label>Email:</label><input onClick='funkyStyle(this)' name='email' type='text' value='' /></li>
 			</div>
 			<div id="buttons">
 				<input onClick='savefield()' type="submit" value="Save" />
@@ -26,6 +26,8 @@
 			</div>
 				</fieldset>
 			</form>
+			<div class="saved">
+			</div>
 		</div>
 	</div>
 </html>
