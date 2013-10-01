@@ -11,10 +11,12 @@
 		<div class="menu"> 
 		</div>
 		<div class="formcontent">
-				<li><label>Position:</label><input name='position' type='text' value='' /></li>
+			<div id="fields">
+				<li><label>Position:</label><input onClick='funkyStyle()' name='position' type='text' value='' /></li>
 				<li><label>First Name:</label><input name='first' type='text' value='' /></li>
 				<li><label>Last Name:</label><input name='last' type='text' value='' /></li>
 				<li><label>Email:</label><input name='email' type='text' value='' /></li>
+			</div>
 			<div id="buttons">
 				<input onClick='savefield()' type="submit" value="Save" />
 				<input onClick='clearfield()' type="submit" value="Clear" />

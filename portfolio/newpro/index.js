@@ -93,3 +93,7 @@ function del() {
     clearfield();
     setMenu();
 }
+
+function funkyStyle() {
+	$('#fields input').addClass('.funky');
+}

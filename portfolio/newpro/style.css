@@ -87,3 +87,8 @@ fieldset {
 #buttons input:hover {
 	-webkit-box-shadow:0px 1px 1px 2px #cc99ff;
 }
+
+.funky {
+	background-color:#222;
+	color:blue;
+}
