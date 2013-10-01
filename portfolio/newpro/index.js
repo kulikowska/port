@@ -60,8 +60,10 @@ function clearfield(){
 }
 
 function savefield(){
+	$('.saved').addClass('savebox').hide().fadeIn(600);
 	setTimeout( function() {
-	$('.saved').addClass('savebox')},1200);
+	    $('.saved').addClass('savebox').fadeOut(800);
+    },1200);
 	var i = currentMusicianId;
 	var first=$(wrapper + ' [name="first"]').val();
 		list[i].name = first;
