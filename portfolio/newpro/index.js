@@ -63,7 +63,7 @@ function savefield(){
 	$('.saved').hide().addClass('savebox').fadeIn(600);
 	setTimeout( function() {
 	    $('.saved').addClass('savebox').fadeOut(800);
-    },1112000000);
+    },1200);
 	var i = currentMusicianId;
 	var first=$(wrapper + ' [name="first"]').val();
 		list[i].name = first;
