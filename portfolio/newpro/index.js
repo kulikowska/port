@@ -60,7 +60,8 @@ function clearfield(){
 }
 
 function savefield(){
-	$('.saved').addClass('savebox').hide().fadeIn(600);
+	$('.saved').hide();
+	$('.saved').addClass('savebox').fadeIn(600);
 	setTimeout( function() {
 	    $('.saved').addClass('savebox').fadeOut(800);
     },1200);
