@@ -12,6 +12,8 @@ li {
 .page {
 	width:580px;
 	height:auto;
+	position:fixed;
+	left:100px;
 	margin:0 auto;
 	padding:15px 15px 15px 15px;	
 }
@@ -96,11 +98,13 @@ fieldset {
 }
 
 .savebox {
-	position:absolute;
+	position:fixed;
 	top:181px;
-	left:253px;
+	left:238px;
 	height:20px;
 	width:70px;
 	background-color:#333;
 	border:1px solid white;
+	opacity:90%;
+	-webkit-border-radius:3px;
 }
