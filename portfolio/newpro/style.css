@@ -84,16 +84,17 @@ fieldset {
 	background-color:#222;
 	color:#ffffff;
 	border:1px solid #ddd;
+	outline:none;
 }
 
 #buttons input:hover {
-	-webkit-box-shadow:0px 1px 1px 2px #cc99ff;
+	-webkit-box-shadow:1px 1px 1px 1px #cc99ff;
 }
 
 .formcontent li input.funky {
 	background-color:#222;
 	border:1px solid #ffffff;
-	-webkit-box-shadow:0 0 0 0 #000;
+	-webkit-box-shadow:1px 1px 1px 1px #cc99ff;
 	outline:none;
 }
 
