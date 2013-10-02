@@ -100,12 +100,19 @@ fieldset {
 
 .savebox {
 	position:fixed;
-	top:181px;
-	left:238px;
-	height:20px;
-	width:70px;
-	background-color:#333;
-	border:1px solid white;
-	opacity:90%;
+	top:180px;
+	left:243px;
+	height:auto;
+	width:auto;
 	-webkit-border-radius:3px;
+	font-size:12px;
+	padding:3px 5px 3px 5px;
+	font-style:italic;
+}
+
+.addbox {
+	position:fixed;
+	top:180px;
+	left:333px;
+	font-size:12px;
 }

@@ -60,10 +60,10 @@ function clearfield(){
 }
 
 function savefield(){
-	$('.saved').hide().addClass('savebox').fadeIn(600);
+	$('.saved').hide().addClass('savebox').text('Saved').fadeIn(600);
 	setTimeout( function() {
 	    $('.saved').addClass('savebox').fadeOut(800);
-    },1200);
+    },120000);
 	var i = currentMusicianId;
 	var first=$(wrapper + ' [name="first"]').val();
 		list[i].name = first;
@@ -76,13 +76,16 @@ function savefield(){
 }
 
 function savefieldDfferent(){
-	
 	list[currentMusicianId].name  = $(wrapper + ' [name="first"]').val();
 	list[currentMusicianId].last  = $(wrapper + ' [name="last"]').val();
 	list[currentMusicianId].email = $(wrapper + ' [name="email"]').val();
 }
 
 function addfield (){
+	$('.saved').hide().addClass('addbox').text('Added').fadeIn(600);
+	setTimeout( function() {
+		$('.saved').addClass('addbox').fadeOut(800);
+	},120000);
 	var newList = {};
 	newList.position=$(wrapper + ' [name="position"]').val();
 	newList.name=$(wrapper + ' [name="first"]').val();
