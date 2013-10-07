@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script src='../../lib/js/jquery.js'></script>
+		<script src="index1.js"></script>
+	</head>
+	<div class="page">
+		<form action="javascript:false">
+			<fieldset>
+				<legend> Performers </legend>
+		<div class="menu"> 
+		</div>
+		<div class="formcontent">
+			<div id="fields">
+				<li><label>Position:</label><input onClick='FormActions.funkyStyle(this)' name='position' type='text' value='' /></li>
+				<li><label>First Name:</label><input onClick='FormActions.funkyStyle(this)' name='first' type='text' value='' /></li>
+				<li><label>Last Name:</label><input onClick='FormActions.funkyStyle(this)' name='last' type='text' value='' /></li>
+				<li><label>Email:</label><input onClick='FormActions.funkyStyle(this)' name='email' type='text' value='' /></li>
+			</div>
+			<div id="buttons">
+				<input onClick='FormActions.savefield()' type="submit" value="Save" />
+				<input onClick='FormActions.clearfield()' type="submit" value="Clear" />
+				<input onClick='FormActions.addfield()' type="submit" value="Add" />
+				<input onClick='FormActions.del()' type="submit" value="Del" />
+				<input onClick='localStorage.clear(); document.location=document.location;' type="submit" value="Clear Local Storage" />
+			</div>
+			<div class="saved">
+			</div>
+			<div class="added">
+			</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</html>
