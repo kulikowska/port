@@ -12,8 +12,7 @@ li {
 .page {
 	width:580px;
 	height:auto;
-	position:fixed;
-	left:100px;
+	position:relative;
 	margin:0 auto;
 	padding:15px 15px 15px 15px;	
 }
@@ -99,11 +98,7 @@ fieldset {
 }
 
 .savebox {
-	position:fixed;
-	top:180px;
-	left:243px;
-	height:auto;
-	width:auto;
+	position:relative;
 	-webkit-border-radius:3px;
 	font-size:12px;
 	padding:3px 5px 3px 5px;
@@ -111,9 +106,9 @@ fieldset {
 }
 
 .addbox {
-	position:fixed;
-	top:184px;
-	left:340px;
+	position:relative;
+	left:92px;
 	font-size:12px;
 	font-style:italic;
+	padding:3px 5px 3px 5px;
 }
