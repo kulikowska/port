@@ -54,7 +54,7 @@ function musicianInfo(el){
 function clearfield(){
 	$('.saved').hide();
 	$('.added').hide();
-	$('.cleared').addClass('clearbox').text('Cleared')
+	$('.cleared').addClass('clearbox').text('Cleared');
 
 	$('.formcontent #fields input').removeClass('funky');
 	$(wrapper + ' [name="position"]').val('');
@@ -94,6 +94,7 @@ function savefieldDfferent(){
 }
 
 function addfield (){
+	$('.cleared').hide();
     $('.saved').hide();
 	$('.added').addClass('addbox').text('Added').fadeIn(600);
 
