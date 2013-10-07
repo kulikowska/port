@@ -82,9 +82,9 @@ function savefieldDfferent(){
 }
 
 function addfield (){
-	$('.saved').hide().addClass('addbox').text('Added').fadeIn(600);
+	$('.added').hide().addClass('addbox').text('Added').fadeIn(600);
 	setTimeout( function() {
-		$('.saved').addClass('addbox').fadeOut(800);
+		$('.added').addClass('addbox').fadeOut(800);
 	},1200000);
 	var newList = {};
 	newList.position=$(wrapper + ' [name="position"]').val();
