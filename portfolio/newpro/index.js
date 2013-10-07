@@ -52,9 +52,8 @@ function musicianInfo(el){
 }
 
 function clearfield(){
-	$('.saved').hide();
-	$('.added').hide();
-	$('.cleared').addClass('clearbox').text('Cleared');
+	$('.notifications >*').hide();
+	$('.cleared').addClass('clearbox').text('Cleared').fadeIn(600);
 
 	$('.formcontent #fields input').removeClass('funky');
 	$(wrapper + ' [name="position"]').val('');
@@ -64,8 +63,7 @@ function clearfield(){
 }
 
 function savefield(){
-    $('.added').hide();
-	$('.cleared').hide();
+	$('.notifications >*').hide();
 	$('.saved').addClass('savebox').text('Saved').fadeIn(600);
 
 	var i = currentMusicianId;
@@ -109,6 +107,9 @@ function addfield (){
 }
 
 function del() {
+	$('notifications >*').hide();
+	$('.deleted').addClass('delbox').text('Deleted').fadeIn(600);
+
     delete list[currentMusicianId];
 	localStorage['musicianStorage'] = JSON.stringify(list);
     clearfield();
