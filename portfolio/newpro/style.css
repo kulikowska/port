@@ -99,6 +99,7 @@ fieldset {
 
 .savebox {
 	position:relative;
+	float:left;
 	-webkit-border-radius:3px;
 	font-size:12px;
 	padding:3px 5px 3px 5px;
@@ -107,6 +108,7 @@ fieldset {
 
 .addbox {
 	position:relative;
+	float:left;
 	left:92px;
 	font-size:12px;
 	font-style:italic;
