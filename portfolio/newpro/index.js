@@ -64,7 +64,8 @@ function savefield(){
 	$('.saved').addClass('savebox').text('Saved').fadeIn(600);
 
 	var i = currentMusicianId;
-	list[i].name = wrapper + ' [name="first"]').val();
+	
+	list[i].name = $(wrapper + ' [name="first"]').val();
 
 	var last=$(wrapper + ' [name="last"]').val();
 		list[i].last = last;
