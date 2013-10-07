@@ -60,10 +60,9 @@ function clearfield(){
 }
 
 function savefield(){
-	$('.added').hide().addClass('savebox').text('Saved').fadeIn(600);
-	setTimeout( function() {
-	    $('.added').addClass('savebox').fadeOut(800);
-    },1200000);
+    $('.added').hide();
+	$('.saved').addClass('savebox').text('Saved').fadeIn(600);
+
 	var i = currentMusicianId;
 	var first=$(wrapper + ' [name="first"]').val();
 		list[i].name = first;
@@ -82,10 +81,9 @@ function savefieldDfferent(){
 }
 
 function addfield (){
-	$('.added').hide().addClass('addbox').text('Added').fadeIn(600);
-	setTimeout( function() {
-		$('.added').addClass('addbox').fadeOut(800);
-	},1200000);
+    $('.saved').hide();
+	$('.added').addClass('addbox').text('Added').fadeIn(600);
+
 	var newList = {};
 	newList.position=$(wrapper + ' [name="position"]').val();
 	newList.name=$(wrapper + ' [name="first"]').val();
