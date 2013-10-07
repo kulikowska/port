@@ -74,11 +74,18 @@ function savefield(){
 	
 	localStorage['musicianStorage'] = JSON.stringify(list);
 }
+	
 
+var fields = ['position', 'first', 'last', 'email'];
 function savefieldDfferent(){
+    for (var i=1; i<fields.length; i++) {
+	    list[currentMusicianId].name  = $(wrapper + ' [name="' + fields[i] + '"]').val();
+    }
+    /*
 	list[currentMusicianId].name  = $(wrapper + ' [name="first"]').val();
 	list[currentMusicianId].last  = $(wrapper + ' [name="last"]').val();
 	list[currentMusicianId].email = $(wrapper + ' [name="email"]').val();
+    */
 }
 
 function addfield (){
