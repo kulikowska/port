@@ -52,6 +52,10 @@ function musicianInfo(el){
 }
 
 function clearfield(){
+	$('.saved').hide();
+	$('.added').hide();
+	$('.cleared').addClass('clearbox').text('Cleared')
+
 	$('.formcontent #fields input').removeClass('funky');
 	$(wrapper + ' [name="position"]').val('');
 	$(wrapper + ' [name="first"]').val('');
@@ -61,6 +65,7 @@ function clearfield(){
 
 function savefield(){
     $('.added').hide();
+	$('.cleared').hide();
 	$('.saved').addClass('savebox').text('Saved').fadeIn(600);
 
 	var i = currentMusicianId;
