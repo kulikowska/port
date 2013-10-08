@@ -1,0 +1,20 @@
+body {
+	background:#a5bcf0;
+}
+
+.container {
+	margin:0 auto;
+	border:3px solid #4264b3;
+	width:300px;
+	height:400px;
+	padding:8px 5px 8px 5px;
+	color:#193880;
+	font-family:"Helvetica";
+	text-align:center;
+	font-size:14px;
+}
+
+p {
+	text-align:center;
+	font-size:18px;
+}
