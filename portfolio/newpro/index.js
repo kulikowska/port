@@ -51,13 +51,17 @@ function musicianInfo(el){
 	$(wrapper + ' [name="email"]').val(list[i].email);
 }
 
-function clearfield(){
+function clearfield(dontClear){
 	$('.formcontent #fields input').removeClass('funky');
-	$(wrapper + ' [name="position"]').val('');
-	$(wrapper + ' [name="first"]').val('');
-	$(wrapper + ' [name="last"]').val('');
-	$(wrapper + ' [name="email"]').val('');
+
+    function doClearing() {
+        $(wrapper + ' [name="position"]').val('');
+        $(wrapper + ' [name="first"]').val('');
+        $(wrapper + ' [name="last"]').val('');
+        $(wrapper + ' [name="email"]').val('');
+    }
 	
+    if (typeof dontClear === 'undefined') doClearing();
 }
 
 function clearnotify(){

@@ -21,11 +21,13 @@ $(document).ready( function() {
     console.log(localStorage);
     FormActions.setMenu();
 	$('.formcontent').hide();
+
+    FormActions.simpleTest();
 });
 
 
 var FormActions = {
-    'fields' : ['position', 'first', 'last', 'email'],
+    'fields'  : ['position', 'first', 'last', 'email'],
     'wrapper' : 'form .formcontent',
 
     'iterator' : function(cb, start) {
@@ -34,6 +36,14 @@ var FormActions = {
         for (var i=start; i<this.fields.length; i++) {
             cb(this.fields[i]);
         }
+    },
+
+    'simpleTest' : function() {
+        console.log( 'Called iterator with two arguments (function() {...}, 2)' );
+        this.iterator(function(field) { console.log(field); }, 2);
+
+        console.log( 'Called iterator with one artument (function() {...})' );
+        this.iterator(function(field) { console.log(field); });
     },
 
     'setMenu' : function() {
@@ -97,11 +107,6 @@ var FormActions = {
         for (var i=1; i<fields.length; i++) {
             list[currentMusicianId].name  = $(this.wrapper + ' [name="' + this.fields[i] + '"]').val();
         }
-        /*
-        list[currentMusicianId].name  = $(this.wrapper + ' [name="first"]').val();
-        list[currentMusicianId].last  = $(this.wrapper + ' [name="last"]').val();
-        list[currentMusicianId].email = $(this.wrapper + ' [name="email"]').val();
-        */
     },
 
     'addfield' : function() {
