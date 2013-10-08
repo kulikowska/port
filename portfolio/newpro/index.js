@@ -52,14 +52,19 @@ function musicianInfo(el){
 }
 
 function clearfield(){
-	$('.notifications >*').hide();
-	$('.cleared').addClass('clearbox').text('Cleared').fadeIn(600);
-
 	$('.formcontent #fields input').removeClass('funky');
 	$(wrapper + ' [name="position"]').val('');
 	$(wrapper + ' [name="first"]').val('');
 	$(wrapper + ' [name="last"]').val('');
 	$(wrapper + ' [name="email"]').val('');
+	
+}
+
+function clearnotify(){
+	$('.notifications >*').hide();
+	$('.cleared').addClass('clearbox').text('Cleared').fadeIn(600);
+
+	clearfield();
 }
 
 function savefield(){
@@ -69,11 +74,8 @@ function savefield(){
 	var i = currentMusicianId;
 	
 	list[i].name = $(wrapper + ' [name="first"]').val();
-
-	var last=$(wrapper + ' [name="last"]').val();
-		list[i].last = last;
-	var email=$(wrapper + ' [name="email"]').val();
-		list[i].email = email;
+	list[i].last = $(wrapper + ' [name="last"]').val();
+	list[i].email = $(wrapper + ' [name="email"]').val();
 	
 	localStorage['musicianStorage'] = JSON.stringify(list);
 }
@@ -92,8 +94,7 @@ function savefieldDfferent(){
 }
 
 function addfield (){
-	$('.cleared').hide();
-    $('.saved').hide();
+	$('.notifications >*').hide();
 	$('.added').addClass('addbox').text('Added').fadeIn(600);
 
 	var newList = {};
@@ -107,7 +108,7 @@ function addfield (){
 }
 
 function del() {
-	$('notifications >*').hide();
+	$('.notifications >*').hide();
 	$('.deleted').addClass('delbox').text('Deleted').fadeIn(600);
 
     delete list[currentMusicianId];
