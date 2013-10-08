@@ -12,6 +12,5 @@ var Actions = {
 				allLi[i].hide();
 			}
 		}
-	}
     }
 }
