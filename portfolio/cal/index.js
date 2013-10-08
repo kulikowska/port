@@ -1,7 +1,8 @@
 var Actions = {
+    'container' : '.container ul',
     'addToList' : function() {
         var item = $('[name="task"]').val();
-        $('.container ul').append("<li>" + item + "<input type='checkbox' name='done'>" +  "</li>");
+        $(this.container).append("<li>" + item + "<input type='checkbox' name='done'>" +  "</li>");
     },
     'removeTask()' : function() {
     }
