@@ -7,6 +7,7 @@ var Actions = {
     },
     'removeTask' : function() {
 		var allLi = $(this.container).find('li');
+
 		for (var i=0; i<allLi.length; i++){
 		    if ($(allLi[i]).find('[type="checkbox"]').is(':checked')){
 				$(allLi[i]).hide();
