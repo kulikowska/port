@@ -54,7 +54,7 @@ function musicianInfo(el){
 function clearfield(dontClear){
 	$('.formcontent #fields input').removeClass('funky');
 
-    var doClearing function() {
+    var doClearing = function() {
         $(wrapper + ' [name="position"]').val('');
         $(wrapper + ' [name="first"]').val('');
         $(wrapper + ' [name="last"]').val('');
