@@ -5,6 +5,6 @@ var Actions = {
         $(this.container).append("<li>" + item + "<input type='checkbox' name='done'>" +  "</li>");
         //$(Actions.container).append("<li>" + item + "<input type='checkbox' name='done'>" +  "</li>");
     },
-    'removeTask()' : function() {
+    'removeTask' : function() {
     }
 }
