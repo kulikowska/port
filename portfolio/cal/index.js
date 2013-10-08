@@ -6,5 +6,12 @@ var Actions = {
         //$(Actions.container).append("<li>" + item + "<input type='checkbox' name='done'>" +  "</li>");
     },
     'removeTask' : function() {
+		var allLi = $(this.container);
+			for (var i=0; i<allLi.length; i++){
+				if ($('.container li ').is(':checked')){
+				allLi[i].hide;
+			}
+		}
+	}
     }
 }
