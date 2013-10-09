@@ -11,8 +11,6 @@ var Actions = {
 		for (var i=0; i<allLi.length; i++){
 		    if ($(allLi[i]).find('[type="checkbox"]').is(':checked')){
 				$(allLi[i]).hide();
-		
-		localStorage['todoStorage'] = JSON.stringify(allLi);
 			}
 		}
     }
