@@ -1,9 +1,10 @@
 body {
 	background-color:#222;
+	font-family:"courier";
 }
 
 .wrapper {
-	width:600px;
+	width:700px;
 	height:auto;
 	position:relative;
 	margin:0 auto;
