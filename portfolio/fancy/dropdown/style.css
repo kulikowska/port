@@ -76,8 +76,6 @@ nav ul ul li {
 nav ul ul li a {
 	padding: 15px 40px;
 	color:#fff;
-	transition:width 2s height 2s;
-	-webkit-transition:width 2s height 2s;
 }
 
 nav ul ul li a:hover {
