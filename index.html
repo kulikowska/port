@@ -12,13 +12,18 @@
 		color    : red;
 		position : relative;
 		float    : left;
-		width    : 120px;
+		width    : 150px;
 		border   : 3px solid #ddd;
-		font-size:2em;
+		font-size: 1.2em;
 		padding: 10px 5px 1px  20px;
 		margin: 0 0 0 4px;
 		-webkit-border-radius: 15px;
 	}
+
+    div.leftDiv div.links a{
+        float:left;
+        clear:both;
+    }
 
 	#d1 {
 		font-size:2em;
@@ -71,7 +76,15 @@
 </script>
 
 <body>
-	<div class='leftDiv'>another</div>
+	<div class='leftDiv'>
+        <h3>Projects</h3>
+        <div class='links'>
+            <a href='portfolio/fancy/dropdown/index.html'>Fancy Dropdown</a>
+            <a href='portfolio/newpro/index.html'>Loc Storage Form</a>
+            <a href='portfolio/cal/index.html'>Cal</a>
+            <a href='portfolio/trinity/index.html'>Trinity</a>
+        </div>
+    </div>
 	<div class='leftDiv'>here</div>
 
 	<div id='d1'> d1 content </div>
