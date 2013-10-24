@@ -9,7 +9,7 @@ var Actions = {
     'removeTask' : function() {
 		var allLi = $(this.container).find('li');
 		
-		var storeObj = {};
+		var storeObj = [];
 
 		for (var i=0; i<allLi.length; i++){
 		    if ($(allLi[i]).find('[type="checkbox"]').is(':checked')) {
@@ -33,11 +33,16 @@ var Actions = {
                 //
                 // Yeah, this one takes a little time to digest and in order to really understand it, you need to use it/experiment with it
                 // But once you play with it a bit it becomes quite simple actually.
-                storeObj[i] = allLi[i].outerHTML;
-
-                 // ready to save in local storage
-				 console.log([ storeObj] );
+                storeObj.push( allLi[i].outerHTML ); // .push() method of array storeObj adds its argument to the end of an array
 			}
 		}
+        localStorage['calElements'] = JSON.stringify(storeObj);
     }
 }
+$('document').ready( function() {
+    var allLi = JSON.parse(localStorage['calElements']);
+
+    for (var i=0;i< allLi.length; i++) {
+        $('.container ul').append(allLi[i]);
+    }
+});
