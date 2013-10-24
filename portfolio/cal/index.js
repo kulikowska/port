@@ -36,7 +36,7 @@ var Actions = {
                 storeObj[i] = allLi[i].outerHTML;
 
                  // ready to save in local storage
-				 console.log([ storeObj] );
+				 console.log([ storeObj]);
 			}
 		}
     }
