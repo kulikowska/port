@@ -12,10 +12,13 @@ var Actions = {
 		var storeObj = {}
 
 		for (var i=0; i<allLi.length; i++){
-		    if ($(allLi[i]).find('[type="checkbox"]').is(':checked')){
+		    if ($(allLi[i]).find('[type="checkbox"]').is(':checked')) {
 				$(allLi[i]).hide();
-			else $(allLi[i]).html(); 
-				 console.log $(allLi[i]).html();
+			} else { 
+                storeObj[i] = allLi[i].outerHTML;
+
+                 // ready to save in local storage
+				 console.log([ storeObj] );
 			}
 		}
     }
