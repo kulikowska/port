@@ -19,7 +19,12 @@ p {
 	font-size:18px;
 }
 
-.makeblue {
-	color:blue;
+.experiments {
+	border:3px solid #4264b3;
+	width:300px;
+	height:auto;
+	padding:10px 10px 10px 10px;
+	text-align:center;
+	font-size:14px;
+	margin:0 auto;
 }
-
