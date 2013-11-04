@@ -6,7 +6,7 @@ var i;
 var j;
 	for (i=0; i<vheight; i++) {
 		for (j=0; j<hwidth; j++) {
-			document.write("<img src='http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Red-icon.png'/>");
+			document.write("<img src='white.png'/>");
 			}
 		document.write("<br/>");
 	}
@@ -26,11 +26,11 @@ var blockformulas = [
 var blockimages = [
 	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Yellow-icon.png",
 	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Green-icon.png",
-	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Blue-icon.png",
+	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Red-icon.png",
+	"turquoise.png",
 	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Gray-icon.png",
-	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Yellow-icon.png",
-	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Green-icon.png",
-	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Blue-icon.png",
+	"pink.png",
+	"purple.png",
 	];
 
 function imagenumber(atcol, atrow) {
