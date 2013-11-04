@@ -1,0 +1,46 @@
+body {
+	background:#A60000;
+	color:#FF7373;
+	font-family:'georgia';
+	font-size:16px;
+}
+
+p {
+	font-size:24px;
+	text-align:center;
+	font-weight:bold;
+}
+
+.wrapper {
+	margin:0 auto;
+	height:auto;
+	width:606px;
+}
+
+.game {
+	width:350px;
+	height:500px;
+	float:left;
+	border:2px solid #ff4040;
+	margin:10px 0px 10px 10px;
+	padding:10px 10px 10px 10px;
+	background:#BF3030;
+}
+
+ul {
+	list-style:none;
+}
+
+.controls {
+	width:200px;
+	height:500px;
+	float:left;
+	border: 2px solid #ff4040;
+	border-left:none;
+	margin:10px 0px 10px 0px;
+	padding:10px 10px 10px 10px;
+}
+
+.buttonWrap {
+	text-align:center;
+}
