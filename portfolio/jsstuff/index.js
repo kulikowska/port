@@ -21,6 +21,5 @@ function makeblack(el) {
 function original(el) {
 	if ( $(el).hasClass('black') && $('.content').hasClass('white')) {
 		$(el).removeClass('black').text('next up');
-		$('.content').removeClass('white').text('stuff');
 	} 
 }
