@@ -6,7 +6,7 @@ var i;
 var j;
 	for (i=0; i<vheight; i++) {
 		for (j=0; j<hwidth; j++) {
-			document.write("<img src='http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/32/folder-blank-icon.png'/>");
+			document.write("<img src='http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Red-icon.png'/>");
 			}
 		document.write("<br/>");
 	}
@@ -31,7 +31,6 @@ var blockimages = [
 	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Yellow-icon.png",
 	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Green-icon.png",
 	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Blue-icon.png",
-
 	];
 
 function imagenumber(atcol, atrow) {
