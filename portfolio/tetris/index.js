@@ -6,7 +6,7 @@ var i;
 var j;
 	for (i=0; i<vheight; i++) {
 		for (j=0; j<hwidth; j++) {
-			document.write("<img src='http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Red-icon.png'/>");
+			document.write("<img src='http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/32/folder-blank-icon.png'/>");
 			}
 		document.write("<br/>");
 	}
@@ -15,12 +15,23 @@ var j;
 
 var blockformulas = [
 					[[0,0], [1,0], [2,0], [1,1]],  	// T shape
-					[[0,0], [1,0], [2,0], [3,0]] 	//
+					[[0,0], [1,0], [2,0], [3,0]], 	// Straight
+					[[0,1], [1,1], [1,0], [2,0]],
+					[[0,0], [1,0], [0,1], [1,1]],
+					[[0,0], [1,0], [1,1], [2,1]],
+					[[0,0], [1,0], [2,0], [2,1]],
+					[[0,1], [1,1], [2,1], [2,0]]
 					];
 
 var blockimages = [
 	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Yellow-icon.png",
-	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Green-icon.png"
+	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Green-icon.png",
+	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Blue-icon.png",
+	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Gray-icon.png",
+	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Yellow-icon.png",
+	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Green-icon.png",
+	"http://icons.iconarchive.com/icons/deleket/soft-scraps/32/Button-Blank-Blue-icon.png",
+
 	];
 
 function imagenumber(atcol, atrow) {
@@ -37,6 +48,6 @@ function makeblock(type, atcol, atrow) {
 			imagenum=imagenumber(atcol+formula[i][0], atrow+formula[i][1]);
 				document.images[imagenum].src = block;
 			}
-		alert("end of makeblock");
 	}
+
 
