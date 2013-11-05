@@ -23,6 +23,10 @@
 				<div class="buttonwrap">
 					<input type='button' value='Start' />
 					<input type='button' value='Pause' />
+					<input type='button' onClick='moveover(-1);' value='Left' />
+					<input type='button' onClick='moveover(1);' value='Right' />
+					<input type='button' onClick='rotate();' value='Rotate' />
+				    <input onClick='localStorage.clear(); document.location=document.location;' type="submit" value='Refresh' />
 				</div>
 				<div id="keycontrols">
 					<ul>
