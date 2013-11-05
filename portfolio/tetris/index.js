@@ -57,8 +57,8 @@ function makeblock(type, atcol, atrow) {
 			current[i][0]=imagenum;
 			current[i][1] = atc;
 			current[i][2] = atr;
-			}
-	}
+		}
+}
 
 var orientations = [
 	[
