@@ -1,14 +1,14 @@
 body {
-	background-color:#222;
+	background-image:url('http://static2.grsites.com/archive/textures/dblue/dblue051.jpg');
 	font-family:"courier";
 }
 
 .wrapper {
-	width:682px;
+	width:882px;
 	height:auto;
 	position:relative;
 	margin:0 auto;
-	margin-top:50px;
+	margin-top:20px;
 }
 
 nav ul ul {
@@ -32,7 +32,7 @@ nav ul {
 	background:linear-gradient(top, #412c84 0%, #876ed7 100%);
 	background:-mox-linear-gradient(top, #3914af 0%, #876ed7 100%);
 	background:-webkit-linear-gradient(top, #412c84 0%, #876ed7 100%);
-	padding:0 20px;
+	padding:0 30px;
 	border-radius:10px;
 	list-style:none;
 	position:relative;
@@ -98,7 +98,6 @@ nav ul ul ul {
 }
 
 .content {
-	width:90%;
 	height:auto;
 	padding:15px 15px 15px 15px;
 	background-color:#444;
@@ -109,6 +108,7 @@ nav ul ul ul {
 }
 
 .new3 {
+	visibility:hidden;
 	color:#fff;
 	width:140px;
 	height:140px;
@@ -130,6 +130,7 @@ nav ul ul ul {
 }
 
 .checkbox {
+	visibility:hidden;
 	margin-top:15px;
 }
 
@@ -172,4 +173,60 @@ input[type=checkbox]:checked + label:before {
 	font-size:15px;
 	text-align:center;
 	line-height:15px;
+}
+
+.container {
+	background:#111;
+	border:1px solid #333;
+	padding:0px 10px 10px 10px;
+	border-radius:10px;
+	opacity:.95;
+	height:auto;
+}
+
+.circles {
+	max-height:70px;
+	width:300px;
+	float:left;
+}
+
+.circles1 {
+	height:70px;
+	width:300px;
+	float:right;
+	z-index:450;
+}
+
+p {
+	text-align:center;
+	font-size:42px;
+	font-weight:bold;
+	color:white;
+	margin-top:10px;
+}
+
+#nightsky {
+	border:5px solid black;
+	width:80%;
+	height:35%;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.text {
+	font-size:12px;
+	color:white;
+	text-align:center;
+}
+
+h {
+	font-size:30px;
+}
+
+#text1 {
+	margin-top:-25px;
+	margin-bottom:20px;
+	font-style:italic;
+	padding:0px 60px 0px 60px;
 }
