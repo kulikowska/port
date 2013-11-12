@@ -1,0 +1,25 @@
+body {
+  background: purple;
+  color: #5b83ad;
+}
+.divpro {
+  border: 1px dotted white;
+  height: 200px;
+  width: 200px;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+}
+.box1 {
+  border: 1px dotted white;
+  height: 200px;
+  width: 200px;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+}
+.box2 {
+  border: 1px dotted white;
+  height: 200px;
+  width: 200px;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+}
