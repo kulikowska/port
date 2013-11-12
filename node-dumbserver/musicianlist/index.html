@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<div class="page">
+		<form action="javascript:false">
+			<fieldset>
+				<legend> Performers </legend>
+		<div class="menu"> 
+		</div>
+		<div class="formcontent">
+			<div id="fields">
+				<li><label>Position:</label><input onClick='funkyStyle(this)' name='position' type='text' value='' /></li>
+				<li><label>First Name:</label><input onClick='funkyStyle(this)' name='first' type='text' value='' /></li>
+				<li><label>Last Name:</label><input onClick='funkyStyle(this)' name='last' type='text' value='' /></li>
+				<li><label>Email:</label><input onClick='funkyStyle(this)' name='email' type='text' value='' /></li>
+			</div>
+			<div id="buttons">
+				<input onClick='savefield()' type="submit" value="Save" />
+				<input onClick='clearnotify()' type="submit" value="Clear" />
+				<input onClick='addfield()' type="submit" value="Add" />
+				<input onClick='del()' type="submit" value="Del" />
+				<input onClick='localStorage.clear(); document.location=document.location;' type="submit" value="Clear Local Storage" />
+			</div>
+			<div class="notifications">
+				<div class="saved">
+				</div>
+				<div class="cleared">
+				</div>
+				<div class="added">
+				</div>
+				<div class="deleted">
+				</div>
+			</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</html>
+
+

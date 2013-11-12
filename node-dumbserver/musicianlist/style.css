@@ -1,0 +1,134 @@
+body {
+	color:#ffffff;
+	font-family:'georgia';
+	background-color:#222;
+}
+
+li {
+	text-decoration:none;
+	list-style-type:none;
+}
+
+.page {
+	width:580px;
+	height:auto;
+	position:relative;
+	margin:0 auto;
+	padding:15px 15px 15px 15px;	
+}
+
+.menu {
+	float:left;
+	position:relative;
+	border-right:1px solid #555;
+	-webkit-box-shadow:1px 0px 0px 0px #cc99ff;
+	padding:15px 15px 15px 15px;
+	font-size:14px;
+}
+
+.menu li:hover {
+	color:#cc99ff;
+}
+
+.menu li {
+	cursor:pointer;
+	padding:2px 3px 2px 3px;
+}
+
+.formcontent {
+	float:left;
+	width:400px;
+	padding:15px 15px 15px 15px;
+	font-size:14px;
+}
+
+.selected {
+	font-style:italic;
+	color:#cc99ff;
+}
+
+.page form {
+	-wekbit-border-radius:4px;
+}
+
+fieldset {
+	border:1px solid #ffffff;
+	-webkit-border-radius:5px;
+	-webkit-box-shadow:7px 7px 15px 6px #555;
+	background-color:#333;
+}
+
+.formcontent li label {
+	float:left;
+	width:90px;
+}
+
+.formcontent li input {
+	background:transparent;
+	border:1px solid transparent;
+	color:#ffffff;
+	-webkit-border-radius:4px;
+}
+
+.formcontent li input:hover {
+	background:#222;
+	color:#ffffff;
+	border:1px solid #ffffff;
+}
+
+#buttons input {
+	margin-top:10px;
+	-webkit-border-radius:3px;
+	-webkit-box-shadow:1px 2px 2px 3px #444;
+	background-color:#222;
+	color:#ffffff;
+	border:1px solid #ddd;
+	outline:none;
+}
+
+#buttons input:hover {
+	-webkit-box-shadow:1px 1px 1px 1px #cc99ff;
+}
+
+.formcontent li input.funky {
+	background-color:#222;
+	border:1px solid #ffffff;
+	-webkit-box-shadow:1px 1px 1px 1px #cc99ff;
+	outline:none;
+}
+
+.savebox {
+	position:relative;
+	float:left;
+	-webkit-border-radius:3px;
+	font-size:12px;
+	padding:3px 5px 3px 5px;
+	font-style:italic;
+}
+
+.addbox {
+	position:relative;
+	float:left;
+	left:92px;
+	font-size:12px;
+	font-style:italic;
+	padding:3px 5px 3px 5px;
+}
+
+.clearbox {
+	position:relative;
+	float:left;
+	left:43px;
+	font-size:12px;
+	font-style:italic;
+	padding:3px 5px 3px 5px;
+}
+
+.delbox {
+	position:relative;
+	float:left;
+	left:132px;
+	font-size:12px;
+	font-style:italic;
+	padding:3px 5px 3px 5px;
+}
