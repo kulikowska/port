@@ -1,0 +1,32 @@
+body {
+	background:purple;
+}
+
+.container {
+	margin:0 auto;
+	width:500px;
+	margin-top:20px;
+}
+
+.picsize {
+	height:257px;
+	width:500px;
+}
+
+#slideshow #slideshowWindow {
+	width:500px;
+	height:257px;
+	margin:0;
+	padding:0;
+	position:relative;
+	overflow:hidden;
+}
+
+#slideshow #slideshowWindow .slide {
+	margin:0;
+	padding:0;
+	width:500px;
+	height:257px;
+	float:left;
+	position:relative;
+}

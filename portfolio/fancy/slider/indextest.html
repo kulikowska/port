@@ -1,0 +1,92 @@
+<html>
+	<div id="slideshow">
+		<div id="slideshowWindow">
+
+	<div class="slide">
+		 <img class="picsize" src="http://www.significancemagazine.org/SpringboardWebApp/userfiles/sig/image/ChampkinUploads/Peacock_butterfly_on_buddleja_davidii.jpg">
+</div><!--/slide-->
+
+<div class="slide">
+	        <img class="picsize" src="http://images4.fanpop.com/image/photos/17300000/Pink-Butterfly-butterflies-17382724-1024-768.jpg">
+</div><!--/slide-->
+
+<div class="slide">
+                <img class="picsize" src="http://www.si.edu/Encyclopedia_SI/nmnh/buginfo/bfly02.gif">
+</div><!--/slide-->
+
+</div><!--/slideshowWindow-->
+</div><!--/slideshow-->
+</html>
+
+<style>
+
+body {
+	background:purple;
+}
+
+.picsize {
+	height:257px;
+	width:500px;
+}
+
+#slideshow #slideshowWindow {
+width:500px;
+height:257px;
+margin:0;
+padding:0;
+position:relative;
+overflow:hidden;
+}
+
+#slideshow #slideshowWindow .slide {
+margin:0;
+padding:0;
+width:500px; 
+height:257px;
+float:left;
+position:relative;
+}
+
+</style>
+
+
+
+<script src='../../../lib/js/jquery.js'></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+var currentPosition = 0;
+var slideWidth = 500;
+var slides = $('.slide');
+var numberOfSlides = slides.length;
+var slideShowInterval;
+var speed = 3000;
+
+
+slideShowInterval = setInterval(changePosition, speed);
+
+slides.wrapAll('<div id="slidesHolder"></div>')
+
+slides.css({ 'float' : 'left' });
+
+$('#slidesHolder').css('width', slideWidth * numberOfSlides);
+
+
+function changePosition() {
+if(currentPosition == numberOfSlides - 1) {
+currentPosition = 0;
+} else {
+currentPosition++;
+}
+moveSlide();
+}
+
+
+function moveSlide() {
+$('#slidesHolder')
+.animate({'marginLeft' : slideWidth*(-currentPosition)});
+}
+
+});
+</script>
