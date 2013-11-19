@@ -1,5 +1,6 @@
 body {
 	background:purple;
+	font-size:12px;
 }
 
 .container {
@@ -31,17 +32,28 @@ body {
 }
 
 #slideshow #slideshowWindow .slide .slideText {
+	position:absolute;
 	margin:0;
 	padding:0;
 	width:100%;
 	height:130px;
-	float:left;
-	position:absolute;
 	top:130px;
 	left:0px;
 	color:#ffffff;
-	background-image:url(grey.png);
+	background-image:url(greyBg.png);
 	background-repeat:repeat;
+	font-family:Myriad Pro, Arial, Helvetica, sans-serif;
 }
 
+#slideshow #slideshowWindow .slide .slideText a:link, 
+#slideshow #slideshowWindow .slide .slideText a:visited {
+	color:#ffffff;
+	text-decoration:none;
+}
+
+#slideshow #slideshowWindow .slide .slideText h2, 
+#slideshow #slideshowWindow .slide .slideText p {
+	margin:10px 0 0 10px;
+	padding:0;
+}
 
