@@ -15,6 +15,10 @@ $(document).ready(function() {
 	
 	$('#slidesHolder').css('width', slideWidth * numberOfSlides);
 
+	$('#slideshow')
+		.prepend('<span class="nav" id="leftNav">Move Left</span>')
+		.append('<span class="nav" id="rightNav">Move Right</span>');
+
 	function changePosition() {
 		if(currentPosition == numberOfSlides - 1) {
 			currentPosition = 0;
