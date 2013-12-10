@@ -65,7 +65,6 @@ body {
 }
 
 #leftNav {
-	float:left;
 	top:-40px;
 	left:330px;
 	width:94px;
@@ -76,7 +75,6 @@ body {
 }
 
 #rightNav {
-	float:left;
 	top:-40px;
 	left:430px;
 	width:54px;

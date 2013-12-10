@@ -16,7 +16,7 @@ $(document).ready(function() {
 	
 	$('#slidesHolder').css('width', slideWidth * numberOfSlides);
 
-	$('#slideshow')
+	$('.slideshowWindow')
 		.append('<span class="nav" id="leftNav">Move Left</span>')
 		.append('<span class="nav" id="rightNav">Move Right</span>');
 
@@ -44,7 +44,6 @@ $(document).ready(function() {
 		if(position==numberOfSlides-1){ $('#rightNav').hide() }
 		else { $('#rightNav').show() }
 	}
-
 
 	$('.nav').bind('click', function() {
 		currentPosition = ($(this).attr('id')=='rightNav')
