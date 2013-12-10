@@ -7,6 +7,7 @@ $(document).ready(function() {
 	var slideShowInterval;
 	var speed = 3000;
 
+	//Timer
 	slideShowInterval = setInterval(changePosition, speed);
 
 	slides.wrapAll('<div id="slidesHolder"></div>')
@@ -16,14 +17,18 @@ $(document).ready(function() {
 	$('#slidesHolder').css('width', slideWidth * numberOfSlides);
 
 	$('#slideshow')
-		.prepend('<span class="nav" id="leftNav">Move Left</span>')
+		.append('<span class="nav" id="leftNav">Move Left</span>')
 		.append('<span class="nav" id="rightNav">Move Right</span>');
+
+	manageNav(currentPosition);
 
 	function changePosition() {
 		if(currentPosition == numberOfSlides - 1) {
 			currentPosition = 0;
+			manageNav(currentPosition); 
 		} else {
 			currentPosition++;
+			manageNav(currentPosition);
 		}
 		moveSlide();
 	}
@@ -31,4 +36,22 @@ $(document).ready(function() {
 	function moveSlide() {
 		$('#slidesHolder').animate({'marginLeft' : slideWidth*(-currentPosition)});
 	}
+
+	function manageNav(position) {
+		if(position==0){ $('#leftNav').hide() }
+		else { $('#leftNav').show() }
+
+		if(position==numberOfSlides-1){ $('#rightNav').hide() }
+		else { $('#rightNav').show() }
+	}
+
+
+	$('.nav').bind('click', function() {
+		currentPosition = ($(this).attr('id')=='rightNav')
+		? currentPosition+1 : currentPosition-1;
+
+		manageNav(currentPosition);
+		clearInterval(slideShowInterval);
+		slideSHowInterval = setInterval(changePosition, speed);
+		moveSlide();
 });

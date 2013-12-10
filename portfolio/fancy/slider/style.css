@@ -60,16 +60,28 @@ body {
 .nav {
 	display:block;
 	text-indent:-10000px;
-	position:absolute;
+	position:relative;
 	cursor:pointer;
 }
 
 #leftNav {
-	top:223;
-	left:780px;
+	float:left;
+	top:-40px;
+	left:330px;
 	width:94px;
 	height:34px;
 	background-image:url(previous.png);
+	background-repeat:no-repeat;
+	z-index:999;
+}
+
+#rightNav {
+	float:left;
+	top:-40px;
+	left:430px;
+	width:54px;
+	height:26px;
+	background-image:url(next.png);
 	background-repeat:no-repeat;
 	z-index:999;
 }
