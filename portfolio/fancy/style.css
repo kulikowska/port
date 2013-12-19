@@ -1,5 +1,5 @@
 body {
-  background: #777;
+  background: #540;
   font-family: cursive;
 }
 .headercontainer {
@@ -93,4 +93,10 @@ body {
   margin-left: -108px;
   font-size: 12px;
   display: none;
+}
+.more {
+  display: none;
+}
+.content a {
+  cursor: pointer;
 }

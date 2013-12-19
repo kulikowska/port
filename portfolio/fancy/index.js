@@ -1,3 +1,7 @@
-$( '#dl-menu' ).dlmenu({
-    animationClasses : { classin : 'animation-class-name', classout : 'animation-class-name' }
-	});
+function expand() {
+	$('.more').fadeIn(600);
+}
+
+function reduce() {
+	$('.more').fadeOut(600);
+}
