@@ -16,8 +16,9 @@ body {
 .h2text {
   float: left;
   font-size: 18px;
-  color: purple;
+  color: #3b238e;
   padding-top: 20px;
+  font-weight: bold;
 }
 .menu {
   float: left;
@@ -46,7 +47,7 @@ body {
   transition: all .4s ease;
 }
 .menu ul li a:hover {
-  color: purple;
+  color: #3b238e;
 }
 .content {
   float: left;
