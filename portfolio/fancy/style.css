@@ -1,60 +1,96 @@
 body {
-	background:111;
-	font-family:cursive;
+  background: #777;
+  font-family: cursive;
 }
-
 .headercontainer {
-	margin:0 auto;
-	width:900px;
+  margin: 0 auto;
+  width: 900px;
 }
-
 .header {
-	font-size:38px;
-	margin-left:50px;
+  font-size: 38px;
+  margin-left: 50px;
 }
-
 .h1text {
-	float:left
+  float: left;
 }
-
 .h2text {
-	float:left;
-	font-size:18px;
-	color:purple;
-	padding-top:20px;
+  float: left;
+  font-size: 18px;
+  color: purple;
+  padding-top: 20px;
 }
-
 .menu {
-	float:left;
-	width:103%;
-	height:50px;
-	background-color:#222;
-	border:2px solid #555;
-	margin-left:-25px;
-	margin-bottom:20px;
+  float: left;
+  width: 103%;
+  height: 57px;
+  background-color: #222;
+  border: 2px solid #555;
+  margin-left: -25px;
+  margin-bottom: 20px;
 }
-
+.menu ul {
+  list-style: none;
+  color: #fff;
+  margin-left: 221px;
+  font-family: serif;
+  font-size: 18px;
+}
+.menu ul li {
+  display: inline;
+  margin: 10px 20px 10px 58px;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+.menu ul li a:hover {
+  color: purple;
+}
 .content {
-	float:left;
+  float: left;
 }
-
 .leftbox {
-	width:580px;
-	float:left;
-	height:auto;
-	border:0px solid black;
+  width: 580px;
+  float: left;
+  height: auto;
+  border: 0px solid black;
 }
-
-.rightbox {	
-	float:right;
-	height:700px;;
-	border:0px solid black;
-	width:200px;
+.rightbox {
+  float: right;
+  height: 700px;
+  border: 0px solid black;
+  width: 150px;
 }
-
 #picsize {
-	height:50%;
-	width:30%;
-	float:right;
+  height: 80%;
+  width: 90%;
+  float: right;
 }
-
+#picsize1 {
+  height: 100%;
+  width: 100%;
+  float: left;
+}
+#flowerpic {
+  float: left;
+  height: 114px;
+  width: 115px;
+}
+.title {
+  font-size: 33px;
+  margin-left: 135px;
+  margin-top: 20px;
+  border-bottom: 1px dotted black;
+  margin-bottom: 15px;
+  margin-right: 25px;
+}
+.info {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin-left: -108px;
+  font-size: 12px;
+  display: none;
+}
