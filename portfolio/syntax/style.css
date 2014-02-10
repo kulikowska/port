@@ -1,0 +1,28 @@
+body {
+	background:#424cb8;
+}
+
+h1 {
+	text-align:center;
+	font-size:18px;
+	margin-top:20px;
+}
+
+.center {
+	margin: 0 auto;
+	width:700px;
+}
+
+.container {
+	width:600px;
+	height:auto;
+	border:1px solid black;
+	margin:20px 20px 20px 20px;
+	padding:10px 10px 10px 10px;
+}
+
+h2 {
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:underline;
+}
