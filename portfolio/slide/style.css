@@ -1,29 +1,30 @@
 
 .container {
 	margin:0 auto;
-	width:700px;
+	width:650px;
 	margin-top:20px;
 	position:relative;
 }
 
 .picsize {
 	height:357px;
-	width:700px;
+	width:650px;
 }
 
 #slideshowWindow {
-	width:700px;
+	width:650px;
 	height:357px;
 	margin:0;
 	padding:0;
 	position:relative;
 	overflow:hidden;
+	border:2px solid white;
 }
 
 .slide {
 	margin:0;
 	padding:0;
-	width:700px;
+	width:650px;
 	height:357px;
 	position:relative;
 }

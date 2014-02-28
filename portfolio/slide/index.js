@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var currentPosition = 0;
-	var slideWidth = 700;
+	var slideWidth = 500;
 	var slides = $('.slide');
 	var numberOfSlides = slides.length;
 	var slideShowInterval;

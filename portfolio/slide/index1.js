@@ -1,11 +1,11 @@
 $(document).ready(function() {
 
 	var currentPosition = 0;
-	var slideWidth = 500;
+	var slideWidth = 650;
 	var slides = $('.slide');
 	var numberOfSlides = slides.length;
 	var slideShowInterval;
-	var speed = 3000;
+	var speed = 6000;
 
 	//Timer
 	slideShowInterval = setInterval(changePosition, speed);
