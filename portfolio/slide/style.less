@@ -1,86 +1,67 @@
-@hi: 900px;
+body {
+	background:black;
+	color:white;
+	font-family:palatino;
+}
 
-.container {
+ul {
+	list-style:none;
+}
+
+.page {
 	margin:0 auto;
-	width:650px;
-	margin-top:20px;
-	position:relative;
+	width:900px;
+	border:1px solid white;
+	height:100%;
+	margin-top:-10px;
+	bottom:-10px;
 }
 
-.picsize {
-	height:357px;
-	width:650px;
+.header {
+	font-size:52px;
+	padding:10px 5px 20px 5px;
+	font-family:cursive;
+	height:110px;
 }
 
-#slideshowWindow {
-	width:650px;
-	height:357px;
-	margin:0;
-	padding:0;
-	position:relative;
-	overflow:hidden;
-	border:2px solid white;
+.location {
+	float:right;
+	padding:10px 5px 2px 5px;
+	font-size:14px;
+	font-family:palatino;
+	margin-right:20px;
 }
 
-.slide {
-	margin:0;
-	padding:0;
-	width:650px;
-	height:357px;
-	position:relative;
+.divider {
+	float:right;
+	border-left:1px solid white;
+	height:120px;
+	padding:0 1px 0 10px;
+	margin-left:-7px;
+	margin-top:5px;
 }
 
-.slideText {
-	position:absolute;
-	top:130px;
-	left:0px;
-	width:100%;
-	height:130px;
-	margin:0;
-	padding:0;
-	color:#ffffff;
-	background-image:url(greyBg.png);
-	background-repeat:repeat;
-	font-family:Myriad Pro, Arial, Helvetica, sans-serif;
+.menu {
+	width:100%
+	height:50px;
+	border:1px solid gray;
+	background:#a60000;
 }
 
-#slideshow #slideshowWindow .slide .slideText a:link, 
-#slideshow #slideshowWindow .slide .slideText a:visited {
-	color:#ffffff;
-	text-decoration:none;
+.menu ul {
+	list-style:none;
 }
 
-#slideshow #slideshowWindow .slide .slideText h2, 
-#slideshow #slideshowWindow .slide .slideText p {
-	margin:10px 0 0 10px;
-	padding:0;
+.menu li {
+	width:50px;
+	display:inline;
+	margin:10px 20px 10px 20px;
+	font-size:18px;
 }
 
-.nav {
-	display:block;
-	text-indent:-10000px;
-	position:relative;
-	cursor:pointer;
-}
-
-#leftNav {
-	position:absolute;
-	top:220px;
-	left:330px;
-	width:94px;
-	height:34px;
-	background-image:url(previous.png);
-	background-repeat:no-repeat;
-	z-index:999;
-}
-
-#rightNav {
-	position:absolute;
-	top:220px;
-	left:430px;
-	width:54px;
-	height:26px;
-	background-image:url(next.png);
-	background-repeat:no-repeat;
-	z-index:999;
+.intro {
+	width:80%;
+	height:400px;
+	margin:20px 20px 10px 50px;
+	display:none;
 }

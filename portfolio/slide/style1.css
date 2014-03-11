@@ -1,7 +1,7 @@
 body {
 	background:black;
-	color:white;
-	font-family:palatino;
+	color:#e0eee0;
+	font-family:georgia;
 }
 
 ul {
@@ -9,17 +9,17 @@ ul {
 }
 
 .page {
+	background:url('http://static2.grsites.com/archive/textures/red/red012.jpg');
 	margin:0 auto;
-	width:900px;
-	border:1px solid white;
-	height:100%;
+	width:950px;
+	border:3px solid #660000;
+	height:800px;
 	margin-top:-10px;
-	bottom:-10px;
 }
 
 .header {
 	font-size:52px;
-	padding:10px 5px 20px 5px;
+	padding:10px 5px 20px 30px;
 	font-family:cursive;
 	height:110px;
 }
@@ -28,7 +28,7 @@ ul {
 	float:right;
 	padding:10px 5px 2px 5px;
 	font-size:14px;
-	font-family:palatino;
+	font-family:georgia;
 	margin-right:20px;
 }
 
@@ -42,10 +42,13 @@ ul {
 }
 
 .menu {
-	width:100%
-	height:50px;
-	border:1px solid gray;
-	background:#a60000;
+	-webkit-box-shadow: inset 0 0 10px #222;
+	box-shadow: inset 0 0 20px #111;
+	border-top:3px solid #660000;
+	border-bottom:3px solid #660000;
+	background:#660000;
+	padding-left:70px;
+	font-family:cursive;
 }
 
 .menu ul {
@@ -53,10 +56,30 @@ ul {
 }
 
 .menu li {
-	width:50px;
+	width:70px;
 	display:inline;
-	margin:10px 20px 10px 20px;
-	font-size:18px;
+	padding:10px 30px 10px 30px;
+	font-size:20px;
+	-webkit-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+
+.menu li:hover {
+	color:#a52a2a;
+	font-weight:bold;
+}
+
+.reviews {
+	margin:15px 0px 15px 0px;
+	font-style:italic;
+	font-size:16px;
+	background:#222;
+	opacity:0.7;
+	padding:5px 5px 5px 5px;
+}
+
+.reviewtext {
+	margin:0 100px 0 100px;
 }
 
 .intro {
