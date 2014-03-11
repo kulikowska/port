@@ -1,0 +1,75 @@
+.container {
+  margin: 0 auto;
+  width: 650px;
+  margin-top: 20px;
+  position: relative;
+}
+.picsize {
+  height: 357px;
+  width: 650px;
+}
+#slideshowWindow {
+  width: 650px;
+  height: 357px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid white;
+}
+.slide {
+  margin: 0;
+  padding: 0;
+  width: 650px;
+  height: 357px;
+  position: relative;
+}
+.slideText {
+  position: absolute;
+  top: 130px;
+  left: 0px;
+  width: 100%;
+  height: 130px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  background-image: url(greyBg.png);
+  background-repeat: repeat;
+  font-family: Myriad Pro, Arial, Helvetica, sans-serif;
+}
+#slideshow #slideshowWindow .slide .slideText a:link,
+#slideshow #slideshowWindow .slide .slideText a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+#slideshow #slideshowWindow .slide .slideText h2,
+#slideshow #slideshowWindow .slide .slideText p {
+  margin: 10px 0 0 10px;
+  padding: 0;
+}
+.nav {
+  display: block;
+  text-indent: -10000px;
+  position: relative;
+  cursor: pointer;
+}
+#leftNav {
+  position: absolute;
+  top: 220px;
+  left: 330px;
+  width: 94px;
+  height: 34px;
+  background-image: url(previous.png);
+  background-repeat: no-repeat;
+  z-index: 999;
+}
+#rightNav {
+  position: absolute;
+  top: 220px;
+  left: 430px;
+  width: 54px;
+  height: 26px;
+  background-image: url(next.png);
+  background-repeat: no-repeat;
+  z-index: 999;
+}
