@@ -59,6 +59,55 @@ a:focus img {
 	cursor:default;
 }
 
+a:nth-child(4n+4) img, a:nth-child(4n+3) img {
+	right:0;
+}
+
+a:nth-child(n+9) img {
+	bottom:0;
+}
+
+.closed {
+	position:absolute;
+	top:10px;
+	right:-50px;
+	display:none;
+	text-align:center;
+	font-weight:bold;
+	font-size:70px;
+	color:#fff;
+	width:20px;
+	height:20px;
+	-webkit-text-shadow:0 0 5px #222;
+	text-shadow:0 0 5px #222;
+	-o-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	cursor:pointer;
+	z-index:3;
+}
 
 
+
+.closed {
+	position:absolute;
+	top:10px;
+	right:-50px;
+	display:none;
+	text-align:center;
+	font-weight:bold;
+	font-size:70px;
+	color:#fff;
+	width:20px;
+	height:20px;
+	-webkit-text-shadow:0 0 5px #222;
+	text-shadow:0 0 5px #222;
+	-o-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	cursor:pointer;
+	z-index:3;
+}
+
+a:focus~.closed {
+	display:block;
+}
 
