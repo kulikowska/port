@@ -1,5 +1,10 @@
 body {
-	background:#660000;
+	background:#9999ff;
+}
+
+.container {
+	margin:0 auto;
+	width:800px;
 }
 
 a {
