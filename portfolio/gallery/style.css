@@ -10,6 +10,7 @@ body {
 }
 
 a {
+	display:inline-block;
 	float:left;
 	width:25%;
 	height:25%;
@@ -88,7 +89,19 @@ a:nth-child(n+9) img {
 	z-index:3;
 }
 
-a:focus~.closed {
+.closed-layer {
+	display:none;
+	position:absolute;
+	top:140px;
+	left:150px;
+	width:500px;
+	height:352px;
+	background:transparent;
+	z-index:30;
+	cursor:pointer;
+}
+
+a:focus~.closed, a:focus~.closed-layer {
 	display:block;
 }
 
