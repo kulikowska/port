@@ -29,7 +29,7 @@ a img {
 	transition-property:width, height, top, bottom, left, right, z-index;
 	transition-duration:2s;
 	position:absolute;
-	opacity:0.5;
+	opacity:0.8;
 	cursor:pointer;
 	z-index:1;
 	top:0px;
