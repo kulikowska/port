@@ -1,0 +1,35 @@
+body {
+	background:#3914af;
+	font-family:"Tahoma";
+	color:#3914af;
+}
+
+.container {
+	margin:0 auto;
+	width:600px;
+	border:3px solid #412c84;
+	background:#000;
+	text-align:center;
+	padding:20px 10px 20px 10px;
+	margin-top:20px;
+}
+
+.name {
+	font-size:40px;
+	padding:5px, 5px 10px 5px;
+}
+
+.title {
+	font-size:18px;
+	padding:5px 5px 10px 5px;
+}
+
+.skills {
+	font-size:14px;
+	padding:5px 5px 10px 5px;
+}
+
+.sowhat {
+	font-size:14px;
+	padding:5px 5px 10px 5px;
+}
