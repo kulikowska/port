@@ -1,17 +1,17 @@
 body {
-	background:#3914af;
+	background-image:url('http://static1.grsites.com/archive/textures/dblue/dblue007.jpg');
 	font-family:"Tahoma";
-	color:#3914af;
+	color:#405980;
 }
 
 .container {
 	margin:0 auto;
 	width:600px;
-	border:3px solid #412c84;
+	border:10px solid #030410;
 	background:#000;
 	text-align:center;
 	padding:20px 10px 20px 10px;
-	margin-top:20px;
+	margin-top:80px;
 }
 
 .name {
@@ -33,3 +33,4 @@ body {
 	font-size:14px;
 	padding:5px 5px 10px 5px;
 }
+
