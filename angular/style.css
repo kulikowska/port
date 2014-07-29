@@ -1,3 +1,21 @@
 body {
 	background:#efa;
 }
+
+.yellow{
+	color:yellow;
+	background:red;
+	width:200px;
+}
+
+.green{
+	color:black;
+	background:green;
+	width:300px;
+}
+
+.red{
+	color:red;
+	background:blue;
+	width:500px;
+}
