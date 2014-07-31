@@ -1,0 +1,37 @@
+body {
+	background:#363377;
+	font-family:"verdana";
+}
+
+.container {
+	margin:0 auto;
+	margin-top:20px;
+	width:800px;
+	background:#827fb2;
+	border:3px solid black;
+	padding:10px 10px 10px 10px;
+}
+
+.yellow{
+	background:#F0DF2A;
+	width:200px;
+	border:2px solid black;
+	padding:5px 5px 5px 5px;
+	margin:5px 5px 5px 5px;
+}
+
+.green{
+	background:#008000;
+	width:200px;
+	padding:5px 5px 5px 5px;
+	margin:5px 5px 5px 5px;
+	border:2px solid black;
+}
+
+.red{
+	background:#9B000f;
+	width:200px;
+	padding:5px 5px 5px 5px;
+	margin:5px 5px 5px 5px;
+	border:2px solid black;
+}
