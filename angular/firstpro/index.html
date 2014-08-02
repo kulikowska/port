@@ -1,0 +1,51 @@
+<html ng-app="ap">
+	<head>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script src="../../lib/js/angular.min.js"></script> 
+		<script src="js/app.js"></script>
+		<script src="js/ctrl.js"></script>
+		<script src="../../lib/js/jquery.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div ng-controller='attempt' class="leftpane">
+				Menu 1
+				<br />
+				{{datavar}}
+			</div>
+			<div class="rightpane">
+				Menu 2
+			</div>
+			<div class="centerpane">
+				<div ng-controller='attempt'>
+					<input type='text' ng-model='datavar' />
+					{{datavar}}
+				</div>
+				<br />
+				<hr>
+				<div ng-controller='mainass'>
+					<input type='button' ng-click='toggle()' value='Switch Div' />
+					<div ng-controller="bigass" ng-class="bigassclass" ng-show='topdiv'>
+						<input type="text" ng-model="bigassclass" />
+						<ul>
+							<li ng-repeat="item in list" ng-click="myclick(item.first)">
+							{{item.first}}, 
+							{{item.last}} 
+							</li>
+						</ul>
+					</div>	
+					<div ng-controller="justass" ng-class="bigassclass" ng-hide='topdiv'>
+						<input type="text" ng-model="bigassclass" />
+						<br />
+						<ul>
+							<li ng-repeat="item in list" ng-click="myclick(item.first)">
+							{{item.first}}, 
+							{{item.last}} 
+							</li>
+						</ul>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</body>
+</html>

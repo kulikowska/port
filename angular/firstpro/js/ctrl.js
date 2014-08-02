@@ -1,6 +1,9 @@
 AP
+.controller('attempt', function ($scope) {
+	$scope.datavar = 'some data';
+})
+	
 .controller('mainass', function ($scope) {
-	$scope.parvar = 'parent variable';
 	$scope.topdiv = true;
 	$scope.toggle = function() {
 		$scope.topdiv = !$scope.topdiv;
@@ -20,8 +23,6 @@ AP
 	$scope.myclick=function(arg){
 		alert(arg);
 	};
-
-	$scope.parvar = 'child var ';
 })
 .controller('justass', function ($scope) {
 	$scope.myvar="mystring"; 
@@ -33,7 +34,5 @@ AP
 	$scope.myclick=function(arg){
 		alert(arg);
 	};
-	
-	$scope.parvar = 'a totally new var ';
 })
 ;
