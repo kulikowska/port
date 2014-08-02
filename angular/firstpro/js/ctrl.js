@@ -3,9 +3,6 @@ AP
 	$scope.datavar = 'some data';
 })
 
-.controller('attempt', function ($scope) {
-})
-	
 .controller('mainass', function ($scope) {
 	$scope.topdiv = true;
 	$scope.toggle = function() {
