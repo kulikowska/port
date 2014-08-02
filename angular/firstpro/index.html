@@ -9,44 +9,43 @@
 	<body>
 		<div class="container">
 			<div ng-controller='dad'>
-				<div class="leftpane">
-					Menu 1
-					<br />
-					{{datavar}}
-				</div>
-				<div class="rightpane">
-					Menu 2
-					<br />
-					<input id="first" type='text'  ng-model='datavar' />
-					{{datavar}}
-				</div>
 				<div class="centerpane">
-					<input type='text'  ng-model='datavar' />
-					<br />
-					<hr>
-					<div ng-controller='mainass'>
-						<input type='button' ng-click='toggle()' value='Switch Div' />
-						<div ng-controller="bigass" ng-class="bigassclass" ng-show='topdiv'>
-							<input type="text" ng-model="bigassclass" />
-							<ul>
-								<li ng-repeat="item in list" ng-click="myclick(item.first)">
-								{{item.first}}, 
-								{{item.last}} 
-								</li>
-							</ul>
-						</div>	
-						<div ng-controller="justass" ng-class="bigassclass" ng-hide='topdiv'>
-							<input type="text" ng-model="bigassclass" />
-							<br />
-							<ul>
-								<li ng-repeat="item in list" ng-click="myclick(item.first)">
-								{{item.first}}, 
-								{{item.last}} 
-								</li>
-							</ul>
-						</div>
-					</div>
+				<button value='first' ng-click='changeTab(0)' >first</button>
+				<button value='second' ng-click='changeTab(1)'>second</button>
+				<button value='third' ng-click='changeTab(2)' >third</button>
+				<br />
+
+				<ul>
+					<li ng-show="divToggle[0]">first li</li>
+					<li ng-show="divToggle[1]">second li</li>
+					<li ng-show="divToggle[2]">third li</li>
+				</ul>
 				</div>	
+				<button ng-click="switchit()">Toggle</button>
+				<br />
+				<br />
+				<div class="divpane left" ng-show="showLeft">
+					<div ng-controller="bigass" ng-class="bigassclass" ng-show='topdiv'>
+						<input type="text" ng-model="bigassclass" />
+						<ul>
+							<li ng-repeat="item in list" ng-click="myclick(item)">
+							{{item.first}} 
+							</li>
+						</ul>
+					</div>	
+				</div>
+				<div class="divpane right" ng-hide="showLeft">
+					<div ng-controller="justass" ng-class="bigassclass"> 
+						{{item.first}}, {{item.last}}, {{item.email}}
+					</div>
+				</div>
+				<div class="newdude" ng-controller="puppyctrl">
+					<ul>
+						<li ng-repeat="puppy in puppies" ng-click="myclick(item)">
+							{{puppy.breed}}, howcute:{{puppy.cuteness}}
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</body>
