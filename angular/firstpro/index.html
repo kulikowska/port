@@ -9,16 +9,19 @@
 	<body>
 		<div class="container">
 			<div ng-controller='dad'>
-				<input id="first" type='text'  ng-model='datavar' />
-				<div ng-controller='attempt' class="leftpane">
+				<div class="leftpane">
 					Menu 1
 					<br />
 					{{datavar}}
 				</div>
 				<div class="rightpane">
 					Menu 2
+					<br />
+					<input id="first" type='text'  ng-model='datavar' />
+					{{datavar}}
 				</div>
 				<div class="centerpane">
+					<input id="first" type='text'  ng-model='datavar' />
 					<br />
 					<hr>
 					<div ng-controller='mainass'>
