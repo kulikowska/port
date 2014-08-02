@@ -8,18 +8,22 @@
 	</head>
 	<body>
 		<div class="container">
-			<div ng-controller='attempt' class="leftpane">
-				Menu 1
-				<br />
-				{{datavar}}
-			</div>
-			<div class="rightpane">
-				Menu 2
-			</div>
-			<div class="centerpane">
-				<div ng-controller='attempt'>
+			<div ng-controller='dad'>
+				<input type='text' ng-model='datavar' />
+				<div ng-controller='attempt' class="leftpane">
+					Menu 1
+					<br />
 					<input type='text' ng-model='datavar' />
 					{{datavar}}
+				</div>
+				<div class="rightpane">
+					Menu 2
+				</div>
+				<div class="centerpane">
+					<div ng-controller='attempt'>
+						<input type='text' ng-model='datavar' />
+						{{datavar}}
+					</div>
 				</div>
 				<br />
 				<hr>

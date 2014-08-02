@@ -1,6 +1,9 @@
 AP
-.controller('attempt', function ($scope) {
+.controller('dad', function ($scope) {
 	$scope.datavar = 'some data';
+})
+
+.controller('attempt', function ($scope) {
 })
 	
 .controller('mainass', function ($scope) {
