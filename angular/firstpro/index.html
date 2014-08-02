@@ -24,29 +24,29 @@
 						<input type='text' ng-model='datavar' />
 						{{datavar}}
 					</div>
-				<br />
-				<hr>
-				<div ng-controller='mainass'>
-					<input type='button' ng-click='toggle()' value='Switch Div' />
-					<div ng-controller="bigass" ng-class="bigassclass" ng-show='topdiv'>
-						<input type="text" ng-model="bigassclass" />
-						<ul>
-							<li ng-repeat="item in list" ng-click="myclick(item.first)">
-							{{item.first}}, 
-							{{item.last}} 
-							</li>
-						</ul>
-					</div>	
-					<div ng-controller="justass" ng-class="bigassclass" ng-hide='topdiv'>
-						<input type="text" ng-model="bigassclass" />
-						<br />
-						<ul>
-							<li ng-repeat="item in list" ng-click="myclick(item.first)">
-							{{item.first}}, 
-							{{item.last}} 
-							</li>
-						</ul>
-					</div>
+					<br />
+					<hr>
+					<div ng-controller='mainass'>
+						<input type='button' ng-click='toggle()' value='Switch Div' />
+						<div ng-controller="bigass" ng-class="bigassclass" ng-show='topdiv'>
+							<input type="text" ng-model="bigassclass" />
+							<ul>
+								<li ng-repeat="item in list" ng-click="myclick(item.first)">
+								{{item.first}}, 
+								{{item.last}} 
+								</li>
+							</ul>
+						</div>	
+						<div ng-controller="justass" ng-class="bigassclass" ng-hide='topdiv'>
+							<input type="text" ng-model="bigassclass" />
+							<br />
+							<ul>
+								<li ng-repeat="item in list" ng-click="myclick(item.first)">
+								{{item.first}}, 
+								{{item.last}} 
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>	
 			</div>
