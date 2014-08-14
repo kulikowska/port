@@ -17,12 +17,8 @@
 				<br />
 				<br />
 				<div class="divpane left" ng-show="showLeft">
-
 					<div ng-controller="bigass" ng-class="bigassclass|divcolor" ng-show='topdiv'>
-						<button ng-click='bigassclass=0'>Red</button>
-						<button ng-click='bigassclass=1'>Yellow</button>
-						<button ng-click='bigassclass=2'>Blue</button>
-						<button ng-click='rotate()'>Rotate</button>
+						<buttoncolor> </buttoncolor> 
 						<input type="text" ng-model="bigassclass" />
 						<ul>
 							<li ng-repeat="item in list" ng-click="myclick(item)">

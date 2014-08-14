@@ -81,6 +81,15 @@ AP
 		}
 	}
 })
+.directive('buttoncolor', function() {
+	return {
+		restrict: 'E',
+		template: '<button ng-click="bigassclass=0">Red</button>' 
+				+ '<button ng-click="bigassclass=1">Yellow</button>'
+				+ '<button ng-click="bigassclass=2">Blue</button>'
+				+ '<button ng-click="rotate()">Rotate</button>',
+		}
+	})
 .directive('buttons', function() {
 	return {
 		restrict: 'E',
