@@ -9,23 +9,20 @@
 	<body>
 		<div class="container">
 			<div ng-controller='dad'>
+				<smallbox>not replaced</smallbox>
 				<div class="centerpane">
-				<button value='first' ng-click='changeTab(0)' >first</button>
-				<button value='second' ng-click='changeTab(1)'>second</button>
-				<button value='third' ng-click='changeTab(2)' >third</button>
-				<br />
-
-				<ul>
-					<li ng-show="divToggle[0]">first li</li>
-					<li ng-show="divToggle[1]">second li</li>
-					<li ng-show="divToggle[2]">third li</li>
-				</ul>
+					<wrap></wrap>
 				</div>	
 				<button ng-click="switchit()">Toggle</button>
 				<br />
 				<br />
 				<div class="divpane left" ng-show="showLeft">
-					<div ng-controller="bigass" ng-class="bigassclass" ng-show='topdiv'>
+
+					<div ng-controller="bigass" ng-class="bigassclass|divcolor" ng-show='topdiv'>
+						<button ng-click='bigassclass=0'>Red</button>
+						<button ng-click='bigassclass=1'>Yellow</button>
+						<button ng-click='bigassclass=2'>Blue</button>
+						<button ng-click='rotate()'>Rotate</button>
 						<input type="text" ng-model="bigassclass" />
 						<ul>
 							<li ng-repeat="item in list" ng-click="myclick(item)">
@@ -42,7 +39,7 @@
 				<div class="newdude" ng-controller="puppyctrl">
 					<ul>
 						<li ng-repeat="puppy in puppies" ng-click="myclick(item)">
-							{{puppy.breed}}, howcute:{{puppy.cuteness}}
+							{{puppy.breed}}, howcute:{{puppy.cuteness|howcute:"extraarg":puppy.breed}}
 						</li>
 					</ul>
 				</div>
