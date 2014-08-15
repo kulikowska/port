@@ -1,6 +1,7 @@
 AP
 .controller('datahomie', function ($scope) {
 	$scope.list=[
+		{"id":"ID", "first":"First Name", "last":"Last Name", "email":"Email Address"}, 
 		{"id":"1", "first":"Susie", "last":"Wang", "email":"susie@kendo.com"},
 		{"id":"2", "first":"Tania", "last":"Delage", "email":"tania@kendo.com"},
 		{"id":"3", "first":"Akane", "last":"D'Orangeville", "email":"akane@kendo.com"},
