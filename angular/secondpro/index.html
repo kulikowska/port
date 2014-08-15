@@ -7,19 +7,24 @@
 		<script src="../../lib/js/jquery.js"></script>
 	</head>
 	<body>
-		<div ng-controller="datahomie">
-			<ul ng-repeat="data in list">
-				<li> 
+		<div ng-controller="datahomie" class="content">
+			<ul id="header" ng-repeat="header in headers"> 
+				<li>
+					{{header}}
+				</li>
+			</ul>
+			<ul id="data"ng-repeat="data in list">
+				<li id="first">
 					{{data.id}}
 				</li>
-				<li> 
+				<li id="second"> 
+					{{data.email}}
+				</li>
+				<li id="third">
 					{{data.first}}
 				</li>
-				<li> 
+				<li id="fourth">
 					{{data.last}}
-				</li>
-				<li>
-					{{data.email}}
 				</li>
 			</ul>
 		</div>

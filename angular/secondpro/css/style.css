@@ -3,10 +3,54 @@ body {
 	font-family:"verdana";
 }
 
+.content {
+	margin:0 auto;
+	width:600px;
+	height:auto;
+	background:orange;
+	margin-top:30px;
+	border:4px solid black;
+	text-align:center;
+}
+
 ul {
 	list-style:none;
 }
 
-li {
+ul#header {
+	background:white;
 	display:inline;
+}
+
+ul#header li {
+	display:inline-block;
+	margin-right:44px;
+}
+
+ul#data {
+}
+
+ul#data li {
+	display:inline-block;
+}
+ 
+ul#data li#first {
+	background:blue;
+	width:35px;
+}
+
+ul#data li#second {
+	background:green;
+	width:170px;
+	margin-left:40px;
+}
+
+ul#data li#third {
+	background:purple;
+	width:100px;
+}
+
+ul#data li#fourth {
+	background:grey;
+	width:140px;
 }
