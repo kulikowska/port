@@ -3,3 +3,10 @@ body {
 	font-family:"verdana";
 }
 
+ul {
+	list-style:none;
+}
+
+li {
+	display:inline;
+}
