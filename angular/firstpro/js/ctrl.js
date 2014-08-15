@@ -22,6 +22,10 @@ AP
 		};
 })
 
+.controller('test', function ($scope) {
+	$scope.newvar = 'hello var';
+})
+
 .controller('bigass', function ($scope) {
 	$scope.myvar="mystring"; 
 	$scope.bigassclass=0;
@@ -56,6 +60,13 @@ AP
 		else return 'almost really fucking cute';
   	};
 })
+
+.filter('changevar', function() {
+	return function(input) {
+		if (input == 'hello var') return 'it worked =D';
+	}; 
+})
+
 .filter('divcolor', function() {
   	return function(input) {
 		var ret;

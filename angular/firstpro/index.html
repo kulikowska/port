@@ -10,11 +10,13 @@
 		<div class="container">
 			<div ng-controller='dad'>
 				<smallbox>not replaced</smallbox>
+				<div ng-controller="test">
+					<button> {{newvar|changevar}} </button>
+				</div>
 				<div class="centerpane">
 					<wrap></wrap>
 				</div>	
 				<button ng-click="switchit()">Toggle</button>
-				<br />
 				<br />
 				<div class="divpane left" ng-show="showLeft">
 					<div ng-controller="bigass" ng-class="bigassclass|divcolor" ng-show='topdiv'>
