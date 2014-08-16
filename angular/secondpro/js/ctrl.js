@@ -14,10 +14,26 @@ AP
 .directive('biglist', function() {
 	return {
 		restrict: 'ACE',
-		template: '<ul id="header">'
+		template: '<div ng-controller="datahomie" class="content">'
+				+ '<ul id="header">'
 				+ '<li ng-repeat="header in headers">'
 				+ '{{header}}'
 				+ '</li>'
-				+ '</ul>',
+				+ '</ul>'
+				+ '<ul id="data"ng-repeat="data in list">'
+				+ '<li id="first">'
+				+ '{{data.id}}'
+				+ '</li>'
+				+ '<li id="second">'
+				+ '{{data.email}}'
+				+ '</li>'
+				+ '<li id="third">'
+				+ '{{data.first}}'
+				+ '</li>'
+				+ '<li id="fourth">'
+				+ '{{data.last}}'
+				+ '</li>'
+				+ '</ul>'
+				+ '</div>',
 			}
 })
