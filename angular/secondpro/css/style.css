@@ -26,6 +26,7 @@ ul#header {
 ul#header li {
 	display:inline-block;
 	margin-right:44px;
+	width:88px;
 }
 
 ul#data {
