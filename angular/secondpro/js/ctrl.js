@@ -9,4 +9,15 @@ AP
 	];
 	
 	$scope.headers=["ID", "E-mail", "First Name", "Last Name"];
+}) 
+
+.directive('biglist', function() {
+	return {
+		restrict: 'ACE',
+		template: '<ul id="header">'
+				+ '<li ng-repeat="header in headers">'
+				+ '{{header}}'
+				+ '</li>'
+				+ '</ul>',
+			}
 })

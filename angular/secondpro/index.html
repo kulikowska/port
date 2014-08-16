@@ -8,11 +8,7 @@
 	</head>
 	<body>
 		<div ng-controller="datahomie" class="content">
-			<ul id="header"> 
-				<li ng-repeat="header in headers">
-					{{header}}
-				</li>
-			</ul>
+			<biglist></biglist>
 			<ul id="data"ng-repeat="data in list">
 				<li id="first">
 					{{data.id}}
