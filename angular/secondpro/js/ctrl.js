@@ -1,39 +1,50 @@
 AP
 .controller('datahomie', function ($scope) {
 	$scope.list=[
-		{"id":"1", "first":"Susie", "last":"Wang", "email":"susie@kendo.com"},
-		{"id":"2", "first":"Tania", "last":"Delage", "email":"tania@kendo.com"},
-		{"id":"3", "first":"Akane", "last":"D'Orangeville", "email":"akane@kendo.com"},
-		{"id":"4", "first":"Melissa", "last":"Djap", "email":"melissa@kendo.com"},
-		{"id":"5", "first":"Martina", "last":"Solano", "email":"martina@kendo.com"}
+		["1", "Susie", "Wang", "susie@kendo.com"],
+		["2", "Tania", "Delage", "tania@kendo.com"],
+		["3", "Akane", "D'Orangeville", "akane@kendo.com"],
+		["4", "Melissa", "Djap", "melissa@kendo.com"],
+		["5", "Martina", "Solano", "martina@kendo.com"]
 	];
-	
-	$scope.headers=["ID", "E-mail", "First Name", "Last Name"];
 }) 
-
 .directive('biglist', function() {
 	return {
 		restrict: 'ACE',
-		template: '<div ng-controller="datahomie" class="content">'
-				+ '<ul id="header">'
-				+ '<li ng-repeat="header in headers">'
-				+ '{{header}}'
-				+ '</li>'
-				+ '</ul>'
-				+ '<ul id="data"ng-repeat="data in list">'
-				+ '<li id="first">'
-				+ '{{data.id}}'
-				+ '</li>'
-				+ '<li id="second">'
-				+ '{{data.email}}'
-				+ '</li>'
-				+ '<li id="third">'
-				+ '{{data.first}}'
-				+ '</li>'
-				+ '<li id="fourth">'
-				+ '{{data.last}}'
-				+ '</li>'
-				+ '</ul>'
-				+ '</div>',
-			}
+		template: '<gridhead></gridhead><content></content>',
+		link: function($scope, $element, $attributes) { }
+	}
+})
+.directive('gridhead', function() {
+	return {
+		restrict: 'ACE',
+		templateUrl: 'tpl/gridhead.tpl',
+		link: function($scope, $element, $attributes) { }
+	}
+})
+.directive('content', function() {
+	return {
+		restrict: 'AE',
+		templateUrl: 'tpl/content.tpl',
+		link: function($scope, $element, $attributes) { }
+	}
+})
+.filter('headString', function() {
+	return function(input) {
+		var ret = '';
+		switch (input) {
+			case 0 : ret = 'ID'; break;
+			case 1 : ret = 'First Name'; break;
+			case 2 : ret = 'Last Name'; break;
+			case 3 : ret = 'E-mail'; break;
+			default : ret = 'Error'; break;
+		}
+		return ret;
+	}
+})
+.filter('oddEven', function() {
+	return function(input) {
+		if (input == 0 || input == 2 || input ==4) return "odd";
+		else return 'even';
+	}
 })

@@ -5,7 +5,7 @@ body {
 
 .content {
 	margin:0 auto;
-	width:600px;
+	width:602px;
 	height:auto;
 	background:orange;
 	margin-top:30px;
@@ -14,6 +14,13 @@ body {
 
 ul {
 	list-style:none;
+}
+
+.odd {
+	background:#ddd;
+}
+.even {
+	background:#888;
 }
 
 ul#header {
@@ -32,26 +39,26 @@ ul#header li {
 ul#data {
 }
 
-ul#data li {
+ul li {
 	display:inline-block;
 }
  
-ul#data li#first {
+ul li.col_0{
 	width:57px;
 	margin-left:6px;
 }
 
-ul#data li#second {
+ul li.col_1 {
 	width:170px;
 	margin-left:20px;
 }
 
-ul#data li#third {
+ul li.col_2 {
 	width:100px;
 	margin-left:30px;
 }
 
-ul#data li#fourth {
+ul li.col_3 {
 	width:140px;
 	margin-left:20px;
 }
