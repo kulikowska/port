@@ -18,7 +18,9 @@ ul {
 
 ul#header {
 	background:white;
-	display:inline;
+	display:inline-block;
+	width:560px;
+	margin:0px; 
 }
 
 ul#header li {
