@@ -37,7 +37,8 @@ ul#data li {
 }
  
 ul#data li#first {
-	width:35px;
+	width:57px;
+	margin-left:6px;
 }
 
 ul#data li#second {
