@@ -1,13 +1,9 @@
 AP
-.controller('datahomie', function ($scope) {
-	$scope.list=[
-		["1", "Susie", "Wang", "susie@kendo.com"],
-		["2", "Tania", "Delage", "tania@kendo.com"],
-		["3", "Akane", "D'Orangeville", "akane@kendo.com"],
-		["4", "Melissa", "Djap", "melissa@kendo.com"],
-		["5", "Martina", "Solano", "martina@kendo.com"]
-	];
-}) 
+.controller('datahomie', ['$scope', '$http', function ($scope, $http) {
+	$http.get('data/hommies.json').success(function(data){ 
+		$scope.list = data 
+	});
+}]) 
 .directive('biglist', function() {
 	return {
 		restrict: 'ACE',
@@ -48,3 +44,4 @@ AP
 		else return 'even';
 	}
 })
+;
