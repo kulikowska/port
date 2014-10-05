@@ -1,11 +1,18 @@
 APP
-.directive('start', function() {
+.directive('header', function() {
     return {
         restrict: 'C',
-        replace: true, 
-       // template: '<div class="first">This is a the first div </div>',
-        templateUrl: 'html/startDiv.html',
-        link: function($scope, $element, $attributes) {}
+        replace: false,
+        templateUrl: 'html/header.html',
+        link: function($scope, $element, $attributes) {
+            $scope.user = 'username';
+            $scope.password = '';
+
+            $scope.logIn = function() {
+                $scope.user = '';
+                $scope.password = '';
+            }
+            }
         }
-    })
+ })
 ;
