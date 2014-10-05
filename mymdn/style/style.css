@@ -14,4 +14,9 @@ body {
 }
 .head .login {
   float: right;
+  margin-right: 8px;
+}
+.head .login button {
+  width: 50px;
+  cursor: pointer;
 }
