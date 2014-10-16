@@ -39,15 +39,16 @@ body {
   background: #222;
   width: 120px;
   padding: 15px 22px 15px 0px;
+  transition: 400ms ease;
 }
 .contentWrap .dropdown nav ul li #leafimg {
   float: right;
   padding-left: 20px;
 }
 .contentWrap .dropdown nav ul li:hover {
-  background: white;
-  color: black;
+  color: #777;
   cursor: pointer;
+  font-size: 18px;
 }
 .contentWrap .dropdown nav ul li:hover > ul {
   display: block;
