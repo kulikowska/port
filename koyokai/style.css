@@ -1,5 +1,6 @@
 body {
   background: maroon;
+  font-family: verdana, arial, sans-serif;
 }
 .contentWrap {
   margin: 0 auto;
@@ -14,4 +15,56 @@ body {
   background-size: 95%;
   background-position: 0 -125px;
   background-repeat: no-repeat;
+}
+.contentWrap .dropdown {
+  background: #222;
+}
+.contentWrap .dropdown nav ul {
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  border-top: 3px solid black;
+  list-style: none;
+  position: relative;
+  display: inline-table;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  padding: 0 10px;
+  transition: 400ms ease;
+}
+.contentWrap .dropdown nav ul li {
+  float: left;
+  text-align: center;
+  background: #222;
+  width: 120px;
+  padding: 15px 22px 15px 0px;
+}
+.contentWrap .dropdown nav ul li #leafimg {
+  float: right;
+  padding-left: 20px;
+}
+.contentWrap .dropdown nav ul li:hover {
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+.contentWrap .dropdown nav ul li:hover > ul {
+  display: block;
+}
+.contentWrap .dropdown nav ul li:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.contentWrap .dropdown nav ul ul {
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 500;
+}
+.contentWrap .dropdown nav ul ul li {
+  float: none;
+  position: relative;
 }
