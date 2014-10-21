@@ -11,7 +11,7 @@ body {
   height: 250px;
   width: 920px;
   overflow: hidden;
-  background-image: url('images/header.jpg');
+  background-image: url('../images/header.jpg');
   background-size: 95%;
   background-position: 0 -125px;
   background-repeat: no-repeat;
