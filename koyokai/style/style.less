@@ -1,6 +1,8 @@
 body { 
-    background:maroon;
+    background:linear-gradient(#450000, #D4A36A);
+    background:-webkit-linear-gradient(#450000, #dfa36a);
     font-family:verdana,arial,sans-serif;
+    color:white;
  }
 
 .contentWrap {
@@ -17,12 +19,13 @@ body {
         background-repeat:no-repeat;
     }
     .dropdown {
-            background:#222;
+            background:#250000;
         nav ul {
             padding:0;
             margin:0;
             height:50px;
-            border-top:3px solid black;
+            border-top:1px solid black;
+            border-bottom:1px solid black;
             list-style:none;
             position:relative;
             display:inline-table;
@@ -34,21 +37,21 @@ body {
             li {
                 float:left;
                 text-align:center;
-                background:#222;
+                background:#250000;
                 //height:50px;
                 width:120px;
                 padding:15px 22px 15px 0px;
                 transition: 400ms ease;
                 #leafimg {
                     float:right;
-                    padding-left:20px;
+                    padding-left:16px;
                 }
                 &:hover {
                     color:#777;
                     cursor:pointer;
-                    font-size:18px;
+                    font-size:17px;
                     > ul {
-                        display:block;
+                        //display:block;
                     }
                 }
                 &:after {
@@ -66,6 +69,25 @@ body {
                 li {
                     float:none;
                     position:relative;
+                }
+            }
+        }
+    }
+    .content {
+        height:500px;
+        background:#111;
+        margin-top:-8px;
+        .sidebar {
+            height:100%;
+            width:150px;
+            border-right:2px solid black;
+            padding:0px 5px 0 5px;
+            .location {
+                font-size:12px;
+                padding-top:10px;
+                h1 { 
+                    font-size:12px;
+                    font-weight:bold;
                 }
             }
         }

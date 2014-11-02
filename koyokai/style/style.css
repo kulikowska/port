@@ -1,6 +1,8 @@
 body {
-  background: maroon;
+  background: linear-gradient(#450000, #d4a36a);
+  background: -webkit-linear-gradient(#450000, #dfa36a);
   font-family: verdana, arial, sans-serif;
+  color: white;
 }
 .contentWrap {
   margin: 0 auto;
@@ -17,13 +19,14 @@ body {
   background-repeat: no-repeat;
 }
 .contentWrap .dropdown {
-  background: #222;
+  background: #250000;
 }
 .contentWrap .dropdown nav ul {
   padding: 0;
   margin: 0;
   height: 50px;
-  border-top: 3px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   list-style: none;
   position: relative;
   display: inline-table;
@@ -36,22 +39,19 @@ body {
 .contentWrap .dropdown nav ul li {
   float: left;
   text-align: center;
-  background: #222;
+  background: #250000;
   width: 120px;
   padding: 15px 22px 15px 0px;
   transition: 400ms ease;
 }
 .contentWrap .dropdown nav ul li #leafimg {
   float: right;
-  padding-left: 20px;
+  padding-left: 16px;
 }
 .contentWrap .dropdown nav ul li:hover {
   color: #777;
   cursor: pointer;
-  font-size: 18px;
-}
-.contentWrap .dropdown nav ul li:hover > ul {
-  display: block;
+  font-size: 17px;
 }
 .contentWrap .dropdown nav ul li:after {
   content: "";
@@ -68,4 +68,23 @@ body {
 .contentWrap .dropdown nav ul ul li {
   float: none;
   position: relative;
+}
+.contentWrap .content {
+  height: 500px;
+  background: #111;
+  margin-top: -8px;
+}
+.contentWrap .content .sidebar {
+  height: 100%;
+  width: 150px;
+  border-right: 2px solid black;
+  padding: 0px 5px 0 5px;
+}
+.contentWrap .content .sidebar .location {
+  font-size: 12px;
+  padding-top: 10px;
+}
+.contentWrap .content .sidebar .location h1 {
+  font-size: 12px;
+  font-weight: bold;
 }
