@@ -1,13 +1,21 @@
+@bottom:#450000;
+@top:#250000;
+
+@ultop:#000;
+@ulbottom:#350000;
+
 body { 
-    background:linear-gradient(#450000, #D4A36A);
-    background:-webkit-linear-gradient(#450000, #dfa36a);
+    background:linear-gradient(@top, @bottom);
+    background:-webkit-linear-gradient(@top, @bottom);
+   // background-image:url(http://static1.grsites.com/archive/textures/red/red152.jpg);
     font-family:verdana,arial,sans-serif;
     color:white;
  }
 
 .contentWrap {
+    box-shadow:1px 1px 5px 3px #100;
     margin:0 auto;
-    border:3px solid black;
+    border:1px solid black;
     width:874px;
     .headerimg {
         height:250px;
@@ -19,12 +27,15 @@ body {
         background-repeat:no-repeat;
     }
     .dropdown {
-            background:#250000;
+            background:#350000;
+            background:linear-gradient(@ultop, @ulbottom);
+            background:-webkit-linear-gradient(@ultop, @ulbottom);
+            height:65px;
         nav ul {
             padding:0;
             margin:0;
             height:50px;
-            border-top:1px solid black;
+            border-top:1px solid #150000;
             border-bottom:1px solid black;
             list-style:none;
             position:relative;
@@ -37,7 +48,9 @@ body {
             li {
                 float:left;
                 text-align:center;
-                background:#250000;
+                background:#350000;
+                background:linear-gradient(@ultop, @ulbottom);
+                background:-webkit-linear-gradient(@ultop, @ulbottom);
                 //height:50px;
                 width:120px;
                 padding:15px 22px 15px 0px;
@@ -74,13 +87,17 @@ body {
         }
     }
     .content {
+        color:#eee;
         height:500px;
-        background:#111;
+        background:#000;
+        opacity:0.8;
         margin-top:-8px;
         .sidebar {
+            display:none;
+            float:right;
             height:100%;
-            width:150px;
-            border-right:2px solid black;
+            width:175px;
+            border-left:1px solid #250000;
             padding:0px 5px 0 5px;
             .location {
                 font-size:12px;
@@ -92,4 +109,12 @@ body {
             }
         }
     }
+    .footer {
+        width:100%;
+        height:35px;
+        background:#000;
+        background:linear-gradient(#150000, @ultop);
+        background:-webkit-linear-gradient(#150000, @ultop);
+        border-top:1px solid black;
+    } 
 }
