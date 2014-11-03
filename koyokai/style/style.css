@@ -1,7 +1,8 @@
 body {
   background: linear-gradient(#250000, #450000);
   background: -webkit-linear-gradient(#250000, #450000);
-  font-family: verdana, arial, sans-serif;
+  background-image: url(http://static1.grsites.com/archive/textures/red/red112.jpg);
+  font-family: trebuchet ms;
   color: white;
 }
 .contentWrap {
@@ -36,7 +37,7 @@ body {
   display: inline-table;
   text-align: center;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0 10px;
   transition: 400ms ease;
 }
@@ -83,12 +84,11 @@ body {
   margin-top: -8px;
 }
 .contentWrap .content .sidebar {
-  display: none;
   float: right;
   height: 100%;
   width: 175px;
-  border-left: 1px solid #250000;
-  padding: 0px 5px 0 5px;
+  padding: 0px 5px 0 12px;
+  box-shadow: inset 6px 3px 4px -4px #222222;
 }
 .contentWrap .content .sidebar .location {
   font-size: 12px;
