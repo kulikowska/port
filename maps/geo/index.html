@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Geocoding service</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="geo.js"></script>
+  </head>
+
+  <body>
+    <div id="header">head </div>
+    <div id="container">
+        <div id="left"> left</div>
+        <div id="contentMenu"></div>
+        <div id="content"></div>
+        <div id="right"> right</div>
+    </div>
+    <div id="footer">foot
+        <div id="panel">
+          <input id="address" type="textbox" value="Sydney, NSW">
+          <input type="button" value="Geocode" onclick="codeAddress()">
+        </div>
+    </div>
+  </body>
+</html>
