@@ -12,4 +12,23 @@
             Rokudan (6th Dan)
         </div>
     </div>
+
+
+   <div class='tabs'>
+        <ul ng-init="tab = 1">
+            <li ng-class="{active:tab===1}">
+                <a href ng-click="tab = 1">Yo what's up?</a>
+            </li>
+            <li ng-class="{active:tab===2}">
+                <a href ng-click="tab = 2">Watcha doing?</a>
+            </li>
+            <li ng-class="{active:tab===3}">
+                <a href ng-click="tab = 3">How's it going?</a>
+            </li>
+            <br><br>
+            <p ng-show="tab === 1">Yo not much</p>
+            <p ng-show="tab === 2">Just trying to figure out how to do tabs in angular</p>
+            <p ng-show="tab === 3">Not bad</p>
+        </ul>
+   </div>
 </div>

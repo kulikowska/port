@@ -42,4 +42,31 @@ APP
             }
         }
  })
+.directive('about', function() {
+    return {
+        restrict: 'ACE',
+        replace: false,
+        templateUrl: 'html/about.html',
+        link: function($scope, $element, $attributes) {
+            }
+        }
+ })
+.directive('gallery', function() {
+    return {
+        restrict: 'ACE',
+        replace: false,
+        templateUrl: 'html/gallery.html',
+        link: function($scope, $element, $attributes) {
+            }
+        }
+ })
+.directive('members', function() {
+    return {
+        restrict: 'ACE',
+        replace: false,
+        templateUrl: 'html/members.html',
+        link: function($scope, $element, $attributes) {
+            }
+        }
+ })
 ;
