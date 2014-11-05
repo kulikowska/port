@@ -31,4 +31,24 @@
             <p ng-show="tab === 3">Not bad</p>
         </ul>
    </div>
+
+
+   <div class='moretabs'>
+        <ul class='tabs'>
+            <li ng-click="tabIdx=1; shrinkAndSelect()">About</li>
+            <li ng-click="tabIdx=2">Gallery</li>
+            <li ng-click="tabIdx=3">Members</li>
+        </ul>
+        <ul class='tabIdx'>
+            <li id="about" ng-show="tabIdx==1">
+            <div class='about'></div>
+            </li>
+            <li id="gallery" ng-show="tabIdx==2">
+            <div class='gallery'></div>
+            </li>
+            <li id="members" ng-show="tabIdx==3">
+            <div class='members'></div>
+            </li>
+        </ul>
+   </div>
 </div>
