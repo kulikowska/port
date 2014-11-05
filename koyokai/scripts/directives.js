@@ -17,9 +17,10 @@ APP
             $scope.menu = ['About', 'Gallery', 'Members', 'Kendo', 'Events'];
             $scope.headerImg='headerimg';
 
-            $scope.shrinkAndSelect=function(value) {
+            $scope.shrinkAndSelect=function(value, idx) {
                 $scope.headerImg='shrunk';
                 $scope.selected = value;
+                $scope.tabIdx = idx;
             };
 
             $scope.itemClass = function(value) {
