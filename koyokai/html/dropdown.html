@@ -1,39 +1,12 @@
 <nav>
-     <ul>
-         <li> Home
-             <div id="leafimg">
-                 <img src='../images/leaf3.png'>
-             </div>
-         </li>
-         <li> About
-             <div id="leafimg">
-                 <img src='../images/leaf3.png'>
-             </div>
-             <ul>
-                 <li> Our Club </li>
-                 <li> Kendo </li>
-             </ul>
-         </li>
-         <li>Gallery
-             <div id="leafimg">
-                 <img src='../images/leaf3.png'>
-             </div>
-         </li>
-         <li>Members
-             <div id="leafimg">
-                 <img src='../images/leaf3.png'>
-             </div>
-         </li>
-         <li>Kendo
-             <div id="leafimg">
-                 <img src='../images/leaf3.png'>
-             </div>
-         </li>
-         <li>Events
-             <div id="leafimg">
-                 <img src='../images/leaf3.png'>
-             </div>
-         </li>
-     </ul>
+    <ul>
+       <li ng-click="expandAndGo()">Home
+            <div id="leafimg"><img src='../images/leaf3.png'></div>
+       </li>
+       <li ng-repeat="value in menu" ng-click="shrinkAndSelect(value)" ng-class="itemClass(value)">
+           {{value}}
+            <div id="leafimg"><img src='../images/leaf3.png'></div>
+       </li>
+    </ul>
  </nav>
 

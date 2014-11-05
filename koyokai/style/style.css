@@ -11,6 +11,15 @@ body {
   border: 1px solid black;
   width: 874px;
 }
+.contentWrap .imgprop {
+  height: 250px;
+  width: 920px;
+  overflow: hidden;
+  background-image: url('../images/header.jpg');
+  background-size: 95%;
+  background-position: 0 -125px;
+  background-repeat: no-repeat;
+}
 .contentWrap .headerimg {
   height: 250px;
   width: 920px;
@@ -19,6 +28,28 @@ body {
   background-size: 95%;
   background-position: 0 -125px;
   background-repeat: no-repeat;
+}
+.contentWrap .shrunk {
+  height: 250px;
+  width: 920px;
+  overflow: hidden;
+  background-size: 95%;
+  background-position: 0 -125px;
+  background-repeat: no-repeat;
+  transition: 1s ease;
+  height: 100px;
+  background-position: 0 -195px;
+  background-image: url('../images/header.jpg');
+}
+.contentWrap .homeimg {
+  height: 250px;
+  width: 920px;
+  overflow: hidden;
+  background-image: url('../images/header.jpg');
+  background-size: 95%;
+  background-position: 0 -125px;
+  background-repeat: no-repeat;
+  transition: 1s ease;
 }
 .contentWrap .dropdown {
   background: #350000;
@@ -55,8 +86,12 @@ body {
   float: right;
   padding-left: 16px;
 }
+.contentWrap .dropdown nav ul li.active {
+  color: maroon;
+  font-style: italic;
+}
 .contentWrap .dropdown nav ul li:hover {
-  color: #777;
+  color: #953000;
   cursor: pointer;
   font-size: 17px;
 }
@@ -84,6 +119,7 @@ body {
   margin-top: -8px;
 }
 .contentWrap .content .sidebar {
+  display: none;
   float: right;
   height: 100%;
   width: 175px;
@@ -97,6 +133,18 @@ body {
 .contentWrap .content .sidebar .location h1 {
   font-size: 12px;
   font-weight: bold;
+}
+.contentWrap .content .tester {
+  border: 1px solid white;
+  background: maroon;
+  width: 200px;
+  height: 200px;
+}
+.contentWrap .content .one {
+  border: 1px solid white;
+  background: blue;
+  width: 200px;
+  height: 200px;
 }
 .contentWrap .footer {
   width: 100%;
