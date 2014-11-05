@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="WS">
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -7,21 +7,17 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="geo.js"></script>
+
+    <script src="http://openlayers.org/api/OpenLayers.js"></script>
+    <script src="./js/angular.js"></script>
+    <script src="./js/service.js"></script>
+    <script src="./js/controller.js"></script>
+    <script src="./js/directive.js"></script>
+    <script src="./js/filter.js"></script>
   </head>
 
   <body>
     <div id="header">head </div>
-    <div id="container">
-        <div id="left"> left</div>
-        <div id="contentMenu"></div>
-        <div id="content"></div>
-        <div id="right"> right</div>
-    </div>
-    <div id="footer">foot
-        <div id="panel">
-          <input id="address" type="textbox" value="Sydney, NSW">
-          <input type="button" value="Locate on Map" onclick="codeAddress()">
-        </div>
-    </div>
+    <whitespace class="plugin"></whitespace>
   </body>
 </html>
