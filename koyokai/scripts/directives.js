@@ -16,12 +16,14 @@ APP
         link: function($scope, $element, $attributes) {
             $scope.menu = ['About', 'Gallery', 'Members', 'Kendo', 'Events'];
             $scope.headerImg = 'headerimg';
+            $scope.viewHome = true;
 
             $scope.shrinkAndSelect=function(value, idx) {
                 $scope.headerImg = 'shrunk';
                 $scope.selected = value;
                 $scope.tabIdx = idx;
                 $scope.contentVal = 'contentexpand';
+                $scope.viewHome = false;
             };
 
             $scope.itemClass = function(value) {
@@ -32,6 +34,8 @@ APP
                 $scope.headerImg = 'homeimg';
                 $scope.contentVal = 'content';
                 $scope.selected = '';
+                $scope.tabIdx = 6;
+                $scope.viewHome = true;
                 };
             }
         }
