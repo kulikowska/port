@@ -127,6 +127,9 @@ body {
   margin-top: -15px;
   transition: 1s ease;
 }
+.contentWrap .content .homecontent {
+  margin-top: 15px;
+}
 .contentWrap .content .sidebar {
   display: none;
   float: right;
