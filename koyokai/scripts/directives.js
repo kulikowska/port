@@ -21,6 +21,7 @@ APP
                 $scope.headerImg='shrunk';
                 $scope.selected = value;
                 $scope.tabIdx = idx;
+                $scope.contentVal = 'contentexpand';
             };
 
             $scope.itemClass = function(value) {
@@ -40,6 +41,7 @@ APP
         replace: false,
         templateUrl: 'html/home.html',
         link: function($scope, $element, $attributes) {
+            $scope.contentVal='content';
             }
         }
  })
@@ -66,6 +68,24 @@ APP
         restrict: 'ACE',
         replace: false,
         templateUrl: 'html/members.html',
+        link: function($scope, $element, $attributes) {
+            }
+        }
+ })
+.directive('kendo', function() {
+    return {
+        restrict: 'ACE',
+        replace: false,
+        templateUrl: 'html/kendo.html',
+        link: function($scope, $element, $attributes) {
+            }
+        }
+ })
+.directive('events', function() {
+    return {
+        restrict: 'ACE',
+        replace: false,
+        templateUrl: 'html/events.html',
         link: function($scope, $element, $attributes) {
             }
         }

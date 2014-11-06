@@ -1,4 +1,4 @@
-<div class='content'>   
+<div ng-class='contentVal'>   
     <div class='sidebar'>
         <div class='location'>
             <h1>Practice Times:</h1>
@@ -12,43 +12,19 @@
             Rokudan (6th Dan)
         </div>
     </div>
-
-
-   <div class='tabs'>
-        <ul ng-init="tab = 1">
-            <li ng-class="{active:tab===1}">
-                <a href ng-click="tab = 1">Yo what's up?</a>
-            </li>
-            <li ng-class="{active:tab===2}">
-                <a href ng-click="tab = 2">Watcha doing?</a>
-            </li>
-            <li ng-class="{active:tab===3}">
-                <a href ng-click="tab = 3">How's it going?</a>
-            </li>
-            <br><br>
-            <p ng-show="tab === 1">Yo not much</p>
-            <p ng-show="tab === 2">Just trying to figure out how to do tabs in angular</p>
-            <p ng-show="tab === 3">Not bad</p>
-        </ul>
-   </div>
-
-
-   <div class='moretabs'>
-        <ul class='tabs'>
-            <li ng-click="tabIdx=1; shrinkAndSelect()">About</li>
-            <li ng-click="tabIdx=2">Gallery</li>
-            <li ng-click="tabIdx=3">Members</li>
-        </ul>
-        <ul class='tabIdx'>
-            <li id="about" ng-show="tabIdx==1">
-            <div class='about'></div>
-            </li>
-            <li id="gallery" ng-show="tabIdx==2">
-            <div class='gallery'></div>
-            </li>
-            <li id="members" ng-show="tabIdx==3">
-            <div class='members'></div>
-            </li>
-        </ul>
-   </div>
+    <ul class='tabIdx'>
+        <li id="about" ng-show="tabIdx==0">
+        <div class='about'></div>
+        </li>
+        <li id="gallery" ng-show="tabIdx==1">
+        <div class='gallery'></div>
+        </li>
+        <li id="members" ng-show="tabIdx==2">
+        <div class='members'></div>
+        <li id="kendo" ng-show="tabIdx==3">
+        <div class='kendo'></div>
+        <li id="events" ng-show="tabIdx==4">
+        <div class='events'></div>
+        </li>
+    </ul>
 </div>

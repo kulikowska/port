@@ -55,7 +55,7 @@ body {
   background: #350000;
   background: linear-gradient(#000000, #350000);
   background: -webkit-linear-gradient(#000000, #350000);
-  height: 65px;
+  height: 57px;
 }
 .contentWrap .dropdown nav ul {
   padding: 0;
@@ -111,12 +111,19 @@ body {
   float: none;
   position: relative;
 }
+.contentWrap .contentprop {
+  color: #eee;
+  height: 500px;
+  background: #000;
+  opacity: 0.8;
+  margin-top: -15px;
+}
 .contentWrap .content {
   color: #eee;
   height: 500px;
   background: #000;
   opacity: 0.8;
-  margin-top: -8px;
+  margin-top: -15px;
 }
 .contentWrap .content .sidebar {
   display: none;
@@ -133,6 +140,14 @@ body {
 .contentWrap .content .sidebar .location h1 {
   font-size: 12px;
   font-weight: bold;
+}
+.contentWrap .content .contentexpand {
+  color: #eee;
+  height: 500px;
+  background: #000;
+  opacity: 0.8;
+  margin-top: -15px;
+  height: 700px;
 }
 .contentWrap .content .tester {
   border: 1px solid white;
