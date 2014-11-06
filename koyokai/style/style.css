@@ -117,6 +117,7 @@ body {
   background: #000;
   opacity: 0.8;
   margin-top: -15px;
+  transition: 1s ease;
 }
 .contentWrap .content {
   color: #eee;
@@ -124,6 +125,7 @@ body {
   background: #000;
   opacity: 0.8;
   margin-top: -15px;
+  transition: 1s ease;
 }
 .contentWrap .content .sidebar {
   display: none;
@@ -141,14 +143,6 @@ body {
   font-size: 12px;
   font-weight: bold;
 }
-.contentWrap .content .contentexpand {
-  color: #eee;
-  height: 500px;
-  background: #000;
-  opacity: 0.8;
-  margin-top: -15px;
-  height: 700px;
-}
 .contentWrap .content .tester {
   border: 1px solid white;
   background: maroon;
@@ -160,6 +154,15 @@ body {
   background: blue;
   width: 200px;
   height: 200px;
+}
+.contentWrap .contentexpand {
+  color: #eee;
+  height: 500px;
+  background: #000;
+  opacity: 0.8;
+  margin-top: -15px;
+  transition: 1s ease;
+  height: 650px;
 }
 .contentWrap .footer {
   width: 100%;

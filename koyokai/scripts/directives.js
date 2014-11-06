@@ -15,10 +15,10 @@ APP
         templateUrl: 'html/dropdown.html',
         link: function($scope, $element, $attributes) {
             $scope.menu = ['About', 'Gallery', 'Members', 'Kendo', 'Events'];
-            $scope.headerImg='headerimg';
+            $scope.headerImg = 'headerimg';
 
             $scope.shrinkAndSelect=function(value, idx) {
-                $scope.headerImg='shrunk';
+                $scope.headerImg = 'shrunk';
                 $scope.selected = value;
                 $scope.tabIdx = idx;
                 $scope.contentVal = 'contentexpand';
@@ -29,7 +29,8 @@ APP
             };
 
             $scope.expandAndGo=function() {
-                $scope.headerImg='homeimg';
+                $scope.headerImg = 'homeimg';
+                $scope.contentVal = 'content';
                 $scope.selected = '';
                 };
             }
@@ -41,7 +42,7 @@ APP
         replace: false,
         templateUrl: 'html/home.html',
         link: function($scope, $element, $attributes) {
-            $scope.contentVal='content';
+            $scope.contentVal = 'content';
             }
         }
  })
