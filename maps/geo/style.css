@@ -168,6 +168,11 @@ body {
   overflow: hidden;
   background: #def;
 }
+#header > div,
+#footer > div {
+  position: relative;
+  float: right;
+}
 #header {
   top: 0;
 }
@@ -187,13 +192,12 @@ body {
 #content {
   position: absolute;
   bottom: 0;
-  top: 0;
   right: 120px;
   left: 220px;
   z-index: 10;
   height: auto;
-  margin-top: 100px;
-  margin-bottom: 30px;
+  top: 100px;
+  bottom: 30px;
   overflow: hidden;
 }
 #content-text {

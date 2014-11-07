@@ -96,6 +96,10 @@ body {
     height:@headerHeight;
     overflow:hidden;
     background:#def;
+    >div {
+        position:relative;
+        float:right;
+    }
 }
 
 #header {
@@ -120,13 +124,12 @@ body {
 #content {
     position:absolute;
     bottom:0;
-    top:0;
     right:@rightWidth;
     left:@leftWidth;
     z-index:10;
     height:auto;
-    margin-top: @headerHeight + @contentMenuHeight;
-    margin-bottom: @footerHeight;
+    top: @headerHeight + @contentMenuHeight;
+    bottom: @footerHeight;
     overflow:hidden;
 }
 
