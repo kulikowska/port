@@ -14,7 +14,7 @@ APP
         replace: false,
         templateUrl: 'html/dropdown.html',
         link: function($scope, $element, $attributes) {
-            $scope.menu = ['z', 'zz', 'zzz', 'x', 'y'];
+            //$scope.menu = ['z', 'zz', 'zzz', 'x', 'y'];
             $scope.headerImg = 'headerimg';
             $scope.viewHome = true;
 
