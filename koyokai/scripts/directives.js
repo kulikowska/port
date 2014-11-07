@@ -18,16 +18,16 @@ APP
             $scope.headerImg = 'headerimg';
             $scope.viewHome = true;
 
-            $scope.shrinkAndSelect=function(value, idx) {
+            $scope.shrinkAndSelect=function(idx) {
                 $scope.headerImg = 'shrunk';
-                $scope.selected = value;
-                $scope.tabIdx = idx;
+                $scope.selected  = idx;
+                $scope.tabIdx    = idx;
                 $scope.contentVal = 'contentexpand';
-                $scope.viewHome = false;
+                $scope.viewHome  = false;
             };
 
-            $scope.itemClass = function(value) {
-                return value === $scope.selected ? 'active' : undefined;
+            $scope.itemClass = function(idx) {
+                return idx === $scope.selected ? 'active' : undefined;
             };
 
             $scope.expandAndGo=function() {
@@ -36,9 +36,9 @@ APP
                 $scope.selected = '';
                 $scope.tabIdx = 6;
                 $scope.viewHome = true;
-                };
-            }
+            };
         }
+    }
  })
  .filter('toMenuText', function() {
     return function(input) {
