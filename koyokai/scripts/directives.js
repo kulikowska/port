@@ -44,11 +44,11 @@ APP
     return function(input) {
         var ret;
         switch(input) {
-            case '0':     ret = "about";      break;
-            case '1':     ret = "gallery";    break;
-            case '2':     ret = "members";    break;
-            case '3':     ret = "kendo";      break;
-            case '4':     ret = "events";     break;
+            case 0:     ret = "about";      break;
+            case 1:     ret = "gallery";    break;
+            case 2:     ret = "members";    break;
+            case 3:     ret = "kendo";      break;
+            case 4:     ret = "events";     break;
             default :   ret = 'out of range'; break;
        }
        return ret;
