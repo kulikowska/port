@@ -43,12 +43,13 @@ APP
  .filter('toMenuText', function() {
     return function(input) {
         var ret;
-        switch(input) {
-            case "1": ret = "about"; break;
-            case "2": ret = "gallery"; break;
-            case "3": ret = "members"; break;
-            case "4": ret = "kendo"; break;
-            case "5": ret = "events"; break;
+        switch(input+1) {
+            case 1: ret = "about"; break;
+            case 2: ret = "gallery"; break;
+            case 3: ret = "members"; break;
+            case 4: ret = "kendo"; break;
+            case 5: ret = "events"; break;
+            default : ret = 'out of range'; break;
        }
        return ret;
     };

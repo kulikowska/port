@@ -4,33 +4,23 @@ APP
 .factory('GEO', [function() {
     var map;
     var geocoder; 
+    function lonLat(lon, lat, trans) {
+        return trans 
+            ? new OpenLayers.LonLat(lon, lat).transform('EPSG:4326', 'EPSG:3857')
+            : new OpenLayers.LonLat(lon, lat);
+    }
     return {
         map: map,
-        Zinit: function(domEl) {
-            navigator.geolocation.getCurrentPosition( function(pos) {
-                var coords = {};
-                coords.lat = pos.coords.latitude;
-                coords.lon = pos.coords.longitude;
-
-                var latlng = new google.maps.LatLng(coords.lat,coords.lon);
-                var opts = { zoom: 14, center: latlng };
-                geocoder    = new google.maps.Geocoder();
-                map         = new google.maps.Map(domEl, opts);
-            });
-        },
         init: function(domEl) {
             var bingK   = "AgAuqEizNCG46goQiquz3ERCSuMYj8hr1udAEXpb1-kix08_29KzSOGQCkyL_eJc";
-            //map = new OpenLayers.Map('map', {
             geocoder    = new google.maps.Geocoder();
             map = new OpenLayers.Map('content', {
-                //projection: 'EPSG:3857',
-                projection: 'EPSG:900993',
                 layers: [
                     //new OpenLayers.Layer.WMS("Open Street", "http://maps.opengeo.org/geowebcache/service/wms", { layers : "openstreetmap", format : "image/png" }),
                     new OpenLayers.Layer.Google( "Google Streets", {numZoomLevels: 22}
                     ),
                     new OpenLayers.Layer.Google( "Google Physical",
-                        {type: google.maps.MapTypeId.TERRAIN}
+                        {type: google.maps.MapTypeId.TERRAIN, numZoomLevels:18}
                     ),
                     new OpenLayers.Layer.Google( "Google Hybrid",
                         {type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
@@ -45,19 +35,14 @@ APP
                     }),
                     new OpenLayers.Layer.Bing({ name: "Bing Aerial", key: bingK, type: "Aerial" })
                 ],
-                center: new OpenLayers.LonLat(10.2, 48.9).transform('EPSG:4326', 'EPSG:3857'),
-                numZoomLevels:21,
-                zoom:16,
+                //center: new OpenLayers.LonLat(21.018267, 52.235850).transform('EPSG:4326', 'EPSG:3857'),
+                center: lonLat(21.018267, 52.235850, true),
+                zoom:14,
                 controls: [
                     new OpenLayers.Control.Navigation(),
                     new OpenLayers.Control.PanZoomBar(),
                     new OpenLayers.Control.LayerSwitcher({'ascending':true}),
-                    //new OpenLayers.Control.Permalink(),
                     new OpenLayers.Control.ScaleLine(),
-                    //new OpenLayers.Control.Permalink('permalink'),
-                    //new OpenLayers.Control.MousePosition(),
-                    //new OpenLayers.Control.OverviewMap(),
-                    //new OpenLayers.Control.KeyboardDefaults()
                 ]
             });
 
@@ -65,18 +50,20 @@ APP
             console.log( elevator, ' elevator ');
         },
         locAddress: function(addr, cb) {
-            console.log( map.getNumZoomLevels(), 'num zoom levs' );
             geocoder.geocode( { 'address': addr}, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     var loc = results[0].geometry.location;
-                    var ll = new OpenLayers.LonLat(loc.B, loc.k).transform('EPSG:4326', 'EPSG:3857');
-                    map.setCenter(ll,22);
+                    map.setCenter(lonLat(loc.B, loc.k, true), 22);
 
                     //new google.maps.Marker({ map: map, position: loc });
                     cb({'lat': loc.k, 'lon': loc.B});
                 } else { cb(false); }
             });
         }
+    }
+}])
+.factory('OL', [function() {
+    return {
     }
 }])
 .factory('UT', [function() {
