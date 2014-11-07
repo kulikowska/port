@@ -3,7 +3,7 @@
        <li ng-click="expandAndGo()">Home
             <div id="leafimg"><img src='../images/leaf3.png'></div>
        </li>
-       <li ng-repeat="(i,value) in menu" ng-click="shrinkAndSelect(value, i)" ng-class="itemClass(value)">
+       <li ng-repeat="(i,value) in [1,1,1,1,1]" ng-click="shrinkAndSelect(value, i)" ng-class="itemClass(value)">
             {{i|toMenuText}}
             <div id="leafimg"><img src='../images/leaf3.png'></div>
        </li>
