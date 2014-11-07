@@ -20,20 +20,18 @@ APP
 
             $scope.shrinkAndSelect=function(idx) {
                 $scope.headerImg = 'shrunk';
-                $scope.selected  = idx;
                 $scope.tabIdx    = idx;
                 $scope.contentVal = 'contentexpand';
                 $scope.viewHome  = false;
             };
 
             $scope.itemClass = function(idx) {
-                return idx === $scope.selected ? 'active' : undefined;
+                return idx === $scope.tabIdx? 'active' : undefined;
             };
 
             $scope.expandAndGo=function() {
                 $scope.headerImg = 'homeimg';
                 $scope.contentVal = 'content';
-                $scope.selected = '';
                 $scope.tabIdx = 6;
                 $scope.viewHome = true;
             };
