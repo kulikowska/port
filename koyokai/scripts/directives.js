@@ -22,7 +22,6 @@ APP
                 $scope.headerImg = 'shrunk';
                 $scope.tabIdx    = idx;
                 $scope.contentVal = 'contentexpand';
-                $scope.viewHome  = false;
             };
 
             $scope.itemClass = function(idx) {
@@ -33,7 +32,6 @@ APP
                 $scope.headerImg = 'homeimg';
                 $scope.contentVal = 'content';
                 $scope.tabIdx = 6;
-                $scope.viewHome = true;
             };
         }
     }
