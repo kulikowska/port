@@ -16,6 +16,7 @@ APP
         link: function($scope, $element, $attributes) {
             $scope.headerImg = 'headerimg';
             $scope.viewHome = true;
+            $scope.tabIdx = 6;
 
             $scope.shrinkAndSelect=function(idx) {
                 $scope.headerImg = 'shrunk';
