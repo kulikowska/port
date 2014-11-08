@@ -35,10 +35,14 @@ APP
         }
     }
  })
+ .filter('checkActive', function() {
+    return function(input) {
+        return input ? 'active' : '';
+    };
+})
  .filter('toMenuText', function() {
     return function(input) {
         var ret;
-        console.log( typeof input , input);
         switch(input) {
             case 0:     ret = "about";      break;
             case 1:     ret = "gallery";    break;
