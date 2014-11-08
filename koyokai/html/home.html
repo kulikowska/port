@@ -1,19 +1,23 @@
-<div ng-class='contentVal'>   
-    <div class='homecontent' ng-show="tabIdx>4"> Home </div>
+<div ng-class='contentVal'>
+    <!-- <div class='homecontent' ng-show="tabIdx>4"> Home </div>
+    -->
     <ul class='tabIdx'>
-        <li id="about" ng-show="tabIdx==0">
+        <li id="homecontent" ng-show="tabIdx==0">
+            <div></div>
+        </li>
+        <li id="about" ng-show="tabIdx==1">
             <div class='about'></div>
         </li>
-        <li id="gallery" ng-show="tabIdx==1">
+        <li id="gallery" ng-show="tabIdx==2">
             <div class='gallery'></div>
         </li>
-        <li id="members" ng-show="tabIdx==2">
+        <li id="members" ng-show="tabIdx==3">
             <div class='members'></div>
         </li>
-        <li id="kendo" ng-show="tabIdx==3">
+        <li id="kendo" ng-show="tabIdx==4">
             <div class='kendo'></div>
         </li>
-        <li id="events" ng-show="tabIdx==4">
+        <li id="events" ng-show="tabIdx==5">
             <div class='events'></div>
         </li>
     </ul>

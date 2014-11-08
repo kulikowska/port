@@ -14,15 +14,16 @@ APP
         replace: false,
         templateUrl: 'html/dropdown.html',
         link: function($scope, $element, $attributes) {
-            $scope.headerImg = 'headerimg';
-            $scope.tabIdx = 6;
+            //$scope.headerImg = 'headerimg';
+            //$scope.tabIdx = 0;
 
             $scope.shrinkAndSelect=function(idx) {
-                $scope.headerImg = 'shrunk';
                 $scope.tabIdx    = idx;
-                $scope.contentVal = 'contentexpand';
+                $scope.headerImg = idx  ? 'shrunk' : 'homeimg';
+                $scope.contentVal = idx ? 'contentexpand' : 'content';
             };
 
+            /*
             $scope.itemClass = function(idx) {
                 return idx === $scope.tabIdx? 'active' : undefined;
             };
@@ -32,6 +33,7 @@ APP
                 $scope.contentVal = 'content';
                 $scope.tabIdx = 6;
             };
+            */
         }
     }
  })
@@ -44,11 +46,12 @@ APP
     return function(input) {
         var ret;
         switch(input) {
-            case 0:     ret = "about";      break;
-            case 1:     ret = "gallery";    break;
-            case 2:     ret = "members";    break;
-            case 3:     ret = "kendo";      break;
-            case 4:     ret = "events";     break;
+            case 0:     ret = "home";      break;
+            case 1:     ret = "about";      break;
+            case 2:     ret = "gallery";    break;
+            case 3:     ret = "members";    break;
+            case 4:     ret = "kendo";      break;
+            case 5:     ret = "events";     break;
             default :   ret = 'out of range'; break;
        }
        return ret;
