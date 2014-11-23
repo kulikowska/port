@@ -5,7 +5,6 @@ APP
         replace: true,
         template: TPL.mapWs,
         link: function(scope, el) {
-            LG( GEO , 'geo ');
             setTimeout( function() { GEO.init(el[0]); }, 0);
         }
     }
@@ -34,7 +33,14 @@ APP
         replace: true,
         template:  TPL.menuWs,
         link: function($scope, el) {
-            $scope.activate = function(what) { OLCtrl.activate(what); }
+            $scope.activate = function(what) { 
+                OLCtrl.activate(what, function(loc, el) {
+                    $scope.elevation  = el;;
+                    $scope.coords.lon = loc.lon;
+                    $scope.coords.lat = loc.lat;
+                    $scope.$digest();
+                }); 
+            }
         }
     }
 }])
@@ -53,9 +59,11 @@ APP
         scope: {plugData: "="},
         template: TPL.whitespace,
         link: function($scope, $element, $attributes) {
+            $scope.coords = {};
             $scope.locAddress = function() {
                 GEO.locAddress( $scope.addr, function(coords) { 
                     $scope.coords = coords;
+                    LG( $scope.coords );
                     $scope.$digest();
                 });
             }

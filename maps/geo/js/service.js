@@ -47,15 +47,11 @@ APP
                 ]
             });
             OL.setMap(map);
-
-            var elevator = new google.maps.ElevationService();
-
-            // test circle in Gdynia Redłowo
-            map.addLayer(OL.RingV('1Km from Home',[18.55, 54.49], 'red'));
-            //OL.InitCtrl(map, 'box');
             OL.Ctrl(['box', 'point', 'center', 'elevation']);
 
-            //console.log( elevator, ' elevator ');
+            // test circle in Gdynia Redłowo
+            map.addLayer(OL.RingV('1Km from Home',[[18.55, 54.49]], 'red'));
+
         },
         locAddress: function(addr, cb) {
             geocoder.geocode( { 'address': addr}, function(results, status) {
@@ -103,6 +99,7 @@ APP
 }])
 .factory('OLCtrl', [function() {
     var _this = this;
+    var cbk = null;
     var ml = new OpenLayers.Layer.Vector("Selects");
     var ctrls = {
         box : new OpenLayers.Control.DrawFeature(
@@ -112,40 +109,32 @@ APP
         }}}),
         center : new OpenLayers.Control.DrawFeature(
             ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
-                a.lon = a.x;
-                a.lat = a.y;
-                //var pt = (new OpenLayers.Geometry.Point([a.x, a.y])).transform('EPSG:4326', 'EPSG:3857');
-                var pt = (new OpenLayers.Geometry.Point([a.x, a.y]));
-                    console.log( pt ,  ' pt ');
-                    console.log('asdf', a);
-                    _this.map.setCenter(OpenLayers.LonLat(a.x, a.y), 8);
-                    console.log( ' center done', pt);
+                _this.map.setCenter(new OpenLayers.LonLat(a.x, a.y));
+                _this.cbk((new OpenLayers.LonLat(a.x, a.y)).transform('EPSG:3857', 'EPSG:4326'), 0);
                 ctrls.center.deactivate();
         }}}),
         point:  new OpenLayers.Control.DrawFeature(
-            ml, OpenLayers.Handler.Point, { callbacks: 
-            { 
-                done: function(a) {
-                    a.lon = a.x;
-                    a.lat = a.y;
-                    console.log( ' point  done');
+            ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
+                    a.transform('EPSG:3857', 'EPSG:4326');
                     ctrls.point.deactivate();
         }}}),
         elevation:  new OpenLayers.Control.DrawFeature(
-            ml, OpenLayers.Handler.Point, { callbacks: 
-            { 
-                done: function(a) {
-                    a.lon = a.x;
-                    a.lat = a.y;
-                    console.log( ' elevation done');
-                    ctrls.elevation.deactivate();
+            ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
+                a.transform('EPSG:3857', 'EPSG:4326');
+                    (new google.maps.ElevationService()).getElevationForLocations(
+                        { locations: [new google.maps.LatLng(a.y, a.x)] },
+                        function(v) {
+                            _this.cbk((new OpenLayers.LonLat(v[0].location.B, v[0].location.k)), v[0].elevation);
+                        }
+                );
+                ctrls.elevation.deactivate();
         }}})
     };
 
     setTimeout( function() { _this.map.addLayer(ml); }, 100);
 
     return {
-        map: 'map string',
+        map: null,
         init: function(what) {
             setTimeout( function() { 
                 if (typeof what == 'string') 
@@ -154,10 +143,9 @@ APP
                     for (var i=0; i<what.length; i++) _this.map.addControl(ctrls[what[i]]); 
             }, 0);
         },
-        activate: function(what){
-            ctrls[what].activate();
-        },
-        setMap: function( map ) { _this.map = map; }
+        activate:   function(what, cb)  { _this.cbk = cb; ctrls[what].activate(); },
+        deactivate: function(what)      { ctrls[what].deactivate(); },
+        setMap:     function( map )     { _this.map = map; }
     }
 }])
 .factory('OL', ['OLStyle', 'OLCtrl', function(OLStyle, OLCtrl) {

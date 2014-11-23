@@ -172,6 +172,7 @@ body {
 #footer > div {
   position: relative;
   float: right;
+  margin-right: 20px;
 }
 #header {
   top: 0;

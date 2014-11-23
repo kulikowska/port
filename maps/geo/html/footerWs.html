@@ -3,5 +3,6 @@
       <input id="address" type="textbox" ng-model="addr">
       <input type="button" value="Locate on Map" ng-click="locAddress()">
     </div>
-    <div>Lon: {{coords.lon}}, Lat: {{coords.lat}}</div>
+    <div ng-show="coords.lon">Lon: {{coords.lon}}, Lat: {{coords.lat}}</div>
+    <div ng-show="elevation" >Elevation {{elevation}}</div>
 </div>
