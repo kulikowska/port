@@ -50,7 +50,8 @@ APP
             OL.Ctrl(['box', 'point', 'center', 'elevation']);
 
             // test circle in Gdynia Redłowo
-            map.addLayer(OL.RingV('1Km from Home',[[18.55, 54.49]], 'red'));
+            var lr = OL.RingV('1Km from Home',[[18.54, 54.48], [18.55, 54.49]], 'red');
+            map.addLayer(lr);
 
         },
         locAddress: function(addr, cb) {
@@ -165,20 +166,30 @@ APP
         return new OpenLayers.Geometry.LinearRing(pList);
     }; 
 
-    var ringF = function(l, style) { 
-        //return new OpenLayers.Feature.Vector( ring(l), null, OLStyle.get('style') );
-        return new OpenLayers.Feature.Vector( circ(l), null, OLStyle.get('style') );
-    };
-    var ringV = function(id, l, style) {
-        var v = new OpenLayers.Layer.Vector(id, { rendererOptions: {zIndexing: true} });
-        v.addFeatures([ringF(l, OLStyle.get('style'))]);
-        return v;
-    };
     var circ = function(origin, radius) {
         origin = new OpenLayers.Geometry.Point(origin[0], origin[1]).transform('EPSG:4326', 'EPSG:3857');;
-        typeof radius == 'undefined' && (radius = 1300); // 1km
+        typeof radius == 'undefined' && (radius = 1300); // 1.3km
         return new OpenLayers.Geometry.Polygon.createRegularPolygon(origin, radius, 40);
     };
+
+    var ringF = function(l, style) { 
+        //return new OpenLayers.Feature.Vector( ring(l), null, OLStyle.get('style') );
+        var circs = [];
+        if (typeof l[0] == 'number') {
+            circs = new OpenLayers.Feature.Vector( circ(l), null, OLStyle.get('style') );
+        } else {
+            for (var i=0; i< l.length; i++ )
+                circs.push( new OpenLayers.Feature.Vector( circ(l[i]), null, OLStyle.get('style') ));
+        }
+        return circs; 
+    };
+
+    var ringV = function(id, l, style) {
+        var v = new OpenLayers.Layer.Vector(id, { rendererOptions: {zIndexing: true} });
+        v.addFeatures(ringF(l, OLStyle.get('style')));
+        return v;
+    };
+
     var _this = this;
     return {
         List: function(l, closeIt) { return pointList(l, closeIt); },
