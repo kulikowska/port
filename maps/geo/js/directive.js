@@ -1,29 +1,29 @@
 APP
-.directive('mapWs', ['GEO', 'OL',  function(GEO, OL) {
+.directive('mapWs', ['TPL', 'GEO'',  function(TPL, GEO) {
     return {
         restrict: 'A',
         replace: true,
-        template: '<div id="content"></div>',
+        template: TPL.mapWs,
         link: function(scope, el) {
             LG( GEO , 'geo ');
             setTimeout( function() { GEO.init(el[0]); }, 0);
         }
     }
 }])
-.directive('leftWs', [function() {
+.directive('leftWs', ['TPL', function(TPL) {
     return {
         restrict: 'A',
         replace: true,
-        template: '<div id="left">left pane</div>',
+        template: TPL.leftWs,
         link: function(scope, el) {
         }
     }
 }])
-.directive('rightWs', [function() {
+.directive('rightWs', ['TPL', function(TPL) {
     return {
         restrict: 'A',
         replace: true,
-        template: '<div id="right">right pane</div>',
+        template: TPL.rightWs,
         link: function(scope, el) {
         }
     }
@@ -33,9 +33,6 @@ APP
         restrict: 'A',
         replace: true,
         template:  TPL.menuWs,
-        /*
-        '<div id="contentMenu"><button ng-click="activate(\'box\');">Box</button><button ng-click="activate(\'point\');">Point</button><button ng-click="activate(\'center\');">Center</button></div>',
-        */
         link: function($scope, el) {
             $scope.activate = function(what) { OLCtrl.activate(what); }
         }
@@ -55,12 +52,6 @@ APP
         replace:false,
         scope: {plugData: "="},
         template: TPL.whitespace,
-        /*
-            '<div id="container">' +
-                '<div left-ws></div><div menu-ws></div><div map-ws></div><div right-ws></div>' +
-                '<div footer-ws></div>' +
-            '</div>'
-            */
         link: function($scope, $element, $attributes) {
             $scope.locAddress = function() {
                 GEO.locAddress( $scope.addr, function(coords) { 
