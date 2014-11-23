@@ -1,5 +1,5 @@
 APP
-.directive('mapWs', ['GEO', function(GEO) {
+.directive('mapWs', ['GEO', 'OL',  function(GEO, OL) {
     return {
         restrict: 'A',
         replace: true,
@@ -27,12 +27,13 @@ APP
         }
     }
 }])
-.directive('menuWs', [function() {
+.directive('menuWs', ['OLCtrl', function(OLCtrl) {
     return {
         restrict: 'A',
         replace: true,
-        template: '<div id="contentMenu">menu here</div>',
-        link: function(scope, el) {
+        template: '<div id="contentMenu"><button ng-click="activate(\'box\');">Box</button><button ng-click="activate(\'point\');">Point</button><button ng-click="activate(\'center\');">Center</button></div>',
+        link: function($scope, el) {
+            $scope.activate = function(what) { OLCtrl.activate(what); }
         }
     }
 }])

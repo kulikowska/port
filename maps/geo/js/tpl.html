@@ -1,0 +1,32 @@
+var tplObject =  {
+<directive>mapWs</directive>
+<html><div id="content"></div></html>
+
+<directive>leftWs</directive>
+<html><div id="left">left pane</div></html>
+
+<directive>rightWs</directive>
+<html><div id="right">right pane</div></html>
+
+<directive>menuWs</directive>
+<html><div id="contentMenu">menu here</div></html>
+
+<directive>footerWs</directive>
+<html>
+<div id="footer" ng-init="addr=163 Legionów Gdynia Poland\;">
+    <div id="panel">
+      <input id="address" type="textbox" ng-model="addr">
+      <input type="button" value="Locate on Map" ng-click="locAddress()">
+    </div>
+    <div>Lon: {{coords.lon}}, Lat: {{coords.lat}}</div>
+</div>
+</html>
+
+<directive>whitespace</directive>
+<html>
+<div id="container">
+    <div left-ws></div><div menu-ws></div><div map-ws></div><div right-ws></div>
+    <div footer-ws></div>
+</div>
+</html>
+}
