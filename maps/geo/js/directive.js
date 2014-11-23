@@ -1,5 +1,5 @@
 APP
-.directive('mapWs', ['TPL', 'GEO'',  function(TPL, GEO) {
+.directive('mapWs', ['TPL', 'GEO',  function(TPL, GEO) {
     return {
         restrict: 'A',
         replace: true,
