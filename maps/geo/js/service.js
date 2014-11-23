@@ -1,3 +1,4 @@
+function LG(arg) { console.log(arg); }
 if (typeof APP == 'undefined') var APP = angular.module('WS',[]);
 
 APP
