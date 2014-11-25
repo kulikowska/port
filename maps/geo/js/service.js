@@ -49,10 +49,19 @@ APP
             OL.setMap(map);
             OL.Ctrl(['box', 'point', 'center', 'elevation']);
 
+            var idx = 1;
             // test circle in Gdynia Redłowo
-            var lr = OL.RingV('1Km from Home',[[18.54, 54.48], [18.55, 54.49]], 'red');
+            var lr = OL.RingM('1Km Marker',[[18.54, 54.48], [18.55, 54.49]], 'green');
             map.addLayer(lr);
-
+            var lr1 = OL.RingV('1Km from Home',[[18.53, 54.47], [18.54, 54.48]], 'short');
+            map.addLayer(lr1);
+            map.setLayerIndex(lr, ++idx);
+            setTimeout(function() { 
+                for (var i=0; i<lr1.features.length; i++) {
+                    lr1.features[i].style.display = 'none';
+                    lr1.redraw();
+                }
+            }, 218000);
         },
         locAddress: function(addr, cb) {
             geocoder.geocode( { 'address': addr}, function(results, status) {
@@ -72,28 +81,35 @@ APP
 
     var Host =  'http://' + document.location.host + '/';
     var imgPath = Host + 'image/';
+    var markerWidth24 = 16;
+    var markerWidth36 = 24;
 
     var def = function(styleId, base, params)    { 
         if ( typeof STYLES[styleId] == 'undefined' ) {
             STYLES[styleId] = OpenLayers.Feature.Vector.style['default'];
             typeof STYLES[base] != 'undefined' && (STYLES[styleId] = angular.copy(STYLES[base]));
-            typeof params != 'undefined' && (STYLES[styleId] = angular.copy(params));
+            typeof params != 'undefined' && (STYLES[styleId] = angular.copy(params, STYLES[styleId]));
             STYLES[styleId].id = styleId;
         }
     };
 
     def('base', '',  {graphicOpacity: 1, 'strokeWidth' : 1});
-    def('green',  'base', {'fillOpacity': 0.2, 'strokeColor': '#008800', 'fillColor' : '#44ffaa',
-            externalGraphic : imgPath + 'pin.png', graphicWidth : 12,  graphicHeight: 24,
-            graphicYOffset: -24, display : 'block'});
+    def('green',  'base', {'fillOpacity': 0.9, 'strokeColor': '#008800', 'fillColor' : '#44ffaa',
+            externalGraphic : imgPath + 'markgreen.png', graphicWidth : 12,  graphicHeight: 24,
+            graphicYOffset: -24});
     def('red',    'green', {'strokeColor': 'red', 'fillColor' : '#ff8844'});
     def('blue',   'green', {'strokeColor': '#0044ff', 'fillColor' : '#88aaff'});
     def('noshow',   'green', {'strokeColor': 'transparent', 'fillColor' : 'transparent', 'display' : 'none'});
 
-    def('greenL',   'green', {'strokeColor': '#00aa00', 'fillOpacity' : 0.1 });
-    def('greenM',   'green', {});
-    def('greenD',   'green', {'strokeColor': '#002200', 'fillOpacity' : 0.6 });
+    def('long',   'green', {'strokeColor': '#00aa00', 'fillOpacity' : 0.1 });
+    def('med',   'green', {'fillOpacity': 0.2, 'fillColor' : '#008800'});
+    def('short',   'green', {'strokeColor': '#880000', 'fillOpacity' : 0.2, 'fillColor' : '#aa0000' });
 
+    def('marker','', {   graphicHeight : 20, graphicYOffset : -20, 
+                        graphicWidth : 12,  graphicXOffset : -6, 
+                        externalGraphic : imgPath + 'pin.png', fillOpacity:1} );
+
+    LG( STYLES );
     return {
         get: function(styleId) { return STYLES[styleId]; }
     };
@@ -172,21 +188,48 @@ APP
         return new OpenLayers.Geometry.Polygon.createRegularPolygon(origin, radius, 40);
     };
 
+    var markF = function(l, style) { 
+        //return new OpenLayers.Feature.Vector( ring(l), null, OLStyle.get('style') );
+        var circs = [];
+        if (typeof l[0] == 'number') {
+                var point =  new OpenLayers.Geometry.Point(l[i], l[i], OLStyle.get('green')).transform('EPSG:4326', 'EPSG:3857');
+                circs =  new OpenLayers.Feature.Vector(point,null, OLStyle.get('green'));
+        } else {
+            for (var i=0; i< l.length; i++ ) {
+                var point =  new OpenLayers.Geometry.Point(l[i][0], l[i][1], OLStyle.get('green')).transform('EPSG:4326', 'EPSG:3857');
+                var vector =  new OpenLayers.Feature.Vector(point,null, OLStyle.get('green'));
+                circs.push(vector);
+            }
+        }
+        return circs; 
+    };
     var ringF = function(l, style) { 
         //return new OpenLayers.Feature.Vector( ring(l), null, OLStyle.get('style') );
         var circs = [];
         if (typeof l[0] == 'number') {
-            circs = new OpenLayers.Feature.Vector( circ(l), null, OLStyle.get('style') );
+            circs = new OpenLayers.Feature.Vector( circ(l), null, OLStyle.get(style) );
         } else {
-            for (var i=0; i< l.length; i++ )
-                circs.push( new OpenLayers.Feature.Vector( circ(l[i]), null, OLStyle.get('style') ));
+            for (var i=0; i< l.length; i++ ) {
+                var point =  new OpenLayers.Geometry.Point(l[i][0], l[i][1], OLStyle.get('marker')).transform('EPSG:4326', 'EPSG:3857');
+                var vector =  new OpenLayers.Feature.Vector(point,null, OLStyle.get('marker'));
+                circs.push( new OpenLayers.Feature.Vector( circ(l[i]), null, OLStyle.get(style) ));
+                circs.push(vector);
+            }
         }
         return circs; 
     };
 
     var ringV = function(id, l, style) {
         var v = new OpenLayers.Layer.Vector(id, { rendererOptions: {zIndexing: true} });
-        v.addFeatures(ringF(l, OLStyle.get('style')));
+        //v.addFeatures(ringF(l, OLStyle.get(style)));
+        v.addFeatures(ringF(l, style));
+        return v;
+    };
+
+    var ringM = function(id, l, style) {
+        var v = new OpenLayers.Layer.Vector(id, { rendererOptions: {zIndexing: true} });
+        //v.addFeatures(ringF(l, OLStyle.get(style)));
+        v.addFeatures(markF(l, style));
         return v;
     };
 
@@ -196,6 +239,7 @@ APP
         Ring: function(l) { return ring(l); },
         RingF: function(l, style) { return ringF(l, style); },
         RingV: function(id, l, style) { return ringV(id, l, style); },
+        RingM: function(id, l, style) { return ringM(id, l, style); },
         setMap: function( map ) { _this.map = map; OLCtrl.setMap(map); },
         Ctrl: function(what) { OLCtrl.init(what); }
     }
