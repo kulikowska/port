@@ -6,4 +6,25 @@ APP
         return Math.floor(input/skip - 0.001) % 2 ? '' : 'alter';
     };
 })
-;
+.filter('checkActive', function() {
+    return function(input) { return input ? 'active' : ''; };
+})
+.filter('checkInactive', function() {
+    return function(input) { return input ? 'inactive' : ''; };
+})
+.filter('pushBack', function() {
+    return function(input) {
+        return input ? 'inactive' : '';
+    };
+})
+.filter('threeWay', function() {
+    return function(input) {
+        var ret;
+        switch(input) {
+            case "1": ret = "up"; break;
+            case "2": ret = "down"; break;
+            default : ret = "noshow"; break;
+        }
+        return ret;
+    };
+}) 

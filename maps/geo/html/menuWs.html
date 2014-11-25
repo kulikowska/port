@@ -1,6 +1,6 @@
 <div id="contentMenu">
-    <button ng-click="activate('box');">Box</button>
-    <button ng-click="activate('point');">Point</button>
-    <button ng-click="activate('center');">Center</button>
-    <button ng-click="activate('elevation');">Elevation</button>
+    <button ng-click="activate('box');" ng-class="box|checkActive">Box</button>
+    <button ng-click="activate('point');" ng-class="point|checkActive">Point</button>
+    <button ng-click="activate('center');" ng-class="center|checkActive">Center</button>
+    <button ng-click="activate('elevation');" ng-class="elevation|checkActive">Elevation</button>
 </div>

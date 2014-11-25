@@ -33,14 +33,38 @@ APP
         replace: true,
         template:  TPL.menuWs,
         link: function($scope, el) {
+            $scope.active = '';
+            $scope.point = $scope.center = $scope.elevation = 0;
+            $scope.box = 1;
+
             $scope.activate = function(what) { 
-                OLCtrl.activate(what, function(loc, el) {
-                    $scope.elevation  = el;;
-                    $scope.coords.lon = loc.lon;
-                    $scope.coords.lat = loc.lat;
-                    $scope.$digest();
-                }); 
+                $scope.active && OLCtrl.deactivate($scope.active);
+                if (what != $scope.active) {
+                    if ( $scope.active ) $scope[$scope.active] = 0;
+                    $scope[what] = 1;
+                    $scope.active = what;
+
+                    OLCtrl.activate(what, function(loc, el) {
+                        if ($scope.active == 'elevation')
+                            $scope.coords.elevation  = el.toFixed(4);
+                        else 
+                            $scope.coords.elevation  = 0;
+
+                        if ($scope.active != 'box') {
+                            $scope.coords.lon = loc.lon.toFixed(4);
+                            $scope.coords.lat = loc.lat.toFixed(4);
+                        } else {
+                            $scope.coords.lon = loc.tl.lon.toFixed(4);
+                            $scope.coords.lat = loc.tl.lat.toFixed(4);
+                        }
+                        $scope.$digest();
+                    }); 
+                } else { 
+                    $scope[$scope.active] = 0;
+                    $scope.active = '';
+                }
             }
+            setTimeout( function () { $scope.activate($scope.active = 'box');}, 800);
         }
     }
 }])

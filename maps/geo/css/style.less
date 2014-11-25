@@ -65,6 +65,10 @@ body {
     height: 100%;
 }
 
+.active {
+    border:2px solid #333;
+}
+
 #container {
     position:relative;
     z-index:1;
@@ -120,6 +124,16 @@ body {
     left: @leftWidth;
     height: @contentMenuHeight;
     background:#aad;
+    button {
+        background:#def;
+        border:1px solid transparent;
+        &:hover,
+        &.active { 
+            border:1px solid red;
+            background:#789;
+            color:white;
+        }
+    }
 }
 
 #content {

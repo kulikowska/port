@@ -121,30 +121,38 @@ APP
     var ctrls = {
         box : new OpenLayers.Control.DrawFeature(
             ml, OpenLayers.Handler.Box, { callbacks: { done: function(a) {
-            console.log( 'box done');
-            ctrls.box.deactivate();
+            //console.log( 'box done', a);
+            _this.cbk({ 
+                tl: _this.map.getLonLatFromPixel( 
+                    new OpenLayers.Pixel(a.top, a.left)).transform('EPSG:3857', 'EPSG:4326'
+                ),
+                br: _this.map.getLonLatFromPixel(
+                    new OpenLayers.Pixel(a.bottom, a.right)).transform('EPSG:3857', 'EPSG:4326')
+            });
+            //ctrls.box.deactivate();
         }}}),
         center : new OpenLayers.Control.DrawFeature(
             ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
                 _this.map.setCenter(new OpenLayers.LonLat(a.x, a.y));
                 _this.cbk((new OpenLayers.LonLat(a.x, a.y)).transform('EPSG:3857', 'EPSG:4326'), 0);
-                ctrls.center.deactivate();
+                //ctrls.center.deactivate();
         }}}),
         point:  new OpenLayers.Control.DrawFeature(
             ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
-                    a.transform('EPSG:3857', 'EPSG:4326');
-                    ctrls.point.deactivate();
+                a.transform('EPSG:3857', 'EPSG:4326');
+                _this.cbk((new OpenLayers.LonLat(a.x, a.y)), 0);
+                //ctrls.point.deactivate();
         }}}),
         elevation:  new OpenLayers.Control.DrawFeature(
             ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
                 a.transform('EPSG:3857', 'EPSG:4326');
-                    (new google.maps.ElevationService()).getElevationForLocations(
-                        { locations: [new google.maps.LatLng(a.y, a.x)] },
-                        function(v) {
-                            _this.cbk((new OpenLayers.LonLat(v[0].location.B, v[0].location.k)), v[0].elevation);
-                        }
+                (new google.maps.ElevationService()).getElevationForLocations(
+                    { locations: [new google.maps.LatLng(a.y, a.x)] },
+                    function(v) {
+                        _this.cbk((new OpenLayers.LonLat(v[0].location.B, v[0].location.k)), v[0].elevation);
+                    }
                 );
-                ctrls.elevation.deactivate();
+                //ctrls.elevation.deactivate();
         }}})
     };
 
@@ -161,7 +169,7 @@ APP
             }, 0);
         },
         activate:   function(what, cb)  { _this.cbk = cb; ctrls[what].activate(); },
-        deactivate: function(what)      { ctrls[what].deactivate(); },
+        deactivate: function(what)      { LG(what); LG( ctrls); ctrls[what].deactivate(); },
         setMap:     function( map )     { _this.map = map; }
     }
 }])
