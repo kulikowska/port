@@ -1,13 +1,14 @@
 APP
-.directive('header', function() {
+.directive('header', ['TPL', function(TPL) {
     return {
         restrict: 'C',
         replace: false,
-        templateUrl: 'html/header.html',
+        //templateUrl: 'html/header.html',
+        template: TPL.header,
         link: function($scope, $element, $attributes) {
             }
         }
- })
+ }])
 .directive('dropdown', function() {
     return {
         restrict: 'C',

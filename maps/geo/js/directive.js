@@ -40,15 +40,12 @@ APP
             $scope.activate = function(what) { 
                 $scope.active && OLCtrl.deactivate($scope.active);
                 if (what != $scope.active) {
-                    if ( $scope.active ) $scope[$scope.active] = 0;
+                    $scope.active && ($scope[$scope.active] = 0);
                     $scope[what] = 1;
                     $scope.active = what;
 
                     OLCtrl.activate(what, function(loc, el) {
-                        if ($scope.active == 'elevation')
-                            $scope.coords.elevation  = el.toFixed(4);
-                        else 
-                            $scope.coords.elevation  = 0;
+                        $scope.coords.elevation = $scope.active == 'elevation' ? el.toFixed(4) : 0;
 
                         if ($scope.active != 'box') {
                             $scope.coords.lon = loc.lon.toFixed(4);

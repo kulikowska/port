@@ -196,10 +196,10 @@ body {
 #contentMenu button {
   background: #def;
   border: 1px solid transparent;
+  border-bottom-right-radius: 6px;
 }
 #contentMenu button:hover,
 #contentMenu button.active {
-  border: 1px solid red;
   background: #789;
   color: white;
 }
