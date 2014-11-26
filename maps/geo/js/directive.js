@@ -27,7 +27,7 @@ APP
         }
     }
 }])
-.directive('menuWs', ['TPL', 'OLCtrl', function(TPL, OLCtrl) {
+.directive('menuWs', ['TPL', 'OLCtrl', 'OL', function(TPL, OLCtrl, OL) {
     return {
         restrict: 'A',
         replace: true,
@@ -44,7 +44,7 @@ APP
                     $scope[what] = 1;
                     $scope.active = what;
 
-                    OLCtrl.activate(what, function(loc, el) {
+                    OL.activate(what, function(loc, el) {
                         $scope.coords.elevation = $scope.active == 'elevation' ? el.toFixed(4) : 0;
 
                         if ($scope.active != 'box') {

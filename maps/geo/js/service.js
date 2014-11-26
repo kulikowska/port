@@ -5,6 +5,7 @@ APP
 .factory('GEO', ['OL', function(OL) {
     var map;
     var geocoder; 
+    var _this = this;
     function lonLat(lon, lat, trans) {
         return trans 
             ? new OpenLayers.LonLat(lon, lat).transform('EPSG:4326', 'EPSG:3857')
@@ -47,10 +48,20 @@ APP
                 ]
             });
             OL.setMap(map);
-            OL.Ctrl(['box', 'point', 'center', 'elevation']);
+            map.addLayers([
+                OL.RingV('coverageL'  , [[18.531, 54.47]], 'long'),
+                OL.RingV('coverageM'  , [[18.532, 54.47]], 'med'),
+                OL.RingV('coverageS'  , [[18.533, 54.47]], 'short'),
+                OL.RingM('center'     , [[18.534, 54.47]], 'center'),
+                OL.RingM('deviceL'    , [[18.535, 54.47]], 'green')
+            ]);
+            OL.showFeatures('deviceL', false);
+
+            OL.initCtrls(['box', 'point', 'center', 'elevation']);
 
             var idx = 1;
             // test circle in Gdynia Redłowo
+            /*
             var lr = OL.RingM('1Km Marker',[[18.54, 54.48], [18.55, 54.49]], 'green');
             map.addLayer(lr);
             var lr1 = OL.RingV('1Km from Home',[[18.53, 54.47], [18.54, 54.48]], 'short');
@@ -62,6 +73,7 @@ APP
                     lr1.redraw();
                 }
             }, 218000);
+            */
         },
         locAddress: function(addr, cb) {
             geocoder.geocode( { 'address': addr}, function(results, status) {
@@ -109,7 +121,11 @@ APP
                         graphicWidth : 12,  graphicXOffset : -6, 
                         externalGraphic : imgPath + 'pin.png', fillOpacity:1} );
 
-    LG( STYLES );
+    def('center','', {   graphicHeight : 32, graphicYOffset : -16, 
+                        graphicWidth : 32,  graphicXOffset : -16, 
+                        externalGraphic : imgPath + 'target.png', fillOpacity:1} );
+
+
     return {
         get: function(styleId) { return STYLES[styleId]; }
     };
@@ -130,11 +146,13 @@ APP
                     new OpenLayers.Pixel(a.bottom, a.right)).transform('EPSG:3857', 'EPSG:4326')
             });
             //ctrls.box.deactivate();
-        }}}),
+        }}
+        }),
         center : new OpenLayers.Control.DrawFeature(
             ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
                 _this.map.setCenter(new OpenLayers.LonLat(a.x, a.y));
                 _this.cbk((new OpenLayers.LonLat(a.x, a.y)).transform('EPSG:3857', 'EPSG:4326'), 0);
+
                 //ctrls.center.deactivate();
         }}}),
         point:  new OpenLayers.Control.DrawFeature(
@@ -160,17 +178,17 @@ APP
 
     return {
         map: null,
-        init: function(what) {
+        init: function(ctrlName) {
             setTimeout( function() { 
-                if (typeof what == 'string') 
-                    _this.map.addControl(ctrls[what]); 
+                if (typeof ctrlName == 'string') 
+                    _this.map.addControl(ctrls[ctrlName]); 
                 else 
-                    for (var i=0; i<what.length; i++) _this.map.addControl(ctrls[what[i]]); 
+                    for (var i=0; i<ctrlName.length; i++) _this.map.addControl(ctrls[ctrlName[i]]); 
             }, 0);
         },
-        activate:   function(what, cb)  { _this.cbk = cb; ctrls[what].activate(); },
-        deactivate: function(what)      { LG(what); LG( ctrls); ctrls[what].deactivate(); },
-        setMap:     function( map )     { _this.map = map; }
+        activate:   function(ctrlName, cb)  { _this.cbk = cb; ctrls[ctrlName].activate(); },
+        deactivate: function(ctrlName)      { return ctrls[ctrlName].deactivate(); },
+        setMap:     function( map )         { _this.map = map; }
     }
 }])
 .factory('OL', ['OLStyle', 'OLCtrl', function(OLStyle, OLCtrl) {
@@ -200,12 +218,12 @@ APP
         //return new OpenLayers.Feature.Vector( ring(l), null, OLStyle.get('style') );
         var circs = [];
         if (typeof l[0] == 'number') {
-                var point =  new OpenLayers.Geometry.Point(l[i], l[i], OLStyle.get('green')).transform('EPSG:4326', 'EPSG:3857');
-                circs =  new OpenLayers.Feature.Vector(point,null, OLStyle.get('green'));
+                var point =  new OpenLayers.Geometry.Point(l[i], l[i], OLStyle.get(style)).transform('EPSG:4326', 'EPSG:3857');
+                circs =  new OpenLayers.Feature.Vector(point,null, OLStyle.get(style));
         } else {
             for (var i=0; i< l.length; i++ ) {
-                var point =  new OpenLayers.Geometry.Point(l[i][0], l[i][1], OLStyle.get('green')).transform('EPSG:4326', 'EPSG:3857');
-                var vector =  new OpenLayers.Feature.Vector(point,null, OLStyle.get('green'));
+                var point =  new OpenLayers.Geometry.Point(l[i][0], l[i][1], OLStyle.get(style)).transform('EPSG:4326', 'EPSG:3857');
+                var vector =  new OpenLayers.Feature.Vector(point,null, OLStyle.get(style));
                 circs.push(vector);
             }
         }
@@ -218,7 +236,7 @@ APP
             circs = new OpenLayers.Feature.Vector( circ(l), null, OLStyle.get(style) );
         } else {
             for (var i=0; i< l.length; i++ ) {
-                var point =  new OpenLayers.Geometry.Point(l[i][0], l[i][1], OLStyle.get('marker')).transform('EPSG:4326', 'EPSG:3857');
+                var point =  new OpenLayers.Geometry.Point(l[i][0], l[i][1]).transform('EPSG:4326', 'EPSG:3857');
                 var vector =  new OpenLayers.Feature.Vector(point,null, OLStyle.get('marker'));
                 circs.push( new OpenLayers.Feature.Vector( circ(l[i]), null, OLStyle.get(style) ));
                 circs.push(vector);
@@ -248,8 +266,25 @@ APP
         RingF: function(l, style) { return ringF(l, style); },
         RingV: function(id, l, style) { return ringV(id, l, style); },
         RingM: function(id, l, style) { return ringM(id, l, style); },
-        setMap: function( map ) { _this.map = map; OLCtrl.setMap(map); },
-        Ctrl: function(what) { OLCtrl.init(what); }
+        setMap: function( map ) { OLCtrl.setMap( _this.map = map ); },
+        initCtrls: function(what) { OLCtrl.init(what); },
+        showFeatures: function(layer, doShow) {
+            doShow = typeof doShow == 'undefined' || !doShow;
+            var layer = _this.map.getLayersByName(layer)[0];
+            for (var i=0; i< layer.features.length; i++) 
+                layer.features[i].style.display = doShow ? 'block' : 'none';
+            layer.redraw();
+        },
+        activate: function(what, cb) {
+            OLCtrl.activate(what, function(a,b) {
+                cb(a,b);
+                var marker = _this.map.getLayersByName('center')[0].features[0];
+                a.transform('EPSG:4326', 'EPSG:3857'),
+                console.log(  marker.geomettry, ' marker', a, b );
+                var lr = ringM('center Marker',[[a.lon, a.lat]], 'center');
+                _this.map.addLayer(lr);
+            });
+        }
     }
 }])
 .factory('UT', [function() {
