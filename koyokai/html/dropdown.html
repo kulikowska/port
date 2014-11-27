@@ -1,10 +1,5 @@
 <nav>
     <ul>
-        <!--
-       <li ng-click="expandAndGo()">Home
-            <div id="leafimg"><img src='../images/leaf3.png'></div>
-       </li>
-       -->
        <li ng-repeat="i in [0,1,2,3,4,5]" ng-click="shrinkAndSelect(i)" class="{{tabIdx==i|checkActive}}">
             {{i|toMenuText}}
             <div id="leafimg"><img src='./images/leaf3.png'></div>

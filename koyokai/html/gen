@@ -9,4 +9,4 @@ do
     echo "'," >> /tmp/tpl.js
 done
 echo "}}]);"  >> /tmp/tpl.js
-uglifyjs /tmp/tpl.js > ../Scripts/tpl.min.js
+uglifyjs /tmp/tpl.js > ../js/tpl.min.js
