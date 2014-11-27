@@ -11,6 +11,9 @@ body {
   border: 1px solid black;
   width: 874px;
 }
+.contentWrap ul {
+  list-style: none;
+}
 .contentWrap .imgprop {
   height: 250px;
   width: 920px;

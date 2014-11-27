@@ -48,12 +48,12 @@ APP
     return function(input) {
         var ret;
         switch(input) {
-            case 0:     ret = "home";      break;
-            case 1:     ret = "about";      break;
-            case 2:     ret = "gallery";    break;
-            case 3:     ret = "members";    break;
-            case 4:     ret = "kendo";      break;
-            case 5:     ret = "events";     break;
+            case 0:     ret = "Home";      break;
+            case 1:     ret = "About";      break;
+            case 2:     ret = "Gallery";    break;
+            case 3:     ret = "Members";    break;
+            case 4:     ret = "Kendo";      break;
+            case 5:     ret = "Events";     break;
             default :   ret = 'out of range'; break;
        }
        return ret;
@@ -65,6 +65,17 @@ APP
         replace: false,
         //templateUrl: 'html/home.html',
         template: TPL.home,
+        link: function($scope, $element, $attributes) {
+            $scope.contentVal = 'content';
+            }
+        }
+ }])
+.directive('homecontent', ['TPL', function(TPL) {
+    return {
+        restrict: 'C',
+        replace: false,
+        //templateUrl: 'html/home.html',
+        template: TPL.homecontent,
         link: function($scope, $element, $attributes) {
             $scope.contentVal = 'content';
             }
