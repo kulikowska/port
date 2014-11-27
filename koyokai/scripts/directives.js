@@ -13,7 +13,8 @@ APP
     return {
         restrict: 'C',
         replace: false,
-        templateUrl: 'html/dropdown.html',
+        //templateUrl: 'html/dropdown.html',
+        template: TPL.dropdown,
         link: function($scope, $element, $attributes) {
             //$scope.headerImg = 'headerimg';
             //$scope.tabIdx = 0;
