@@ -34,11 +34,14 @@ APP
         template:  TPL.menuWs,
         link: function($scope, el) {
             $scope.active = '';
-            $scope.point = $scope.center = $scope.elevation = 0;
-            $scope.box = 1;
+            $scope.point = $scope.center = $scope.elevation = $scope.box = 0;
 
             $scope.activate = function(what) { 
-                $scope.active && OLCtrl.deactivate($scope.active);
+                LG( what );
+                OL.deactivate($scope.active ? $scope.active : 'elevation');
+                OL.deactivate('point');
+                OL.deactivate('center');
+                OL.deactivate('elevation');
                 if (what != $scope.active) {
                     $scope.active && ($scope[$scope.active] = 0);
                     $scope[what] = 1;
@@ -61,7 +64,7 @@ APP
                     $scope.active = '';
                 }
             }
-            setTimeout( function () { $scope.activate($scope.active = 'box');}, 800);
+            setTimeout( function() { $scope.activate('box'); $scope.$digest(); }, 800);
         }
     }
 }])
