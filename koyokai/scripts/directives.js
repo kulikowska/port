@@ -9,7 +9,7 @@ APP
             }
         }
  }])
-.directive('dropdown', function() {
+.directive('dropdown', ['TPL', function(TPL) {
     return {
         restrict: 'C',
         replace: false,
@@ -38,7 +38,7 @@ APP
             */
         }
     }
- })
+ }])
  .filter('checkActive', function() {
     return function(input) {
         return input ? 'active' : '';
@@ -59,59 +59,65 @@ APP
        return ret;
     };
 })
-.directive('home', function() {
+.directive('home', ['TPL', function(TPL) {
     return {
         restrict: 'C',
         replace: false,
-        templateUrl: 'html/home.html',
+        //templateUrl: 'html/home.html',
+        template: TPL.home,
         link: function($scope, $element, $attributes) {
             $scope.contentVal = 'content';
             }
         }
- })
-.directive('about', function() {
+ }])
+.directive('about', ['TPL',  function(TPL) {
     return {
         restrict: 'ACE',
         replace: false,
-        templateUrl: 'html/about.html',
+        //templateUrl: 'html/about.html',
+        template: TPL.about,
         link: function($scope, $element, $attributes) {
             }
         }
- })
-.directive('gallery', function() {
+ }])
+.directive('gallery', ['TPL', function(TPL) {
     return {
         restrict: 'ACE',
         replace: false,
-        templateUrl: 'html/gallery.html',
+        //templateUrl: 'html/gallery.html',
+        template: TPL.gallery,
         link: function($scope, $element, $attributes) {
             }
         }
- })
-.directive('members', function() {
+ }])
+.directive('members', ['TPL', function(TPL) {
     return {
         restrict: 'ACE',
         replace: false,
-        templateUrl: 'html/members.html',
+        //templateUrl: 'html/members.html',
+        template: TPL.members,
         link: function($scope, $element, $attributes) {
             }
         }
- })
-.directive('kendo', function() {
+ }])
+.directive('kendo', ['TPL', function(TPL) {
     return {
         restrict: 'ACE',
         replace: false,
-        templateUrl: 'html/kendo.html',
+        //templateUrl: 'html/kendo.html',
+        template: TPL.kendo,
         link: function($scope, $element, $attributes) {
             }
         }
- })
-.directive('events', function() {
+ }])
+.directive('events', ['TPL', function(TPL) {
     return {
         restrict: 'ACE',
         replace: false,
-        templateUrl: 'html/events.html',
+        //templateUrl: 'html/events.html',
+        template: TPL.events,
         link: function($scope, $element, $attributes) {
             }
         }
- })
+ }])
 ;
