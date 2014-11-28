@@ -1,5 +1,5 @@
-@leftWidth:  220px;
-@rightWidth: 228px;
+@leftWidth:  174px;
+@rightWidth: 174px;
 @headerHeight: 70px;
 @footerHeight: 30px;
 @contentMenuHeight: 30px;
@@ -89,13 +89,26 @@ body {
         margin:4px;
         border:3px solid red;
         padding:6px;
-        max-height:346px;
+        max-height:350px;
         overflow:auto;
         border-radius:8px;
         background:#eee;
         button {
-           margin:2px 3px;
+           margin:4px 0px 0px 4px;
            font-size:13px;
+           width:40px;
+           border-radius:5px;
+           border:1px solid #abc;
+           background:#def;
+           color:#346;
+           font-weight:bold;
+           &.up {
+                opacity:1;
+                color:red;
+           }
+           &.noshow {
+                opacity:0.4;
+           }
         }
     }
 }

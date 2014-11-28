@@ -1,6 +1,7 @@
 APP
 .factory('DATA', ['$http', function($http) {
-    var urlBase = document.location.href + (document.location.host == 'geo' ? '/noMVC/' : '/Api/');
+    var urlHref = document.location.href;
+    var urlBase = urlHref + (document.location.host == 'geo' ? '/noMVC/' : '/Api/');
 
     var qString = function(url, pt1, pt2, opt1, opt2) {
         ret = "";
@@ -15,6 +16,7 @@ APP
     };
 
     return {
+        url: urlHref,
         get: function(url, cb, pt1, pt2, opt1, opt2) {
             var url = urlBase + url + qString(url, pt1, pt2, opt1, opt2); 
             $http.get(url).success(function(data) { typeof cb == 'function' && cb(data); });

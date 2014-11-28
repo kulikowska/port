@@ -21,8 +21,8 @@ APP
     return function(input) {
         var ret;
         switch(input) {
-            case "1": ret = "up"; break;
-            case "2": ret = "down"; break;
+            case 1: ret = "down"; break;
+            case 2: ret = "up"; break;
             default : ret = "noshow"; break;
         }
         return ret;

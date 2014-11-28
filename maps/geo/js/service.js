@@ -3,7 +3,11 @@ if (typeof APP == 'undefined') var APP = angular.module('WS',[]);
 
 APP
 .factory('GEO', ['DATA', 'OL', 'OLC', function(DATA, OL, OLC) {
+    var z = 10;
     var map;
+    var devActive = false;
+    var devMarkers = {};
+    var devUrl = [ '', DATA.url + 'image/markgreen.png', DATA.url + 'image/markred.png'];
     var geocoder; 
     var _this = this;
     function lonLat(lon, lat, trans) {
@@ -35,7 +39,7 @@ APP
                 //center: lonLat(21.018267, 52.235850, true), //Warszawa
                 //center: lonLat(18.55123, 54.49001, true), //Gdynia
                 center: lonLat(55.86, 19.88, true), //Oman 
-                zoom:8,
+                zoom:7,
                 controls: [
                     new OpenLayers.Control.Navigation(),
                     new OpenLayers.Control.PanZoomBar(),
@@ -48,8 +52,9 @@ APP
             map.addLayers([
                 //OL.RingV('coverageL'  , [[18.531, 54.47]], 'long'),
                 //_this.covL=OLC.Markers('coverageL'),
-                _this.centerL=OLC.Markers('centerL'),
                 //_this.longL = OLC.Contours('longL')
+                _this.centerL=OLC.Markers('centerL'),
+                _this.deviceL=OLC.Markers('deviceL'),
                 //_this.longL = OLC.Contours('longL').add([[18.532, 54.47]], 'green', 'med'),
                 //OL.RingV('coverageM'  , [[18.532, 54.47]], 'med'),
                 //OL.RingV('coverageS'  , [[18.533, 54.47]], 'short'),
@@ -76,6 +81,23 @@ APP
                 }
             }, 218000);
             */
+        },
+        deviceVis: function(loc, vis, active, cb) {
+            LG ( devMarkers[loc[2]]);
+
+            if (typeof devMarkers[loc[2]] == 'undefined') {
+                devMarkers[loc[2]] = 
+                    _this.deviceL.add('markRed', [{lon: loc[0], lat:loc[1], attrs: loc[2]}], cb);
+            } else {
+                if (vis == 0) {
+                    _this.deviceL.removeMarker(devMarkers[loc[2]]);
+                    devMarkers[loc[2]].destroy();
+                    delete devMarkers[loc[2]];
+                } else {
+                    active && devMarkers[active].setUrl(devUrl[1]);
+                    devMarkers[loc[2]].setUrl(devUrl[vis]);
+                }
+            }
         },
         locAddress: function(addr, cb) {
             geocoder.geocode( { 'address': addr}, function(results, status) {
@@ -363,9 +385,12 @@ APP
         Markers: function(name) { 
             var ret = new OpenLayers.Layer.Markers(name,{ rendererOptions: {zIndexing: true} }); 
             ret.add = function(icon, coords, cb) { 
-                for (var i=0; i<coords.length; i++) ret.addMarker(marker(icon, coords[i],
-                    function(e) { cb(e.object.attrs);} )
+                var m;
+                for (var i=0; i<coords.length; i++) 
+                    ret.addMarker(m = marker(icon, coords[i],
+                    function(e) { cb(e.object.attrs); } )
                 ); 
+                return m;
             };
             ret.clear = function() {
                 ret.removeMarkers();

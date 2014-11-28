@@ -14,21 +14,32 @@ APP
         restrict: 'A',
         replace: true,
         template: TPL.leftWs,
+        scope:true,
         link: function($scope, el) {
             $scope.chanSel = function(chanId) {
+                $scope.active = chanId;
                 console.log(chanId);
             }
         }
     }
 }])
-.directive('rightWs', ['TPL', function(TPL) {
+.directive('rightWs', ['TPL', 'GEO', function(TPL, GEO) {
     return {
         restrict: 'A',
         replace: true,
         template: TPL.rightWs,
+        scope:true,
         link: function($scope, el) {
+            var active = 0;
+            $scope.vis = {}; 
             $scope.devSel = function(devId) {
-                console.log(devId);
+                active != devId && ($scope.vis[active] = 1);
+                typeof $scope.vis[devId] == 'undefined' && ($scope.vis[devId] = 0); 
+                ($scope.vis[devId] -= 1) < 0 && ($scope.vis[devId] = 2);
+                GEO.deviceVis($scope.devices[devId], $scope.vis[devId], active, 
+                    function(v) { LG(v, 'v '); }
+                );
+                active = devId;
             }
         }
     }
@@ -55,9 +66,10 @@ APP
                             $scope.coords.lon = topLeft.lon.toFixed(4);
                             $scope.coords.lat = topLeft.lat.toFixed(4);
                             DATA.get('WsDeviceList', function(data) {
-                                $scope.devices = [];
+                                $scope.devices = {};
                                 for (var i=0; i<data.length; i++)
-                                    $scope.devices.push( [data[i].Long4Dec, data[i].Lat4Dec, data[i].Id])
+                                    $scope.devices[data[i].Id] 
+                                        = [data[i].Long4Dec, data[i].Lat4Dec, data[i].Id];
                                }
                                , topLeft, bottomRight);
                                $scope.$digest();
@@ -69,9 +81,9 @@ APP
 
                                 DATA.get('WsChannelsList', function(data) {
                                     LG( data );
-                                    $scope.channels = [];
+                                    $scope.channels = {};
                                     for (var i=0; i<data.length; i++)
-                                        $scope.channels.push( [data[i].Channel] );
+                                        $scope.channels[data[i].Channel] = [data[i].Channel];
                                });
                            }; break;
                         case 'center' : cb = function(loc, el) {
@@ -113,8 +125,8 @@ APP
         scope: {plugData: "="},
         template: TPL.whitespace,
         link: function($scope, $element, $attributes) {
-            $scope.devices = [];
-            $scope.contours = [];
+            $scope.devices = false;
+            $scope.channels= false;
 
             $scope.coords = {};
             $scope.locAddress = function() {

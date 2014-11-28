@@ -1,5 +1,7 @@
 <div id="left">
     <div class='buttonWrap' ng-show="channels">
-        <button ng-repeat="channel in channels" ng-click="chanSel(channel[0])">{{channel[0]}}</button>
+        <button ng-repeat="channel in channels" ng-click="chanSel(channel[0])"
+            ng-class="active == channel[0]|checkActive"
+        >{{channel[0]}}</button>
     </div>
 </div>
