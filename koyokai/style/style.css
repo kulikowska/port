@@ -153,6 +153,21 @@ body {
   font-style: italic;
   padding: 15px;
 }
+.contentWrap .content .wrap {
+  margin: 0 auto;
+  padding-top: 25px;
+  width: 250px;
+}
+.contentWrap .content .wrap .staytuned {
+  font-size: 22px;
+  font-weight: bold;
+}
+.contentWrap .content .wrap .more {
+  font-size: 14px;
+  margin: 0 auto;
+  width: 120px;
+  padding-top: 5px;
+}
 .contentWrap .content .about {
   padding-top: 15px;
 }
