@@ -33,7 +33,7 @@ APP
             var active = 0;
             $scope.vis = {}; 
             $scope.devSel = function(devId) {
-                active != devId && ($scope.vis[active] = 1);
+                active != devId && ($scope.vis[active] -= 1);
                 typeof $scope.vis[devId] == 'undefined' && ($scope.vis[devId] = 0); 
                 ($scope.vis[devId] -= 1) < 0 && ($scope.vis[devId] = 2);
                 GEO.deviceVis($scope.devices[devId], $scope.vis[devId], active, 
@@ -51,7 +51,17 @@ APP
         template:  TPL.menuWs,
         link: function($scope, el) {
             $scope.active = '';
+            $scope.autoOff = true;
             $scope.point = $scope.center = $scope.elevation = $scope.box = 0;
+
+            var setActive = function(ctrlName){
+                if ($scope.autoOff) {
+                    OLCtrl.deactivate($scope.active);
+                    $scope[ctrlName] = 0;
+                    $scope.active = '';
+                }
+                $scope.$digest();
+            };
 
             $scope.activate = function(ctrlName) { 
                 OLCtrl.deactivate($scope.active ? $scope.active : 'elevation');
@@ -72,12 +82,12 @@ APP
                                         = [data[i].Long4Dec, data[i].Lat4Dec, data[i].Id];
                                }
                                , topLeft, bottomRight);
-                               $scope.$digest();
+                                setActive(ctrlName);
                             }; break;
                         case 'point' : cb = function(loc, el) {
                                    $scope.coords.lon = loc.lon.toFixed(4);
                                    $scope.coords.lat = loc.lat.toFixed(4);
-                                   $scope.$digest();
+                                    setActive(ctrlName);
 
                                 DATA.get('WsChannelsList', function(data) {
                                     LG( data );
@@ -90,13 +100,13 @@ APP
                             LG( loc, el );
                                             $scope.coords.lon = loc.lon.toFixed(4);
                                             $scope.coords.lat = loc.lat.toFixed(4);
-                                            $scope.$digest();
+                                            setActive(ctrlName);
                                         }; break;
                         case 'elevation' : cb = function(loc, el) {
                                             $scope.coords.elevation = el.toFixed(4);
                                             $scope.coords.lon = loc.lon.toFixed(4);
                                             $scope.coords.lat = loc.lat.toFixed(4);
-                                            $scope.$digest();
+                                            setActive(ctrlName);
                                         }; break;
                     }
                     OLCtrl.activate(ctrlName, cb);
