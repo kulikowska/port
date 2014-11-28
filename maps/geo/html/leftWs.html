@@ -1,1 +1,5 @@
-<div id="left">left pane</div>
+<div id="left">
+    <div class='buttonWrap' ng-show="channels">
+        <button ng-repeat="channel in channels" ng-click="chanSel(channel[0])">{{channel[0]}}</button>
+    </div>
+</div>

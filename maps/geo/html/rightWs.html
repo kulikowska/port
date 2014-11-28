@@ -1,1 +1,5 @@
-<div id="right">right pane</div>
+<div id="right">
+    <div class='buttonWrap' ng-show="devices">
+        <button ng-repeat="device in devices" ng-click="devSel(device[2])">{{device[2]}}</button>
+    </div>
+</div>

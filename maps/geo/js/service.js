@@ -3,9 +3,6 @@ if (typeof APP == 'undefined') var APP = angular.module('WS',[]);
 
 APP
 .factory('GEO', ['DATA', 'OL', 'OLC', function(DATA, OL, OLC) {
-
-    DATA.get('WsTvwsLookup',function(data) { console.log(data); }, {lon: 18, lat:54} );
-
     var map;
     var geocoder; 
     var _this = this;
@@ -35,9 +32,10 @@ APP
                     }),
                     new OpenLayers.Layer.Bing({ name: "Bing Aerial", key: bingK, type: "Aerial" })
                 ],
-                //center: lonLat(21.018267, 52.235850, true),
-                center: lonLat(18.55123, 54.49001, true),
-                zoom:14,
+                //center: lonLat(21.018267, 52.235850, true), //Warszawa
+                //center: lonLat(18.55123, 54.49001, true), //Gdynia
+                center: lonLat(55.86, 19.88, true), //Oman 
+                zoom:8,
                 controls: [
                     new OpenLayers.Control.Navigation(),
                     new OpenLayers.Control.PanZoomBar(),
@@ -58,7 +56,6 @@ APP
                 //OL.RingM('center'     , [[18.534, 54.47]], 'center'),
                 //OL.RingM('deviceL'    , [[18.535, 54.47]], 'green')
             ]);
-            LG( 'added i1');
             //_this.covL.add(OLC.Marker('marker', {lon: 18.531, lat:54.47}, {id:23}));
             //_this.centerL.add(OLC.Marker('target', {lon: 18.55, lat:54.49}, {id: 22} ));
             //_this.longL.add([[18.532, 54.47]], 'long', 23);
@@ -129,7 +126,6 @@ APP
     def('center','', {   graphicHeight : 32, graphicYOffset : -16, 
                         graphicWidth : 32,  graphicXOffset : -16, 
                         externalGraphic : imgPath + 'target.png', fillOpacity:1} );
-                        LG( STYLES );
 
     def('pin','', {   graphicHeight : 20, graphicYOffset : -20, 
                         graphicWidth : 12,  graphicXOffset : -6, 
@@ -144,30 +140,48 @@ APP
 .factory('OLCtrl', [function() {
     var _this = this;
     var cbk = null;
-    var ml = new OpenLayers.Layer.Vector("Selects", { rendererOptions: {zIndexing: true} });
+    var ml = new OpenLayers.Layer.Vector("Selects");
+
+    var actions = { // callbacks
+        box: function(b) {
+            typeof b.bottom == 'undefined' ||
+                _this.cbk( 
+                    _this.map.getLonLatFromPixel( 
+                        new OpenLayers.Pixel(b.top, b.right)).transform('EPSG:3857', 'EPSG:4326'), 
+                    _this.map.getLonLatFromPixel( 
+                        new OpenLayers.Pixel(b.bottom, b.left)).transform('EPSG:3857', 'EPSG:4326')
+                );
+        },
+        point: function(a) { _this.cbk(a); },
+        center: function(a) {
+            _this.map.setCenter(new OpenLayers.LonLat(a.x, a.y));
+            var pt  = new OpenLayers.LonLat(a.x, a.y);
+            pt.transform('EPSG:3857', 'EPSG:4326');
+
+            var idx = parseInt(Math.random() * 10000);
+            _this.map.getLayersByName('centerL')[0].add( 'marker', 
+                [{lon: pt.lon, lat: pt.lat, attrs: { id: idx}}], 
+                function (attrs) { console.log(attrs); }
+            );
+            setTimeout(function() { _this.map.getLayersByName('centerL')[0].clearMarkers(); }, 1000);
+            _this.cbk(pt);
+        },
+        elevation: function(a) {
+            _this.cbk(a);
+        }
+    };
+
     var ctrls = {
         box : new OpenLayers.Control.DrawFeature(
-            ml, OpenLayers.Handler.Box, { callbacks: { done: function(a) {
-            _this.cbk({ 
-                tl: _this.map.getLonLatFromPixel( 
-                    new OpenLayers.Pixel(a.top, a.left)).transform('EPSG:3857', 'EPSG:4326'
-                ),
-                br: _this.map.getLonLatFromPixel(
-                    new OpenLayers.Pixel(a.bottom, a.right)).transform('EPSG:3857', 'EPSG:4326')
-            });
-        }}
-        }),
+            ml, OpenLayers.Handler.Box, {callbacks: { done: actions.box }}
+        ),
         center : new OpenLayers.Control.DrawFeature(
-            ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
-                _this.map.setCenter(new OpenLayers.LonLat(a.x, a.y));
-                _this.cbk((new OpenLayers.LonLat(a.x, a.y)).transform('EPSG:3857', 'EPSG:4326'), 0);
-
-                //ctrls.center.deactivate();
-        }}}),
+            ml, OpenLayers.Handler.Point, { callbacks: { done: actions.center }}
+        ),
         point:  new OpenLayers.Control.DrawFeature(
             ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
                 a.transform('EPSG:3857', 'EPSG:4326');
-                _this.cbk((new OpenLayers.LonLat(a.x, a.y)), 0);
+                actions.point((new OpenLayers.LonLat(a.x, a.y)), 0);
         }}}),
         elevation:  new OpenLayers.Control.DrawFeature(
             ml, OpenLayers.Handler.Point, { callbacks: { done: function(a) {
@@ -180,6 +194,7 @@ APP
                 );
         }}})
     };
+     
 
     setTimeout( function() { _this.map.addLayer(ml); }, 100);
 
@@ -189,10 +204,7 @@ APP
             setTimeout( function() { 
                 if (typeof ctrlName == 'string') _this.map.addControl(ctrls[ctrlName]); 
                 else 
-                    for (var i=0; i<ctrlName.length; i++) {
-                        _this.map.addControl(ctrls[ctrlName[i]]); 
-                        ctrls[ctrlName[i]].deactivate();
-                    }
+                    for (var i=0; i<ctrlName.length; i++) _this.map.addControl(ctrls[ctrlName[i]]);
 
             }, 0);
         },
@@ -292,22 +304,12 @@ APP
                 layer.features[i].style.display = doShow ? 'block' : 'none';
             layer.redraw();
         },
-        activate: function(what, cb) {
-            OLCtrl.activate(what, function(a,b) {
+        activate: function(ctrlName, cb) {
+            OLCtrl.activate(ctrlName, function(a,b) {
                 cb(a,b);
-                _this.map.getLayersByName('centerL')[0].add(
-                    'marker', 
-                    [
-                        {lon: 18.55, lat:54.47, attrs:23},
-                        {lon: 18.558, lat:54.47, attrs:44}
-                    ], 
-                    function (e) { console.log(e); }
-                );
-                return false;
             });
         }, 
         deactivate: function(ctrlName) {
-            LG( ctrlName , ' in deact');
             OLCtrl.deactivate(ctrlName);
         }
     }
@@ -333,14 +335,18 @@ APP
         typeof radius == 'undefined' && (radius = 1300); // 1.3km
         return new OpenLayers.Geometry.Polygon.createRegularPolygon(Point(origin[0], origin[1]), radius, 40);
     };
-    var contour = function(l, style, id) { 
+    var contour = function(l, style, cb) { 
         var ret = [];
         if (typeof l[0] == 'number') {
             ret = new OpenLayers.Feature.Vector( circ(l), null, OLStyle.get(style) );
         } else {
             for (var i=0; i< l.length; i++ ) {
-                ret.push( new OpenLayers.Feature.Vector( circ(l[i]), null, OLStyle.get(style) ));
-                ret.push( new OpenLayers.Feature.Vector(Point(l[i][0], l[i][1]), null, OLStyle.get('pin')));
+                var c = new OpenLayers.Feature.Vector(circ(l[i]), null, OLStyle.get(style));
+                ret.push( c );
+                var m = new OpenLayers.Feature.Vector(Point(l[i][0], l[i][1]), null, OLStyle.get('pin'));
+                ret.push( m );
+
+                m.attrs = c.attrs = l[i][2]; // attributes passed in location data
             }
         }
         return ret; 
@@ -360,6 +366,9 @@ APP
                 for (var i=0; i<coords.length; i++) ret.addMarker(marker(icon, coords[i],
                     function(e) { cb(e.object.attrs);} )
                 ); 
+            };
+            ret.clear = function() {
+                ret.removeMarkers();
             };
             ret.show= function(show, id) { 
                 for (var i=0; i<this.markers.length; i++) 

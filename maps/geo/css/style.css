@@ -157,9 +157,24 @@ body {
   width: 220px;
   background: #abc;
 }
+#left .buttonWrap,
+#right .buttonWrap {
+  margin: 4px;
+  border: 3px solid red;
+  padding: 6px;
+  max-height: 346px;
+  overflow: auto;
+  border-radius: 8px;
+  background: #eee;
+}
+#left .buttonWrap button,
+#right .buttonWrap button {
+  margin: 2px 3px;
+  font-size: 13px;
+}
 #right {
   right: 0;
-  width: 120px;
+  width: 228px;
 }
 #header,
 #footer {
@@ -188,10 +203,13 @@ body {
   position: absolute;
   bottom: 0;
   top: 70px;
-  right: 120px;
+  right: 228px;
   left: 220px;
   height: 30px;
   background: #aad;
+}
+#contentMenu.active {
+  background: #88a;
 }
 #contentMenu button {
   background: #def;
@@ -206,7 +224,7 @@ body {
 #content {
   position: absolute;
   bottom: 0;
-  right: 120px;
+  right: 228px;
   left: 220px;
   z-index: 10;
   height: auto;
