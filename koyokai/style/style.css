@@ -133,6 +133,29 @@ body {
 .contentWrap .content .homecontent {
   margin-top: 15px;
 }
+.contentWrap .content .blurb {
+  display: none;
+}
+.contentWrap .content .grouppic {
+  margin: 0 auto;
+  width: 600px;
+  height: 300px;
+  overflow: hidden;
+  background-image: url('../images/group.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0;
+  box-shadow: 0 0 4px 4px #150000;
+}
+.contentWrap .content .blurb2 {
+  width: 90%;
+  margin: 0 auto;
+  font-style: italic;
+  padding: 15px;
+}
+.contentWrap .content .about {
+  padding-top: 15px;
+}
 .contentWrap .content .sidebar {
   display: none;
   float: right;
