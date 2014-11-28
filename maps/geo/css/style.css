@@ -154,12 +154,42 @@ body {
   position: absolute;
   top: 70px;
   bottom: 0;
-  width: 220px;
+  width: 174px;
   background: #abc;
+}
+#left .buttonWrap,
+#right .buttonWrap {
+  margin: 4px;
+  border: 3px solid red;
+  padding: 6px;
+  max-height: 350px;
+  overflow: auto;
+  border-radius: 8px;
+  background: #eee;
+}
+#left .buttonWrap button,
+#right .buttonWrap button {
+  margin: 4px 0px 0px 4px;
+  font-size: 13px;
+  width: 40px;
+  border-radius: 5px;
+  border: 1px solid #abc;
+  background: #def;
+  color: #346;
+  font-weight: bold;
+}
+#left .buttonWrap button.up,
+#right .buttonWrap button.up {
+  opacity: 1;
+  color: red;
+}
+#left .buttonWrap button.noshow,
+#right .buttonWrap button.noshow {
+  opacity: 0.4;
 }
 #right {
   right: 0;
-  width: 120px;
+  width: 174px;
 }
 #header,
 #footer {
@@ -188,10 +218,13 @@ body {
   position: absolute;
   bottom: 0;
   top: 70px;
-  right: 120px;
-  left: 220px;
+  right: 174px;
+  left: 174px;
   height: 30px;
   background: #aad;
+}
+#contentMenu.active {
+  background: #88a;
 }
 #contentMenu button {
   background: #def;
@@ -206,8 +239,8 @@ body {
 #content {
   position: absolute;
   bottom: 0;
-  right: 120px;
-  left: 220px;
+  right: 174px;
+  left: 174px;
   z-index: 10;
   height: auto;
   top: 100px;
