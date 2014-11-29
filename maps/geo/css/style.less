@@ -87,12 +87,19 @@ body {
     background:#abc;
     .buttonWrap {
         margin:4px;
-        border:3px solid red;
+        border:3px solid #456;
         padding:6px;
-        max-height:350px;
+        max-height:322px;
         overflow:auto;
         border-radius:8px;
         background:#eee;
+        &.wide {
+            button { 
+                width: 68px;
+                font-size:12px;
+                margin:2px;
+           }
+        }
         button {
            margin:4px 0px 0px 4px;
            font-size:13px;

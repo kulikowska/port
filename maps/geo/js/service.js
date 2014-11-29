@@ -3,10 +3,11 @@ if (typeof APP == 'undefined') var APP = angular.module('WS',[]);
 
 APP
 .factory('GEO', ['DATA', 'OL', 'OLC', function(DATA, OL, OLC) {
-    var z = 10;
+    var zIndex = 10;
     var map;
     var devActive = false;
     var devMarkers = {};
+    var chanContours = {};
     var devUrl = [ '', DATA.url + 'image/markgreen.png', DATA.url + 'image/markred.png'];
     var geocoder; 
     var _this = this;
@@ -39,7 +40,7 @@ APP
                 //center: lonLat(21.018267, 52.235850, true), //Warszawa
                 //center: lonLat(18.55123, 54.49001, true), //Gdynia
                 center: lonLat(55.86, 19.88, true), //Oman 
-                zoom:7,
+                zoom:6,
                 controls: [
                     new OpenLayers.Control.Navigation(),
                     new OpenLayers.Control.PanZoomBar(),
@@ -50,30 +51,24 @@ APP
             OL.setMap(map);
             OL.initCtrls(['box', 'point', 'center', 'elevation']);
             map.addLayers([
-                //OL.RingV('coverageL'  , [[18.531, 54.47]], 'long'),
-                //_this.covL=OLC.Markers('coverageL'),
-                //_this.longL = OLC.Contours('longL')
                 _this.centerL=OLC.Markers('centerL'),
                 _this.deviceL=OLC.Markers('deviceL'),
-                //_this.longL = OLC.Contours('longL').add([[18.532, 54.47]], 'green', 'med'),
-                //OL.RingV('coverageM'  , [[18.532, 54.47]], 'med'),
-                //OL.RingV('coverageS'  , [[18.533, 54.47]], 'short'),
-                //OL.RingM('center'     , [[18.534, 54.47]], 'center'),
-                //OL.RingM('deviceL'    , [[18.535, 54.47]], 'green')
+                _this.contL = OLC.Contours('contL'),
+                _this.contM = OLC.Contours('contM'),
+                _this.contS = OLC.Contours('contS'),
+                _this.test  = OLC.Contours('test')
             ]);
             //_this.covL.add(OLC.Marker('marker', {lon: 18.531, lat:54.47}, {id:23}));
             //_this.centerL.add(OLC.Marker('target', {lon: 18.55, lat:54.49}, {id: 22} ));
-            //_this.longL.add([[18.532, 54.47]], 'long', 23);
+            _this.test.add([[18.532, 54.47]], 'long', 23);
             //OL.showFeatures('deviceL', false);
 
-            var idx = 1;
             // test circle in Gdynia Redłowo
             /*
             var lr = OL.RingM('1Km Marker',[[18.54, 54.48], [18.55, 54.49]], 'green');
             map.addLayer(lr);
             var lr1 = OL.RingV('1Km from Home',[[18.53, 54.47], [18.54, 54.48]], 'short');
             map.addLayer(lr1);
-            map.setLayerIndex(lr, ++idx);
             setTimeout(function() { 
                 for (var i=0; i<lr1.features.length; i++) {
                     lr1.features[i].style.display = 'none';
@@ -83,29 +78,51 @@ APP
             */
         },
         deviceVis: function(loc, vis, active, cb) {
-            LG ( devMarkers[loc[2]]);
+            var id = loc[2];
 
-            if (typeof devMarkers[loc[2]] == 'undefined') {
-                devMarkers[loc[2]] = 
-                    _this.deviceL.add('markRed', [{lon: loc[0], lat:loc[1], attrs: loc[2]}], cb);
+            if (typeof devMarkers[id] == 'undefined') {
+                devMarkers[id] = 
+                    _this.deviceL.add('markRed', [{lon: loc[0], lat:loc[1], attrs: id}], cb);
             } else {
                 if (vis == 0) {
-                    _this.deviceL.removeMarker(devMarkers[loc[2]]);
-                    devMarkers[loc[2]].destroy();
-                    delete devMarkers[loc[2]];
+                    _this.deviceL.removeMarker(devMarkers[id]);
+                    devMarkers[id].destroy();
+                    delete devMarkers[id];
                 } else {
                     active && devMarkers[active].setUrl(devUrl[1]);
-                    devMarkers[loc[2]].setUrl(devUrl[vis]);
+                    devMarkers[id].setUrl(devUrl[vis]);
                 }
             }
+            map.setLayerIndex(_this.deviceL, zIndex++);
+        },
+        chanVis: function(id, loc, vis, active, cb) {
+            if (typeof loc != 'undefined')
+                typeof chanContours[id] == 'undefined' && (chanContours[id] = []);
+
+                for (var i=0; i<loc.length; i++) {
+                    var L = 'cont' + (loc[i].Pwr >= -7 ? 'L' : (loc[i].Pwr < -11 ? 'S' : 'M'));
+
+                    if (typeof chanContours[id][i] == 'undefined') {
+                        chanContours[id].push(_this[L].add([loc[i].loc], 'med', function() {}, 40000));
+                    }
+                    chanContours[id][i][0].style.display = vis ? 'block' : 'none';
+                    chanContours[id][i][1].style.display = vis ? 'block' : 'none';
+                    _this[L].redraw();
+                }
+            typeof _this[L] == 'undefined' || map.setLayerIndex(_this[L], zIndex++);
+            typeof _this[L] == 'undefined' || _this[L].redraw();
+            cb('good stuff');
+        },
+        range: function(idx, vis) {
+            var L = (idx ? (idx>1 ? 'S' : 'M') : 'L');
+            _this['cont' + L].setVisibility(vis);
+            vis && map.setLayerIndex(_this['cont' +L], zIndex++);
         },
         locAddress: function(addr, cb) {
             geocoder.geocode( { 'address': addr}, function(results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     var loc = results[0].geometry.location;
                     map.setCenter(lonLat(loc.B, loc.k, true), 22);
-
-                    //new google.maps.Marker({ map: map, position: loc });
                     cb({'lat': loc.k, 'lon': loc.B});
                 } else { cb(false); }
             });
@@ -185,7 +202,7 @@ APP
                 [{lon: pt.lon, lat: pt.lat, attrs: { id: idx}}], 
                 function (attrs) { console.log(attrs); }
             );
-            setTimeout(function() { _this.map.getLayersByName('centerL')[0].clearMarkers(); }, 1000);
+            setTimeout(function() { _this.map.getLayersByName('centerL')[0].clearMarkers(); }, 500);
             _this.cbk(pt);
         },
         elevation: function(a) {
@@ -344,7 +361,7 @@ APP
 
     var marker = function(icon, loc, cb) {
         typeof loc == 'undefined' && (loc = {lon:0, lat:0});
-        var size    = new OpenLayers.Size(21,25);
+        var size    = new OpenLayers.Size(15,25);
         var offset  = new OpenLayers.Pixel(-(size.w/2), -size.h);
         var icon    = new OpenLayers.Icon(imgPath + icon + '.png', size, offset);
         var m  = new OpenLayers.Marker(LonLat(loc.lon, loc.lat), icon);
@@ -354,16 +371,16 @@ APP
     };
 
     var circ = function(origin, radius) {
-        typeof radius == 'undefined' && (radius = 1300); // 1.3km
+        typeof radius == 'undefined' && (radius = 20000); // 1.3km
         return new OpenLayers.Geometry.Polygon.createRegularPolygon(Point(origin[0], origin[1]), radius, 40);
     };
-    var contour = function(l, style, cb) { 
+    var contour = function(l, style, cb, radius) { 
         var ret = [];
         if (typeof l[0] == 'number') {
-            ret = new OpenLayers.Feature.Vector( circ(l), null, OLStyle.get(style) );
+            ret = new OpenLayers.Feature.Vector( circ(l, radius), null, OLStyle.get(style) );
         } else {
             for (var i=0; i< l.length; i++ ) {
-                var c = new OpenLayers.Feature.Vector(circ(l[i]), null, OLStyle.get(style));
+                var c = new OpenLayers.Feature.Vector(circ(l[i], radius), null, OLStyle.get(style));
                 ret.push( c );
                 var m = new OpenLayers.Feature.Vector(Point(l[i][0], l[i][1]), null, OLStyle.get('pin'));
                 ret.push( m );
@@ -377,8 +394,12 @@ APP
     return {
         Contour: function() { return false; },
         Contours: function(name, loc, marker) { 
-            var vect = new OpenLayers.Layer.Vector(name);
-            vect.add = function(a,b,c)  { return vect.addFeatures(contour(a,b,c)); };
+            var vect = new OpenLayers.Layer.Vector(name,{ rendererOptions: {zIndexing: true} });;
+            vect.add = function(a,b,c,d)  { 
+                var f;
+                vect.addFeatures(f = contour(a,b,c,d)); 
+                return f;
+            };
             return vect;
         },
         Marker: function(icon, loc, id) { return marker(icon, loc, id); },

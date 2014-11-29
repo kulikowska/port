@@ -1,7 +1,27 @@
 <div id="right">
     <div class='buttonWrap' ng-show="devices">
-        <button ng-repeat="device in devices" ng-click="devSel(device[2])"
-            ng-class="vis[device[2]]|threeWay"
-        >{{device[2]}}</button>
+        <div>Devices:</div>
+        <button ng-repeat="device in devices" ng-click="devSel(device._ID[2])"
+            ng-class="vis[device._ID[2]]|threeWay"
+        >{{device._ID[2]}}</button>
+    </div>
+    <div class="buttonWrap wide">
+        <button ng-click="show(true)">Show All</button>
+        <button ng-click="show(false)">Hide All</button>
+        <button ng-click="reverse()">Reverse</button>
+        <button ng-click="toFront()">To Front</button>
+    </div>
+    <div class="buttonWrap" ng-show="selDevice.Chans">
+        Device Channels:
+        <button ng-repeat="chan in selDevice.Chans">{{chan.Chan}}</button>
+    </div>
+    <div class="buttonWrap" ng-show="selDevice.Chans">
+        Device Parameters:
+        <ul>
+            <li>Id: {{selDevice.Id}}</li>
+            <li>Agl: {{selDevice.Agl}}</li>
+            <li>Address: {{selDevice.Address}}</li>
+            <li>City: {{selDevice.City}}</li>
+        </ul>
     </div>
 </div>

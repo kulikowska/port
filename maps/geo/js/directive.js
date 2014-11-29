@@ -9,21 +9,30 @@ APP
         }
     }
 }])
-.directive('leftWs', ['TPL', function(TPL) {
+.directive('leftWs', ['TPL', 'GEO', 'DATA', function(TPL, GEO, DATA) {
     return {
         restrict: 'A',
         replace: true,
         template: TPL.leftWs,
         scope:true,
         link: function($scope, el) {
+            $scope.chanVis = {};
+            $scope.vis = [true, true, true];
             $scope.chanSel = function(chanId) {
-                $scope.active = chanId;
-                console.log(chanId);
-            }
+                if ( $scope.active == chanId ) $scope.active = -1;
+                else $scope.active = chanId;
+
+                $scope.selChan = DATA.findChan(chanId);
+                LG( DATA.chanLoc(chanId) , ' dev c' );
+                $scope.chanDevs = DATA.chanLoc(chanId);
+                GEO.chanVis(chanId, $scope.chanDevs, $scope.active == chanId, 1, function(data) {
+                });
+            };
+            $scope.range = function(idx) { GEO.range(idx, $scope.vis[idx]); };
         }
     }
 }])
-.directive('rightWs', ['TPL', 'GEO', function(TPL, GEO) {
+.directive('rightWs', ['TPL', 'GEO', 'DATA', function(TPL, GEO, DATA) {
     return {
         restrict: 'A',
         replace: true,
@@ -33,11 +42,14 @@ APP
             var active = 0;
             $scope.vis = {}; 
             $scope.devSel = function(devId) {
+                $scope.selDevice = DATA.findDev(devId);
                 active != devId && ($scope.vis[active] -= 1);
                 typeof $scope.vis[devId] == 'undefined' && ($scope.vis[devId] = 0); 
                 ($scope.vis[devId] -= 1) < 0 && ($scope.vis[devId] = 2);
-                GEO.deviceVis($scope.devices[devId], $scope.vis[devId], active, 
-                    function(v) { LG(v, 'v '); }
+                GEO.deviceVis(DATA.findDev(devId)._ID, $scope.vis[devId], active, 
+                    function(v) { 
+                        LG(v, 'v ', DATA.findDev(devId) );
+                    }
                 );
                 active = devId;
             }
@@ -51,7 +63,7 @@ APP
         template:  TPL.menuWs,
         link: function($scope, el) {
             $scope.active = '';
-            $scope.autoOff = true;
+            $scope.autoOff = false;
             $scope.point = $scope.center = $scope.elevation = $scope.box = 0;
 
             var setActive = function(ctrlName){
@@ -72,32 +84,28 @@ APP
 
                     var cb;
                     switch (ctrlName) {
-                        case 'box' : cb = function(topLeft, bottomRight) {
-                            $scope.coords.lon = topLeft.lon.toFixed(4);
-                            $scope.coords.lat = topLeft.lat.toFixed(4);
-                            DATA.get('WsDeviceList', function(data) {
-                                $scope.devices = {};
-                                for (var i=0; i<data.length; i++)
-                                    $scope.devices[data[i].Id] 
-                                        = [data[i].Long4Dec, data[i].Lat4Dec, data[i].Id];
-                               }
-                               , topLeft, bottomRight);
+                        case 'box' : cb = function(tL, bR) {
+                                $scope.coords.lon = tL.lon.toFixed(4);
+                                $scope.coords.lat = tL.lat.toFixed(4);
                                 setActive(ctrlName);
+
+                                DATA.get('WsDeviceList',function(data) {
+                                    $scope.devices=data;
+                                    DATA.get('WsDeviceDetails',function(data) {});
+                                },tL,bR);
+
                             }; break;
                         case 'point' : cb = function(loc, el) {
-                                   $scope.coords.lon = loc.lon.toFixed(4);
-                                   $scope.coords.lat = loc.lat.toFixed(4);
-                                    setActive(ctrlName);
+                                $scope.coords.lon = loc.lon.toFixed(4);
+                                $scope.coords.lat = loc.lat.toFixed(4);
+                                setActive(ctrlName);
 
-                                DATA.get('WsChannelsList', function(data) {
-                                    LG( data );
-                                    $scope.channels = {};
-                                    for (var i=0; i<data.length; i++)
-                                        $scope.channels[data[i].Channel] = [data[i].Channel];
-                               });
+                                DATA.get('WsTvwsLookup',function(data) { 
+                                    $scope.channels = data; 
+                                    DATA.get('WsChannelsList', function(data) {});
+                                }, loc);
                            }; break;
                         case 'center' : cb = function(loc, el) {
-                            LG( loc, el );
                                             $scope.coords.lon = loc.lon.toFixed(4);
                                             $scope.coords.lat = loc.lat.toFixed(4);
                                             setActive(ctrlName);
@@ -142,7 +150,6 @@ APP
             $scope.locAddress = function() {
                 GEO.locAddress( $scope.addr, function(coords) { 
                     $scope.coords = coords;
-                    LG( $scope.coords );
                     $scope.$digest();
                 });
             }

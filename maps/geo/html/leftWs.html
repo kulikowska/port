@@ -1,7 +1,28 @@
 <div id="left">
     <div class='buttonWrap' ng-show="channels">
+        <div>Channels:</div>
         <button ng-repeat="channel in channels" ng-click="chanSel(channel[0])"
             ng-class="active == channel[0]|checkActive"
         >{{channel[0]}}</button>
+    </div>
+    <div class="buttonWrap wide">
+        <button ng-click="show(true)">Show All</button>
+        <button ng-click="show(false)">Hide All</button>
+        <button ng-click="reverse()">Reverse</button>
+        <button ng-click="toFront()">To Front</button>
+    </div>
+    <div class="buttonWrap">
+        <button ng-click="vis[0]=!vis[0]; range(0)" ng-class="vis[0]|checkActive">Long</button>
+        <button ng-click="vis[1]=!vis[1]; range(1)" ng-class="vis[1]|checkActive">Med</button>
+        <button ng-click="vis[2]=!vis[2]; range(2)" ng-class="vis[2]|checkActive">Short</button>
+    </div>
+    <div class='buttonWrap' ng-show="channels">
+        <ul>
+            <li>Chan: {{selChan.Channel}}</li>
+            <li>BWkHz: {{selChan.BWkHz}}</li>
+            <li>Band: {{selChan.Band}}</li>
+            <li>Freq: {{selChan.FreqMHz}}</li>
+        </ul>
+        <button ng-repeat="dev in chanDevs">{{dev.loc[2]}}</button>
     </div>
 </div>

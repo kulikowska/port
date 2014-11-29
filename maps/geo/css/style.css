@@ -160,12 +160,18 @@ body {
 #left .buttonWrap,
 #right .buttonWrap {
   margin: 4px;
-  border: 3px solid red;
+  border: 3px solid #456;
   padding: 6px;
-  max-height: 350px;
+  max-height: 322px;
   overflow: auto;
   border-radius: 8px;
   background: #eee;
+}
+#left .buttonWrap.wide button,
+#right .buttonWrap.wide button {
+  width: 68px;
+  font-size: 12px;
+  margin: 2px;
 }
 #left .buttonWrap button,
 #right .buttonWrap button {
