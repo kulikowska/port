@@ -206,7 +206,7 @@ body {
   padding: 2px;
   margin: 1px;
   width: 43px;
-  opacity: 0.4;
+  opacity: 0.2;
 }
 #left .buttonWrap button.long,
 #right .buttonWrap button.long {
@@ -219,6 +219,10 @@ body {
 #left .buttonWrap button.short,
 #right .buttonWrap button.short {
   background: #AA0000;
+}
+#left .buttonWrap button:hover,
+#right .buttonWrap button:hover {
+  opacity: 0.6;
 }
 #left .buttonWrap button.active,
 #right .buttonWrap button.active {
@@ -257,6 +261,10 @@ body {
 #footer > div.notify {
   float: left;
   color: red;
+}
+#header > div.elevation,
+#footer > div.elevation {
+  color: #008800;
 }
 #header {
   top: 0;

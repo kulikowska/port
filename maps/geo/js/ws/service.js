@@ -102,7 +102,8 @@ APP
             }
             map.setLayerIndex(_this.deviceL, zIndex++);
         },
-        chanVis: function(id, loc, vis, active) {
+        chanVis: function(id, loc, vis) {
+            LG( vis );
             if (typeof loc != 'undefined')
                 typeof chanContours[id] == 'undefined' && (chanContours[id] = []);
 
@@ -112,15 +113,17 @@ APP
                     if (typeof chanContours[id][i] == 'undefined')
                         chanContours[id].push(_this[L].add([loc[i].loc], L, function() {}));
 
+                    LG( chanContours[21][0][0].style.display, ' 21 in' );
+                    LG( chanContours[id], chanContours, id, i );
                     chanContours[id][i][0].style.display = vis ? 'block' : 'none';
                     chanContours[id][i][1].style.display = vis ? 'block' : 'none';
                     _this[L].redraw();
+                    LG( chanContours[21][0][0].style.display, ' 21' );
                 }
             typeof _this[L] == 'undefined' || map.setLayerIndex(_this[L], zIndex++);
             typeof _this[L] == 'undefined' || _this[L].redraw();
         },
         range: function(idx, vis) {
-            //var L = (idx ? (idx>1 ? 'S' : 'M') : 'L');
             var L = getRange(idx);
             _this[ L].setVisibility(vis);
             vis && map.setLayerIndex(_this[L], zIndex++);
@@ -181,7 +184,7 @@ APP
 
 
     return {
-        get: function(styleId) { return STYLES[styleId]; }
+        get: function(styleId) { return angular.extend({},STYLES[styleId]); }
     };
 }])
 .factory('OLCtrl', [function() {
@@ -383,12 +386,8 @@ APP
         return new OpenLayers.Geometry.Polygon.createRegularPolygon(Point(origin[0], origin[1]), radius, 40);
     };
     var contour = function(l, style, cb, radius) { 
-        LG( style, radius );
         if (typeof radius == 'undefined') 
             radius = style == 'contL' ? 20000 : ( style=='contM' ? 10000 : 50);
-
-        LG( radius );
-
         var ret = [];
         if (typeof l[0] == 'number') {
             ret = new OpenLayers.Feature.Vector( circ(l, radius), null, OLStyle.get(style) );

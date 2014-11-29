@@ -38,18 +38,17 @@ APP
             $scope.chanSel = function(chanId) {
                 setVis(chanId);
 
-                $scope.selChan = DATA.findChan(chanId);
+                $scope.selChan = $scope.vis[chanId] ? DATA.findChan(chanId) : false;
                 $scope.chanDevs = DATA.chanLoc(chanId);
                 if (typeof $scope.chanDevs == 'undefined')
                     $scope.notify( 'No devices loaded for channel Id: ' +  chanId);
                 else
-                    GEO.chanVis(chanId, $scope.chanDevs, $scope.active == chanId, 1, function(data) {
-                    });
+                    GEO.chanVis(chanId, $scope.chanDevs, $scope.vis[chanId]);
             };
             $scope.range = function(idx) { GEO.range(idx, $scope.rng[idx]); };
 
             /* TEST INIT */
-            setTimeout(function() { $scope.chanSel(22); $scope.$digest(); }, 2000);
+            //setTimeout(function() { $scope.chanSel(21); $scope.chanSel(32); $scope.$digest(); }, 2000);
         }
     }
 }])
@@ -177,7 +176,6 @@ APP
             $scope.message = '';
             $scope.devices = false;
             $scope.channels= false;
-            $scope.$watch('message', function(a,b) { LG( 'watch', $scope.messaage, a,b);} );
             $scope.notify = function(msg, status, duration) {
                 $scope.message = msg;;
             }

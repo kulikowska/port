@@ -124,11 +124,12 @@ body {
                 padding:2px;
                 margin:1px;
                 width:43px;
-                opacity:0.6;
+                opacity:0.2;
            }
            &.long   { background: #0044CC; }
            &.med    { background: #006600; }
            &.short  { background: #AA0000; }
+           &:hover  { opacity: 0.6; }
            &.active { opacity: 1; }
         }
     }
@@ -162,6 +163,9 @@ body {
         &.notify {
             float:left;
             color:red;
+        }
+        &.elevation {
+            color:#008800;
         }
     }
 }
