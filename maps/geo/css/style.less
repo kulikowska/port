@@ -105,17 +105,31 @@ body {
            font-size:13px;
            width:40px;
            border-radius:5px;
-           border:1px solid #abc;
+           border:1px solid #346;
            background:#def;
            color:#346;
            font-weight:bold;
            &.up {
                 opacity:1;
                 color:red;
+                border:1px solid red;
            }
            &.noshow {
+                border:1px solid #abc;
                 opacity:0.4;
            }
+           &.long, &.med, &.short {
+                color:white;
+                border :1px solid transparent;
+                padding:2px;
+                margin:1px;
+                width:43px;
+                opacity:0.6;
+           }
+           &.long   { background: #0044CC; }
+           &.med    { background: #006600; }
+           &.short  { background: #AA0000; }
+           &.active { opacity: 1; }
         }
     }
 }
@@ -137,6 +151,18 @@ body {
         position:relative;
         float:right;
         margin-right:20px;
+        margin:0px 4px;;
+        margin:7px;
+        font-family:monospace;
+        font-size:14px;
+        font-weight:bold;
+        &#panel {
+            margin:1px;
+        }
+        &.notify {
+            float:left;
+            color:red;
+        }
     }
 }
 

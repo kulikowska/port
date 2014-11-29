@@ -179,7 +179,7 @@ body {
   font-size: 13px;
   width: 40px;
   border-radius: 5px;
-  border: 1px solid #abc;
+  border: 1px solid #346;
   background: #def;
   color: #346;
   font-weight: bold;
@@ -188,10 +188,41 @@ body {
 #right .buttonWrap button.up {
   opacity: 1;
   color: red;
+  border: 1px solid red;
 }
 #left .buttonWrap button.noshow,
 #right .buttonWrap button.noshow {
+  border: 1px solid #abc;
   opacity: 0.4;
+}
+#left .buttonWrap button.long,
+#right .buttonWrap button.long,
+#left .buttonWrap button.med,
+#right .buttonWrap button.med,
+#left .buttonWrap button.short,
+#right .buttonWrap button.short {
+  color: white;
+  border: 1px solid transparent;
+  padding: 2px;
+  margin: 1px;
+  width: 43px;
+  opacity: 0.4;
+}
+#left .buttonWrap button.long,
+#right .buttonWrap button.long {
+  background: #0044CC;
+}
+#left .buttonWrap button.med,
+#right .buttonWrap button.med {
+  background: #006600;
+}
+#left .buttonWrap button.short,
+#right .buttonWrap button.short {
+  background: #AA0000;
+}
+#left .buttonWrap button.active,
+#right .buttonWrap button.active {
+  opacity: 1;
 }
 #right {
   right: 0;
@@ -212,6 +243,20 @@ body {
   position: relative;
   float: right;
   margin-right: 20px;
+  margin: 0px 4px;
+  margin: 7px;
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: bold;
+}
+#header > div#panel,
+#footer > div#panel {
+  margin: 1px;
+}
+#header > div.notify,
+#footer > div.notify {
+  float: left;
+  color: red;
 }
 #header {
   top: 0;

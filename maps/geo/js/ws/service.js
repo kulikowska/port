@@ -16,6 +16,13 @@ APP
             ? new OpenLayers.LonLat(lon, lat).transform('EPSG:4326', 'EPSG:3857')
             : new OpenLayers.LonLat(lon, lat);
     }
+
+    function getRange(pwr, byPwr) {
+        var l = byPwr 
+            ? pwr >= -7 ? 'L' : (pwr < -13  ? 'S' : 'M')
+            : pwr ? (pwr > 1 ? 'S' : 'M') : 'L';
+        return 'cont' + l;
+    };
     return {
         map: map,
         init: function(domEl) {
@@ -60,7 +67,7 @@ APP
             ]);
             //_this.covL.add(OLC.Marker('marker', {lon: 18.531, lat:54.47}, {id:23}));
             //_this.centerL.add(OLC.Marker('target', {lon: 18.55, lat:54.49}, {id: 22} ));
-            _this.test.add([[18.532, 54.47]], 'long', 23);
+            _this.test.add([[18.532, 54.47]], 'contL', 23);
             //OL.showFeatures('deviceL', false);
 
             // test circle in Gdynia Redłowo
@@ -95,29 +102,28 @@ APP
             }
             map.setLayerIndex(_this.deviceL, zIndex++);
         },
-        chanVis: function(id, loc, vis, active, cb) {
+        chanVis: function(id, loc, vis, active) {
             if (typeof loc != 'undefined')
                 typeof chanContours[id] == 'undefined' && (chanContours[id] = []);
 
                 for (var i=0; i<loc.length; i++) {
-                    var L   = 'cont' + (loc[i].Pwr >= -7 ? 'L' : (loc[i].Pwr < -11 ? 'S' : 'M'));
-                    var STL = loc[i].Pwr >= -7 ? 'long' : (loc[i].Pwr < -11 ? 'short' : 'med');
+                    var L = getRange(loc[i].Pwr, true);
 
-                    if (typeof chanContours[id][i] == 'undefined') {
-                        chanContours[id].push(_this[L].add([loc[i].loc], STL, function() {}));
-                    }
+                    if (typeof chanContours[id][i] == 'undefined')
+                        chanContours[id].push(_this[L].add([loc[i].loc], L, function() {}));
+
                     chanContours[id][i][0].style.display = vis ? 'block' : 'none';
                     chanContours[id][i][1].style.display = vis ? 'block' : 'none';
                     _this[L].redraw();
                 }
             typeof _this[L] == 'undefined' || map.setLayerIndex(_this[L], zIndex++);
             typeof _this[L] == 'undefined' || _this[L].redraw();
-            cb('good stuff');
         },
         range: function(idx, vis) {
-            var L = (idx ? (idx>1 ? 'S' : 'M') : 'L');
-            _this['cont' + L].setVisibility(vis);
-            vis && map.setLayerIndex(_this['cont' +L], zIndex++);
+            //var L = (idx ? (idx>1 ? 'S' : 'M') : 'L');
+            var L = getRange(idx);
+            _this[ L].setVisibility(vis);
+            vis && map.setLayerIndex(_this[L], zIndex++);
         },
         locAddress: function(addr, cb) {
             geocoder.geocode( { 'address': addr}, function(results, status) {
@@ -139,25 +145,26 @@ APP
     var markerWidth36 = 24;
 
     var def = function(styleId, base, params)    { 
-        if ( typeof STYLES[styleId] == 'undefined' ) {
-            STYLES[styleId] = OpenLayers.Feature.Vector.style['default'];
-            typeof STYLES[base] != 'undefined' && (STYLES[styleId] = angular.copy(STYLES[base]));
-            typeof params != 'undefined' && (STYLES[styleId] = angular.copy(params, STYLES[styleId]));
-            STYLES[styleId].id = styleId;
+        if (typeof STYLES[styleId] == 'undefined') {
+            STYLES[styleId] = angular.extend({}, OpenLayers.Feature.Vector.style['default']);
+            if (base) for (var i in base) STYLES[styleId][i] = base[i];
+            for (var i in params) STYLES[styleId][i] = params[i];
         }
     };
 
     def('base', '',  {graphicOpacity: 1, 'strokeWidth' : 1});
+    /*
     def('green',  'base', {'fillOpacity': 0.9, 'strokeColor': '#008800', 'fillColor' : '#44ffaa',
             externalGraphic : imgPath + 'markgreen.png', graphicWidth : 12,  graphicHeight: 24,
             graphicYOffset: -24});
     def('red',    'green', {'strokeColor': 'red', 'fillColor' : '#ff8844'});
     def('blue',   'green', {'strokeColor': '#0044ff', 'fillColor' : '#88aaff'});
     def('noshow',   'green', {'strokeColor': 'transparent', 'fillColor' : 'transparent', 'display' : 'none'});
+    */
 
-    def('long',   'green', {'strokeColor': '#00aa00', 'fillOpacity' : 0.1 });
-    def('med',   'green', {'fillOpacity': 0.2, 'fillColor' : '#008800'});
-    def('short',   'green', {'strokeColor': '#880000', 'fillOpacity' : 0.2, 'fillColor' : '#aa0000' });
+    def('contL', '', { 'strokeColor': '#000088', 'fillColor' : '#0044FF', 'fillOpacity': 0.2, 'strokeWidth' : 0.5});
+    def('contM', 'contL', {'strokeColor': '#004400', 'fillColor' : '#00AA22'});
+    def('contS', 'contL', {'strokeColor': '#440000', 'fillColor' : '#FF2200'});
 
     def('marker','', {   graphicHeight : 20, graphicYOffset : -20, 
                         graphicWidth : 12,  graphicXOffset : -6, 
@@ -378,7 +385,7 @@ APP
     var contour = function(l, style, cb, radius) { 
         LG( style, radius );
         if (typeof radius == 'undefined') 
-            radius = style == 'long' ? 20000 : ( style=='med' ? 10000 : 50);
+            radius = style == 'contL' ? 20000 : ( style=='contM' ? 10000 : 50);
 
         LG( radius );
 

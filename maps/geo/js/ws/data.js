@@ -49,6 +49,7 @@ APP
         },
         WsDeviceDetails: {
             set: function(data) {
+                if (data.length) { Stor.Chan.dev = {}; Stor.Dev.chan = {} };
                 for (var i=0; i<data.length; i++)
                     if (typeof  Stor.Dev.idx[data[i].Id] != 'undefined') {
                         data[i]._ID = Stor.Dev.idx[data[i].Id]._ID;
@@ -94,6 +95,7 @@ APP
         findChan:   function(id)    { return Stor.Chan.idx[id]; },
         findDev:    function(id)    { return Stor.Dev.idx[id];  },
         devChans:   function(id)    { return Stor.Chan;  },
+        chanIdx:    function()      {LG('called'); return Stor.Chan.idx; }
     }
 }])
 ;
