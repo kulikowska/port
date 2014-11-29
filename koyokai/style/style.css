@@ -148,15 +148,15 @@ body {
   box-shadow: 0 0 4px 4px #150000;
 }
 .contentWrap .content .blurb2 {
-  width: 90%;
+  width: 61%;
   margin: 0 auto;
-  font-style: italic;
   padding: 15px;
+  font-size: 15px;
 }
 .contentWrap .content .wrap {
   margin: 0 auto;
   padding-top: 25px;
-  width: 250px;
+  width: 150px;
 }
 .contentWrap .content .wrap .staytuned {
   font-size: 22px;
@@ -199,6 +199,12 @@ body {
   width: 200px;
   height: 200px;
 }
+.contentWrap .tempprop {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
 .contentWrap .contentexpand {
   color: #eee;
   height: 500px;
@@ -207,6 +213,36 @@ body {
   margin-top: -15px;
   transition: 1s ease;
   height: 650px;
+}
+.contentWrap .contentexpand .aboutcont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand .gallerycont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand .memberscont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand .kendocont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand .eventscont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
 }
 .contentWrap .footer {
   width: 100%;
