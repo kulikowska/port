@@ -100,10 +100,11 @@ APP
                 typeof chanContours[id] == 'undefined' && (chanContours[id] = []);
 
                 for (var i=0; i<loc.length; i++) {
-                    var L = 'cont' + (loc[i].Pwr >= -7 ? 'L' : (loc[i].Pwr < -11 ? 'S' : 'M'));
+                    var L   = 'cont' + (loc[i].Pwr >= -7 ? 'L' : (loc[i].Pwr < -11 ? 'S' : 'M'));
+                    var STL = loc[i].Pwr >= -7 ? 'long' : (loc[i].Pwr < -11 ? 'short' : 'med');
 
                     if (typeof chanContours[id][i] == 'undefined') {
-                        chanContours[id].push(_this[L].add([loc[i].loc], 'med', function() {}, 40000));
+                        chanContours[id].push(_this[L].add([loc[i].loc], STL, function() {}));
                     }
                     chanContours[id][i][0].style.display = vis ? 'block' : 'none';
                     chanContours[id][i][1].style.display = vis ? 'block' : 'none';
@@ -375,6 +376,12 @@ APP
         return new OpenLayers.Geometry.Polygon.createRegularPolygon(Point(origin[0], origin[1]), radius, 40);
     };
     var contour = function(l, style, cb, radius) { 
+        LG( style, radius );
+        if (typeof radius == 'undefined') 
+            radius = style == 'long' ? 20000 : ( style=='med' ? 10000 : 50);
+
+        LG( radius );
+
         var ret = [];
         if (typeof l[0] == 'number') {
             ret = new OpenLayers.Feature.Vector( circ(l, radius), null, OLStyle.get(style) );
