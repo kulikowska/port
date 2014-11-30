@@ -36,6 +36,16 @@ APP
             _this[layers[i]].redraw();
         }
     }
+
+    function clearDevMarkers() {
+        _this.deviceL.clearMarkers();
+        for (var i in devMarkers) {
+            devMarkers[i].destroy();
+            delete(devMarkers[i]);
+        }
+        devMarkers = {};
+    }
+
     return {
         map: map,
         init: function(domEl) {
@@ -80,11 +90,14 @@ APP
         },
         initDevs: function() {
             var data = DATA.devIdx();
+            clearDevMarkers();
             for (var i in data) {
                 if (typeof devMarkers[data[i]._ID[2]] == 'undefined')
-                devMarkers[data[i]._ID[2]] =
-                    _this.deviceL.add('markGreen', [{lon: data[i]._ID[0], lat:data[i]._ID[1], attrs: data[i]._ID[2]}], function(attrs) { LG( 'cb from create marker', attrs ); }, 'hidden');
-
+                    devMarkers[data[i]._ID[2]] =
+                        _this.deviceL.add( 'markGreen', 
+                            [{lon: data[i]._ID[0], lat:data[i]._ID[1], attrs: data[i]._ID[2]}], 
+                            function(attrs) { LG( 'cb from create marker', attrs ); }, 'hidden'
+                        );
             }
         },
         initChans: function() {
@@ -105,7 +118,6 @@ APP
             devMarkers[id].display(vis != 0);
             typeof active != 'undefined' && active && devMarkers[active].setUrl(devUrl[1]);
             if (vis) {
-                //devMarkers[id].display(true);
                 devMarkers[id].setUrl(devUrl[vis]);
                 typeof doCenter != 'undefined' && doCenter && map.setCenter(devMarkers[id].lonlat);
             }
@@ -117,23 +129,6 @@ APP
                 chanContours[id][i][1].style.display = vis ? 'block' : 'none';;
             toTop(contours);
         },
-        chanVisDepr: function(id, loc, vis) {
-            if (typeof loc != 'undefined')
-                typeof chanContours[id] == 'undefined' && (chanContours[id] = []);
-
-                for (var i=0; i<loc.length; i++) {
-                    var L = getRange(loc[i].Pwr, true);
-
-                    if (typeof chanContours[id][i] == 'undefined')
-                        chanContours[id].push(_this[L].add([loc[i].loc], L, function() {}));
-                        else LG( ' aleady there ' , id );
-
-                    chanContours[id][i][0].style.display = vis ? 'block' : 'none';
-                    chanContours[id][i][1].style.display = vis ? 'block' : 'none';
-                    _this[L].redraw();
-                }
-            toTop(contours);
-        },
         showChan: function(showIt) {
             for (var i=0; i<contours.length; i++ )
                 _this[contours[i]].setVisibility(showIt);
@@ -142,7 +137,6 @@ APP
         showDev: function(showIt) {
             for (var i=0 in devMarkers) devMarkers[i].display(showIt);
             toTop('deviceL');
-            _this.deviceL.redraw();
         },
         chanToFront: function() { toTop(contours); },
         devToFront: function()  { toTop('deviceL'); },
