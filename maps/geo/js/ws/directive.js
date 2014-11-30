@@ -16,6 +16,7 @@ APP
         template: TPL.leftWs,
         scope:true,
         link: function($scope, el) {
+            var active = 0;
             $scope.vis = false;
             $scope.rng = [true, true, true];
 
@@ -27,13 +28,12 @@ APP
             });
 
             var setVis = function(chanId) {
-                var active = $scope.active; 
                 if ($scope.vis) {
-                    if ($scope.active != chanId )
-                        $scope.vis[$scope.active] == 2 && ($scope.vis[$scope.active] = 1);
+                    if (active != chanId )
+                        $scope.vis[active] == 2 && ($scope.vis[active] = 1);
 
                     $scope.vis[chanId] = $scope.vis[chanId] ? 0 : 2;
-                    $scope.active = chanId;
+                    active = chanId;
                 }
             };
 
