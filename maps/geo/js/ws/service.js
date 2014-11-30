@@ -2,7 +2,8 @@ function LG(arg) { console.log(arguments); }
 if (typeof APP == 'undefined') var APP = angular.module('WS',[]);
 
 APP
-.factory('GEO', ['DATA', 'OL', 'OLC', function(DATA, OL, OLC) {
+.factory('GEO', ['DATA', 'OLCtrl', 'OLC', function(DATA, OLCtrl, OLC) {
+    var zoom=8;
     var zIndex = 10;
     var map;
     var devActive = false;
@@ -11,18 +12,30 @@ APP
     var devUrl = [ '', DATA.url + 'image/markgreen.png', DATA.url + 'image/markred.png'];
     var geocoder; 
     var _this = this;
+
     function lonLat(lon, lat, trans) {
         return trans 
             ? new OpenLayers.LonLat(lon, lat).transform('EPSG:4326', 'EPSG:3857')
             : new OpenLayers.LonLat(lon, lat);
     }
 
+    var contours = ['contL', 'contM', 'contS'];
     function getRange(pwr, byPwr) {
         var l = byPwr 
             ? pwr >= -7 ? 'L' : (pwr < -13  ? 'S' : 'M')
             : pwr ? (pwr > 1 ? 'S' : 'M') : 'L';
         return 'cont' + l;
     };
+
+    function toTop(layers) {
+        typeof layers == 'string' && (layers = [layers]);
+
+        for (var i=0; i<layers.length; i++) {
+            map.setLayerIndex(_this[layers[i]], zIndex++);
+            _this[layers[i]].setVisibility(true);
+            _this[layers[i]].redraw();
+        }
+    }
     return {
         map: map,
         init: function(domEl) {
@@ -46,8 +59,8 @@ APP
                 ],
                 //center: lonLat(21.018267, 52.235850, true), //Warszawa
                 //center: lonLat(18.55123, 54.49001, true), //Gdynia
-                center: lonLat(55.86, 19.88, true), //Oman 
-                zoom:6,
+                center: lonLat(58.043, 23.523, true), //Oman 
+                zoom:zoom,
                 controls: [
                     new OpenLayers.Control.Navigation(),
                     new OpenLayers.Control.PanZoomBar(),
@@ -55,55 +68,56 @@ APP
                     new OpenLayers.Control.ScaleLine(),
                 ]
             });
-            OL.setMap(map);
-            OL.initCtrls(['box', 'point', 'center', 'elevation']);
+            OLCtrl.setMap(map);
+            OLCtrl.init(['box', 'point', 'center', 'elevation']);
             map.addLayers([
                 _this.centerL=OLC.Markers('centerL'),
                 _this.deviceL=OLC.Markers('deviceL'),
                 _this.contL = OLC.Contours('contL'),
                 _this.contM = OLC.Contours('contM'),
-                _this.contS = OLC.Contours('contS'),
-                _this.test  = OLC.Contours('test')
+                _this.contS = OLC.Contours('contS')
             ]);
-            //_this.covL.add(OLC.Marker('marker', {lon: 18.531, lat:54.47}, {id:23}));
-            //_this.centerL.add(OLC.Marker('target', {lon: 18.55, lat:54.49}, {id: 22} ));
-            _this.test.add([[18.532, 54.47]], 'contL', 23);
-            //OL.showFeatures('deviceL', false);
-
-            // test circle in Gdynia Redłowo
-            /*
-            var lr = OL.RingM('1Km Marker',[[18.54, 54.48], [18.55, 54.49]], 'green');
-            map.addLayer(lr);
-            var lr1 = OL.RingV('1Km from Home',[[18.53, 54.47], [18.54, 54.48]], 'short');
-            map.addLayer(lr1);
-            setTimeout(function() { 
-                for (var i=0; i<lr1.features.length; i++) {
-                    lr1.features[i].style.display = 'none';
-                    lr1.redraw();
-                }
-            }, 218000);
-            */
         },
-        deviceVis: function(loc, vis, active, cb) {
-            var id = loc[2];
+        initDevs: function() {
+            var data = DATA.devIdx();
+            for (var i in data) {
+                if (typeof devMarkers[data[i]._ID[2]] == 'undefined')
+                devMarkers[data[i]._ID[2]] =
+                    _this.deviceL.add('markGreen', [{lon: data[i]._ID[0], lat:data[i]._ID[1], attrs: data[i]._ID[2]}], function(attrs) { LG( 'cb from create marker', attrs ); }, 'hidden');
 
-            if (typeof devMarkers[id] == 'undefined') {
-                devMarkers[id] = 
-                    _this.deviceL.add('markRed', [{lon: loc[0], lat:loc[1], attrs: id}], cb);
-            } else {
-                if (vis == 0) {
-                    _this.deviceL.removeMarker(devMarkers[id]);
-                    devMarkers[id].destroy();
-                    delete devMarkers[id];
-                } else {
-                    active && devMarkers[active].setUrl(devUrl[1]);
-                    devMarkers[id].setUrl(devUrl[vis]);
-                }
+            }
+        },
+        initChans: function() {
+            var d = DATA.devChans();
+            var loc;
+            for (var id  in d) { 
+                loc = d[id];
+                chanContours[id] = [];
+                for (var i=0; i<loc.length; i++) {
+                    var L = getRange(loc[i].Pwr, true);
+                    chanContours[id].push(
+                        _this[L].add([loc[i].loc], L, function() {})
+                   );
+                 }
+            }
+        },
+        deviceVis: function(id, vis, active, doCenter) {
+            devMarkers[id].display(vis != 0);
+            typeof active != 'undefined' && active && devMarkers[active].setUrl(devUrl[1]);
+            if (vis) {
+                //devMarkers[id].display(true);
+                devMarkers[id].setUrl(devUrl[vis]);
+                typeof doCenter != 'undefined' && doCenter && map.setCenter(devMarkers[id].lonlat);
             }
             map.setLayerIndex(_this.deviceL, zIndex++);
         },
         chanVis: function(id, loc, vis) {
-            LG( vis );
+            for (var i in chanContours[id])
+                chanContours[id][i][0].style.display = 
+                chanContours[id][i][1].style.display = vis ? 'block' : 'none';;
+            toTop(contours);
+        },
+        chanVisDepr: function(id, loc, vis) {
             if (typeof loc != 'undefined')
                 typeof chanContours[id] == 'undefined' && (chanContours[id] = []);
 
@@ -112,17 +126,26 @@ APP
 
                     if (typeof chanContours[id][i] == 'undefined')
                         chanContours[id].push(_this[L].add([loc[i].loc], L, function() {}));
+                        else LG( ' aleady there ' , id );
 
-                    LG( chanContours[21][0][0].style.display, ' 21 in' );
-                    LG( chanContours[id], chanContours, id, i );
                     chanContours[id][i][0].style.display = vis ? 'block' : 'none';
                     chanContours[id][i][1].style.display = vis ? 'block' : 'none';
                     _this[L].redraw();
-                    LG( chanContours[21][0][0].style.display, ' 21' );
                 }
-            typeof _this[L] == 'undefined' || map.setLayerIndex(_this[L], zIndex++);
-            typeof _this[L] == 'undefined' || _this[L].redraw();
+            toTop(contours);
         },
+        showChan: function(showIt) {
+            for (var i=0; i<contours.length; i++ )
+                _this[contours[i]].setVisibility(showIt);
+            toTop(contours);
+        },
+        showDev: function(showIt) {
+            for (var i=0 in devMarkers) devMarkers[i].display(showIt);
+            toTop('deviceL');
+            _this.deviceL.redraw();
+        },
+        chanToFront: function() { toTop(contours); },
+        devToFront: function()  { toTop('deviceL'); },
         range: function(idx, vis) {
             var L = getRange(idx);
             _this[ L].setVisibility(vis);
@@ -150,36 +173,24 @@ APP
     var def = function(styleId, base, params)    { 
         if (typeof STYLES[styleId] == 'undefined') {
             STYLES[styleId] = angular.extend({}, OpenLayers.Feature.Vector.style['default']);
-            if (base) for (var i in base) STYLES[styleId][i] = base[i];
+            if (base) for (var i in STYLES[base]) STYLES[styleId][i] = STYLES[base][i];
             for (var i in params) STYLES[styleId][i] = params[i];
         }
     };
 
     def('base', '',  {graphicOpacity: 1, 'strokeWidth' : 1});
-    /*
-    def('green',  'base', {'fillOpacity': 0.9, 'strokeColor': '#008800', 'fillColor' : '#44ffaa',
-            externalGraphic : imgPath + 'markgreen.png', graphicWidth : 12,  graphicHeight: 24,
-            graphicYOffset: -24});
-    def('red',    'green', {'strokeColor': 'red', 'fillColor' : '#ff8844'});
-    def('blue',   'green', {'strokeColor': '#0044ff', 'fillColor' : '#88aaff'});
-    def('noshow',   'green', {'strokeColor': 'transparent', 'fillColor' : 'transparent', 'display' : 'none'});
-    */
-
-    def('contL', '', { 'strokeColor': '#000088', 'fillColor' : '#0044FF', 'fillOpacity': 0.2, 'strokeWidth' : 0.5});
+    def('pin','', { graphicHeight: 24, graphicYOffset: -24, graphicWidth: 12, graphicXOffset: -6, 
+                    externalGraphic: imgPath + 'pin.png', fillOpacity: 1} );
+    def('contL', 'pin', { 'strokeColor': '#000088', 'fillColor' : '#0044FF', 
+                                    'fillOpacity': 0.2, 'strokeWidth' : 0.5});
     def('contM', 'contL', {'strokeColor': '#004400', 'fillColor' : '#00AA22'});
     def('contS', 'contL', {'strokeColor': '#440000', 'fillColor' : '#FF2200'});
 
-    def('marker','', {   graphicHeight : 20, graphicYOffset : -20, 
-                        graphicWidth : 12,  graphicXOffset : -6, 
-                        externalGraphic : imgPath + 'pin.png', fillOpacity:1} );
+    def('center','', {  graphicHeight: 32, graphicYOffset: -32, graphicWidth:  32, graphicXOffset: -16,
+                        externalGraphic :   imgPath + 'target.png', fillOpacity:1} );
 
-    def('center','', {   graphicHeight : 32, graphicYOffset : -16, 
-                        graphicWidth : 32,  graphicXOffset : -16, 
-                        externalGraphic : imgPath + 'target.png', fillOpacity:1} );
+    def('marker', 'pin', { externalGraphic : imgPath + 'marker.png'});
 
-    def('pin','', {   graphicHeight : 20, graphicYOffset : -20, 
-                        graphicWidth : 12,  graphicXOffset : -6, 
-                        externalGraphic : imgPath + 'pin.png', fillOpacity:1} );
 
 
 
@@ -197,20 +208,21 @@ APP
             typeof b.bottom == 'undefined' ||
                 _this.cbk( 
                     _this.map.getLonLatFromPixel( 
-                        new OpenLayers.Pixel(b.top, b.right)).transform('EPSG:3857', 'EPSG:4326'), 
+                        new OpenLayers.Pixel(b.left, b.bottom)).transform('EPSG:3857', 'EPSG:4326'),
                     _this.map.getLonLatFromPixel( 
-                        new OpenLayers.Pixel(b.bottom, b.left)).transform('EPSG:3857', 'EPSG:4326')
+                        new OpenLayers.Pixel(b.right, b.top)).transform('EPSG:3857', 'EPSG:4326')
                 );
         },
         point: function(a) { _this.cbk(a); },
         center: function(a) {
+            //_this.map.zoomIn();
+
             _this.map.setCenter(new OpenLayers.LonLat(a.x, a.y));
             var pt  = new OpenLayers.LonLat(a.x, a.y);
             pt.transform('EPSG:3857', 'EPSG:4326');
 
-            var idx = parseInt(Math.random() * 10000);
             _this.map.getLayersByName('centerL')[0].add( 'marker', 
-                [{lon: pt.lon, lat: pt.lat, attrs: { id: idx}}], 
+                [{lon: pt.lon, lat: pt.lat, attrs: { id: 0}}], 
                 function (attrs) { console.log(attrs); }
             );
             setTimeout(function() { _this.map.getLayersByName('centerL')[0].clearMarkers(); }, 500);
@@ -244,9 +256,7 @@ APP
                 );
         }}})
     };
-     
-
-    setTimeout( function() { _this.map.addLayer(ml); }, 100);
+    setTimeout( function() { _this.map.addLayer(ml); }, 500);
 
     return {
         map: null,
@@ -264,13 +274,95 @@ APP
             ml.setVisibility(true);
         },
         deactivate: function(ctrlName) {
-            ctrls[ctrlName].deactivate();
-            ml.setVisibility(false);
+            if (ctrlName) {
+                ctrls[ctrlName].deactivate();
+                ml.setVisibility(false);
+            }
         },
         setMap: function( map ) { _this.map = map; }
     }
 }])
-.factory('OL', ['OLStyle', 'OLCtrl', function(OLStyle, OLCtrl) {
+.factory('OLC', ['OLStyle', function(OLStyle) { //OLCHERE
+    var Point   = function(lo, la) { return new OpenLayers.Geometry.Point(lo, la).transform('EPSG:4326', 'EPSG:3857'); };
+    var LonLat  = function(lo, la) { return new OpenLayers.LonLat(lo, la).transform('EPSG:4326', 'EPSG:3857'); };
+
+    var imgPath =  'http://' + document.location.host + '/image/';
+
+    var marker = function(icon, loc, cb, hideIt) {
+        typeof loc == 'undefined' && (loc = {lon:0, lat:0});
+        var size    = new OpenLayers.Size(15,25);
+        var offset  = new OpenLayers.Pixel(-(size.w/2), -size.h);
+        var icon    = new OpenLayers.Icon(imgPath + icon + '.png', size, offset);
+        var m  = new OpenLayers.Marker(LonLat(loc.lon, loc.lat), icon);
+        m.attrs = loc.attrs;
+        m.events.register('click', m, cb);
+        m.display(typeof hideIt == 'undefined' || !hideIt);
+        return  m;
+    };
+
+    var circ = function(origin, radius) {
+        typeof radius == 'undefined' && (radius = 20000); // 1.3km
+        return new OpenLayers.Geometry.Polygon.createRegularPolygon(Point(origin[0], origin[1]), radius, 30);
+    };
+
+    var contour = function(l, style, cb, radius, hideIt) { 
+        typeof l == 'string' && (l = [l]);
+        var ret = [];
+
+        if (typeof radius == 'undefined') 
+            radius = style == 'contL' ? 20000 : (style=='contM' ? 10000 : 50);
+
+        for (var i=0; i< l.length; i++ ) {
+            var cStyle = OLStyle.get(style);
+            var mStyle = OLStyle.get('pin');
+            mStyle.display = 'none';
+            cStyle.display = 'none';
+            var c = new OpenLayers.Feature.Vector(circ(l[i], radius), null, cStyle);
+            ret.push( c );
+            var m = new OpenLayers.Feature.Vector(Point(l[i][0], l[i][1]), null, mStyle);
+            ret.push( m );
+
+            m.attrs = c.attrs = l[i][2]; // attributes passed in location data
+        }
+        return ret; 
+    };
+
+    return {
+        Contour: function() { return false; },
+        Contours: function(name, loc, marker) { 
+            var vect = new OpenLayers.Layer.Vector(name,{ rendererOptions: {zIndexing: true} });;
+            vect.add = function(a,b,c,d,e)  { 
+                var f;
+                vect.addFeatures(f = contour(a,b,c,d,e)); 
+                return f;
+            };
+            return vect;
+        },
+        Marker: function(icon, loc, id) { return marker(icon, loc, id); },
+        Markers: function(name) { 
+            var ret = new OpenLayers.Layer.Markers(name,{ rendererOptions: {zIndexing: true} }); 
+            ret.add = function(icon, coords, cb, hideIt) { 
+                var m;
+                for (var i=0; i<coords.length; i++) 
+                    ret.addMarker(m = marker(icon, coords[i],
+                    function(e) { cb(e.object.attrs); }, hideIt)
+                ); 
+                return m;
+            };
+            ret.clear = function() {
+                ret.removeMarkers();
+            };
+            ret.show= function(show, id) { 
+                for (var i=0; i<this.markers.length; i++) 
+                    if (this.markers[i].id == id || typeof id == 'undefined') 
+                        this.markers[i].display(show);
+            };
+            return ret;
+        },
+        Add: function(l, m)     { l.addMarker(m); }
+    }
+}])
+.factory('OLDepr', ['OLStyle', 'OLCtrl', function(OLStyle, OLCtrl) {
     var pointList= function(l, closeIt) {
         var poly = [];
         for (var i=0; i< l.length; i++) 
@@ -316,7 +408,7 @@ APP
         } else {
             for (var i=0; i< l.length; i++ ) {
                 var point =  new OpenLayers.Geometry.Point(l[i][0], l[i][1]).transform('EPSG:4326', 'EPSG:3857');
-                var vector =  new OpenLayers.Feature.Vector(point,null, OLStyle.get('marker'));
+                var vector =  new OpenLayers.Feature.Vector(point, null, OLStyle.get('marker'));
                 ret.push( new OpenLayers.Feature.Vector( circ(l[i]), null, OLStyle.get(style) ));
                 ret.push(vector);
             }
@@ -362,81 +454,6 @@ APP
         deactivate: function(ctrlName) {
             OLCtrl.deactivate(ctrlName);
         }
-    }
-}])
-.factory('OLC', ['OLStyle', function(OLStyle) {
-    var Point   = function(lo, la) { return new OpenLayers.Geometry.Point(lo, la).transform('EPSG:4326', 'EPSG:3857'); };
-    var LonLat  = function(lo, la) { return new OpenLayers.LonLat(lo, la).transform('EPSG:4326', 'EPSG:3857'); };
-
-    var imgPath =  'http://' + document.location.host + '/image/';
-
-    var marker = function(icon, loc, cb) {
-        typeof loc == 'undefined' && (loc = {lon:0, lat:0});
-        var size    = new OpenLayers.Size(15,25);
-        var offset  = new OpenLayers.Pixel(-(size.w/2), -size.h);
-        var icon    = new OpenLayers.Icon(imgPath + icon + '.png', size, offset);
-        var m  = new OpenLayers.Marker(LonLat(loc.lon, loc.lat), icon);
-        m.attrs = loc.attrs;
-        m.events.register('click', m, cb);
-        return  m;
-    };
-
-    var circ = function(origin, radius) {
-        typeof radius == 'undefined' && (radius = 20000); // 1.3km
-        return new OpenLayers.Geometry.Polygon.createRegularPolygon(Point(origin[0], origin[1]), radius, 40);
-    };
-    var contour = function(l, style, cb, radius) { 
-        if (typeof radius == 'undefined') 
-            radius = style == 'contL' ? 20000 : ( style=='contM' ? 10000 : 50);
-        var ret = [];
-        if (typeof l[0] == 'number') {
-            ret = new OpenLayers.Feature.Vector( circ(l, radius), null, OLStyle.get(style) );
-        } else {
-            for (var i=0; i< l.length; i++ ) {
-                var c = new OpenLayers.Feature.Vector(circ(l[i], radius), null, OLStyle.get(style));
-                ret.push( c );
-                var m = new OpenLayers.Feature.Vector(Point(l[i][0], l[i][1]), null, OLStyle.get('pin'));
-                ret.push( m );
-
-                m.attrs = c.attrs = l[i][2]; // attributes passed in location data
-            }
-        }
-        return ret; 
-    };
-
-    return {
-        Contour: function() { return false; },
-        Contours: function(name, loc, marker) { 
-            var vect = new OpenLayers.Layer.Vector(name,{ rendererOptions: {zIndexing: true} });;
-            vect.add = function(a,b,c,d)  { 
-                var f;
-                vect.addFeatures(f = contour(a,b,c,d)); 
-                return f;
-            };
-            return vect;
-        },
-        Marker: function(icon, loc, id) { return marker(icon, loc, id); },
-        Markers: function(name) { 
-            var ret = new OpenLayers.Layer.Markers(name,{ rendererOptions: {zIndexing: true} }); 
-            ret.add = function(icon, coords, cb) { 
-                var m;
-                for (var i=0; i<coords.length; i++) 
-                    ret.addMarker(m = marker(icon, coords[i],
-                    function(e) { cb(e.object.attrs); } )
-                ); 
-                return m;
-            };
-            ret.clear = function() {
-                ret.removeMarkers();
-            };
-            ret.show= function(show, id) { 
-                for (var i=0; i<this.markers.length; i++) 
-                    if (this.markers[i].id == id || typeof id == 'undefined') 
-                        this.markers[i].display(show);
-            };
-            return ret;
-        },
-        Add: function(l, m)     { l.addMarker(m); }
     }
 }])
 .factory('UT', [function() {

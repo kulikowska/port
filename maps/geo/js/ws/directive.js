@@ -19,7 +19,9 @@ APP
             $scope.vis = false;
             $scope.rng = [true, true, true];
 
-            $scope.$on('chanLoad', function() { 
+            $scope.$on('devLoad', function() { 
+                LG( 'chan loaded');
+                GEO.initChans();
                 $scope.vis = {}; 
                 for (var i in DATA.chanIdx()) $scope.vis[i] = 0; 
             });
@@ -30,7 +32,7 @@ APP
                     if ($scope.active != chanId )
                         $scope.vis[$scope.active] == 2 && ($scope.vis[$scope.active] = 1);
 
-                    $scope.vis[chanId] = $scope.vis[chanId] ? $scope.vis[chanId] - 1 : 2;
+                    $scope.vis[chanId] = $scope.vis[chanId] ? 0 : 2;
                     $scope.active = chanId;
                 }
             };
@@ -45,10 +47,9 @@ APP
                 else
                     GEO.chanVis(chanId, $scope.chanDevs, $scope.vis[chanId]);
             };
-            $scope.range = function(idx) { GEO.range(idx, $scope.rng[idx]); };
-
-            /* TEST INIT */
-            //setTimeout(function() { $scope.chanSel(21); $scope.chanSel(32); $scope.$digest(); }, 2000);
+            $scope.range    = function(idx)     { GEO.range(idx, $scope.rng[idx]); };
+            $scope.show     = function(showIt)  { GEO.showChan(showIt); };
+            $scope.toFront  = function() { GEO.chanToFront(); }
         }
     }
 }])
@@ -57,22 +58,42 @@ APP
         restrict: 'A',
         replace: true,
         template: TPL.rightWs,
-        scope:true,
+        //scope:true,
+        scope:{ devices: '=', devCenter: '=', toDevId: '=' },
         link: function($scope, el) {
             var active = 0;
             $scope.vis = {}; 
+
+            $scope.$watch('toDevId', function(n, o) {
+                if ( typeof n != 'undefined') {
+                    $scope.devSel(n);
+                    $scope.vis[n] < 1 && $scope.devSel(n);
+                }
+            });
+
+            $scope.$on('devLoad', function() { 
+                GEO.initDevs();
+                $scope.vis = {}; 
+                for (var i in DATA.devIdx()) $scope.vis[i] = 0; 
+            });
+
             $scope.devSel = function(devId) {
                 $scope.selDevice = DATA.findDev(devId);
-                active != devId && ($scope.vis[active] -= 1);
+
                 typeof $scope.vis[devId] == 'undefined' && ($scope.vis[devId] = 0); 
-                ($scope.vis[devId] -= 1) < 0 && ($scope.vis[devId] = 2);
-                GEO.deviceVis(DATA.findDev(devId)._ID, $scope.vis[devId], active, 
-                    function(v) { 
-                        LG(v, 'v ', DATA.findDev(devId) );
-                    }
-                );
+                typeof active != 'undefined' && $scope.vis[active] && ($scope.vis[active] = 1);
+                $scope.vis[devId] = $scope.vis[devId] ? 0 : 2;
+
+                GEO.deviceVis(DATA.findDev(devId)._ID[2], $scope.vis[devId], active, $scope.devCenter);
                 active = devId;
             }
+            $scope.show     = function(showIt)  { 
+                GEO.showDev(showIt); 
+                for (var i in $scope.vis)
+                    //$scope.vis[i] = showIt ? $scope.vis : 0;
+                    $scope.vis[i] = showIt ? 1 : 0;
+            };
+            $scope.toFront  = function() { $scope.devTop=1; GEO.devToFront(); };
         }
     }
 }])
@@ -83,7 +104,8 @@ APP
         template:  TPL.menuWs,
         link: function($scope, el) {
             $scope.active = '';
-            $scope.autoOff = false;
+            $scope.autoOff = true;
+            $scope.devCenter = false;
             $scope.point = $scope.center = $scope.elevation = $scope.box = 0;
 
             var setActive = function(ctrlName){
@@ -97,14 +119,15 @@ APP
 
             var ctrls = {
                 box : function(tL, bR) {
-                    $scope.coords.lon = tL.lon.toFixed(4);
-                    $scope.coords.lat = tL.lat.toFixed(4);
+                    $scope.coords.lon = tL.lon.toFixed(2) + '/' + bR.lon.toFixed(2);
+                    $scope.coords.lat = tL.lat.toFixed(2) + '/' +  bR.lat.toFixed(2);
                     setActive('box');
 
                     DATA.get('WsDeviceList',function(data) {
                         $scope.devices=data;
                         DATA.get('WsDeviceDetails',function(data) {
                             $scope.notify('Loaded ' + data.length + ' devices');
+                            $scope.$broadcast('devLoad');
                         });
                     },tL,bR);
                 },
@@ -115,8 +138,8 @@ APP
 
                     DATA.get('WsTvwsLookup',function(data) { 
                         $scope.channels = data; 
-                        DATA.get('WsChannelsList', function(data) {});
-                        $scope.$parent.$broadcast('chanLoad');
+                        DATA.get('WsChannelsList', function(data) {
+                        });
                     }, loc);
                 },
                 center : function(loc, el) {
@@ -149,7 +172,7 @@ APP
             setTimeout( function() { 
                 /* TEST INIT */
                 $scope.activate('box'); 
-                ctrls.box({lat: 20.50, lon: 53.959}, {lat: 27.30, lon: 65.959});
+                ctrls.box({lat: 16.50, lon: 53.959}, {lat: 27.30, lon: 65.959});
                 ctrls.point({lat: 20.50, lon: 53.959});
                 $scope.activate('center');
                 $scope.$digest(); 
@@ -174,8 +197,9 @@ APP
         template: TPL.whitespace,
         link: function($scope, $element, $attributes) {
             $scope.message = '';
-            $scope.devices = false;
+            //$scope.devices = false;
             $scope.channels= false;
+            $scope.devTop = 1;
             $scope.notify = function(msg, status, duration) {
                 $scope.message = msg;;
             }
@@ -186,7 +210,8 @@ APP
                     $scope.coords = coords;
                     $scope.$digest();
                 });
-            }
+            };
+            $scope.toDev = function(devId) { $scope.toDevId = devId; };
         }
     }
 }])

@@ -94,8 +94,10 @@ APP
         chanLoc:    function(id)    { return Stor.Chan.dev[id]; },
         findChan:   function(id)    { return Stor.Chan.idx[id]; },
         findDev:    function(id)    { return Stor.Dev.idx[id];  },
-        devChans:   function(id)    { return Stor.Chan;  },
-        chanIdx:    function()      {LG('called'); return Stor.Chan.idx; }
+        devChans:   function()      { return Stor.Chan.dev;  },
+        chanDevs:   function()      { return Stor.Dev.chan;  },
+        chanIdx:    function()      { return Stor.Chan.idx; },
+        devIdx:     function()      { return Stor.Dev.idx; }
     }
 }])
 ;

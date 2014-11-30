@@ -149,6 +149,19 @@ body {
   margin-right: auto;
   overflow: hidden;
 }
+#contentMenu div {
+  position: relative;
+  float: right;
+  padding: 4px;
+  color: honeydew;
+  font-family: serif;
+  border: 1px solid burlywood;
+  border-radius: 4px;
+  margin: 2px;
+  background: darkcyan;
+  height: 14px;
+  font-size: 14px;
+}
 #left,
 #right {
   position: absolute;
@@ -222,7 +235,7 @@ body {
 }
 #left .buttonWrap button:hover,
 #right .buttonWrap button:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 #left .buttonWrap button.active,
 #right .buttonWrap button.active {

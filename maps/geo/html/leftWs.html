@@ -10,7 +10,7 @@
             <button ng-click="show(true)">Show All</button>
             <button ng-click="show(false)">Hide All</button>
             <button ng-click="reverse()">Reverse</button>
-            <button ng-click="toFront()">To Front</button>
+            <button ng-click="toFront()" ng-class="inFront|checkActive">To Front</button>
         </div>
         <div class="buttonWrap">
             <button ng-click="rng[0]=!rng[0]; range(0)" class="long" ng-class="rng[0]|checkActive">Long</button>
@@ -24,7 +24,7 @@
                 <li>Band: {{selChan.Band}}</li>
                 <li>Freq: {{selChan.FreqMHz}}</li>
             </ul>
-            <button ng-repeat="dev in chanDevs">{{dev.loc[2]}}</button>
+            <button ng-click="toDev(dev.loc[2])" ng-repeat="dev in chanDevs">{{dev.loc[2]}}</button>
         </div>
     </div>
 </div>
