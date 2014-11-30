@@ -182,7 +182,7 @@ body {
 }
 #left .buttonWrap.wide button,
 #right .buttonWrap.wide button {
-  width: 68px;
+  width: 144px;
   font-size: 12px;
   margin: 2px;
 }
@@ -297,6 +297,30 @@ body {
 }
 #contentMenu.active {
   background: #88a;
+}
+#contentMenu #options {
+  position: relative;
+  float: right;
+  min-height: 18px;
+  height: auto;
+  width: 170px;
+  background: #def;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+#contentMenu #options:hover {
+  z-index: 12;
+  cursor: pointer;
+}
+#contentMenu #options span {
+  color: black;
+  float: right;
+  height: 20px;
+}
+#contentMenu #options > div {
+  position: relative;
+  float: left;
 }
 #contentMenu button {
   background: #def;

@@ -109,7 +109,7 @@ body {
         background:#eee;
         &.wide {
             button { 
-                width: 68px;
+                width: 144px;
                 font-size:12px;
                 margin:2px;
            }
@@ -203,6 +203,24 @@ body {
     background:#aad;
     &.active {
         background:#88a;
+    }
+
+    #options{
+        position:relative;
+        float:right;
+        min-height: 18px;
+        height:auto;
+        width:170px;
+        &:hover { z-index:12;  cursor:pointer;  }
+        background:#def;
+        border-bottom: 2px solid black;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+        span { color: black; float:right; height:20px; }
+        >div {
+            position:relative;
+            float:left;
+        }
     }
     button {
         background:#def;
