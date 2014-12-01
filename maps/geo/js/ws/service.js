@@ -9,7 +9,7 @@ APP
     var devActive = false;
     var devMarkers = {};
     var chanContours = {};
-    var devUrl = [ '', DATA.url + 'image/markgreen.png', DATA.url + 'image/markred.png'];
+    var devUrl = [ '', DATA.url + '/image/markgreen.png', DATA.url + '/image/markred.png'];
     var geocoder; 
     var _this = this;
 
@@ -119,6 +119,8 @@ APP
             typeof active != 'undefined' && active && devMarkers[active].setUrl(devUrl[1]);
             if (vis) {
                 devMarkers[id].setUrl(devUrl[vis]);
+                angular.element(devMarkers[id].icon.imageDiv).css('zIndex', zIndex++);
+
                 typeof doCenter != 'undefined' && doCenter && map.setCenter(devMarkers[id].lonlat);
             }
             map.setLayerIndex(_this.deviceL, zIndex++);
@@ -164,7 +166,7 @@ APP
 .factory('OLStyle', [function() {
     var STYLES = {};
 
-    var Host =  'http://' + document.location.host + '/';
+    var Host =  document.location.origin + '/';
     var imgPath = Host + 'image/';
     var markerWidth24 = 16;
     var markerWidth36 = 24;
@@ -285,7 +287,7 @@ APP
     var Point   = function(lo, la) { return new OpenLayers.Geometry.Point(lo, la).transform('EPSG:4326', 'EPSG:3857'); };
     var LonLat  = function(lo, la) { return new OpenLayers.LonLat(lo, la).transform('EPSG:4326', 'EPSG:3857'); };
 
-    var imgPath =  'http://' + document.location.host + '/image/';
+    var imgPath =  document.location.origin + '/image/';
 
     var marker = function(icon, loc, cb, hideIt) {
         typeof loc == 'undefined' && (loc = {lon:0, lat:0});

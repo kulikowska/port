@@ -5,7 +5,17 @@
     <button ng-click="activate('elevation');" ng-class="elevation|checkActive">Elevation</button>
     <div id="options">
         <span>Options</span>
-        <div><label for="devCenter">Center On Device Click</label><input id="devCenter" type="checkbox" ng-model="devCenter"></input></div>
-        <div><label for="autoOff">Menu Auto Off</label><input id="autoOff" type="checkbox" ng-model="autoOff"></input></div>
+        <div>
+            <label for="devCenter">Center On Device Click</label>
+            <input id="devCenter" type="checkbox" ng-model="opts.devCenter"></input>
+        </div>
+        <div>
+            <label for="autoOff">Menu Auto Off</label>
+            <input id="autoOff" type="checkbox" ng-model="opts.autoOff"></input>
+        </div>
+        <div>
+            <label for="autoDisp">Show Devices On Load</label>
+            <input id="autoDisp" type="checkbox" ng-model="opts.autoDisp"></input>
+        </div>
     </div>
 </div>

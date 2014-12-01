@@ -1,6 +1,6 @@
 APP
 .factory('DATA', ['$http', function($http) {
-    var urlHref = document.location.href;
+    var urlHref = document.location.origin;
     var urlBase = urlHref + (document.location.host == 'geo' ? '/noMVC/' : '/Api/');
 
     var Stor    = { Dev: {list:[], idx:{}, chan: {}}, Chan: {list:[], idx:{}, dev: {}}};

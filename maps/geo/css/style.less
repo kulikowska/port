@@ -1,5 +1,5 @@
-@leftWidth:  174px;
-@rightWidth: 174px;
+@leftWidth:  175px;
+@rightWidth: 175px;
 @headerHeight: 70px;
 @footerHeight: 30px;
 @contentMenuHeight: 30px;
@@ -65,10 +65,6 @@ body {
     height: 100%;
 }
 
-.active {
-    border:2px solid #333;
-}
-
 #container {
     position:relative;
     z-index:1;
@@ -127,6 +123,10 @@ body {
                 opacity:1;
                 color:red;
                 border:1px solid red;
+           }
+           &.down {
+                border:1px solid #00AA00;
+                color:#008800;
            }
            &.noshow {
                 border:1px solid #abc;
@@ -210,7 +210,7 @@ body {
         float:right;
         min-height: 18px;
         height:auto;
-        width:170px;
+        width:190px;
         &:hover { z-index:12;  cursor:pointer;  }
         background:#def;
         border-bottom: 2px solid black;
@@ -219,7 +219,7 @@ body {
         span { color: black; float:right; height:20px; }
         >div {
             position:relative;
-            float:left;
+            float:right;;
         }
     }
     button {

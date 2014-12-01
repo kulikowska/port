@@ -63,13 +63,13 @@ APP
         replace: true,
         template: TPL.rightWs,
         //scope:true,
-        scope:{ devices: '=', devCenter: '=', toDevId: '=' },
+        scope:{ devices: '=', opts: '='},
         link: function($scope, el) {
             var active = 0;
             var hideAll = false;
             $scope.vis = {}; 
 
-            $scope.$watch('toDevId', function(n, o) {
+            $scope.$watch('opts.toDevId', function(n, o) {
                 if ( typeof n != 'undefined') {
                     $scope.devSel(n);
                     $scope.vis[n] < 1 && $scope.devSel(n);
@@ -80,6 +80,8 @@ APP
                 GEO.initDevs();
                 $scope.vis = {}; 
                 for (var i in DATA.devIdx()) $scope.vis[i] = 0; 
+                LG( $scope.opts.autoDisp, ' auto disp');
+                $scope.opts.autoDisp && $scope.show();
             });
 
             $scope.devSel = function(devId) {
@@ -89,7 +91,7 @@ APP
                 typeof active != 'undefined' && $scope.vis[active] && ($scope.vis[active] = 1);
                 $scope.vis[devId] = $scope.vis[devId] ? 0 : 2;
 
-                GEO.deviceVis(DATA.findDev(devId)._ID[2], $scope.vis[devId], active, $scope.devCenter);
+                GEO.deviceVis(DATA.findDev(devId)._ID[2], $scope.vis[devId], active, $scope.opts.devCenter);
                 active = devId;
             }
 
@@ -109,12 +111,11 @@ APP
         template:  TPL.menuWs,
         link: function($scope, el) {
             $scope.active = '';
-            $scope.autoOff = true;
-            $scope.devCenter = false;
+            $scope.opts = { autoOff: true, devCenter: false, autoDisp: true };
             $scope.point = $scope.center = $scope.elevation = $scope.box = 0;
 
             var setActive = function(ctrlName){
-                if ($scope.autoOff) {
+                if ($scope.opts.autoOff) {
                     OLCtrl.deactivate($scope.active);
                     $scope[ctrlName] = 0;
                     $scope.active = '';
@@ -216,7 +217,7 @@ APP
                     $scope.$digest();
                 });
             };
-            $scope.toDev = function(devId) { $scope.toDevId = devId; };
+            $scope.toDev = function(devId) { $scope.opts.toDevId = devId; };
         }
     }
 }])
