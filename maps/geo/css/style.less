@@ -211,15 +211,31 @@ body {
         min-height: 18px;
         height:auto;
         width:170px;
-        &:hover { z-index:12;  cursor:pointer;  }
         background:#def;
         border-bottom: 2px solid black;
         border-left: 2px solid black;
         border-right: 2px solid black;
-        span { color: black; float:right; height:20px; }
+        margin-top:-3px;
+        z-index:100;
+        span { color: black; float:right; height:20px; width:100%; }
         >div {
             position:relative;
             float:left;
+        }
+        ul {
+            display:inline-table;
+            list-style:none;
+            width:100%;
+                &:hover li ul { 
+                    display:block; 
+                }
+            li {
+                width:100%;
+                transition:500ms ease;
+                ul { 
+                    display:none;
+                }
+            }
         }
     }
     button {

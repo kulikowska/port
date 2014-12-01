@@ -308,19 +308,33 @@ body {
   border-bottom: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
-}
-#contentMenu #options:hover {
-  z-index: 12;
-  cursor: pointer;
+  margin-top: -3px;
+  z-index: 100;
 }
 #contentMenu #options span {
   color: black;
   float: right;
   height: 20px;
+  width: 100%;
 }
 #contentMenu #options > div {
   position: relative;
   float: left;
+}
+#contentMenu #options ul {
+  display: inline-table;
+  list-style: none;
+  width: 100%;
+}
+#contentMenu #options ul:hover li ul {
+  display: block;
+}
+#contentMenu #options ul li {
+  width: 100%;
+  transition: 500ms ease;
+}
+#contentMenu #options ul li ul {
+  display: none;
 }
 #contentMenu button {
   background: #def;
