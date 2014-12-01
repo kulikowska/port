@@ -17,7 +17,7 @@ APP
         scope:true,
         link: function($scope, el) {
             var active = 0;
-            var showAll = false;
+            var hideAll = false;
             $scope.vis = false;
             $scope.rng = [true, true, true];
 
@@ -49,8 +49,11 @@ APP
                     GEO.chanVis(chanId, $scope.chanDevs, $scope.vis[chanId]);
             };
             $scope.range    = function(idx)     { GEO.range(idx, $scope.rng[idx]); };
-            $scope.show     = function()  { GEO.showChan(showAll = !showAll); };
             $scope.toFront  = function() { GEO.chanToFront(); }
+            $scope.show     = function()  { 
+                for (var i in $scope.vis) $scope.vis[i] = hideAll ? 0 : 1;
+                GEO.showChan(hideAll = !hideAll); 
+            };
         }
     }
 }])
@@ -63,7 +66,7 @@ APP
         scope:{ devices: '=', devCenter: '=', toDevId: '=' },
         link: function($scope, el) {
             var active = 0;
-            var showAll = true;
+            var hideAll = false;
             $scope.vis = {}; 
 
             $scope.$watch('toDevId', function(n, o) {
@@ -91,9 +94,9 @@ APP
             }
 
             $scope.show     = function()  { 
-                GEO.showDev(showAll); 
-                for (var i in $scope.vis) $scope.vis[i] = showAll ? 1 : 0;
-                showAll = !showAll;
+                for (var i in $scope.vis) $scope.vis[i] = hideAll ? 0 : 1;
+                GEO.showDev(hideAll = !hideAll); 
+                
             };
             $scope.toFront  = function() { $scope.devTop=1; GEO.devToFront(); };
         }

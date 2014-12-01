@@ -27,12 +27,12 @@ APP
         return 'cont' + l;
     };
 
-    function toTop(layers) {
+    function toTop(layers, noVis) {
         typeof layers == 'string' && (layers = [layers]);
 
         for (var i=0; i<layers.length; i++) {
             map.setLayerIndex(_this[layers[i]], zIndex++);
-            _this[layers[i]].setVisibility(true);
+            typeof noVis != 'undefined' && noVis || _this[layers[i]].setVisibility(true);
             _this[layers[i]].redraw();
         }
     }
@@ -127,12 +127,17 @@ APP
             for (var i in chanContours[id])
                 chanContours[id][i][0].style.display = 
                 chanContours[id][i][1].style.display = vis ? 'block' : 'none';;
-            toTop(contours);
+            toTop(contours, true);
         },
         showChan: function(showIt) {
-            for (var i=0; i<contours.length; i++ )
-                _this[contours[i]].setVisibility(showIt);
-            toTop(contours);
+            //for (var i=0; i<contours.length; i++ ) _this[contours[i]].setVisibility(showIt);
+            for (var i in chanContours) {
+                for (var j=0; j<chanContours[i].length; j++) {
+                    chanContours[i][j][0].style.display = 
+                    chanContours[i][j][1].style.display = showIt ? 'block' : 'none';
+                }
+            }
+            toTop(contours, true);
         },
         showDev: function(showIt) {
             for (var i=0 in devMarkers) devMarkers[i].display(showIt);
