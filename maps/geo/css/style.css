@@ -137,9 +137,6 @@ body {
   margin: 0;
   height: 100%;
 }
-.active {
-  border: 2px solid #333;
-}
 #container {
   position: relative;
   z-index: 1;
@@ -167,7 +164,7 @@ body {
   position: absolute;
   top: 70px;
   bottom: 0;
-  width: 174px;
+  width: 175px;
   background: #abc;
 }
 #left .buttonWrap,
@@ -202,6 +199,11 @@ body {
   opacity: 1;
   color: red;
   border: 1px solid red;
+}
+#left .buttonWrap button.down,
+#right .buttonWrap button.down {
+  border: 1px solid #00AA00;
+  color: #008800;
 }
 #left .buttonWrap button.noshow,
 #right .buttonWrap button.noshow {
@@ -243,7 +245,7 @@ body {
 }
 #right {
   right: 0;
-  width: 174px;
+  width: 175px;
 }
 #header,
 #footer {
@@ -290,8 +292,8 @@ body {
   position: absolute;
   bottom: 0;
   top: 70px;
-  right: 174px;
-  left: 174px;
+  right: 175px;
+  left: 175px;
   height: 30px;
   background: #aad;
 }
@@ -303,7 +305,7 @@ body {
   float: right;
   min-height: 18px;
   height: auto;
-  width: 170px;
+  width: 190px;
   background: #def;
   border-bottom: 2px solid black;
   border-left: 2px solid black;
@@ -319,7 +321,7 @@ body {
 }
 #contentMenu #options > div {
   position: relative;
-  float: left;
+  float: right;
 }
 #contentMenu #options ul {
   display: inline-table;
@@ -349,8 +351,8 @@ body {
 #content {
   position: absolute;
   bottom: 0;
-  right: 174px;
-  left: 174px;
+  right: 175px;
+  left: 175px;
   z-index: 10;
   height: auto;
   top: 100px;
