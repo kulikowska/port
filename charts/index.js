@@ -32,6 +32,29 @@ var options = {'title':'How Much Pizza I Ate Last Night',
 var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
 chart.draw(data, options);
 
-var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
-chart.draw(data, options);
+}
+
+google.setOnLoadCallback(drawChartTwo);
+
+function drawChartTwo() {
+
+var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+        ['Rotties', 10],
+        ['Pitties', 9],
+        ['Labs', 6],
+        ['Golden Retrievers', 7],
+        ['Huskies', 9],
+        ['Border Collies', 7]
+]);
+
+var options = {'title':'Coolest Dog Breeds on Scale of 1-10',
+    'width':500,
+    'height':400};
+
+var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+            chart.draw(data, options);
+
 }
