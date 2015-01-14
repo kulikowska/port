@@ -18,15 +18,20 @@ var data = new google.visualization.DataTable();
         ['Mushrooms', 4],
         ['Onions', 0.5],
         ['Zucchini', 1],
+        ['Olives', 1],
+        ['Garlic', 1],
         ['Pepperoni', 2]
 ]);
 
 // Set chart options
 var options = {'title':'How Much Pizza I Ate Last Night',
-    'width':400,
-    'height':300};
+    'width':500,
+    'height':400};
 
 // Instantiate and draw our chart, passing in some options.
-var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+chart.draw(data, options);
+
+var chart2 = new google.visualization.BarChart(document.getElementById('chart_div2'));
 chart.draw(data, options);
 }
