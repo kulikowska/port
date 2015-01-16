@@ -13,7 +13,7 @@ class DB {
         $query = $sql or die("Error in the consult.." . mysqli_error(DB::$link)); 
         $result = DB::$link->query($query); 
         while($row = mysqli_fetch_array($result)) { 
-          array_push($ret, [$row['first'], $row['last']]);
+          array_push($ret, [$row['first'], $row['last'], $row['sport']]);
         } 
         return $ret;
     }
@@ -21,6 +21,8 @@ class DB {
 
 DB::conn();
 $rows = DB::getRows('SELECT * FROM members');
+echo ('<pre>'); 
+var_dump($rows);
 foreach ($rows as $row) {
     echo $row[0] . '...' . $row[1] . '<br /><br />';
 }
