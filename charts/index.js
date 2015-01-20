@@ -88,5 +88,12 @@ function drawChartThree() {
 }
 
 function getData() {
-    alert('yo');
+    $.ajax( {
+        type: "GET",
+        url: "index.php",
+        dataType: "html",
+        success: function(data) {
+            $("#serverData").html(data);
+       } 
+    });
 }
