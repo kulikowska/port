@@ -94,6 +94,7 @@ function getData() {
         dataType: "html",
         success: function(data) {
             $("#serverData").html(data);
+            console.log(data);
        } 
     });
 }
