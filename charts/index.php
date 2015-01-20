@@ -24,5 +24,6 @@ $rows = DB::getRows('SELECT * FROM members');
 echo ('<pre>'); 
 var_dump($rows);
 foreach ($rows as $row) {
-    echo $row[0] . '...' . $row[1] . '<br /><br />';
+    echo $row[0] . '...' . $row[1] . '...' . $row[2] . '<br />';
 }
+echo ($rows);

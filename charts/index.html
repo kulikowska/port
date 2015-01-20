@@ -5,15 +5,25 @@
         <!--Load the AJAX API-->
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript" src="index.js"></script>
-        <script src='lib/js/jquery.js'></script>:w
+        <script src='lib/js/jquery.js'></script>
     </head>
     <style>
         div {
             float:left;
         }
+        #serverData {
+            height:100px;
+            width:200px;
+            border:1px solid purple;
+            background:lightblue;
+        }
     </style>
 
     <body>
+        <div>
+            <button onclick="getData()">Get Data from Server</button>
+        </div>
+        <div id="serverData"></div>
         <!--Div that will hold the pie chart-->
         <div id="chart_div" style="width:500; height:400"> first chart here</div>
         <div id="chart_div2" style="width:500; height:400"> second chart here</div>

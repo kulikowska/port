@@ -86,3 +86,7 @@ function drawChartThree() {
     var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
                 chart.draw(data, options);
 }
+
+function getData() {
+    alert('yo');
+}
