@@ -4,8 +4,14 @@
         <title> Google Charts Experiments </title>
         <!--Load the AJAX API-->
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript" src="index.js"></script>
         <script src='lib/js/jquery.js'></script>
+
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/tpl.min.js"></script>
+        <script type="text/javascript" src="js/directives.js"></script>
+
+        <script type="text/javascript" src="js/index.js"></script>
     </head>
     <style>
         div {
@@ -22,14 +28,7 @@
         }
     </style>
 
-    <body>
-        <div>
-            <button onclick="getData()">Get Data from Server</button>
-        </div>
-        <div id="serverData"></div>
-        <!--Div that will hold the pie chart-->
-        <div id="chart_div" style="width:500; height:400"> first chart here</div>
-        <div id="chart_div2" style="width:500; height:400"> second chart here</div>
-        <div id="chart_div3" style="width:500; height:400"> second chart here</div>
+    <body ng-app="charts">
+        <div class="content"></div>
     </body>
 </html>
