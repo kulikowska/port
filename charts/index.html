@@ -2,9 +2,8 @@
 <html>
     <head>
         <title> Google Charts Experiments </title>
-        <!--Load the AJAX API-->
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script src='lib/js/jquery.js'></script>
+
+        <link href="./css/style.css" type="text/css" rel="stylesheet" />
 
         <script type="text/javascript" src="js/angular.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
@@ -12,21 +11,12 @@
         <script type="text/javascript" src="js/directives.js"></script>
 
         <script type="text/javascript" src="js/index.js"></script>
+
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+        <script src='lib/js/jquery.js'></script>
     </head>
-    <style>
-        div {
-            float:left;
-        }
-        #serverData {
-            padding:2px;
-            margin:2px;
-            height:200px;
-            width:700px;
-            border:3px solid purple;
-            background:#A00;
-            overflow-y:scroll;
-        }
-    </style>
 
     <body ng-app="charts">
         <div class="content"></div>

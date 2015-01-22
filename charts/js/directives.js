@@ -6,6 +6,7 @@ APP
         templateUrl: 'html/content.html',
        // template: TPL.content,
         link: function($scope, $element, $attributes) {
+            google.load('visualization', '1.0', { callback : function() {}, packages: ['corechart', 'table'] });
          }
       }
 }])
