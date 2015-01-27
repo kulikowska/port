@@ -1,5 +1,5 @@
 APP
-.directive('content', ['TPL', function(TPL) {
+.directive('content', ['TPL', '$http', function(TPL, $http) {
     return {
         restrict: 'C',
         replace: false,
