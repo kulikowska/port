@@ -13,6 +13,7 @@ APP
              $scope.getAngularData = function() {
                 $http.get('Controllers/index.php').success(function(data) { 
                     $scope.angularData = data;
+                    console.log(data);
                 })
              }
 
