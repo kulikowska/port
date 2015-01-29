@@ -4,20 +4,24 @@ body {
   color: #4058A7;
 }
 .large-header {
-  width: 100%;
   position: relative;
+  width: 100%;
+  background: #333;
   overflow: hidden;
-  z-index: 1;
   background-size: cover;
+  background-position: center center;
+  z-index: 1;
 }
 .container {
-  margin: 0 auto;
+  margin: 0;
   width: 600px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
   border: 10px solid #030410;
   background: #000;
   text-align: center;
   padding: 20px 10px 20px 10px;
-  margin-top: 80px;
 }
 .container .name {
   font-size: 40px;

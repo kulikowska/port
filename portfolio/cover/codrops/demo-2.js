@@ -16,7 +16,7 @@
 
         canvas = document.getElementById('demo-canvas');
         canvas.width = width;
-        canvas.height = 600;
+        canvas.height = height;
         ctx = canvas.getContext('2d');
 
         // create particles
