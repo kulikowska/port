@@ -3,6 +3,13 @@ body {
   font-family: "Tahoma";
   color: #4058A7;
 }
+.large-header {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-size: cover;
+}
 .container {
   margin: 0 auto;
   width: 600px;
@@ -12,19 +19,19 @@ body {
   padding: 20px 10px 20px 10px;
   margin-top: 80px;
 }
-.name {
+.container .name {
   font-size: 40px;
   padding: 5px, 5px 10px 5px;
 }
-.title {
+.container .title {
   font-size: 18px;
   padding: 5px 5px 10px 5px;
 }
-.skills {
+.container .skills {
   font-size: 14px;
   padding: 5px 5px 10px 5px;
 }
-.sowhat {
+.container .sowhat {
   font-size: 14px;
   padding: 5px 5px 10px 5px;
 }
