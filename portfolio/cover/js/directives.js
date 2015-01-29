@@ -43,7 +43,7 @@ APP
                     var c = new Circle();
                     circles.push(c);
                 }
-            animate();
+                animate();
             }
             
             //Event handling
@@ -73,11 +73,11 @@ APP
                     }
                 }
                 requestAnimationFrame(animate);
-                }
+            }
                
             // Canvas manipulation
-                function Circle() {
-                        var _this = this;
+            function Circle() {
+                var _this = this;
 
                // constructor
                 (function() {
@@ -97,19 +97,19 @@ APP
                 this.draw = function() {
                     if(_this.alpha <= 0) {
                         init();
-                }
-                _this.pos.y -= _this.velocity;
-                _this.alpha -= 0.0005;
-                ctx.beginPath();
-                ctx.arc(_this.pos.x, _this.pos.y, _this.scale*10, 0, 2 * Math.PI, false);
-                ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';
-                ctx.fill();
-                };
+                    }
+                    _this.pos.y -= _this.velocity;
+                    _this.alpha -= 0.0005;
+                    ctx.beginPath();
+                    ctx.arc(_this.pos.x, _this.pos.y, _this.scale*10, 0, 2 * Math.PI, false);
+                    ctx.fillStyle = 'rgba(255,255,255,'+ _this.alpha+')';
+                    ctx.fill();
+                    };
                 }
             })
-        }
-        }
- }])
+         }
+      }
+}])
     var canvas = document.getElementById('testCanvas');
 
     var requestAnimationFrame = 
