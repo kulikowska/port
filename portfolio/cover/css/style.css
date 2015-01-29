@@ -1,36 +1,30 @@
 body {
-	background-image:url('http://static1.grsites.com/archive/textures/dblue/dblue007.jpg');
-	font-family:"Tahoma";
-	color:#4058A7;
+  background-image: url('http://static1.grsites.com/archive/textures/dblue/dblue007.jpg');
+  font-family: "Tahoma";
+  color: #4058A7;
 }
-
 .container {
-	margin:0 auto;
-	width:600px;
-	border:10px solid #030410;
-	background:#000;
-	text-align:center;
-	padding:20px 10px 20px 10px;
-	margin-top:80px;
+  margin: 0 auto;
+  width: 600px;
+  border: 10px solid #030410;
+  background: #000;
+  text-align: center;
+  padding: 20px 10px 20px 10px;
+  margin-top: 80px;
 }
-
 .name {
-	font-size:40px;
-	padding:5px, 5px 10px 5px;
+  font-size: 40px;
+  padding: 5px, 5px 10px 5px;
 }
-
 .title {
-	font-size:18px;
-	padding:5px 5px 10px 5px;
+  font-size: 18px;
+  padding: 5px 5px 10px 5px;
 }
-
 .skills {
-	font-size:14px;
-	padding:5px 5px 10px 5px;
+  font-size: 14px;
+  padding: 5px 5px 10px 5px;
 }
-
 .sowhat {
-	font-size:14px;
-	padding:5px 5px 10px 5px;
+  font-size: 14px;
+  padding: 5px 5px 10px 5px;
 }
-
