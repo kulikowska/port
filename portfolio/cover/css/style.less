@@ -30,12 +30,16 @@ body {
     opacity:0.9;
     box-shadow:1px 0 34px 34px #000;
     border-radius:200px;
+    transition:5s;
+    &:hover {
+        box-shadow:1px 0 54px 54px #000;
+    }
     .whiteText { color:#fff; }
     .svgDudes { display:none; }
     .fontFun {
        font-size:30px;
        color:darken(@textColor, 10%);
-       margin-bottom:15px;
+       margin:15px;
        transition:1s ease;
        &:hover {
             color:#fff;
@@ -44,6 +48,7 @@ body {
     .fontFun1 {
         .fontFun;
         color:#fff;
+        margin:10px;
         &:hover { color:@textColor; }
     }   
     .name {

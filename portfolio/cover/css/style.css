@@ -19,6 +19,10 @@ body {
   opacity: 0.9;
   box-shadow: 1px 0 34px 34px #000;
   border-radius: 200px;
+  transition: 5s;
+}
+.container:hover {
+  box-shadow: 1px 0 54px 54px #000;
 }
 .container .whiteText {
   color: #fff;
@@ -29,7 +33,7 @@ body {
 .container .fontFun {
   font-size: 30px;
   color: #573f6d;
-  margin-bottom: 15px;
+  margin: 15px;
   transition: 1s ease;
 }
 .container .fontFun:hover {
@@ -38,9 +42,10 @@ body {
 .container .fontFun1 {
   font-size: 30px;
   color: #573f6d;
-  margin-bottom: 15px;
+  margin: 15px;
   transition: 1s ease;
   color: #fff;
+  margin: 10px;
 }
 .container .fontFun1:hover {
   color: #fff;
