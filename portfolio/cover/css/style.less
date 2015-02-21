@@ -1,38 +1,71 @@
 body {
-	background-image:url('http://static1.grsites.com/archive/textures/dblue/dblue007.jpg');
+	//background-image:url('http://static1.grsites.com/archive/textures/dblue/dblue007.jpg');
+	background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl046.gif');
+	//background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl054.gif');
+	//background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl100.jpg');
+	//background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl179.jpg');
+    //background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl015.jpg');
+	//background-image:url('http://static1.grsites.com/archive/textures/multi/multi273.jpg');
 	font-family:"Tahoma";
-	color:#4058A7;
+	//color:#4058A7;
+    color:#642f71;
     margin:0;
 }
 
+@textColor:#71528d;
+
 .container {
-	width:600px;
+	width:460px;
+    color:lighten(@textColor, 50%);
     position:absolute;
     left:0;
     right:0;
     margin-left:auto;
     margin-right:auto;
-    top:10%;
-	border:10px solid #030410;
+    top:15%;
+	//border:10px solid #030410;
 	background:#000;
 	text-align:center;
-	padding:20px 10px 20px 10px;
+	padding:50px 10px;
+    opacity:0.9;
+    box-shadow:1px 0 34px 34px #000;
+    border-radius:200px;
+    .whiteText { color:#fff; }
+    .svgDudes { display:none; }
+    .fontFun {
+       font-size:30px;
+       color:darken(@textColor, 10%);
+       margin-bottom:15px;
+       transition:1s ease;
+       &:hover {
+            color:#fff;
+       }
+    }
+    .fontFun1 {
+        .fontFun;
+        color:#fff;
+        &:hover { color:@textColor; }
+    }   
     .name {
+        color:@textColor;
         font-size:40px;
         padding:5px, 5px 10px 5px;
     }
 
     .title {
+        color:lighten(@textColor, 15%);
         font-size:18px;
         padding:5px 5px 10px 5px;
     }
 
     .skills {
+        color:lighten(@textColor, 30%);
         font-size:14px;
         padding:5px 5px 10px 5px;
     }
 
     .sowhat {
+        color:lighten(@textColor, 50%);
         font-size:14px;
         padding:5px 5px 10px 5px;
     }

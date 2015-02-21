@@ -1,35 +1,70 @@
 body {
-  background-image: url('http://static1.grsites.com/archive/textures/dblue/dblue007.jpg');
+  background-image: url('http://static1.grsites.com/archive/textures/purpl/purpl046.gif');
   font-family: "Tahoma";
-  color: #4058A7;
+  color: #642f71;
   margin: 0;
 }
 .container {
-  width: 600px;
+  width: 460px;
+  color: #efebf3;
   position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 10%;
-  border: 10px solid #030410;
+  top: 15%;
   background: #000;
   text-align: center;
-  padding: 20px 10px 20px 10px;
+  padding: 50px 10px;
+  opacity: 0.9;
+  box-shadow: 1px 0 34px 34px #000;
+  border-radius: 200px;
+}
+.container .whiteText {
+  color: #fff;
+}
+.container .svgDudes {
+  display: none;
+}
+.container .fontFun {
+  font-size: 30px;
+  color: #573f6d;
+  margin-bottom: 15px;
+  transition: 1s ease;
+}
+.container .fontFun:hover {
+  color: #fff;
+}
+.container .fontFun1 {
+  font-size: 30px;
+  color: #573f6d;
+  margin-bottom: 15px;
+  transition: 1s ease;
+  color: #fff;
+}
+.container .fontFun1:hover {
+  color: #fff;
+}
+.container .fontFun1:hover {
+  color: #71528d;
 }
 .container .name {
+  color: #71528d;
   font-size: 40px;
   padding: 5px, 5px 10px 5px;
 }
 .container .title {
+  color: #977ab2;
   font-size: 18px;
   padding: 5px 5px 10px 5px;
 }
 .container .skills {
+  color: #bdaace;
   font-size: 14px;
   padding: 5px 5px 10px 5px;
 }
 .container .sowhat {
+  color: #efebf3;
   font-size: 14px;
   padding: 5px 5px 10px 5px;
 }
