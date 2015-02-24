@@ -132,11 +132,56 @@ body {
 }
 .contentWrap .content .homecontent {
   margin-top: 15px;
+  margin-left: -40px;
 }
-.contentWrap .content .blurb {
+.contentWrap .content .homecontent .leftPane,
+.contentWrap .content .homecontent .centerPane {
+  float: left;
+  height: 96%;
+  margin: 10px;
+  box-shadow: 0 0 4px 4px #000;
+  box-shadow: inset 0 0 4px 4px #000;
+  background: #350000;
+  border-radius: 4px;
+}
+.contentWrap .content .homecontent .leftPane {
+  width: 170px;
+}
+.contentWrap .content .homecontent .centerPane {
+  width: 674px;
+  margin-left: 0;
+}
+.contentWrap .content .homecontent .centerPane #header {
+  display: none;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px;
+}
+.contentWrap .content .homecontent .centerPane .title {
+  display: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+.contentWrap .content .homecontent .centerPane .date,
+.contentWrap .content .homecontent .centerPane .name {
+  float: left;
+}
+.contentWrap .content .homecontent .centerPane .date {
+  color: #888;
+  margin-left: 2px;
+}
+.contentWrap .content .homecontent .centerPane .post {
+  margin: 10px 0px 0 30px;
+  float: left;
+  font-size: 14px;
+}
+.contentWrap .content .depr {
   display: none;
 }
-.contentWrap .content .grouppic {
+.contentWrap .content .depr .blurb {
+  display: none;
+}
+.contentWrap .content .depr .grouppic {
   margin: 0 auto;
   width: 600px;
   height: 300px;
@@ -147,22 +192,22 @@ body {
   background-position: 0;
   box-shadow: 0 0 4px 4px #150000;
 }
-.contentWrap .content .blurb2 {
+.contentWrap .content .depr .blurb2 {
   width: 61%;
   margin: 0 auto;
   padding: 15px;
   font-size: 15px;
 }
-.contentWrap .content .wrap {
+.contentWrap .content .depr .wrap {
   margin: 0 auto;
   padding-top: 25px;
   width: 150px;
 }
-.contentWrap .content .wrap .staytuned {
+.contentWrap .content .depr .wrap .staytuned {
   font-size: 22px;
   font-weight: bold;
 }
-.contentWrap .content .wrap .more {
+.contentWrap .content .depr .wrap .more {
   font-size: 14px;
   margin: 0 auto;
   width: 120px;

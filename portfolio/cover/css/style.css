@@ -32,7 +32,7 @@ body {
 }
 .container .fontFun {
   font-size: 30px;
-  color: #573f6d;
+  color: #3d2c4d;
   margin: 15px;
   transition: 1s ease;
 }
@@ -41,7 +41,7 @@ body {
 }
 .container .fontFun1 {
   font-size: 30px;
-  color: #573f6d;
+  color: #3d2c4d;
   margin: 15px;
   transition: 1s ease;
   color: #fff;
@@ -56,7 +56,7 @@ body {
 .container .name {
   color: #71528d;
   font-size: 40px;
-  padding: 5px, 5px 10px 5px;
+  padding: 0px 5px 6px 5px;
 }
 .container .title {
   color: #977ab2;
