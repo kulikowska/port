@@ -242,8 +242,8 @@ a:hover {
   margin-bottom: 23px;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane {
-  width: 484px;
-  margin-left: 0;
+  width: 492px;
+  margin: 10px 0;
   overflow: hidden;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap {
