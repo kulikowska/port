@@ -191,10 +191,24 @@ body {
   height: 94%;
   margin: 10px;
   box-shadow: 0 0 4px 4px #000;
-  background: #350000;
+  background: #211;
 }
 .contentWrap .content .homecontent .bottomDiv .leftPane {
   width: 170px;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane .leftHead {
+  width: 95px;
+  margin: 13px auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane .leftHead i {
+  margin: 2px;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane .leftInfo {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane {
   width: 674px;
