@@ -5,6 +5,13 @@ body {
   font-family: tahoma, geneva, sans-serif;
   color: white;
 }
+a {
+  color: #777;
+  transition: 200ms ease;
+}
+a:hover {
+  color: #fff;
+}
 .contentWrap {
   box-shadow: 1px 1px 5px 3px #100;
   margin: 0 auto;
@@ -221,10 +228,10 @@ body {
   width: 100%;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap #header {
-  display: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  margin: 10px;
+  margin: 8px 0 10px 10px;
+  text-align: center;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .title {
   margin: 8px;
