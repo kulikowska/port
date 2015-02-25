@@ -9,9 +9,10 @@ body {
     background:-webkit-linear-gradient(@top, @bottom);
     background-image:url(http://static1.grsites.com/archive/textures/red/red112.jpg);
    // background-image:url(http://static1.grsites.com/archive/textures/red/red152.jpg);
-    font-family:trebuchet ms;
-   // font-family:tahoma, geneva, sans-serif;
-    color:white;
+    //font-family:trebuchet ms;
+   font-family:tahoma, geneva, sans-serif;
+    //font-family:verdana, geneva, sans-serif;
+    color:#ccc;
  }
 
 a { 
@@ -62,10 +63,10 @@ a {
             border-top:1px solid #150000;
             border-bottom:1px solid black;
             list-style:none;
+            color:#eee;
             position:relative;
             display:inline-table;
             text-align:center;
-            color:white;
             font-size:18px;
             padding:0 10px;
             transition: 400ms ease;
@@ -115,10 +116,10 @@ a {
         }
     }
     .contentprop {
-        color:#eee;
-        height:500px;
+        color:#ccc;
+        height:550px;
         background:#111;
-        opacity:0.9;
+        opacity:1;
         margin-top:-15px;
         transition:1s ease;
     }
@@ -127,11 +128,12 @@ a {
             margin-top:15px;
             margin-left:-40px;
             .topDiv, .bottomDiv {
+                i { color:#9b3333; }
                 margin:0;
                 padding:0;
                 float:left;
                 width:100%;
-                height:35%;
+                height:32%;
                 //border:1px solid white;
                 .photoWrap {
                     width:100%;
@@ -157,9 +159,23 @@ a {
                     }
                 }
             }
+            //side pane mixins:
+            .sideHead {
+                width:95px;
+                margin:13px auto 5px;
+                font-weight:bold;
+                font-size:15px;
+            }
+            .sideInfo {
+                font-size:12px;
+                width:100%;
+                text-align:center;
+                color:#bbb;
+                margin-bottom:23px;
+            }   
             .bottomDiv { 
-                height:65%;
-                .leftPane, .centerPane { 
+                height:68%;
+                .leftPane, .centerPane, .rightPane { 
                     float:left;
                     height:94%;
                     margin:10px;
@@ -171,21 +187,17 @@ a {
                 .leftPane {
                     width:170px;
                     .leftHead {
-                        width:95px;
-                        margin:13px auto 5px;
-                        font-weight:bold;
-                        font-size:15px;
+                        .sideHead;
                         i { margin:2px; }
                     }
                     .leftInfo {
-                        font-size:12px;
-                        width:100%;
-                        text-align:center;
+                        .sideInfo;
                     }
                 }
                 .centerPane {
-                    width:674px;
+                    width:484px;
                     margin-left:0;
+                    overflow:hidden;
                     .blogPostWrap {
                         float:left;
                         margin-bottom:13px;
@@ -244,6 +256,20 @@ a {
                         }   
                     }
                  }
+                .rightPane {
+                    width:170px;
+                    .rightHead {
+                        .sideHead;
+                        width:105px;
+                    }
+                    .rightHeadEvents {
+                        .sideHead;
+                        width:70px;
+                    }   
+                    .rightInfo {
+                        .sideInfo;
+                    }
+                }
              }
          }
          .depr {
@@ -252,35 +278,6 @@ a {
         .contentprop;
         .about {
             padding-top:15px;
-        }
-        .sidebar {
-            display:none;
-            float:right;
-            height:100%;
-            width:175px;
-            //border-left:1px solid #250000;
-            padding:0px 5px 0 12px;
-            box-shadow:inset 6px 3px 4px -4px #222;
-            .location {
-                font-size:12px;
-                padding-top:10px;
-                h1 { 
-                    font-size:12px;
-                    font-weight:bold;
-                }
-            }
-        }
-        .tester {
-            border:1px solid white;
-            background:maroon;
-            width:200px;
-            height:200px;
-        }
-        .one {  
-            border:1px solid white;
-            background:blue;
-            width:200px;
-            height:200px;
         }
     }
     .tempprop { 

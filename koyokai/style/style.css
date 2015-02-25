@@ -2,8 +2,8 @@ body {
   background: linear-gradient(#250000, #450000);
   background: -webkit-linear-gradient(#250000, #450000);
   background-image: url(http://static1.grsites.com/archive/textures/red/red112.jpg);
-  font-family: trebuchet ms;
-  color: white;
+  font-family: tahoma, geneva, sans-serif;
+  color: #ccc;
 }
 a {
   color: #777;
@@ -75,10 +75,10 @@ a:hover {
   border-top: 1px solid #150000;
   border-bottom: 1px solid black;
   list-style: none;
+  color: #eee;
   position: relative;
   display: inline-table;
   text-align: center;
-  color: white;
   font-size: 18px;
   padding: 0 10px;
   transition: 400ms ease;
@@ -123,18 +123,18 @@ a:hover {
   position: relative;
 }
 .contentWrap .contentprop {
-  color: #eee;
-  height: 500px;
+  color: #ccc;
+  height: 550px;
   background: #111;
-  opacity: 0.9;
+  opacity: 1;
   margin-top: -15px;
   transition: 1s ease;
 }
 .contentWrap .content {
-  color: #eee;
-  height: 500px;
+  color: #ccc;
+  height: 550px;
   background: #111;
-  opacity: 0.9;
+  opacity: 1;
   margin-top: -15px;
   transition: 1s ease;
 }
@@ -148,7 +148,11 @@ a:hover {
   padding: 0;
   float: left;
   width: 100%;
-  height: 35%;
+  height: 32%;
+}
+.contentWrap .content .homecontent .topDiv i,
+.contentWrap .content .homecontent .bottomDiv i {
+  color: #9b3333;
 }
 .contentWrap .content .homecontent .topDiv .photoWrap,
 .contentWrap .content .homecontent .bottomDiv .photoWrap {
@@ -193,11 +197,25 @@ a:hover {
   background-position: 0;
   background-image: url('../images/travisdo.jpg');
 }
+.contentWrap .content .homecontent .sideHead {
+  width: 95px;
+  margin: 13px auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.contentWrap .content .homecontent .sideInfo {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  color: #bbb;
+  margin-bottom: 23px;
+}
 .contentWrap .content .homecontent .bottomDiv {
-  height: 65%;
+  height: 68%;
 }
 .contentWrap .content .homecontent .bottomDiv .leftPane,
-.contentWrap .content .homecontent .bottomDiv .centerPane {
+.contentWrap .content .homecontent .bottomDiv .centerPane,
+.contentWrap .content .homecontent .bottomDiv .rightPane {
   float: left;
   height: 94%;
   margin: 10px;
@@ -220,10 +238,13 @@ a:hover {
   font-size: 12px;
   width: 100%;
   text-align: center;
+  color: #bbb;
+  margin-bottom: 23px;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane {
-  width: 674px;
+  width: 484px;
   margin-left: 0;
+  overflow: hidden;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap {
   float: left;
@@ -285,39 +306,35 @@ a:hover {
   color: #eee;
   border: 1px solid #eee;
 }
+.contentWrap .content .homecontent .bottomDiv .rightPane {
+  width: 170px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightHead {
+  width: 95px;
+  margin: 13px auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 105px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightHeadEvents {
+  width: 95px;
+  margin: 13px auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 70px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  color: #bbb;
+  margin-bottom: 23px;
+}
 .contentWrap .content .depr {
   display: none;
 }
 .contentWrap .content .about {
   padding-top: 15px;
-}
-.contentWrap .content .sidebar {
-  display: none;
-  float: right;
-  height: 100%;
-  width: 175px;
-  padding: 0px 5px 0 12px;
-  box-shadow: inset 6px 3px 4px -4px #222222;
-}
-.contentWrap .content .sidebar .location {
-  font-size: 12px;
-  padding-top: 10px;
-}
-.contentWrap .content .sidebar .location h1 {
-  font-size: 12px;
-  font-weight: bold;
-}
-.contentWrap .content .tester {
-  border: 1px solid white;
-  background: maroon;
-  width: 200px;
-  height: 200px;
-}
-.contentWrap .content .one {
-  border: 1px solid white;
-  background: blue;
-  width: 200px;
-  height: 200px;
 }
 .contentWrap .tempprop {
   margin: 0 auto;
@@ -326,10 +343,10 @@ a:hover {
   padding-top: 30px;
 }
 .contentWrap .contentexpand {
-  color: #eee;
-  height: 500px;
+  color: #ccc;
+  height: 550px;
   background: #111;
-  opacity: 0.9;
+  opacity: 1;
   margin-top: -15px;
   transition: 1s ease;
   height: 650px;
