@@ -131,4 +131,13 @@ APP
             }
         }
  }])
+.directive('footer', ['TPL', function(TPL) {
+    return {
+        restrict: 'ACE',
+        replace: false,
+        template: TPL.footer,
+        link: function($scope, $element, $attributes) {
+            }
+        }
+ }])
 ;

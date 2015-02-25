@@ -369,3 +369,21 @@ a:hover {
   background: -webkit-linear-gradient(#150000, #000000);
   border-top: 1px solid black;
 }
+.contentWrap .footer #facebook {
+  margin: 5px 11px;
+  color: #333;
+  font-size: 24px;
+  float: right;
+  transition: 400ms ease;
+}
+.contentWrap .footer #facebook:hover {
+  color: #999;
+}
+.contentWrap .footer #copywrite {
+  font-size: 12px;
+  width: 330px;
+  margin: 5px auto;
+}
+.contentWrap .footer #copywrite i {
+  color: maroon;
+}
