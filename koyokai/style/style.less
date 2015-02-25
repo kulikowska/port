@@ -9,7 +9,8 @@ body {
     background:-webkit-linear-gradient(@top, @bottom);
     background-image:url(http://static1.grsites.com/archive/textures/red/red112.jpg);
    // background-image:url(http://static1.grsites.com/archive/textures/red/red152.jpg);
-    font-family:trebuchet ms;
+    //font-family:trebuchet ms;
+    font-family:tahoma, geneva, sans-serif;
     color:white;
  }
 
@@ -43,6 +44,7 @@ body {
         transition:1s ease;
     }
     .dropdown {
+            font-family:trebuchet ms;
             background:#350000;
             background:linear-gradient(@ultop, @ulbottom);
             background:-webkit-linear-gradient(@ultop, @ulbottom);
@@ -110,7 +112,7 @@ body {
         color:#eee;
         height:500px;
         background:#000;
-        opacity:0.8;
+        opacity:0.9;
         margin-top:-15px;
         transition:1s ease;
     }
@@ -177,25 +179,64 @@ body {
                 .centerPane {
                     width:674px;
                     margin-left:0;
-                    #header { 
-                        display:none;
-                        font-size:24px;
-                        font-weight:bold;
-                        margin:10px;
-                    }
-                    .title {
-                        display:none;
-                        font-size:14px;
-                        font-weight:bold;
-                    }
-                    .date, .name { float:left; }
-                    .date { color:#888; margin-left:2px; }
-                    .post {
-                        margin:10px 0px 0 30px;
+                    .blogPostWrap {
                         float:left;
-                        font-size:14px;
+                        margin-bottom:13px;
+                        width:100%;
+                        #header { 
+                            display:none;
+                            font-size:24px;
+                            font-weight:bold;
+                            margin:10px;
+                        }
+                        .title {
+                            margin:8px;
+                            font-size:16px;
+                            font-weight:bold;
+                        }
+                        .date, .name { float:left; }
+                        .date { 
+                            width:40px;
+                            height:40px;
+                            background:#000;
+                            box-shadow:0 0 1px 2px #350000;
+                            text-align:center;
+                            padding-top:2;
+                            font-size:11px;
+                            .month {
+                                font-size:18px;
+                                font-weight:bold;
+                            }
+                        }
+                        .name {
+                            margin:0px 0 0 10px;
+                        }       
+                        .post {
+                            margin:10px 0px 0 30px;
+                            float:left;
+                            font-size:13px;
+                            width:80%;
+                        }
+                        #morePosts {
+                            width:80px;
+                            height:auto;
+                            border:1px solid #999;
+                            background:#111;
+                            font-size:13px;
+                            margin:0 auto;
+                            font-weight:bold;
+                            padding:4px 6px;
+                            text-align:center;
+                            cursor:pointer;
+                            color:#999;
+                            transition:400ms ease;
+                            &:hover {
+                                color:#eee;
+                                border:1px solid #eee;
+                            }   
+                        }   
                     }
-                }
+                 }
              }
          }
          .depr {

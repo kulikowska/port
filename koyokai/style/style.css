@@ -2,7 +2,7 @@ body {
   background: linear-gradient(#250000, #450000);
   background: -webkit-linear-gradient(#250000, #450000);
   background-image: url(http://static1.grsites.com/archive/textures/red/red112.jpg);
-  font-family: trebuchet ms;
+  font-family: tahoma, geneva, sans-serif;
   color: white;
 }
 .contentWrap {
@@ -55,6 +55,7 @@ body {
   transition: 1s ease;
 }
 .contentWrap .dropdown {
+  font-family: trebuchet ms;
   background: #350000;
   background: linear-gradient(#000000, #350000);
   background: -webkit-linear-gradient(#000000, #350000);
@@ -118,7 +119,7 @@ body {
   color: #eee;
   height: 500px;
   background: #000;
-  opacity: 0.8;
+  opacity: 0.9;
   margin-top: -15px;
   transition: 1s ease;
 }
@@ -126,7 +127,7 @@ body {
   color: #eee;
   height: 500px;
   background: #000;
-  opacity: 0.8;
+  opacity: 0.9;
   margin-top: -15px;
   transition: 1s ease;
 }
@@ -214,29 +215,65 @@ body {
   width: 674px;
   margin-left: 0;
 }
-.contentWrap .content .homecontent .bottomDiv .centerPane #header {
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap {
+  float: left;
+  margin-bottom: 13px;
+  width: 100%;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap #header {
   display: none;
   font-size: 24px;
   font-weight: bold;
   margin: 10px;
 }
-.contentWrap .content .homecontent .bottomDiv .centerPane .title {
-  display: none;
-  font-size: 14px;
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .title {
+  margin: 8px;
+  font-size: 16px;
   font-weight: bold;
 }
-.contentWrap .content .homecontent .bottomDiv .centerPane .date,
-.contentWrap .content .homecontent .bottomDiv .centerPane .name {
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .date,
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .name {
   float: left;
 }
-.contentWrap .content .homecontent .bottomDiv .centerPane .date {
-  color: #888;
-  margin-left: 2px;
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .date {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  box-shadow: 0 0 1px 2px #350000;
+  text-align: center;
+  padding-top: 2;
+  font-size: 11px;
 }
-.contentWrap .content .homecontent .bottomDiv .centerPane .post {
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .date .month {
+  font-size: 18px;
+  font-weight: bold;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .name {
+  margin: 0px 0 0 10px;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .post {
   margin: 10px 0px 0 30px;
   float: left;
-  font-size: 14px;
+  font-size: 13px;
+  width: 80%;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap #morePosts {
+  width: 80px;
+  height: auto;
+  border: 1px solid #999;
+  background: #111;
+  font-size: 13px;
+  margin: 0 auto;
+  font-weight: bold;
+  padding: 4px 6px;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+  transition: 400ms ease;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap #morePosts:hover {
+  color: #eee;
+  border: 1px solid #eee;
 }
 .contentWrap .content .depr {
   display: none;
@@ -282,7 +319,7 @@ body {
   color: #eee;
   height: 500px;
   background: #000;
-  opacity: 0.8;
+  opacity: 0.9;
   margin-top: -15px;
   transition: 1s ease;
   height: 650px;
