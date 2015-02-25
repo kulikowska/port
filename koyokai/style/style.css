@@ -134,84 +134,98 @@ body {
   margin-top: 15px;
   margin-left: -40px;
 }
-.contentWrap .content .homecontent .leftPane,
-.contentWrap .content .homecontent .centerPane {
+.contentWrap .content .homecontent .topDiv,
+.contentWrap .content .homecontent .bottomDiv {
+  margin: 0;
+  padding: 0;
   float: left;
-  height: 96%;
+  width: 100%;
+  height: 35%;
+}
+.contentWrap .content .homecontent .topDiv .photoWrap,
+.contentWrap .content .homecontent .bottomDiv .photoWrap {
+  width: 100%;
+  float: left;
+}
+.contentWrap .content .homecontent .topDiv .photoWrap .photo1,
+.contentWrap .content .homecontent .bottomDiv .photoWrap .photo1 {
+  float: left;
+  border: 3px solid #111;
+  width: 272px;
+  height: 160px;
+  margin: 10px 0 10px 10px;
+  background-image: url('../images/kendodude.jpg');
+  background-size: 100%;
+  background-position: 0;
+}
+.contentWrap .content .homecontent .topDiv .photoWrap .photo2,
+.contentWrap .content .homecontent .bottomDiv .photoWrap .photo2 {
+  float: left;
+  border: 3px solid #111;
+  width: 272px;
+  height: 160px;
+  margin: 10px 0 10px 10px;
+  background-image: url('../images/kendodude.jpg');
+  background-size: 100%;
+  background-position: 0;
+  background-image: url('../images/group.jpg');
+}
+.contentWrap .content .homecontent .topDiv .photoWrap .photo3,
+.contentWrap .content .homecontent .bottomDiv .photoWrap .photo3 {
+  float: left;
+  border: 3px solid #111;
+  width: 272px;
+  height: 160px;
+  margin: 10px 0 10px 10px;
+  background-image: url('../images/kendodude.jpg');
+  background-size: 100%;
+  background-position: 0;
+  background-image: url('../images/travisdo.jpg');
+}
+.contentWrap .content .homecontent .bottomDiv {
+  height: 65%;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane,
+.contentWrap .content .homecontent .bottomDiv .centerPane {
+  float: left;
+  height: 94%;
   margin: 10px;
   box-shadow: 0 0 4px 4px #000;
-  box-shadow: inset 0 0 4px 4px #000;
   background: #350000;
-  border-radius: 4px;
 }
-.contentWrap .content .homecontent .leftPane {
+.contentWrap .content .homecontent .bottomDiv .leftPane {
   width: 170px;
 }
-.contentWrap .content .homecontent .centerPane {
+.contentWrap .content .homecontent .bottomDiv .centerPane {
   width: 674px;
   margin-left: 0;
 }
-.contentWrap .content .homecontent .centerPane #header {
+.contentWrap .content .homecontent .bottomDiv .centerPane #header {
   display: none;
   font-size: 24px;
   font-weight: bold;
   margin: 10px;
 }
-.contentWrap .content .homecontent .centerPane .title {
+.contentWrap .content .homecontent .bottomDiv .centerPane .title {
   display: none;
   font-size: 14px;
   font-weight: bold;
 }
-.contentWrap .content .homecontent .centerPane .date,
-.contentWrap .content .homecontent .centerPane .name {
+.contentWrap .content .homecontent .bottomDiv .centerPane .date,
+.contentWrap .content .homecontent .bottomDiv .centerPane .name {
   float: left;
 }
-.contentWrap .content .homecontent .centerPane .date {
+.contentWrap .content .homecontent .bottomDiv .centerPane .date {
   color: #888;
   margin-left: 2px;
 }
-.contentWrap .content .homecontent .centerPane .post {
+.contentWrap .content .homecontent .bottomDiv .centerPane .post {
   margin: 10px 0px 0 30px;
   float: left;
   font-size: 14px;
 }
 .contentWrap .content .depr {
   display: none;
-}
-.contentWrap .content .depr .blurb {
-  display: none;
-}
-.contentWrap .content .depr .grouppic {
-  margin: 0 auto;
-  width: 600px;
-  height: 300px;
-  overflow: hidden;
-  background-image: url('../images/group.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: 0;
-  box-shadow: 0 0 4px 4px #150000;
-}
-.contentWrap .content .depr .blurb2 {
-  width: 61%;
-  margin: 0 auto;
-  padding: 15px;
-  font-size: 15px;
-}
-.contentWrap .content .depr .wrap {
-  margin: 0 auto;
-  padding-top: 25px;
-  width: 150px;
-}
-.contentWrap .content .depr .wrap .staytuned {
-  font-size: 22px;
-  font-weight: bold;
-}
-.contentWrap .content .depr .wrap .more {
-  font-size: 14px;
-  margin: 0 auto;
-  width: 120px;
-  padding-top: 5px;
 }
 .contentWrap .content .about {
   padding-top: 15px;

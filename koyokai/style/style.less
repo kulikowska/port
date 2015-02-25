@@ -118,78 +118,76 @@ body {
         .homecontent {
             margin-top:15px;
             margin-left:-40px;
-            .leftPane, .centerPane { 
+            .topDiv, .bottomDiv {
+                margin:0;
+                padding:0;
                 float:left;
-                height:96%;
-                margin:10px;
-                box-shadow:0 0 4px 4px #000;
-                box-shadow:inset 0 0 4px 4px #000;
-                background:@ulbottom;
-                border-radius:4px;
-            }
-            .leftPane {
-                width:170px;
-            }
-            .centerPane {
-                width:674px;
-                margin-left:0;
-                #header { 
-                    display:none;
-                    font-size:24px;
-                    font-weight:bold;
-                    margin:10px;
-                }
-                .title {
-                    display:none;
-                    font-size:14px;
-                    font-weight:bold;
-                }
-                .date, .name { float:left; }
-                .date { color:#888; margin-left:2px; }
-                .post {
-                    margin:10px 0px 0 30px;
+                width:100%;
+                height:35%;
+                //border:1px solid white;
+                .photoWrap {
+                    width:100%;
                     float:left;
-                    font-size:14px;
+                    .photo1 {
+                        float:left;
+                        border:3px solid #111;
+                        width:272px;
+                        height:160px;
+                        margin:10px 0 10px 10px;
+                        background-image:url('../images/kendodude.jpg');
+                        background-size:100%;
+                        background-position:0;
+                    }
+                    .photo2 {
+                        .photo1;
+                        background-image:url('../images/group.jpg');
+                    }
+                    .photo3 {
+                        .photo1;
+                        background-image:url('../images/travisdo.jpg');
+                    }
                 }
             }
+            .bottomDiv { 
+                height:65%;
+                .leftPane, .centerPane { 
+                    float:left;
+                    height:94%;
+                    margin:10px;
+                    box-shadow:0 0 4px 4px #000;
+                    //box-shadow:inset 0 0 4px 4px #000;
+                    background:@ulbottom;
+                    //border-radius:4px;
+                }
+                .leftPane {
+                    width:170px;
+                }
+                .centerPane {
+                    width:674px;
+                    margin-left:0;
+                    #header { 
+                        display:none;
+                        font-size:24px;
+                        font-weight:bold;
+                        margin:10px;
+                    }
+                    .title {
+                        display:none;
+                        font-size:14px;
+                        font-weight:bold;
+                    }
+                    .date, .name { float:left; }
+                    .date { color:#888; margin-left:2px; }
+                    .post {
+                        margin:10px 0px 0 30px;
+                        float:left;
+                        font-size:14px;
+                    }
+                }
+             }
          }
          .depr {
               display:none;
-             .blurb {
-                display:none;
-             }
-             .grouppic {
-                margin:0 auto;
-                width:600px;
-                height:300px;
-                overflow:hidden;
-                background-image:url('../images/group.jpg');
-                background-size:100%;
-                background-repeat:no-repeat;
-                background-position:0;
-                box-shadow:0 0 4px 4px #150000;
-             }
-           .blurb2 {
-                width:61%;
-                margin:0 auto;
-                padding:15px;
-                font-size:15px;
-            }
-            .wrap {
-                margin:0 auto;
-                padding-top:25px;
-                width:150px;
-                .staytuned {
-                    font-size:22px;
-                    font-weight:bold;
-                 }
-                 .more {
-                    font-size:14px;
-                    margin:0 auto;
-                    width:120px;
-                    padding-top:5px;
-                 }
-             }
         }
         .contentprop;
         .about {
