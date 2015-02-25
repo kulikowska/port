@@ -330,6 +330,20 @@ a:hover {
   color: #bbb;
   margin-bottom: 23px;
 }
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul {
+  margin-left: -55px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul li {
+  width: 200px;
+  margin-top: 2px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul a {
+  color: #aaa;
+  text-decoration: none;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul a:hover {
+  color: white;
+}
 .contentWrap .content .depr {
   display: none;
 }
