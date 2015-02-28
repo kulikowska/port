@@ -1,38 +1,68 @@
-
 <html>
     <head>
         <title> Three.js Experiments</title>
-        <link href="./css/style.css" type="text/css" rel="stylesheet" />
+        <link href="css/style.css" type="text/css" rel="stylesheet" />
         <script src="js/three.min.js"></script>
-
+        <script src="http://threejs.org/examples/js/controls/OrbitControls.js"></script>
     </head>
 
     <body>
-        <script>
-            var scene = new THREE.Scene();
-            var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
-            var renderer = new THREE.WebGLRenderer();
-            renderer.setSize( window.innerWidth, window.innerHeight );
-            document.body.appendChild( renderer.domElement );
-
-            var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-            var material = new THREE.MeshBasicMaterial( { color: 0x350000} );
-            var cube = new THREE.Mesh( geometry, material );
-            scene.add( cube );
-
-            camera.position.z = 5;
-
-            var render = function () {
-                requestAnimationFrame( render );
-
-                cube.rotation.x += 0.01;
-                cube.rotation.y += 0.01;
-
-                renderer.render(scene, camera);
-            };
-
-            render();
-        </script>
+        <button id="stop" onClick="stopRender()">Stop</button>
+        <button id="start" onClick="startRender()">Start</button>
+        <div class="instructions">Click and drag to manually rotate </div>
     </body>
+
+    <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera( 55, 1, 0.5, 100 );
+
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize( 600, 600);
+        document.body.appendChild( renderer.domElement );
+
+        //imports from library all the mouse controls (zoom, drag to rotate)
+        controls = new THREE.OrbitControls( camera );
+
+        var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+
+        var cubeMaterialArray = [ ];
+        
+        cubeMaterialArray.push( new THREE.MeshBasicMaterial( { color: 0x7887ab} ) );
+        cubeMaterialArray.push( new THREE.MeshBasicMaterial( { color: 0x4f628e} ) );
+        cubeMaterialArray.push( new THREE.MeshBasicMaterial( { color: 0x2e4272} ) );
+        cubeMaterialArray.push( new THREE.MeshBasicMaterial( { color: 0x162955} ) );
+        cubeMaterialArray.push( new THREE.MeshBasicMaterial( { color: 0x364e85} ) );
+        cubeMaterialArray.push( new THREE.MeshBasicMaterial( { color: 0x213971} ) );
+
+        var cubeMaterials = new THREE.MeshFaceMaterial( cubeMaterialArray );
+
+        var cube = new THREE.Mesh( geometry, cubeMaterials );
+        scene.add( cube );
+
+        camera.position.z = 5;
+
+        var rotationX = 0.01;
+        var rotationY = 0.01;
+
+        var render = function () {
+            requestAnimationFrame( render );
+
+            cube.rotation.x += rotationX;
+            cube.rotation.y += rotationY;
+
+            renderer.render(scene, camera);
+        };
+
+        render();
+
+        function stopRender() {
+             rotationX = 0.00;
+             rotationY = 0.00;
+        }   
+
+        function startRender() {
+             rotationX = 0.01;
+             rotationY = 0.01;
+        }   
+    </script>
 </html>

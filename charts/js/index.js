@@ -105,18 +105,3 @@ function getData() {
     });
 }
 
-var scene;
-var camera;
-
-initializeScene();
-renderScene();
-
-function initializeScene() {
-    if(Detector.webgl) {
-        renderer = new THREE.WebGLRenderer({antialias:true});
-    }
-    else {
-        renderer = new THREE.CanvasRenderer();
-    }
-}
-
