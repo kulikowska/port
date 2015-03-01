@@ -199,7 +199,7 @@ a:hover {
 }
 .contentWrap .content .homecontent .sideHead {
   width: 95px;
-  margin: 13px auto 5px;
+  margin: 0 auto 5px;
   font-weight: bold;
   font-size: 15px;
 }
@@ -208,7 +208,13 @@ a:hover {
   width: 100%;
   text-align: center;
   color: #bbb;
-  margin-bottom: 23px;
+}
+.contentWrap .content .homecontent .divider {
+  margin: 15px auto;
+  width: 50px;
+}
+.contentWrap .content .homecontent .divider i {
+  color: #444;
 }
 .contentWrap .content .homecontent .bottomDiv {
   height: 68%;
@@ -216,8 +222,9 @@ a:hover {
 .contentWrap .content .homecontent .bottomDiv .leftPane,
 .contentWrap .content .homecontent .bottomDiv .centerPane,
 .contentWrap .content .homecontent .bottomDiv .rightPane {
+  padding-top: 15px;
   float: left;
-  height: 94%;
+  height: 93%;
   margin: 10px;
   box-shadow: 0 0 4px 4px #000;
   background: #211;
@@ -227,19 +234,25 @@ a:hover {
 }
 .contentWrap .content .homecontent .bottomDiv .leftPane .leftHead {
   width: 95px;
-  margin: 13px auto 5px;
+  margin: 0 auto 5px;
   font-weight: bold;
   font-size: 15px;
 }
 .contentWrap .content .homecontent .bottomDiv .leftPane .leftHead i {
   margin: 2px;
 }
+.contentWrap .content .homecontent .bottomDiv .leftPane .leftHeadAffil {
+  width: 95px;
+  margin: 0 auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 110px;
+}
 .contentWrap .content .homecontent .bottomDiv .leftPane .leftInfo {
   font-size: 12px;
   width: 100%;
   text-align: center;
   color: #bbb;
-  margin-bottom: 23px;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane {
   width: 492px;
@@ -254,7 +267,7 @@ a:hover {
 .contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap #header {
   font-size: 20px;
   font-weight: bold;
-  margin: 8px 0 10px 10px;
+  margin: 0px 0 10px 10px;
   text-align: center;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .title {
@@ -311,14 +324,14 @@ a:hover {
 }
 .contentWrap .content .homecontent .bottomDiv .rightPane .rightHead {
   width: 95px;
-  margin: 13px auto 5px;
+  margin: 0 auto 5px;
   font-weight: bold;
   font-size: 15px;
-  width: 105px;
+  width: 80px;
 }
 .contentWrap .content .homecontent .bottomDiv .rightPane .rightHeadEvents {
   width: 95px;
-  margin: 13px auto 5px;
+  margin: 0 auto 5px;
   font-weight: bold;
   font-size: 15px;
   width: 70px;
@@ -328,7 +341,6 @@ a:hover {
   width: 100%;
   text-align: center;
   color: #bbb;
-  margin-bottom: 23px;
 }
 .contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul {
   margin-left: -55px;

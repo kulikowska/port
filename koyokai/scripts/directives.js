@@ -78,6 +78,38 @@ APP
         template: TPL.homecontent,
         link: function($scope, $element, $attributes) {
             $scope.contentVal = 'content';
+            $scope.contact = true;
+
+                $scope.showEvents= function() {
+                    if (!$scope.events) {
+                        $scope.events = true;
+                        $scope.contact = false;
+                        $scope.links= false;
+                    }
+                    else {
+                        $scope.events = false;
+                    }
+                }   
+                $scope.showContact= function() {
+                    if (!$scope.contact) {
+                        $scope.contact= true;
+                        $scope.events= false;
+                        $scope.links= false;
+                    }
+                    else {
+                        $scope.contact= false;
+                    }
+                }   
+                $scope.showLinks= function() {
+                    if (!$scope.links) {
+                        $scope.links= true;
+                        $scope.events= false;
+                        $scope.contact= false;
+                    }
+                    else {
+                        $scope.links= false;
+                    }
+                }
             }
         }
  }])
