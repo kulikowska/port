@@ -31,47 +31,79 @@ body {
     box-shadow:1px 0 34px 34px #000;
     border-radius:200px;
     transition:5s;
-    &:hover {
-        box-shadow:1px 0 54px 54px #000;
-    }
-    .whiteText { color:#fff; }
-    .svgDudes { display:none; }
-    .fontFun {
-       font-size:30px;
-       color:darken(@textColor, 20%);
-       margin:15px;
-       transition:1s ease;
-       &:hover {
+    //&:hover {
+    //    box-shadow:1px 0 54px 54px #000;
+   // }
+    .intro {
+        .whiteText { color:#fff; }
+        .svgDudes { display:none; }
+        .fontFun {
+           font-size:30px;
+           color:darken(@textColor, 20%);
+           margin:15px;
+           transition:1s ease;
+           &:hover {
+                color:#fff;
+           }
+        }
+        .fontFun1 {
+            .fontFun;
             color:#fff;
-       }
-    }
-    .fontFun1 {
-        .fontFun;
-        color:#fff;
-        margin:10px;
-        &:hover { color:@textColor; }
-    }   
-    .name {
-        color:@textColor;
-        font-size:40px;
-        padding:0px 5px 6px 5px;
-    }
+            margin:10px;
+            &:hover { color:@textColor; }
+        }   
+        .name {
+            color:@textColor;
+            font-size:40px;
+            padding:0px 5px 6px 5px;
+        }
 
-    .title {
-        color:lighten(@textColor, 15%);
-        font-size:18px;
-        padding:5px 5px 10px 5px;
-    }
+        .title {
+            color:lighten(@textColor, 15%);
+            font-size:18px;
+            padding:5px 5px 10px 5px;
+        }
 
-    .skills {
-        color:lighten(@textColor, 30%);
-        font-size:14px;
-        padding:5px 5px 10px 5px;
-    }
+        .skills {
+            color:lighten(@textColor, 30%);
+            font-size:14px;
+            padding:5px 5px 10px 5px;
+        }
 
-    .sowhat {
-        color:lighten(@textColor, 50%);
-        font-size:14px;
-        padding:5px 5px 10px 5px;
+        .sowhat {
+            color:lighten(@textColor, 50%);
+            font-size:14px;
+            padding:5px 5px 10px 5px;
+            .linkToPort { 
+                cursor:pointer;
+                font-weight:bold;
+                margin-bottom:15px;
+                transition:200ms;
+                &:hover {
+                    color:lighten(@textColor, 5%);
+                }
+            }
+        }
+    }
+    .portfolio {
+        margin-top:20px;
+        min-height:325px;
+        .backToIntro {
+            font-weight:bold;
+            margin:10px;
+            cursor:pointer;
+        }
+        .header {
+            font-size:18px;
+        }
+        .websites {
+            color:lighten(@textColor, 15%);
+        }
+        .applications {
+            color:lighten(@textColor, 30%);
+        }
+        .misc {
+            color:lighten(@textColor, 50%);
+        }
     }
 }

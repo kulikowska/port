@@ -21,25 +21,22 @@ body {
   border-radius: 200px;
   transition: 5s;
 }
-.container:hover {
-  box-shadow: 1px 0 54px 54px #000;
-}
-.container .whiteText {
+.container .intro .whiteText {
   color: #fff;
 }
-.container .svgDudes {
+.container .intro .svgDudes {
   display: none;
 }
-.container .fontFun {
+.container .intro .fontFun {
   font-size: 30px;
   color: #3d2c4d;
   margin: 15px;
   transition: 1s ease;
 }
-.container .fontFun:hover {
+.container .intro .fontFun:hover {
   color: #fff;
 }
-.container .fontFun1 {
+.container .intro .fontFun1 {
   font-size: 30px;
   color: #3d2c4d;
   margin: 15px;
@@ -47,29 +44,59 @@ body {
   color: #fff;
   margin: 10px;
 }
-.container .fontFun1:hover {
+.container .intro .fontFun1:hover {
   color: #fff;
 }
-.container .fontFun1:hover {
+.container .intro .fontFun1:hover {
   color: #71528d;
 }
-.container .name {
+.container .intro .name {
   color: #71528d;
   font-size: 40px;
   padding: 0px 5px 6px 5px;
 }
-.container .title {
+.container .intro .title {
   color: #977ab2;
   font-size: 18px;
   padding: 5px 5px 10px 5px;
 }
-.container .skills {
+.container .intro .skills {
   color: #bdaace;
   font-size: 14px;
   padding: 5px 5px 10px 5px;
 }
-.container .sowhat {
+.container .intro .sowhat {
   color: #efebf3;
   font-size: 14px;
   padding: 5px 5px 10px 5px;
+}
+.container .intro .sowhat .linkToPort {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 15px;
+  transition: 200ms;
+}
+.container .intro .sowhat .linkToPort:hover {
+  color: #7e5b9d;
+}
+.container .portfolio {
+  margin-top: 20px;
+  min-height: 325px;
+}
+.container .portfolio .backToIntro {
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+}
+.container .portfolio .header {
+  font-size: 18px;
+}
+.container .portfolio .websites {
+  color: #977ab2;
+}
+.container .portfolio .applications {
+  color: #bdaace;
+}
+.container .portfolio .misc {
+  color: #efebf3;
 }
