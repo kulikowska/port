@@ -6,7 +6,7 @@ APP
         //templateUrl: 'html/header.html',
         template: TPL.content,
         link: function($scope, $element, $attributes) {
-            $scope.tabIdx = 2;
+            $scope.tabIdx = 1;
          }
       } 
  }])
@@ -30,3 +30,7 @@ APP
          }
       }
 }])
+.filter('checkActive', function() {
+    return function(input) { return input ? 'active' : '' };
+})
+ 
