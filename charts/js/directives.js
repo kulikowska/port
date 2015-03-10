@@ -8,7 +8,6 @@ APP
         link: function($scope, $element, $attributes) {
             $scope.angularData = 'empty';
             $scope.something = 'some random string';
-            google.load('visualization', '1.0', { callback : function() {}, packages: ['corechart', 'table'] });
 
              $scope.getAngularData = function() {
                 $http.get('Controllers/index.php').success(function(data) { 

@@ -1,4 +1,3 @@
-setTimeout( function() {
     //Load the Visualization API and the piechart package.
     google.load('visualization', '1.0', {'packages':['corechart']});
 
@@ -36,7 +35,6 @@ setTimeout( function() {
         colors: ['#111', '#333', '#555', '#777', '#999', '#bbb']
         });
     }
-}, 4000);
 
 google.setOnLoadCallback(drawChartTwo);
 
