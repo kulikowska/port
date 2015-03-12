@@ -24,16 +24,19 @@ DB::conn();
 $rows = DB::getRows('SELECT * FROM members');
 echo ('<pre>'); 
 //var_dump($rows);
+//foreach ($rows as $row) {
+//    echo $row[0] . '...' . $row[1] . '...' . $row[2] . '<br />';
+//}
 foreach ($rows as $row) {
-    echo $row[0] . '...' . $row[1] . '...' . $row[2] . '<br />';
+    echo $row[0] . $row[1] . $row[2];
 }
 
 $my_array = array("fucking","around","with","PHP");
 list($a, $b, $c, $d) = $my_array;
-echo "$a $c $d.";
+//echo "$a $c $d.";
 
 $str = "What's going on in groove town?";
-print_r (explode(" ",$str));
+//print_r (explode(" ",$str));
 
 $arr = array('Whats', 'going', 'on', 'in', 'groove', 'town?');
-echo implode(" ", $arr);
+//echo implode(" ", $arr);
