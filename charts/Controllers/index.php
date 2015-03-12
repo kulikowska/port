@@ -28,7 +28,7 @@ echo ('<pre>');
 //    echo $row[0] . '...' . $row[1] . '...' . $row[2] . '<br />';
 //}
 foreach ($rows as $row) {
-    echo $row[0] . $row[1] . $row[2];
+    echo 'first:'.$row[0] . $row[1] . $row[2];
 }
 
 $my_array = array("fucking","around","with","PHP");
