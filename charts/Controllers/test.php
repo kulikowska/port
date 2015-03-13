@@ -10,7 +10,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $data_array[$row['first']] = $row['last'];
 }
 
-foreach ($data_array as $row) {
-    echo $row[0]. " ";
-}
+var_dump($data_array);
 
+echo json_encode($data_array);

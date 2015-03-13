@@ -10,7 +10,7 @@ APP
             $scope.something = 'some random string';
 
              $scope.getAngularData = function() {
-                $http.get('Controllers/test.php').success(function(data) { 
+                $http.get('Controllers/index.php').success(function(data) { 
                     $scope.angularData = data;
                     console.log(data);
                 })
