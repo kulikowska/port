@@ -22,14 +22,12 @@ class DB {
 
 DB::conn();
 $rows = DB::getRows('SELECT * FROM members');
-echo ('<pre>'); 
-//var_dump($rows);
 //foreach ($rows as $row) {
 //    echo $row[0] . '...' . $row[1] . '...' . $row[2] . '<br />';
 //}
-foreach ($rows as $row) {
-    echo 'first:'.$row[0] . $row[1] . $row[2];
-}
+//foreach ($rows as $row) {
+//    echo 'first:'.$row[0] . $row[1] . $row[2];
+//}
 
 $my_array = array("fucking","around","with","PHP");
 list($a, $b, $c, $d) = $my_array;
@@ -40,3 +38,5 @@ $str = "What's going on in groove town?";
 
 $arr = array('Whats', 'going', 'on', 'in', 'groove', 'town?');
 //echo implode(" ", $arr);
+
+echo json_encode($rows);
