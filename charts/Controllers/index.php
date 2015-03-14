@@ -13,7 +13,7 @@ class DB {
         $query = $sql or die("Error in the consult.." . mysqli_error(DB::$link)); 
         $result = DB::$link->query($query); 
         while($row = mysqli_fetch_array($result)) { 
-          array_push($ret, [$row['first'], $row['last'], $row['sport']]);
+          array_push($ret, ["first" => $row['first'], "last" => $row['last'], "sport" => $row['sport']]);
         } 
         return $ret;
     }
