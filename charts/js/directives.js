@@ -14,7 +14,10 @@ APP
                     $scope.angularData = data;
                     console.log(data);
                     $scope.first = data[0];
+                    $scope.second = data[1];
+                    $scope.third = data[2];
                     console.log($scope.first);
+
                     console.log($scope.angularData.first);
                 })
              }
