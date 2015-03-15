@@ -14,20 +14,14 @@ APP
                     $scope.angularData = data;
                     console.log(data);
 
-                    console.log($scope.angularData[4].first);
+                    console.log($scope.angularData[3].first);
                 })
              }
 
-             $scope.postAngularData = function(cb) {
-                $http({
-                    url: 'Controllers/index.php',
-                    method: 'POST',
-                    data: JSON.stringify($scope.something),
-                }).
-                success(cb);
-                alert($scope.something);
-            }
-         }
+             $scope.postAngularData = function(data, cb) {
+                data = JSON.stringify($scope.angularData);
+                $http.post('Controllers/index.php', data).success(cb); }
+           }
       }
 }])
 ;
