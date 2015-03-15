@@ -35,7 +35,7 @@ $arr = array('Whats', 'going', 'on', 'in', 'groove', 'town?');
 //echo implode(" ", $arr);
 
 $sql = "INSERT INTO members (first, last, sport)
-        VALUES ('muddy', 'waters', 'judo')";
+        VALUES ('$_POST[fname]', '$_POST[lname]', '$_POST[sport]')";
 
 $shifted = array_shift($rows);
 
