@@ -19,11 +19,11 @@ class DB {
     }
 }
 
+$sql = 'INSERT INTO members (first, last, sport) VALUES ( "rick", "danko", "kendo")';
+
 DB::conn();
 $rows = DB::getRows('SELECT * FROM members');
 
-$sql = "INSERT INTO members (first, last, sport)
-        VALUES ('levon', 'helm', 'kendo')";
 
 $my_array = array("fucking","around","with","PHP");
 list($a, $b, $c, $d) = $my_array;
