@@ -19,9 +19,10 @@ class DB {
     }
 }
 
-$sql = 'INSERT INTO members (first, last, sport) VALUES ( "rick", "danko", "kendo")';
+$insert_query = 'INSERT INTO members (first, last, sport) VALUES ( "rick", "danko", "kendo")';
 
 DB::conn();
+$addrow = DB::getRows($insert_query);
 $rows = DB::getRows('SELECT * FROM members');
 
 
