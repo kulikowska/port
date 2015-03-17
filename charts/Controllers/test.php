@@ -1,15 +1,22 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+$dbhost = 'localhost';
+$dbuser = 'rubz';
+$dbpass = 'donkey';
+$conn = mysql_connect($dbhost, $dbuser, $dbpass);
+if(! $conn )
+{
+  die('Could not connect: ' . mysql_error());
+  }
+  $sql = 'INSERT INTO members'.
+         '(first, last, sport) '.
+                'VALUES ( "dr", "john", "judo")';
 
-$dbc  = mysqli_connect("localhost","rubz","donkey","newdudes") or die("Error " . mysqli_error($link)); 
-$query = "SELECT * FROM members";
-$result = mysqli_query($dbc, $query);
-$data_array = array();
-while ($row = mysqli_fetch_assoc($result)) {
-    $data_array[] = $row['first'];
-}
-
-var_dump($data_array);
-
-echo json_encode($data_array);
+                mysql_select_db('newdudes');
+                $retval = mysql_query( $sql, $conn );
+                if(! $retval )
+                {
+                  die('Could not enter data: ' . mysql_error());
+                  }
+                  echo "Entered data successfully\n";
+                  mysql_close($conn);
+                  ?>

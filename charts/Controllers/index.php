@@ -17,12 +17,13 @@ class DB {
         } 
         return $ret;
     }
-
 }
-
 
 DB::conn();
 $rows = DB::getRows('SELECT * FROM members');
+
+$sql = "INSERT INTO members (first, last, sport)
+        VALUES ('levon', 'helm', 'kendo')";
 
 $my_array = array("fucking","around","with","PHP");
 list($a, $b, $c, $d) = $my_array;
@@ -34,10 +35,8 @@ $str = "What's going on in groove town?";
 $arr = array('Whats', 'going', 'on', 'in', 'groove', 'town?');
 //echo implode(" ", $arr);
 
-$sql = "INSERT INTO members (first, last, sport)
-        VALUES ('$_POST[fname]', '$_POST[lname]', '$_POST[sport]')";
-
 $shifted = array_shift($rows);
 
 echo json_encode($rows);
+
 
