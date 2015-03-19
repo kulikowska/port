@@ -29,7 +29,7 @@ APP
 
              $scope.deleteData = function(id) {
                 $http.get('Controllers/delete.php?id=' + id ).success(function(data) {
-                    for (var i=0; i<$scope.angularData.length; i+)  {
+                    for (var i=0; i<$scope.angularData.length; i++)  {
                         if ($scope.angularData[i].id == id) {
                             delete $scope.angularData[i];
                         }
