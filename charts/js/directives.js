@@ -8,9 +8,9 @@ APP
         link: function($scope, $element, $attributes) {
             $scope.angularData = 'empty';
             $scope.something = 'some random string';
-            $scope.first = 'some';
-            $scope.last= 'data';
-            $scope.sport= '4u';
+            $scope.first = 'robbie';
+            $scope.last= 'robertson';
+            $scope.sport= 'kendo';
 
              $scope.getAngularData = function() {
                 $http.get('Controllers/index.php').success(function(data) { 

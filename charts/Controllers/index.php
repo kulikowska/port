@@ -34,11 +34,11 @@ class DB {
 $name = ($_REQUEST['first']);
 $last = ($_REQUEST['last']);
 $sport = ($_REQUEST['sport']);
-$sql = "INSERT INTO members (first, last, sport) VALUES ('$name', '$last', '$sport')";
+$add = "INSERT INTO members (first, last, sport) VALUES ('$name', '$last', '$sport')";
 
 DB::conn();
-DB::insert($sql);
 $rows = DB::getRows('SELECT * FROM members');
+$addRows = DB::insert($add);
 
 $my_array = array("fucking","around","with","PHP");
 list($a, $b, $c, $d) = $my_array;
