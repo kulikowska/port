@@ -15,11 +15,12 @@ class DB {
     }
 
     public static function getRows($sql) {
+        lg($sql);
         $ret = [];
         $query = $sql or die("Error in the consult.." . mysqli_error(DB::$link)); 
         $result = DB::$link->query($query); 
         while($row = mysqli_fetch_array($result)) { 
-          array_push($ret, ["first" => $row['first'], "last" => $row['last'], "sport" => $row['sport']]);
+          array_push($ret, ["id" => $row['id'], "first" => $row['first'], "last" => $row['last'], "sport" => $row['sport']]);
         } 
         return $ret;
     }
@@ -37,8 +38,6 @@ $str = "What's going on in groove town?";
 
 $arr = array('Whats', 'going', 'on', 'in', 'groove', 'town?');
 //echo implode(" ", $arr);
-
-$shifted = array_shift($rows);
 
 echo json_encode($rows);
 

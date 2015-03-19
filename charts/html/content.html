@@ -1,18 +1,6 @@
-<div class="jqueryData">
-    <div>
-        <div class="button" onclick="getData()">Get Data from Server JQuery</div>
-    </div>
-    <div id="serverData"></div>
-</div>
 <div class="angularData">
-    <div>
-        <div class="button" ng-click="getAngularData()">Get Data from Server Angular</div>
-    </div>
+    <div class="button" ng-click="getAngularData()">Get Data from Server Angular</div>
     <div id="serverDataAngular">{{angularData}}</div>
-    <div>
-        <div class="button" ng-click="postAngularData()">Post Data</div>
-        <input type="text" name="something" ng-model="something"></input>
-    </div>
 </div>
 <div class="testData">
     <div>
@@ -27,6 +15,7 @@
         <label>Sport:</label>
         <input type="text" ng-model="angularData[0].sport" />
     </div>
+    <div class="button" ng-click="deleteData(angularData[0].id)">Delete Above Data</div>
 
     <div>
         <label>First Name:</label>
@@ -40,6 +29,7 @@
         <label>Sport:</label>
         <input type="text" ng-model="angularData[1].sport" />
     </div>
+    <div class="button" ng-click="deleteData(angularData[1].id)">Delete Above Data</div>
 
     <div>
         <label>First Name:</label>
@@ -53,6 +43,7 @@
         <label>Sport:</label>
         <input type="text" ng-model="angularData[2].sport" />
     </div>
+    <div class="button" ng-click="deleteData(angularData[2].id)">Delete Above Data</div>
 </div>
 <div class="testData">
     <div>
