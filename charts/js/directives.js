@@ -22,7 +22,7 @@ APP
              }
 
              $scope.postAngularData = function(first, last, sport) {
-                $http.get('Controllers/index.php?first=' + first + '&last=' + last + '&sport=' + sport); } 
+                $http.get('Controllers/insert.php?first=' + first + '&last=' + last + '&sport=' + sport); } 
                 }
       }
 }])

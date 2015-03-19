@@ -14,6 +14,12 @@ class DB {
         self::$link = mysqli_connect("localhost","rubz","donkey","newdudes") or die("Error " . mysqli_error($link)); 
     }
 
+    public static function insert($sql) {
+        $result = DB::$link->query($sql); 
+        lg( $sql );
+        return $result;
+    }
+
     public static function getRows($sql) {
         $ret = [];
         $query = $sql or die("Error in the consult.." . mysqli_error(DB::$link)); 
@@ -25,8 +31,14 @@ class DB {
     }
 }
 
+$name = ($_REQUEST['first']);
+$last = ($_REQUEST['last']);
+$sport = ($_REQUEST['sport']);
+$add = "INSERT INTO members (first, last, sport) VALUES ('$name', '$last', '$sport')";
+
 DB::conn();
-$rows = DB::getRows('SELECT * FROM members');
+//$rows = DB::getRows('SELECT * FROM members');
+$addRows = DB::insert($add);
 
 $my_array = array("fucking","around","with","PHP");
 list($a, $b, $c, $d) = $my_array;
