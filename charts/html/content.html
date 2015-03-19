@@ -57,17 +57,17 @@
 <div class="testData">
     <div>
         <label>First Name:</label>
-        <input type="text" ng-model="fname" />
+        <input type="text" ng-model="first" />
     </div>
     <div>
         <label>Last Name:</label>
-        <input type="text" ng-model="lname" />
+        <input type="text" ng-model="last" />
     </div>
     <div>
         <label>Sport:</label>
         <input type="text" ng-model="sport" />
     </div>
-    <div class="button" ng-click="postAngularData()">Save</div>
+    <div class="button" ng-click="postAngularData(first, last, sport)">Save</div>
 </div>
 
 <!--Div that will hold the pie chart-->

@@ -31,17 +31,13 @@ class DB {
     }
 }
 
-<<<<<<< HEAD
-$insert_query = 'INSERT INTO members (first, last, sport) VALUES ( "rick", "danko", "kendo")';
-
-DB::conn();
-$addrow = DB::getRows($insert_query);
-=======
-$sql = "INSERT INTO members (first, last, sport) VALUES ( 'rick', 'danko', 1)";
+$name = ($_REQUEST['first']);
+$last = ($_REQUEST['last']);
+$sport = ($_REQUEST['sport']);
+$sql = "INSERT INTO members (first, last, sport) VALUES ('$name', '$last', '$sport')";
 
 DB::conn();
 DB::insert($sql);
->>>>>>> fc745de9504e1cf651e06634dc14f8eb4f8d7ad0
 $rows = DB::getRows('SELECT * FROM members');
 
 $my_array = array("fucking","around","with","PHP");
@@ -57,5 +53,4 @@ $arr = array('Whats', 'going', 'on', 'in', 'groove', 'town?');
 $shifted = array_shift($rows);
 
 echo json_encode($rows);
-
 

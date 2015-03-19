@@ -8,9 +8,9 @@ APP
         link: function($scope, $element, $attributes) {
             $scope.angularData = 'empty';
             $scope.something = 'some random string';
-            $scope.fname = 'some';
-            $scope.lname= 'test';
-            $scope.sport = 'data';
+            $scope.first = 'some';
+            $scope.last= 'data';
+            $scope.sport= '4u';
 
              $scope.getAngularData = function() {
                 $http.get('Controllers/index.php').success(function(data) { 
@@ -21,8 +21,8 @@ APP
                 })
              }
 
-             $scope.postAngularData = function(fname, lname, sport, cb) {
-                $http.get('Controllers/index.php?first=' + fname + '&last=' + lname + '&sport=' + sport).success(cb); } 
+             $scope.postAngularData = function(first, last, sport) {
+                $http.get('Controllers/index.php?first=' + first + '&last=' + last + '&sport=' + sport); } 
                 }
       }
 }])
