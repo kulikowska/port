@@ -20,11 +20,9 @@ APP
              }
 
              $scope.postAngularData = function(first, last, sport) {
-                $http.get('Controllers/insert.php?first=' + first + '&last=' + last + '&sport=' + sport);  
-
-                setTimeout(function() {
+                $http.get('Controllers/insert.php?first=' + first + '&last=' + last + '&sport=' + sport).success(function(data) {
                     $scope.getAngularData();
-                    }, 200);
+                });  
              }
 
              $scope.deleteData = function(id) {
