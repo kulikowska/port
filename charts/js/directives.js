@@ -28,11 +28,9 @@ APP
              }
 
              $scope.deleteData = function(id) {
-                $http.get('Controllers/delete.php?id=' + id );  
-                
-                setTimeout(function() {
+                $http.get('Controllers/delete.php?id=' + id ).success(function(data) {
                     $scope.getAngularData();
-                    }, 200);
+                });  
                 }
            }
       }
