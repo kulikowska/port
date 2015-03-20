@@ -21,14 +21,13 @@ class DB {
     }
 }
 
-$id = $_POST['id'];
-//$first = ($_REQUEST['first']);
-//$last= ($_REQUEST['last']);
-//$sport= ($_REQUEST['sport']);
+$id = $_REQUEST['id'];
+$first = $_REQUEST['first'];
+$last= ($_REQUEST['last']);
+$sport= ($_REQUEST['sport']);
 $sql = "UPDATE members set first='$first', last='$last', sport='$sport' where id='$id'";
 
 DB::conn();
 DB::update($sql);
 
-//var_dump($_SERVER);
 //echo $_POST['id'] . ' ' . $_POST['first'];
