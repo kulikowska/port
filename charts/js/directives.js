@@ -34,6 +34,10 @@ APP
                     $scope.angularData = stor;
                 });  
              }
+
+             $scope.updateData = function(id) {
+                $http.get('Controllers/update.php');
+             }
           }
       }
 }])
