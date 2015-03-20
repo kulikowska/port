@@ -1,12 +1,7 @@
 <?php
+include 'log.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-function lg($msg) {
-    $fp = fopen('/tmp/chart.log', 'w');
-    fwrite($fp, $msg . "\n");
-    fclose($fp); 
-}
 
 class DB {
     public static $link;
@@ -20,6 +15,9 @@ class DB {
         return $result;
     }
 }
+
+lg($_REQUEST);
+lg($_POST);
 
 $id = $_REQUEST['id'];
 $first = $_REQUEST['first'];
