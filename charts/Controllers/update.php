@@ -16,13 +16,15 @@ class DB {
     }
 }
 
-lg($_REQUEST);
+//lg($_SERVER);
 lg($_POST);
+lg($_REQUEST);
 
 $id = $_REQUEST['id'];
 $first = $_REQUEST['first'];
 $last= ($_REQUEST['last']);
 $sport= ($_REQUEST['sport']);
+
 $sql = "UPDATE members set first='$first', last='$last', sport='$sport' where id='$id'";
 lg($sql);
 
