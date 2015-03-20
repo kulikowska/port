@@ -36,7 +36,11 @@ APP
              }
 
              $scope.updateData = function(id, first, last, sport) {
-                $http.get('Controllers/update.php?id=' + id + '&first=' + first + '&last=' + last + '&sport=' + sport);
+                $http.post('Controllers/update.php?', 'id=' + id + '&first=' + first + '&last=' + last + '&sport=' + sport)
+                .success(function(newdata) {
+                    $scope.newData = newdata;
+                });
+                console.log(id, first, last, sport);
              }
           }
       }
