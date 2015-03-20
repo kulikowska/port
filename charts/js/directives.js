@@ -35,8 +35,8 @@ APP
                 });  
              }
 
-             $scope.updateData = function(id) {
-                $http.get('Controllers/update.php');
+             $scope.updateData = function(id, first, last, sport) {
+                $http.get('Controllers/update.php?id=' + id + '&first=' + first + '&last=' + last + '&sport=' + sport);
              }
           }
       }

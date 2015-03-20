@@ -21,8 +21,11 @@ class DB {
     }
 }
 
-//$id = ($_REQUEST['id']);
-$sql = "UPDATE members set first='ronnie' where id=166";
+$id = ($_REQUEST['id']);
+$first = ($_REQUEST['first']);
+$last= ($_REQUEST['last']);
+$sport= ($_REQUEST['sport']);
+$sql = "UPDATE members set first='$first', last='$last', sport='$sport' where id='$id'";
 
 DB::conn();
 DB::update($sql);
