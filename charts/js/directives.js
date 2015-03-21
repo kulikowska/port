@@ -29,20 +29,20 @@ APP
             $scope.sport= 'kendo';
 
              $scope.getAngularData = function() {
-                $http.get('Controllers/index.php').success(function(data) { 
+                $http.get('route.php?ctrl=index').success(function(data) { 
                     $scope.angularData = data;
                     console.log(data);
                 })
              }
 
              $scope.postAngularData = function(first, last, sport) {
-                $http.get('Controllers/insert.php?first=' + first + '&last=' + last + '&sport=' + sport).success(function(data) {
+                $http.get('route.php?ctrl=insert&first=' + first + '&last=' + last + '&sport=' + sport).success(function(data) {
                     $scope.getAngularData();
                 });  
              }
 
              $scope.deleteData = function(id) {
-                $http.get('Controllers/delete.php?id=' + id ).success(function(data) {
+                $http.get('route.php?ctrl=delete&id=' + id ).success(function(data) {
                     var stor = [];
                     for (var i=0; i<$scope.angularData.length; i++)  
                         $scope.angularData[i].id == id || stor.push($scope.angularData[i]);
@@ -52,7 +52,7 @@ APP
              }
 
              $scope.updateData = function(id, first, last, sport) {
-                $http.post('Controllers/update.php', { id: id, first: first, last: last, sport: sport })
+                $http.post('route.php?ctrl=update', { id: id, first: first, last: last, sport: sport })
                 .success(function(newdata) {
                     $scope.newData = newdata;
                 });
