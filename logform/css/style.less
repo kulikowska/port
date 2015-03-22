@@ -1,0 +1,42 @@
+body {
+    background:lighten(@bottom, 20%);
+    font-family:verdana;
+}
+
+@top:#ADC964;
+@bottom:#DBf1a1;
+
+.register {
+    width:500px;
+    margin:0 auto;
+    fieldset {
+        background:linear-gradient(@top, @bottom);
+        border-radius:2px;
+        border:1px solid #111;
+        legend { font-size: 18px; }
+        input, label { 
+            display:inline-block;
+            width:100px;
+            font-size:14px;
+            margin:2px;
+            padding:2px;
+            outline:0;
+        }
+        .button {
+            border-radius:2px;
+            width:auto;
+            padding:4px;
+            margin:4px;
+            width:60px;
+            text-align:center;
+            cursor:pointer;
+            font-size:14px;
+            background:lighten(@bottom, 10%);
+            border:1px solid #111;
+            transition:200ms ease;
+            &:hover {
+                background:lighten(@top, 20%);
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<div>
+    <div class="register">
+        <fieldset>
+            <div>
+                <label>Username:</label>
+                <input type="text" ng-model="user" />
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="text" ng-model="pwd" />
+            </div>
+            <div class="button" ng-click="register(user, pwd)">Register</div>
+            <div class="alerts" ng-show="successful">
+                Successfully registered {{user}}!
+            </div>
+        </fieldset>     
+    </div>
+</div>
