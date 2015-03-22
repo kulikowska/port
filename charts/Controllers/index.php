@@ -1,17 +1,9 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-function lg($msg) {
-    $fp = fopen('/tmp/chart.log', 'w');
-    fwrite($fp, $msg . "\n");
-    fclose($fp); 
-}
-
 class DB {
-    public static $link;
+    public static $link=null;
     public static function conn() {
-        self::$link = mysqli_connect("localhost","rubz","donkey","newdudes") or die("Error " . mysqli_error($link)); 
+        if ( self::$link === null) 
+            self::$link = mysqli_connect("localhost","rubz","donkey","newdudes") or die("Error " . mysqli_error($link)); 
     }
 
     public static function getRows($sql) {
@@ -19,8 +11,11 @@ class DB {
         $ret = [];
         $query = $sql or die("Error in the consult.." . mysqli_error(DB::$link)); 
         $result = DB::$link->query($query); 
-        while($row = mysqli_fetch_array($result)) { 
-          array_push($ret, ["id" => $row['id'], "first" => $row['first'], "last" => $row['last'], "sport" => $row['sport']]);
+        while($row = mysqli_fetch_assoc($result)) { 
+            //foreach ($row as $k => $v) { lg( $k . ' => ' . $v); } // TODO Later: PHP associative arrays can be very useful, definitely worth learning
+                                                                    // uncomment the above line to see what you get in the log
+                                                                    // this way you don't have to know field names, you can get them from array (but that's for later)
+            array_push($ret, ["id" => $row['id'], "first" => $row['first'], "last" => $row['last'], "sport" => $row['sport']]);
         } 
         return $ret;
     }
@@ -40,4 +35,3 @@ $arr = array('Whats', 'going', 'on', 'in', 'groove', 'town?');
 //echo implode(" ", $arr);
 
 echo json_encode($rows);
-

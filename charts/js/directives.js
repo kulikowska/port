@@ -26,37 +26,41 @@ APP
             $scope.something = 'some random string';
             $scope.first = 'robbie';
             $scope.last= 'robertson';
-            $scope.sport= 'kendo';
+            $scope.sport= '1';
 
              $scope.getAngularData = function() {
-                $http.get('Controllers/index.php').success(function(data) { 
+                // TODO: Change this controller name from index to get or getData, make those changes in Controller directory (rename file)
+                // TODO: Change the name of this function to something like get or getData (in html template somewhere)
+                $http.get('route.php?ctrl=index').success(function(data) { 
                     $scope.angularData = data;
                     console.log(data);
                 })
              }
 
              $scope.postAngularData = function(first, last, sport) {
-                $http.get('Controllers/insert.php?first=' + first + '&last=' + last + '&sport=' + sport).success(function(data) {
+                // TODO: Use POST for inserting and change the name from postAngularData to something like insertData or just insert to make it clear
+                $http.get('route.php?ctrl=insert&first=' + first + '&last=' + last + '&sport=' + sport).success(function(data) {
                     $scope.getAngularData();
                 });  
              }
 
+             $scope.updateData = function(id, first, last, sport) {
+                $http.post('route.php?ctrl=update', { id: id, first: first, last: last, sport: sport })
+                    .success(function(newdata) {
+                        $scope.newData = newdata;
+                    });
+
+                console.log(id, first, last, sport);
+             }
+
              $scope.deleteData = function(id) {
-                $http.get('Controllers/delete.php?id=' + id ).success(function(data) {
+                $http.get('route.php?ctrl=delete&id=' + id ).success(function(data) {
                     var stor = [];
                     for (var i=0; i<$scope.angularData.length; i++)  
                         $scope.angularData[i].id == id || stor.push($scope.angularData[i]);
 
                     $scope.angularData = stor;
                 });  
-             }
-
-             $scope.updateData = function(id, first, last, sport) {
-                $http.post('Controllers/update.php', { id: id, first: first, last: last, sport: sport })
-                .success(function(newdata) {
-                    $scope.newData = newdata;
-                });
-                console.log(id, first, last, sport);
              }
           }
       }
