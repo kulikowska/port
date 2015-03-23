@@ -1,32 +1,37 @@
-    <div class="container">
-        <fieldset>
-            <div class="register" ng-hide="successful">
-                <div>
-                    <label>Username:</label>
-                    <input type="text" ng-model="newUser" />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="text" ng-model="newPwd" />
-                </div>
-                <div class="button" ng-click="register(newUser, newPwd)">Register</div>
+<div class="container">
+    <fieldset>
+        <legend>Register</legend>
+        <div class="register" ng-hide="successful">
+            <div>
+                <label>Username:</label>
+                <input type="text" ng-model="newUser" />
             </div>
-            <div class="alerts" ng-show="successful">
-                <div class="notice">
-                    Successfully registered {{newUser}}!
-                </div>
-                <div>
-                    <label>Username:</label>
-                    <input type="text" ng-model="user" />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input type="text" ng-model="pwd" />
-                </div>
-                <div class="button" ng-click="login(user, pwd)">Login</div>
+            <div>
+                <label>Password:</label>
+                <input type="text" ng-model="newPwd" />
             </div>
-        </fieldset>     
-        <fieldset ng-show="loggedIn">
-            Welcome!
-        </fieldset>
-    </div>
+            <div class="button" ng-click="register(newUser, newPwd)">Register</div>
+        </div>
+        <div class="alerts" ng-show="successful">
+            Successfully Registered {{newUser}}
+            <div class="button" ng-click="successful=false">Back</div>
+        </div>
+     </fieldset>
+
+     <fieldset>
+        <legend>Login</legend>
+        <div>
+            <label>Username:</label>
+            <input type="text" ng-model="user" />
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="text" ng-model="pwd" />
+        </div>
+        <div class="button" ng-click="login(user, pwd)">Login</div>
+    </fieldset>     
+
+    <fieldset ng-show="loggedIn">
+        Welcome!
+    </fieldset>
+</div>

@@ -8,9 +8,13 @@ body {
   font-size: 14px;
 }
 .container fieldset {
+  margin: 5px;
   background: linear-gradient(#adc964, #dbf1a1);
   border-radius: 2px;
   border: 1px solid #111;
+}
+.container fieldset legend {
+  font-weight: bold;
 }
 .container fieldset legend {
   font-size: 18px;

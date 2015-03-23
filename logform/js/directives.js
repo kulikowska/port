@@ -30,11 +30,11 @@ APP
                     $scope.successful = true;
                 });
             }
-            //$scope.login = function(user, pwd, cb) {
-            //    $http.post('controllers/login.php?user=' + user + '&password=' + pwd).success(function(data) {
-            //        $scope.loggedIn = true;
-            //    });
-            // }
+            $scope.login = function(user, pwd, cb) {
+                $http.post('controllers/login.php', { user : user, password : pwd}).success(function(data) {
+                    $scope.loggedIn = true;
+                });
+             }
         }
     }
 }])
