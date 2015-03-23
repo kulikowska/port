@@ -6,9 +6,10 @@ body {
 @top:#ADC964;
 @bottom:#DBf1a1;
 
-.register {
+.container{
     width:500px;
     margin:0 auto;
+    font-size:14px;
     fieldset {
         background:linear-gradient(@top, @bottom);
         border-radius:2px;
@@ -36,6 +37,13 @@ body {
             transition:200ms ease;
             &:hover {
                 background:lighten(@top, 20%);
+            }
+        }
+        .alerts {
+            .notice {
+                color:darken(@top, 45%);
+                text-align:center;
+                padding:6px;
             }
         }
     }

@@ -28,19 +28,19 @@ APP
             $scope.last= 'robertson';
             $scope.sport= '1';
 
-             $scope.getAngularData = function() {
-                // TODO: Change this controller name from index to get or getData, make those changes in Controller directory (rename file)
-                // TODO: Change the name of this function to something like get or getData (in html template somewhere)
-                $http.get('route.php?ctrl=index').success(function(data) { 
+             $scope.getData = function() {
+                // DONE: Change this controller name from index to get or getData, make those changes in Controller directory (rename file)
+                // DONE: Change the name of this function to something like get or getData (in html template somewhere)
+                $http.get('route.php?ctrl=getData').success(function(data) { 
                     $scope.angularData = data;
                     console.log(data);
                 })
              }
 
-             $scope.postAngularData = function(first, last, sport) {
-                // TODO: Use POST for inserting and change the name from postAngularData to something like insertData or just insert to make it clear
-                $http.get('route.php?ctrl=insert&first=' + first + '&last=' + last + '&sport=' + sport).success(function(data) {
-                    $scope.getAngularData();
+             $scope.insertData = function(first, last, sport) {
+                // DONE: Use POST for inserting and change the name from postAngularData to something like insertData or just insert to make it clear
+                $http.post('route.php?ctrl=insert', { first : first, last : last, sport : sport }).success(function(data) {
+                    $scope.getData();
                 });  
              }
 

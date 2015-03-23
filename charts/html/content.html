@@ -1,5 +1,5 @@
 <div class="angularData">
-    <div class="button" ng-click="getAngularData()">Get Data from Server Angular</div>
+    <div class="button" ng-click="getData()">Get Data from Server Angular</div>
     <div id="serverDataAngular">{{angularData}} <br /> <br /> {{newData}}</div>
 </div>
 <div class="testData">
@@ -67,7 +67,7 @@
         <label>Sport:</label>
         <input type="text" ng-model="sport" />
     </div>
-    <div class="button" ng-click="postAngularData(first, last, sport)">Add</div>
+    <div class="button" ng-click="insertData(first, last, sport)">Add</div>
 </div>
 
 <!--Div that will hold the pie chart-->

@@ -2,20 +2,21 @@ body {
   background: #fdfefa;
   font-family: verdana;
 }
-.register {
+.container {
   width: 500px;
   margin: 0 auto;
+  font-size: 14px;
 }
-.register fieldset {
+.container fieldset {
   background: linear-gradient(#adc964, #dbf1a1);
   border-radius: 2px;
   border: 1px solid #111;
 }
-.register fieldset legend {
+.container fieldset legend {
   font-size: 18px;
 }
-.register fieldset input,
-.register fieldset label {
+.container fieldset input,
+.container fieldset label {
   display: inline-block;
   width: 100px;
   font-size: 14px;
@@ -23,7 +24,7 @@ body {
   padding: 2px;
   outline: 0;
 }
-.register fieldset .button {
+.container fieldset .button {
   border-radius: 2px;
   width: auto;
   padding: 4px;
@@ -36,6 +37,11 @@ body {
   border: 1px solid #111;
   transition: 200ms ease;
 }
-.register fieldset .button:hover {
+.container fieldset .button:hover {
   background: #d5e3b0;
+}
+.container fieldset .alerts .notice {
+  color: #2b3512;
+  text-align: center;
+  padding: 6px;
 }

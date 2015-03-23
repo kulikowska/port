@@ -1,18 +1,34 @@
 <div>
-    <div class="register">
+    <div class="container">
         <fieldset>
-            <div>
-                <label>Username:</label>
-                <input type="text" ng-model="user" />
+            <div class="register" ng-hide="successful">
+                <div>
+                    <label>Username:</label>
+                    <input type="text" ng-model="newUser" />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="text" ng-model="newPwd" />
+                </div>
+                <div class="button" ng-click="register(newUser, newPwd)">Register</div>
             </div>
-            <div>
-                <label>Password:</label>
-                <input type="text" ng-model="pwd" />
-            </div>
-            <div class="button" ng-click="register(user, pwd)">Register</div>
             <div class="alerts" ng-show="successful">
-                Successfully registered {{user}}!
+                <div class="notice">
+                    Successfully registered {{newUser}}!
+                </div>
+                <div>
+                    <label>Username:</label>
+                    <input type="text" ng-model="user" />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="text" ng-model="pwd" />
+                </div>
+                <div class="button" ng-click="login(user, pwd)">Login</div>
             </div>
         </fieldset>     
+        <fieldset ng-show="loggedIn">
+            Welcome!
+        </fieldset>
     </div>
 </div>
