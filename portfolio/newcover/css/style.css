@@ -1,135 +1,84 @@
 body {
-  background-image: url('http://static1.grsites.com/archive/textures/purpl/purpl046.gif');
-  font-family: "Tahoma";
-  color: #642f71;
-  margin: 0;
-}
-a {
-  color: #6e508a;
-  font-weight: bold;
-  font-style: none;
-  transition: 200ms;
-}
-a:hover {
-  color: #bdaace;
+  background-image: url('http://static3.grsites.com/archive/textures/lgrey/lgrey013.jpg');
+  font-family: tahoma;
+  color: #222;
 }
 .container {
-  width: 460px;
-  min-height: 375px;
-  color: #efebf3;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 15%;
-  background: #000;
-  text-align: center;
-  padding-top: 45px;
+  width: 750px;
+  margin: 30px auto;
+  height: 500px;
+  background: #fff;
+  border: 1px solid #ccc;
   opacity: 0.9;
-  box-shadow: 1px 0 34px 34px #000;
-  border-radius: 200px;
-  transition: 3s;
+  padding: 15px;
 }
-.container:hover {
-  box-shadow: 1px 0 54px 54px #000;
+.container .left {
+  float: left;
+  width: 300px;
 }
-.container .fontFun {
-  font-size: 30px;
-  color: #3d2c4d;
-  margin: 15px;
-  transition: 1s ease;
-}
-.container .fontFun:hover {
-  color: #fff;
-}
-.container .fontFun1 {
-  font-size: 30px;
-  color: #3d2c4d;
-  margin: 15px;
-  transition: 1s ease;
-  color: #fff;
-  margin: 10px;
-}
-.container .fontFun1:hover {
-  color: #fff;
-}
-.container .fontFun1:hover {
-  color: #71528d;
-}
-.container .intro .whiteText {
-  color: #fff;
-}
-.container .intro .svgDudes {
-  display: none;
-}
-.container .intro .name {
-  color: #71528d;
-  font-size: 40px;
-  padding: 0px 5px 6px 5px;
-}
-.container .intro .title {
-  color: #977ab2;
-  font-size: 18px;
-  padding: 5px 5px 10px 5px;
-}
-.container .intro .skills {
-  color: #bdaace;
-  font-size: 14px;
-  padding: 5px 5px 10px 5px;
-}
-.container .intro .sowhat {
-  color: #efebf3;
-  font-size: 14px;
-  padding: 5px 5px 10px 5px;
-}
-.container .intro .sowhat .linkToPort {
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 15px;
-  transition: 200ms;
-}
-.container .intro .sowhat .linkToPort:hover {
-  color: #7e5b9d;
-}
-.container .portfolio {
-  min-height: 315px;
-  font-size: 14px;
-}
-.container .portfolio .fontFun {
+.container .left .name {
+  margin: 0px 10px 6px 15px;
+  float: left;
   font-size: 34px;
-  margin-top: -20px;
+  border-bottom: 15px dotted #cee0f5;
+  padding-bottom: 5px;
 }
-.container .portfolio .blurb {
-  padding: 10px;
+.container .left .awesome {
+  display: none;
+  float: left;
+  font-size: 34px;
+  margin-top: 20px;
+  color: #cee0f5;
 }
-.container .portfolio .header {
-  font-size: 18px;
+.container .left .cutMe {
+  display: none;
+  float: left;
+  width: 99px;
+  border-bottom: 3px dotted #999;
+  margin: 35px 0 0 10px;
+}
+.container .left .intro .myTitle {
+  font-size: 20px;
+  width: 250px;
+  margin: 12px auto;
+}
+.container .right {
+  float: right;
+  margin: 17px 12px;
+}
+.container .right .awesomeWrench {
+  font-size: 42px;
+  margin: 0px -7px;
+  float: right;
+}
+.container .right .skills {
+  float: right;
+}
+.container .right .skills .experience,
+.container .right .skills .otherTools,
+.container .right .skills .lessGood {
+  width: 240px;
+  font-size: 14px;
+  margin: 0 auto;
+  padding: 1px;
+}
+.container .right .skills .experience {
   font-weight: bold;
-  margin-bottom: 5px;
 }
-.container .portfolio .websites,
-.container .portfolio .applications,
-.container .portfolio .misc {
-  margin: 15px;
+.container .right .skills .otherTools {
+  width: 320px;
+  font-size: 14px;
+  color: #333;
 }
-.container .portfolio .websites {
-  color: #977ab2;
+.container .right .skills .lessGood {
+  width: 370px;
+  font-size: 12px;
+  color: #444;
 }
-.container .portfolio .applications {
-  color: #bdaace;
-}
-.container .portfolio .misc {
-  color: #efebf3;
-}
-.container .portfolio .fontFun1 {
-  margin-top: 15px;
-}
-.container .portfolio .backToIntro {
-  font-weight: bold;
-  margin: 10px;
-  cursor: pointer;
-}
-.container .portfolio .backToIntro:hover {
-  color: #7e5b9d;
+.container .bulk {
+  height: 2px;
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(to right, #ffffff, #86a9d3, #ffffff);
+  float: left;
 }
