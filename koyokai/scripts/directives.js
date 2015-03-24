@@ -1,20 +1,20 @@
 APP
-.directive('header', ['TPL', function(TPL) {
+.directive('header', [function() {
     return {
         restrict: 'C',
         replace: false,
-        //templateUrl: 'html/header.html',
-        template: TPL.header,
+        templateUrl: 'html/header.html',
+        //template: TPL.header,
         link: function($scope, $element, $attributes) {
             }
         }
  }])
-.directive('dropdown', ['TPL', function(TPL) {
+.directive('dropdown', [function() {
     return {
         restrict: 'C',
         replace: false,
-        //templateUrl: 'html/dropdown.html',
-        template: TPL.dropdown,
+        templateUrl: 'html/dropdown.html',
+        //template: TPL.dropdown,
         link: function($scope, $element, $attributes) {
             //$scope.headerImg = 'headerimg';
             //$scope.tabIdx = 0;
@@ -59,23 +59,23 @@ APP
        return ret;
     };
 })
-.directive('home', ['TPL', function(TPL) {
+.directive('home', [function() {
     return {
         restrict: 'C',
         replace: false,
-        //templateUrl: 'html/home.html',
-        template: TPL.home,
+        templateUrl: 'html/home.html',
+        //template: TPL.home,
         link: function($scope, $element, $attributes) {
             $scope.contentVal = 'content';
             }
         }
  }])
-.directive('homecontent', ['TPL', function(TPL) {
+.directive('homecontent', [function() {
     return {
         restrict: 'C',
         replace: false,
-        //templateUrl: 'html/home.html',
-        template: TPL.homecontent,
+        templateUrl: 'html/homecontent.html',
+        //template: TPL.homecontent,
         link: function($scope, $element, $attributes) {
             $scope.contentVal = 'content';
             $scope.contact = true;
@@ -113,61 +113,62 @@ APP
             }
         }
  }])
-.directive('about', ['TPL',  function(TPL) {
+.directive('about', [function() {
     return {
         restrict: 'ACE',
         replace: false,
-        //templateUrl: 'html/about.html',
-        template: TPL.about,
+        templateUrl: 'html/about.html',
+        //template: TPL.about,
         link: function($scope, $element, $attributes) {
             }
         }
  }])
-.directive('gallery', ['TPL', function(TPL) {
+.directive('gallery', [function() {
     return {
         restrict: 'ACE',
         replace: false,
-        //templateUrl: 'html/gallery.html',
-        template: TPL.gallery,
+        templateUrl: 'html/gallery.html',
+        //template: TPL.gallery,
         link: function($scope, $element, $attributes) {
             }
         }
  }])
-.directive('members', ['TPL', function(TPL) {
+.directive('members', [function() {
     return {
         restrict: 'ACE',
         replace: false,
-        //templateUrl: 'html/members.html',
-        template: TPL.members,
+        templateUrl: 'html/members.html',
+       // template: TPL.members,
         link: function($scope, $element, $attributes) {
             }
         }
  }])
-.directive('kendo', ['TPL', function(TPL) {
+.directive('kendo', [function() {
     return {
         restrict: 'ACE',
         replace: false,
-        //templateUrl: 'html/kendo.html',
-        template: TPL.kendo,
+        templateUrl: 'html/kendo.html',
+        //template: TPL.kendo,
         link: function($scope, $element, $attributes) {
             }
         }
  }])
-.directive('events', ['TPL', function(TPL) {
+.directive('events', [function() {
     return {
         restrict: 'ACE',
         replace: false,
-        //templateUrl: 'html/events.html',
-        template: TPL.events,
+        templateUrl: 'html/events.html',
+        //template: TPL.events,
         link: function($scope, $element, $attributes) {
             }
         }
  }])
-.directive('footer', ['TPL', function(TPL) {
+.directive('footer', [function() {
     return {
         restrict: 'ACE',
         replace: false,
-        template: TPL.footer,
+        templateUrl: 'html/footer.html',
+        //template: TPL.footer,
         link: function($scope, $element, $attributes) {
             }
         }
