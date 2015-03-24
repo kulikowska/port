@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="intro" ng-show="tabIdx==1">
+        <div class="fontFun">
+            <i class="fa fa-cube"></i>
+            <i class="fa fa-cube"></i>
+            <i class="fa fa-cube"></i>
+        </div>
+        <div class="name">Ruby Kulikowska</div>
+        <div class="title">Front-End Web Developer</div>
+        <div class="skills">
+            <b>Experienced in:</b> AngularJS, HTML5, CSS3, Less <br>
+            SVG graphics, CSS Animations, Dynamic HTML, Javascript, JQuery
+        </div>
+        <div class="sowhat" ng-click="home=true">
+            <div class="linkToPort" ng-click="tabIdx=2">
+                Click here to check out my portfolio!
+            </div>
+            rubykulikowska@gmail.com
+        </div>
+        <div class="fontFun1">
+            <i class="fa fa-cube"></i>
+            <i class="fa fa-cube"></i>
+            <i class="fa fa-cube"></i>
+        </div>
+        <div class="svgDudes">
+            <svg height="30" width="40">
+                <circle cx="15" cy="15" r="12" stroke="black" stroke-width="3" fill="#333" />
+            </svg>
+            <svg height="30" width="40">
+                <circle cx="15" cy="15" r="12" stroke="black" stroke-width="3" fill="#666" />
+            </svg>
+            <svg height="30" width="40">
+                <circle cx="15" cy="15" r="12" stroke="black" stroke-width="3" fill="#999" />
+            </svg>
+        </div>
+    </div>
+    <div class="portfolio" ng-show="tabIdx==2"></div>
+</div>

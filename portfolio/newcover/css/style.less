@@ -1,0 +1,130 @@
+body {
+	//background-image:url('http://static1.grsites.com/archive/textures/dblue/dblue007.jpg');
+	background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl046.gif');
+	//background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl054.gif');
+	//background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl100.jpg');
+	//background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl179.jpg');
+    //background-image:url('http://static1.grsites.com/archive/textures/purpl/purpl015.jpg');
+	//background-image:url('http://static1.grsites.com/archive/textures/multi/multi273.jpg');
+	font-family:"Tahoma";
+	//color:#4058A7;
+    color:#642f71;
+    margin:0;
+}
+
+@textColor:#71528d;
+
+a { 
+    color:darken(@textColor, 1%);
+    font-weight:bold;
+    font-style:none;
+    transition:200ms;
+    &:hover { color:lighten(@textColor, 30%); }
+}
+
+.container {
+	width:460px;
+    min-height:375px;
+    color:lighten(@textColor, 50%);
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+    top:15%;
+	//border:10px solid #030410;
+	background:#000;
+	text-align:center;
+    padding-top:45px;
+    opacity:0.9;
+    box-shadow:1px 0 34px 34px #000;
+    border-radius:200px;
+    transition:3s;
+    &:hover {
+        box-shadow:1px 0 54px 54px #000;
+    }
+    .fontFun {
+       font-size:30px;
+       color:darken(@textColor, 20%);
+       margin:15px;
+       transition:1s ease;
+       &:hover {
+            color:#fff;
+       }
+    }
+    .fontFun1 {
+        .fontFun;
+        color:#fff;
+        margin:10px;
+        &:hover { color:@textColor; }
+    }   
+    .intro {
+        .whiteText { color:#fff; }
+        .svgDudes { display:none; }
+        .name {
+            color:@textColor;
+            font-size:40px;
+            padding:0px 5px 6px 5px;
+        }
+        .title {
+            color:lighten(@textColor, 15%);
+            font-size:18px;
+            padding:5px 5px 10px 5px;
+        }
+        .skills {
+            color:lighten(@textColor, 30%);
+            font-size:14px;
+            padding:5px 5px 10px 5px;
+        }
+        .sowhat {
+            color:lighten(@textColor, 50%);
+            font-size:14px;
+            padding:5px 5px 10px 5px;
+            .linkToPort { 
+                cursor:pointer;
+                font-weight:bold;
+                margin-bottom:15px;
+                transition:200ms;
+                &:hover {
+                    color:lighten(@textColor, 5%);
+                }
+            }
+        }
+    }
+    .portfolio {
+        min-height:315px;
+        font-size:14px;
+        .fontFun {
+            font-size:34px;
+            margin-top:-20px;
+        }
+        .blurb {
+            padding:10px;
+        }
+        .header {
+            font-size:18px;
+            font-weight:bold;
+            margin-bottom:5px;
+        }
+        .websites, .applications, .misc { margin:15px; }
+        .websites {
+            color:lighten(@textColor, 15%);
+        }
+        .applications {
+            color:lighten(@textColor, 30%);
+        }
+        .misc {
+            color:lighten(@textColor, 50%);
+        }
+        .fontFun1 { 
+            margin-top:15px;
+        }
+        .backToIntro {
+            font-weight:bold;
+            margin:10px;
+            cursor:pointer;
+            &:hover { color:lighten(@textColor, 5%);
+            }
+        }
+    }
+}

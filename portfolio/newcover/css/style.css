@@ -1,0 +1,135 @@
+body {
+  background-image: url('http://static1.grsites.com/archive/textures/purpl/purpl046.gif');
+  font-family: "Tahoma";
+  color: #642f71;
+  margin: 0;
+}
+a {
+  color: #6e508a;
+  font-weight: bold;
+  font-style: none;
+  transition: 200ms;
+}
+a:hover {
+  color: #bdaace;
+}
+.container {
+  width: 460px;
+  min-height: 375px;
+  color: #efebf3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 15%;
+  background: #000;
+  text-align: center;
+  padding-top: 45px;
+  opacity: 0.9;
+  box-shadow: 1px 0 34px 34px #000;
+  border-radius: 200px;
+  transition: 3s;
+}
+.container:hover {
+  box-shadow: 1px 0 54px 54px #000;
+}
+.container .fontFun {
+  font-size: 30px;
+  color: #3d2c4d;
+  margin: 15px;
+  transition: 1s ease;
+}
+.container .fontFun:hover {
+  color: #fff;
+}
+.container .fontFun1 {
+  font-size: 30px;
+  color: #3d2c4d;
+  margin: 15px;
+  transition: 1s ease;
+  color: #fff;
+  margin: 10px;
+}
+.container .fontFun1:hover {
+  color: #fff;
+}
+.container .fontFun1:hover {
+  color: #71528d;
+}
+.container .intro .whiteText {
+  color: #fff;
+}
+.container .intro .svgDudes {
+  display: none;
+}
+.container .intro .name {
+  color: #71528d;
+  font-size: 40px;
+  padding: 0px 5px 6px 5px;
+}
+.container .intro .title {
+  color: #977ab2;
+  font-size: 18px;
+  padding: 5px 5px 10px 5px;
+}
+.container .intro .skills {
+  color: #bdaace;
+  font-size: 14px;
+  padding: 5px 5px 10px 5px;
+}
+.container .intro .sowhat {
+  color: #efebf3;
+  font-size: 14px;
+  padding: 5px 5px 10px 5px;
+}
+.container .intro .sowhat .linkToPort {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 15px;
+  transition: 200ms;
+}
+.container .intro .sowhat .linkToPort:hover {
+  color: #7e5b9d;
+}
+.container .portfolio {
+  min-height: 315px;
+  font-size: 14px;
+}
+.container .portfolio .fontFun {
+  font-size: 34px;
+  margin-top: -20px;
+}
+.container .portfolio .blurb {
+  padding: 10px;
+}
+.container .portfolio .header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.container .portfolio .websites,
+.container .portfolio .applications,
+.container .portfolio .misc {
+  margin: 15px;
+}
+.container .portfolio .websites {
+  color: #977ab2;
+}
+.container .portfolio .applications {
+  color: #bdaace;
+}
+.container .portfolio .misc {
+  color: #efebf3;
+}
+.container .portfolio .fontFun1 {
+  margin-top: 15px;
+}
+.container .portfolio .backToIntro {
+  font-weight: bold;
+  margin: 10px;
+  cursor: pointer;
+}
+.container .portfolio .backToIntro:hover {
+  color: #7e5b9d;
+}
