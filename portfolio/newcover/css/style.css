@@ -4,7 +4,7 @@ body {
   color: #222;
 }
 .container {
-  width: 750px;
+  width: 800px;
   margin: 30px auto;
   height: 500px;
   background: #fff;
@@ -44,11 +44,11 @@ body {
 }
 .container .right {
   float: right;
-  margin: 17px 12px;
+  margin: 17px;
 }
 .container .right .awesomeWrench {
   font-size: 42px;
-  margin: 0px -7px;
+  margin: 0px -12px;
   float: right;
 }
 .container .right .skills {
@@ -57,7 +57,7 @@ body {
 .container .right .skills .experience,
 .container .right .skills .otherTools,
 .container .right .skills .lessGood {
-  width: 240px;
+  width: 220px;
   font-size: 14px;
   margin: 0 auto;
   padding: 1px;
