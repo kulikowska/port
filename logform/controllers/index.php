@@ -10,15 +10,15 @@ class DB {
     }
 
     public static function insert($sql) {
+        lg($sql);
         $result = DB::$link->query($sql);
-        lg( $sql );
         return $result;
     }
 }
 
 $username= ($_REQUEST['user']);
 $password= ($_REQUEST['password']);
-$add = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+//$add = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
 DB::conn();
-$addRows = DB::insert($add);
+DB::insert("INSERT INTO users (username, password) VALUES ('$username', '$password')");
