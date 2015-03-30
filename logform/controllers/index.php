@@ -10,23 +10,25 @@ class DB {
     }
 
     public static function newUser() {
+        lg($sql);
         $username= ($_REQUEST['user']);
         $password= ($_REQUEST['password']);
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         $result = DB::$link->query($sql);
         return $result;
-        lg($sql);
     }
 
     public static function checkUser() {
-        $username= ($_REQUEST['user']);
-        $query = mysqli_query("SELECT * FROM users WHERE username = '$username'") or die (mysql_error());
-        if (!$row = mysql_fetch_array($query) or die (mysql_error())) {
-            DB::newUser();
+        $ret = [];
+        $username = ($_REQUEST['user']);
+        $query = "SELECT username FROM users WHERE username = '$username'" or die (mysql_error());
+        $result = DB::$link->query($query);
+        return $result;
+        while ($row = mysqli_fetch_assoc($result)) {
+            array_push($ret, ["username" => $row['username']]);
         }
-        else {
-            echo "User Already Exists";
-        }
+        return $ret;
+        lg($query);
     }
 
 }
@@ -34,4 +36,7 @@ class DB {
 //$add = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
 DB::conn();
-DB::checkUser();
+$rows = DB::checkUser();
+
+echo json_encode($rows);
+
