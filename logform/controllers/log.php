@@ -5,7 +5,7 @@ function lg($msg) {
     var_dump($msg);
     $out = ob_get_contents();
     ob_end_clean();
-    $fp = fopen('/tmp/chart.log', 'w');
+    $fp = fopen('/Users/tuc/charts.log', 'a');
     fwrite($fp, $out . "\n");
     fclose($fp); 
 }

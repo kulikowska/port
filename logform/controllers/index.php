@@ -9,16 +9,29 @@ class DB {
     self::$link = mysqli_connect("localhost","rubz","donkey","users") or die("Error " . mysqli_error($link));
     }
 
-    public static function insert($sql) {
-        lg($sql);
+    public static function newUser() {
+        $username= ($_REQUEST['user']);
+        $password= ($_REQUEST['password']);
+        $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         $result = DB::$link->query($sql);
         return $result;
+        lg($sql);
     }
+
+    public static function checkUser() {
+        $username= ($_REQUEST['user']);
+        $query = mysqli_query("SELECT * FROM users WHERE username = '$username'") or die (mysql_error());
+        if (!$row = mysql_fetch_array($query) or die (mysql_error())) {
+            DB::newUser();
+        }
+        else {
+            echo "User Already Exists";
+        }
+    }
+
 }
 
-$username= ($_REQUEST['user']);
-$password= ($_REQUEST['password']);
 //$add = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
 DB::conn();
-DB::insert("INSERT INTO users (username, password) VALUES ('$username', '$password')");
+DB::checkUser();
