@@ -33,6 +33,7 @@ APP
                     } 
                     else {
                         $scope.successful = true;
+                        $scope.falseMsg = '';
                     }
                     console.log(data);
                     console.log($scope.message);

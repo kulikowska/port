@@ -29,9 +29,9 @@ class DB {
 
     public static function checkLength() {
         $password = $_REQUEST['password'];
-        echo "password length is" . " " . strlen($password);
         if (strlen($password) <= 3) {
             echo json_encode(['msg' => "password must be at least 4 characters", 'success' => false]);
+            lg(strlen($password));
         }
         else {
             DB::newUser();
