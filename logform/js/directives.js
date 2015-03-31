@@ -26,9 +26,17 @@ APP
             $scope.newPwd = 'test';
 
             $scope.register = function(user, pwd, cb) {
-                $http.post('controllers/index.php', { user : user, password : pwd }).success(function(data) {
-                    $scope.successful = true;
+                $http.post('controllers/index.php?user=jo', { user : user, password : pwd }).success(function(data) {
+                    $scope.message = data.msg;
+                    if (!data.success) {
+                        $scope.falseMsg = data.msg;
+                    } 
+                    else {
+                        $scope.successful = true;
+                        $scope.falseMsg = '';
+                    }
                     console.log(data);
+                    console.log($scope.message);
                 });
             }
             $scope.login = function(user, pwd, cb) {

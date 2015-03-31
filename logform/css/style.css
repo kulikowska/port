@@ -28,12 +28,18 @@ body {
   padding: 2px;
   outline: 0;
 }
+.container fieldset .failure {
+  float: left;
+  color: red;
+  margin: 8px;
+}
 .container fieldset .button {
   border-radius: 2px;
   width: auto;
   padding: 4px;
   margin: 4px;
   width: 60px;
+  float: left;
   text-align: center;
   cursor: pointer;
   font-size: 14px;

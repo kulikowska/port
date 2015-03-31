@@ -5,38 +5,33 @@ ini_set('display_errors', 1);
 
 class DB {
     public static $link;
+
     public static function conn() {
-    self::$link = mysqli_connect("localhost","rubz","donkey","users") or die("Error " . mysqli_error($link));
+         self::$link = mysqli_connect("localhost","rubz","donkey","users") or die("Error " . mysqli_error($link));
     }
 
     public static function newUser() {
-        lg($sql);
-        $username= ($_REQUEST['user']);
-        $password= ($_REQUEST['password']);
+        $username = $_REQUEST['user'];
+        $password= $_REQUEST['password'];
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+        lg($sql);
         $result = DB::$link->query($sql);
         return $result;
     }
 
     public static function checkUser() {
-        $ret = [];
-        $username = ($_REQUEST['user']);
-        $query = "SELECT username FROM users WHERE username = '$username'" or die (mysql_error());
+        $username = $_REQUEST['user'];
+        $query = "SELECT username FROM users WHERE username = '$username'";
         $result = DB::$link->query($query);
-        return $result;
-        while ($row = mysqli_fetch_assoc($result)) {
-            array_push($ret, ["username" => $row['username']]);
-        }
-        return $ret;
-        lg($query);
+        lg(json_encode($result));
+        return $result->num_rows>0;
     }
-
 }
 
-//$add = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-
 DB::conn();
-$rows = DB::checkUser();
-
-echo json_encode($rows);
-
+if (!DB::checkUser()) { 
+    DB::newUser(); 
+    echo json_encode(['msg' => "user added" , 'success' => true]);
+} else {
+    echo json_encode(['msg' => "username already exists", 'success' => false]);
+}

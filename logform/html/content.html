@@ -11,6 +11,7 @@
                 <input type="text" ng-model="newPwd" />
             </div>
             <div class="button" ng-click="register(newUser, newPwd)">Register</div>
+            <div class="failure">{{falseMsg}}</div>
         </div>
         <div class="alerts" ng-show="successful">
             Successfully Registered {{newUser}}
