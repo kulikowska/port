@@ -12,7 +12,7 @@ class DB {
 
     public static function newUser() {
         $username = $_REQUEST['user'];
-        $password= $_REQUEST['password'];
+        $password = md5($_REQUEST['password']);
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         lg($sql);
         $result = DB::$link->query($sql);
@@ -29,7 +29,6 @@ class DB {
 
     public static function checkLength() {
         $password = $_REQUEST['password'];
-        echo strlen($password);
         if (strlen($password) <= 3) {
             echo json_encode(['msg' => "password must be at least 4 characters", 'success' => false]);
         }
