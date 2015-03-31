@@ -26,12 +26,23 @@ class DB {
         lg(json_encode($result));
         return $result->num_rows>0;
     }
+
+    public static function checkLength() {
+        $password = $_REQUEST['password'];
+        if (strlen($password)<4) {
+            DB::newUser();
+        }
+        else {
+            echo json_encode(['msg' => "password must be at least 4 characters", 'success' => false]);
+        }
+    }
 }
 
 DB::conn();
 if (!DB::checkUser()) { 
-    DB::newUser(); 
-    echo json_encode(['msg' => "user added" , 'success' => true]);
+    DB::checkLength(); 
+    //echo json_encode(['msg' => "user added" , 'success' => true]);
 } else {
     echo json_encode(['msg' => "username already exists", 'success' => false]);
 }
+
