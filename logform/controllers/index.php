@@ -29,9 +29,9 @@ class DB {
 
     public static function checkLength() {
         $password = $_REQUEST['password'];
+        echo strlen($password);
         if (strlen($password) <= 3) {
             echo json_encode(['msg' => "password must be at least 4 characters", 'success' => false]);
-            lg(strlen($password));
         }
         else {
             DB::newUser();
@@ -43,7 +43,6 @@ class DB {
 DB::conn();
 if (!DB::checkUser()) { 
     DB::checkLength(); 
-    //echo json_encode(['msg' => "user added" , 'success' => true]);
 } else {
     echo json_encode(['msg' => "username already exists", 'success' => false]);
 }
