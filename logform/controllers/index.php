@@ -18,6 +18,7 @@ class DB {
         $result = DB::$link->query($sql);
         if (DB::$link->error != "") {
             lg($result);
+            return json_encode(['msg' => 'database error']);
         } 
         else {
             return $result;
@@ -39,7 +40,7 @@ class DB {
         }
         else {
             DB::newUser();
-            echo json_encode(['msg' => "user added", 'success' => true]);
+            //echo json_encode(['msg' => "user added", 'success' => true]);
         }
     }
 }
