@@ -16,7 +16,6 @@ class DB {
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         lg($sql);
         $result = DB::$link->query($sql);
-        echo json_encode($result);
         return $result;
     }
 
@@ -24,6 +23,7 @@ class DB {
         $username = $_REQUEST['user'];
         $query = "SELECT username FROM users WHERE username = '$username'";
         $result = DB::$link->query($query);
+        lg(json_encode($result));
         return $result->num_rows>0;
     }
 
