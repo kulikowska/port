@@ -30,15 +30,13 @@ APP
                     $scope.message = data.msg;
                     if (!data.success) {
                         $scope.falseMsg = data.msg;
-                        console.log('failed');
                     } 
                     else {
                         $scope.successful = true;
                         $scope.falseMsg = '';
-                        console.log('succeeded');
                     }
                     console.log(data);
-                    //console.log($scope.message);
+                    console.log($scope.message);
                 });
             }
             $scope.login = function(user, pwd, cb) {
