@@ -18,7 +18,7 @@ class DB {
         $result = DB::$link->query($sql);
         if (DB::$link->error != "") {
             lg($result);
-            echo json_encode(['msg' => 'database error']);
+            echo json_encode(['msg' => 'database error', 'success' => false]);
         } 
         else {
             return $result;
