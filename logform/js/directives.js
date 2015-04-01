@@ -40,10 +40,16 @@ APP
                 });
             }
             $scope.login = function(user, pwd, cb) {
-                //$http.get('controllers/login.php?&user=' + user + '&pwd=' + pwd).success(function(data) {
                 $http.post('controllers/login.php', { user : user, password : pwd}).success(function(data) {
-                    ($scope.loggedIn = (data.success === 'true')) && ($scope.user = data.username);
                     console.log(data);
+                    if (!data.success) {
+                        $scope.loggedIn = false;
+                        $scope.falseLg = data.msg;
+                    }
+                    else {
+                        $scope.loggedIn = true;
+                        $scope.falseLg = '';
+                    }
                 });
              }
         }
