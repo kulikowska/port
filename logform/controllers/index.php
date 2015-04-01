@@ -15,7 +15,7 @@ class DB {
         $password = md5($_REQUEST['password']);
         $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
         lg($sql);
-        $result = DB::$link->query($sql) or die ("database error");
+        $result = DB::$link->query($sql) or die("database error");
         return $result;
     }
 
