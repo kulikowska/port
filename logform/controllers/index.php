@@ -22,6 +22,7 @@ class DB {
             echo json_encode(['msg' => 'database error', 'success' => false]);
         } 
         else {
+            echo json_encode(['msg' => "user added", 'success' => true]);
             return $result;
         }
     }
