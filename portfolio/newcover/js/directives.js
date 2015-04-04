@@ -10,11 +10,11 @@ APP
          }
       } 
  }])
-.directive('portfolio', [function() {
+.directive('projects', [function() {
     return {
         restrict: 'C',
         replace: false,
-        templateUrl: 'html/portfolio.html',
+        templateUrl: 'html/projects.html',
         //template: TPL.portfolio,
         link: function($scope, $element, $attributes) {
          }

@@ -75,10 +75,25 @@ body {
   font-size: 12px;
   color: #444;
 }
-.container .bulk {
+.container .divide {
   height: 2px;
   width: 100%;
   margin: 0 auto;
   background: linear-gradient(to right, #ffffff, #86a9d3, #ffffff);
   float: left;
+}
+.container .projects {
+  color: green;
+  float: left;
+  height: 400px;
+  width: 860px;
+}
+.container .projects .websites,
+.container .projects .apps,
+.container .projects .misc {
+  float: left;
+  height: 90%;
+  width: 30%;
+  margin: 10px 10px 5px 0px;
+  border: 1px solid black;
 }
