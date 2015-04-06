@@ -14,7 +14,7 @@ a:hover {
 .container {
   width: 800px;
   margin: 30px auto;
-  height: 440px;
+  height: 500px;
   background: #fff;
   border: 1px solid #ccc;
   opacity: 0.9;
@@ -138,6 +138,7 @@ a:hover {
   margin: 5px;
 }
 .container .projects .divide {
+  display: none;
   height: 80%;
   float: left;
   width: 2px;
