@@ -83,17 +83,28 @@ body {
   float: left;
 }
 .container .projects {
-  color: green;
   float: left;
-  height: 400px;
+  height: 360px;
   width: 860px;
 }
 .container .projects .websites,
 .container .projects .apps,
 .container .projects .misc {
   float: left;
-  height: 90%;
+  height: 100%;
+  font-size: 12px;
   width: 30%;
   margin: 10px 10px 5px 0px;
-  border: 1px solid black;
+}
+.container .projects .divide {
+  height: 100%;
+  float: left;
+  width: 2px;
+  background: linear-gradient(#ffffff, #86a9d3, #ffffff);
+}
+.container .projects .header {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
 }
