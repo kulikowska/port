@@ -20,7 +20,14 @@ APP
          }
       } 
  }])
-.filter('checkActive', function() {
-    return function(input) { return input ? 'active' : '' };
-})
+.directive('contact', [function() {
+    return {
+        restrict: 'C',
+        replace: false,
+        templateUrl: 'html/contact.html',
+        //template: TPL.portfolio,
+        link: function($scope, $element, $attributes) {
+         }
+      } 
+ }])
  

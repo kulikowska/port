@@ -84,6 +84,7 @@ body {
 }
 .container .projects {
   float: left;
+  text-align: center;
   height: 360px;
   width: 860px;
 }
@@ -96,6 +97,15 @@ body {
   width: 30%;
   margin: 10px 10px 5px 0px;
 }
+.container .projects .title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.container .projects .awesome {
+  font-size: 16px;
+  color: #86a9d3;
+  margin: 5px;
+}
 .container .projects .divide {
   height: 100%;
   float: left;
@@ -107,4 +117,23 @@ body {
   color: #333;
   text-align: center;
   font-weight: bold;
+  margin: 5px 0;
+}
+.container .contact {
+  height: auto;
+  width: 590px;
+  margin: 0 auto;
+}
+.container .contact .email,
+.container .contact .blurb,
+.container .contact .location,
+.container .contact .awesomeIcon {
+  float: left;
+  margin: 12px 4px;
+  text-align: center;
+  font-size: 13px;
+  color: #222;
+}
+.container .contact .awesomeIcon {
+  color: #86a9d3;
 }
