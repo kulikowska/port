@@ -3,10 +3,18 @@ body {
   font-family: tahoma;
   color: #222;
 }
+a {
+  color: #222;
+  text-decoration: none;
+  transition: 150ms;
+}
+a:hover {
+  color: #618ec5;
+}
 .container {
   width: 800px;
   margin: 30px auto;
-  height: 500px;
+  height: 440px;
   background: #fff;
   border: 1px solid #ccc;
   opacity: 0.9;
@@ -30,13 +38,6 @@ body {
   font-size: 34px;
   margin-top: 20px;
   color: #cee0f5;
-}
-.container .left .cutMe {
-  display: none;
-  float: left;
-  width: 99px;
-  border-bottom: 3px dotted #999;
-  margin: 35px 0 0 10px;
 }
 .container .left .intro .myTitle {
   font-size: 20px;
@@ -83,44 +84,6 @@ body {
   background: linear-gradient(to right, #ffffff, #86a9d3, #ffffff);
   float: left;
 }
-.container .projects {
-  margin-top: 10px;
-  float: left;
-  text-align: center;
-  height: 360px;
-  width: 860px;
-}
-.container .projects .websites,
-.container .projects .apps,
-.container .projects .misc {
-  float: left;
-  height: 100%;
-  font-size: 12px;
-  width: 30%;
-  margin: 10px 10px 5px 0px;
-}
-.container .projects .title {
-  font-weight: bold;
-  margin-bottom: 4px;
-}
-.container .projects .awesome {
-  font-size: 16px;
-  color: #86a9d3;
-  margin: 5px;
-}
-.container .projects .divide {
-  height: 100%;
-  float: left;
-  width: 2px;
-  background: linear-gradient(#ffffff, #86a9d3, #ffffff);
-}
-.container .projects .header {
-  font-size: 16px;
-  color: #333;
-  text-align: center;
-  font-weight: bold;
-  margin: 5px 0;
-}
 .container .contact {
   height: auto;
   width: 590px;
@@ -138,4 +101,45 @@ body {
 }
 .container .contact .awesomeIcon {
   color: #86a9d3;
+}
+.container .projects {
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+  height: 300px;
+  width: 860px;
+}
+.container .projects .header {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  margin: 5px 0;
+}
+.container .projects .websites,
+.container .projects .apps,
+.container .projects .misc {
+  float: left;
+  height: 100%;
+  font-size: 13px;
+  width: 30%;
+  margin: 10px 10px 5px 0px;
+}
+.container .projects .eachOne {
+  margin: 8px;
+}
+.container .projects .title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.container .projects .awesome {
+  font-size: 16px;
+  color: #86a9d3;
+  margin: 5px;
+}
+.container .projects .divide {
+  height: 80%;
+  float: left;
+  width: 2px;
+  background: linear-gradient(#ffffff, #86a9d3, #ffffff);
 }
