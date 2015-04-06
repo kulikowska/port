@@ -15,6 +15,7 @@ body {
 .container .left {
   float: left;
   width: 300px;
+  margin-bottom: 10px;
 }
 .container .left .name {
   margin: 0px 10px 6px 15px;
@@ -83,6 +84,7 @@ body {
   float: left;
 }
 .container .projects {
+  margin-top: 10px;
   float: left;
   text-align: center;
   height: 360px;
