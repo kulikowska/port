@@ -1,5 +1,5 @@
 body {
-  background-image: url('http://static3.grsites.com/archive/textures/lgrey/lgrey013.jpg');
+  background-image: url('../images/background.jpg');
   font-family: tahoma;
   color: #000;
 }
@@ -99,7 +99,7 @@ a:hover {
   float: left;
   text-align: center;
   height: 240px;
-  width: 860px;
+  width: 800px;
 }
 .container .projects .header {
   font-size: 16px;
@@ -115,7 +115,7 @@ a:hover {
   float: left;
   height: 100%;
   font-size: 13px;
-  width: 30%;
+  width: 255px;
   margin: 10px 10px 5px 0px;
 }
 .container .projects .eachOne {
@@ -138,7 +138,7 @@ a:hover {
   background: linear-gradient(#ffffff, #86a9d3, #ffffff);
 }
 .container .projects .previews {
-  width: 800px;
+  width: 751px;
   margin: 0 auto;
 }
 .container .projects .previews .koyoImg {
