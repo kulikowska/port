@@ -14,65 +14,65 @@ a:hover {
 .container {
   width: 800px;
   margin: 30px auto;
-  height: 610px;
+  height: 600px;
   background: #fff;
   border: 1px solid #ccc;
   opacity: 0.9;
   padding: 15px;
 }
-.container .left {
+.container .mainHeader .left {
   float: left;
   width: 300px;
   margin-bottom: 10px;
 }
-.container .left .name {
+.container .mainHeader .left .name {
   margin: 0px 10px 6px 15px;
   float: left;
   font-size: 34px;
   border-bottom: 15px dotted #cee0f5;
   padding-bottom: 5px;
 }
-.container .left .awesome {
+.container .mainHeader .left .awesome {
   display: none;
   float: left;
   font-size: 34px;
   margin-top: 20px;
   color: #cee0f5;
 }
-.container .left .intro .myTitle {
+.container .mainHeader .left .intro .myTitle {
   font-size: 20px;
   width: 250px;
   margin: 12px auto;
 }
-.container .right {
+.container .mainHeader .right {
   float: right;
   margin: 17px;
 }
-.container .right .awesomeWrench {
+.container .mainHeader .right .awesomeWrench {
   font-size: 42px;
   margin: 0px -12px;
   float: right;
 }
-.container .right .skills {
+.container .mainHeader .right .skills {
   float: right;
 }
-.container .right .skills .experience,
-.container .right .skills .otherTools,
-.container .right .skills .lessGood {
+.container .mainHeader .right .skills .experience,
+.container .mainHeader .right .skills .otherTools,
+.container .mainHeader .right .skills .lessGood {
   width: 220px;
   font-size: 14px;
   margin: 0 auto;
   padding: 1px;
 }
-.container .right .skills .experience {
+.container .mainHeader .right .skills .experience {
   font-weight: bold;
 }
-.container .right .skills .otherTools {
+.container .mainHeader .right .skills .otherTools {
   width: 320px;
   font-size: 14px;
   color: #333;
 }
-.container .right .skills .lessGood {
+.container .mainHeader .right .skills .lessGood {
   width: 370px;
   font-size: 12px;
   color: #444;
@@ -85,32 +85,25 @@ a:hover {
   float: left;
 }
 .container .contact {
-  height: auto;
   width: 590px;
   margin: 0 auto;
 }
-.container .contact .email,
-.container .contact .blurb,
-.container .contact .location,
-.container .contact .awesomeIcon {
+.container .contact .blurb {
   float: left;
   margin: 12px 4px;
   text-align: center;
   font-size: 13px;
 }
-.container .contact .awesomeIcon {
-  color: #86a9d3;
-}
 .container .projects {
-  margin-top: 10px;
+  margin-top: 15px;
   float: left;
   text-align: center;
-  height: 250px;
+  height: 240px;
   width: 860px;
 }
 .container .projects .header {
   font-size: 16px;
-  color: #333;
+  color: #111;
   text-align: center;
   text-decoration: underline;
   font-weight: bold;
@@ -126,36 +119,107 @@ a:hover {
   margin: 10px 10px 5px 0px;
 }
 .container .projects .eachOne {
-  margin: 15px 8px;
-}
-.container .projects .eachOne .koyoImg {
-  height: 88px;
-  width: 138px;
-  background-image: url('../images/koyo.png');
-  background-size: 100%;
-  border: 1px solid black;
-  margin: 4px auto;
+  margin: 8px 8px 15px;
 }
 .container .projects .title {
   font-weight: bold;
   margin-bottom: 4px;
 }
 .container .projects .awesome {
-  font-size: 16px;
+  font-size: 18px;
   color: #86a9d3;
   margin: 5px;
 }
 .container .projects .divide {
-  height: 80%;
+  height: 100%;
+  opacity: 0.5;
   float: left;
   width: 2px;
   background: linear-gradient(#ffffff, #86a9d3, #ffffff);
 }
+.container .projects .previews {
+  width: 800px;
+  margin: 0 auto;
+}
+.container .projects .previews .koyoImg {
+  float: left;
+  height: 110px;
+  width: 165px;
+  background-image: url('../images/koyo.png');
+  background-size: 100%;
+  border: 1px solid black;
+  margin: 4px;
+}
+.container .projects .previews .koyoImg > div {
+  margin-top: 112px;
+  font-size: 12px;
+}
+.container .projects .previews .oldImg {
+  float: left;
+  height: 110px;
+  width: 165px;
+  background-image: url('../images/koyo.png');
+  background-size: 100%;
+  border: 1px solid black;
+  margin: 4px;
+  width: 120px;
+  background-image: url('../images/oldsite.png');
+}
+.container .projects .previews .oldImg > div {
+  margin-top: 112px;
+  font-size: 12px;
+}
+.container .projects .previews .portal {
+  float: left;
+  height: 110px;
+  width: 165px;
+  background-image: url('../images/koyo.png');
+  background-size: 100%;
+  border: 1px solid black;
+  margin: 4px;
+  width: 146px;
+  background-image: url('../images/portal.png');
+}
+.container .projects .previews .portal > div {
+  margin-top: 112px;
+  font-size: 12px;
+}
+.container .projects .previews .whitespace {
+  float: left;
+  height: 110px;
+  width: 165px;
+  background-image: url('../images/koyo.png');
+  background-size: 100%;
+  border: 1px solid black;
+  margin: 4px;
+  width: 135px;
+  background-image: url('../images/whitespace.png');
+}
+.container .projects .previews .whitespace > div {
+  margin-top: 112px;
+  font-size: 12px;
+}
+.container .projects .previews .cube {
+  float: left;
+  height: 110px;
+  width: 165px;
+  background-image: url('../images/koyo.png');
+  background-size: 100%;
+  border: 1px solid black;
+  margin: 4px;
+  width: 135px;
+  background-image: url('../images/cube.png');
+}
+.container .projects .previews .cube > div {
+  margin-top: 112px;
+  font-size: 12px;
+}
 .container .scissors {
   float: left;
   background-image: url('../images/montreal.png');
+  background-size: 120%;
   width: 815px;
-  height: 531px;
+  height: 631px;
   margin-top: -15px;
   z-index: -10;
   position: absolute;
