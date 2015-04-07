@@ -135,7 +135,7 @@ a:hover {
   color: #86a9d3;
   margin: 5px;
 }
-.container .projects .divide {
+.container .projects .divideVert {
   height: 100%;
   opacity: 0.5;
   float: left;
