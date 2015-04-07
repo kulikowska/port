@@ -121,6 +121,11 @@ a:hover {
 .container .projects .eachOne {
   margin: 8px 8px 15px;
 }
+.container .projects .eachOne i {
+  font-size: 52px;
+  color: #333;
+  margin-top: 12px;
+}
 .container .projects .title {
   font-weight: bold;
   margin-bottom: 4px;
@@ -224,14 +229,4 @@ a:hover {
   z-index: -10;
   position: absolute;
   opacity: 0.05;
-}
-.container .scissors i {
-  color: #86a9d3;
-  float: left;
-  font-size: 42px;
-}
-.container .scissors .cutMe {
-  float: left;
-  width: 200px;
-  border-bottom: 10px dotted #777;
 }
