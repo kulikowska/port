@@ -30,14 +30,4 @@ APP
          }
       } 
  }])
-.directive('scissors', [function() {
-    return {
-        restrict: 'C',
-        replace: false,
-        templateUrl: 'html/scissors.html',
-        //template: TPL.portfolio,
-        link: function($scope, $element, $attributes) {
-         }
-      } 
- }])
  
