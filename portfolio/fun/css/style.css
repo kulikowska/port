@@ -1,0 +1,26 @@
+body {
+  font-family: FuturaBT-Book;
+  margin: 0;
+  padding: 0;
+}
+.container .imageContainer {
+  background-image: url('../images/red_bird.jpg');
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 350px;
+  height: 350px;
+  margin: auto;
+}
+.divide {
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, #ffffff, #ff0000, #ffffff);
+  margin: auto;
+  margin-top: -20px;
+}
+.media {
+  font-size: 5vw;
+  width: 21%;
+  margin: 35px auto;
+}

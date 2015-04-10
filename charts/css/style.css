@@ -87,3 +87,13 @@ button#stop {
   top: 70px;
   left: 150px;
 }
+.yo {
+  color: black;
+  border: 1px solid black;
+  float: none;
+  width: 600px;
+  height: 200px;
+}
+.blueText {
+  color: blue;
+}
