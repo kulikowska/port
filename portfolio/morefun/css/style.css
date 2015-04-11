@@ -1,23 +1,45 @@
 body {
-  font-family: FuturaBT-Book;
+  font-family: Tahoma;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background: #222;
+}
+.container .imageContainer {
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  height: 33%;
+  border-bottom: 1px solid #6a9ad9;
+}
+.container .middleGround {
+  height: 33%;
+  border-bottom: 1px solid #6a9ad9;
+  background: #2d66b0;
+}
+.container .middleGround .left {
+  padding: 0;
+  margin: 0;
+  width: 33%;
+}
+.container .middleGround .left ul,
+.container .middleGround .left li {
   margin: 0;
   padding: 0;
 }
-.container {
-  background-image: url('../images/landscape.jpg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  min-height: 500px;
-  min-width: 800px;
-  height: 100%;
-  width: 100%;
-  opacity: 0.8;
-  margin: auto;
+.container .project {
+  height: 33%;
 }
-.container .imageContainer {
-  width: 350px;
-  height: 350px;
+.container .title {
+  display: none;
+  position: absolute;
   margin: auto;
+  font-size: 34px;
+  top: 25%;
+  left: 30%;
+  border: 2px solid #333;
+  padding: 10px;
+  background: #555;
+  opacity: 0.8;
 }
 .container .divide {
   width: 60%;
