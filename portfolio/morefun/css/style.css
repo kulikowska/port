@@ -15,7 +15,7 @@ body {
   background-image: url('../images/bg.jpg');
   background-size: cover;
   height: 33%;
-  border-bottom: 1px solid #6a9ad9;
+  border-bottom: 1px solid #000000;
 }
 .container .imageContainer .title {
   text-align: center;
@@ -25,8 +25,8 @@ body {
 }
 .container .middleGround {
   height: 33%;
-  border-bottom: 1px solid #6a9ad9;
-  background: #2d66b0;
+  border-bottom: 1px solid #000000;
+  background: linear-gradient(#2d66b0, #6a9ad9, #2d66b0);
 }
 .container .middleGround .left {
   float: left;
@@ -45,6 +45,7 @@ body {
   font-size: 18px;
 }
 .container .middleGround .centerPiece {
+  display: none;
   float: left;
   padding: 20px;
   text-align: center;

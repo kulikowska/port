@@ -1,5 +1,6 @@
 @niceBlue:#2d66b0;
-@borders:1px solid lighten(@niceBlue, 20%);
+//@borders:1px solid lighten(@niceBlue, 20%);
+@borders:1px solid #000;
 @font-face {
     font-family:OstrichFont;
     //src:url("fonts/ostrich-sans-master/webfonts/ostrich-sans-bold.woff")
@@ -34,7 +35,7 @@ body {
     .middleGround {
         height:33%;
         border-bottom:@borders;
-        background:@niceBlue;
+        background:linear-gradient(@niceBlue, lighten(@niceBlue, 20%), @niceBlue);
         .left {
             float:left;
             padding:20px;
@@ -45,6 +46,7 @@ body {
             .smaller { font-size:18px; }
         }
         .centerPiece {
+            display:none;
             float:left;
             padding:20px;
             text-align:center;
