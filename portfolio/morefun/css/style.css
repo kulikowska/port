@@ -1,9 +1,15 @@
+@font-face {
+  font-family: OstrichFont;
+  src: url("fonts/raleway/webfonts/raleway_thin-webfont.woff");
+}
 body {
-  font-family: Tahoma;
+  font-family: OstrichFont;
   color: #fff;
   margin: 0;
   padding: 0;
   background: #222;
+  font-size: 22px;
+  font-weight: bold;
 }
 .container .imageContainer {
   background-image: url('../images/bg.jpg');
@@ -11,75 +17,45 @@ body {
   height: 33%;
   border-bottom: 1px solid #6a9ad9;
 }
+.container .imageContainer .title {
+  text-align: center;
+  font-size: 4.3vw;
+  padding: 20px 10px;
+  color: black;
+}
 .container .middleGround {
   height: 33%;
   border-bottom: 1px solid #6a9ad9;
   background: #2d66b0;
 }
 .container .middleGround .left {
-  padding: 0;
+  float: left;
+  padding: 20px;
   margin: 0;
-  width: 33%;
+  width: 14%;
 }
-.container .middleGround .left ul,
-.container .middleGround .left li {
-  margin: 0;
-  padding: 0;
+.container .middleGround .left .less {
+  color: #aaa;
+}
+.container .middleGround .left .aLittleBit {
+  font-size: 14px;
+  padding: 5px;
+}
+.container .middleGround .left .smaller {
+  font-size: 18px;
+}
+.container .middleGround .centerPiece {
+  float: left;
+  padding: 20px;
+  text-align: center;
+  width: 67%;
 }
 .container .project {
   height: 33%;
+  color: #2d66b0;
 }
-.container .title {
-  display: none;
-  position: absolute;
-  margin: auto;
-  font-size: 34px;
-  top: 25%;
-  left: 30%;
-  border: 2px solid #333;
-  padding: 10px;
-  background: #555;
-  opacity: 0.8;
-}
-.container .divide {
-  width: 60%;
-  height: 2px;
-  background: linear-gradient(to right, #ffffff, #ff0000, #ffffff);
-  margin: auto;
-  margin-top: -20px;
-}
-.container .media {
-  font-size: 5vw;
-  width: 18%;
-  margin: 35px auto 20px;
-}
-.container .media i {
-  transition: color 200ms;
-  cursor: pointer;
-}
-.container .media i:hover {
-  color: red;
-}
-.container .blurb {
-  width: 80%;
-  margin: auto;
-  font-style: italic;
+.container .project .header {
   text-align: center;
-  font-size: 3vw;
-}
-.container .infoWrap {
-  margin: 10px auto;
-  width: 85%;
-}
-.container .infoWrap .hours,
-.container .infoWrap .location {
-  width: 49%;
-  margin: auto;
-  float: left;
-}
-.container .infoWrap .hours .header,
-.container .infoWrap .location .header {
-  display: none;
-  font-size: 3vw;
-  text-align: center;
+  font-size: 36px;
+  padding: 20px;
 }
