@@ -28,30 +28,65 @@ body {
   padding: 20px 10px;
   color: black;
 }
-.container .middleGround {
+.container .middleGround,
+.container .shrunkMiddle {
   height: 33%;
   border-bottom: 1px solid #000000;
   background: linear-gradient(#2d66b0, #6a9ad9, #2d66b0);
+  transition: 1s ease;
 }
-.container .middleGround .left {
-  float: left;
-  padding: 20px;
-  margin: 0;
-  width: 14%;
-}
-.container .middleGround .left .aLittleBit {
-  font-size: 14px;
-  padding: 5px;
-}
-.container .middleGround .left .smaller {
-  font-size: 18px;
-}
-.container .middleGround .centerPiece {
+.container .middleGround .centerPiece,
+.container .shrunkMiddle .centerPiece {
   padding: 20px;
   text-align: center;
 }
-.container .middleGround .centerPiece .less {
+.container .middleGround .centerPiece .less,
+.container .shrunkMiddle .centerPiece .less {
   color: #aaa;
+}
+.container .middleGround .centerPiece .smaller,
+.container .shrunkMiddle .centerPiece .smaller {
+  font-size: 18px;
+  margin: 8px;
+}
+.container .middleGround .centerPiece .smallest,
+.container .shrunkMiddle .centerPiece .smallest {
+  font-size: 15px;
+}
+.container .middleGround .centerPiece ul,
+.container .shrunkMiddle .centerPiece ul {
+  display: inline-block;
+}
+.container .middleGround .centerPiece ul li,
+.container .shrunkMiddle .centerPiece ul li {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 8px 12px;
+  margin: 4px;
+  border: 1px solid #aaa;
+  box-shadow: 1px 1px 4px 2px #222;
+  background: #1e1c41;
+  opacity: 0.8;
+  transition: color 200ms;
+  cursor: pointer;
+}
+.container .middleGround .centerPiece ul li.smaller,
+.container .shrunkMiddle .centerPiece ul li.smaller {
+  font-size: 18px;
+}
+.container .middleGround .centerPiece ul li.smallest,
+.container .shrunkMiddle .centerPiece ul li.smallest {
+  font-size: 15px;
+}
+.container .middleGround .centerPiece ul li:hover,
+.container .shrunkMiddle .centerPiece ul li:hover {
+  color: #222;
+  border: 1px solid #222;
+  background: #4e4aad;
+}
+.container .shrunkMiddle {
+  height: 13%;
 }
 .container .project {
   height: 33%;
@@ -61,4 +96,18 @@ body {
   text-align: center;
   font-size: 36px;
   padding: 20px;
+}
+.container .project .up {
+  float: right;
+  font-size: 44px;
+  margin: 14px;
+  margin-top: -64px;
+  cursor: pointer;
+  transition: 200ms;
+}
+.container .project .up:hover {
+  color: #343173;
+}
+.container .expandProject {
+  height: 53%;
 }

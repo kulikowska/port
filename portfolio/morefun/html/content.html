@@ -3,15 +3,31 @@
         <div class="title">Ruby Kulikowska</div>
     </div>
     
-    <div class="middleGround"> 
+    <div class={{middleDiv}}> 
         <div class="centerPiece">
-        HTML5 CSS3 <span class="less">{ LESS }</span> AngularJS
-            <span class="smaller">
-            </span>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3 {LESS}</li>
+                <li>AngularJs</li><br>
+                <li class="smaller">Dynamic HTML</li>
+                <li class="smaller">Responsive Design</li>
+                <li class="smaller">CSS Animations</li>
+                <li class="smaller">JavaScript</li>
+                <li class="smaller">JQuery</li>
+                <li class="smallest">PHP</li>
+                <li class="smallest">MySQL</li>
+                <li class="smallest">Three.js</li>
+                <li class="smallest">Canvas</li>
+                <li class="smallest">SVG</li>
+            </ul>
         </div>
     </div>
 
     <div class="project">
         <div class="header"> Portfolio </div>
+        <div class="up" ng-click="showPort()">
+            <i class="fa fa-arrow-circle-up" ng-hide="portfolio"></i>
+            <i class="fa fa-arrow-circle-down" ng-show="portfolio"></i>
+        </div>
     </div>
 </div>

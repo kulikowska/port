@@ -39,25 +39,44 @@ body {
         }
     }
 
-    .middleGround {
+    .middleGround, .shrunkMiddle {
         height:33%;
         border-bottom:@borders;
         background:linear-gradient(@niceBlue, lighten(@niceBlue, 20%), @niceBlue);
-        .left {
-            float:left;
-            padding:20px;
-            margin:0;
-            width:14%;
-            .aLittleBit { font-size:14px; padding:5px; }
-            .smaller { font-size:18px; }
-        }
+        transition:1s ease;
         .centerPiece {
             padding:20px;
             text-align:center;
             .smaller {  }
             .less { color:#aaa; }
+            .smaller { font-size:18px; margin:8px; }
+            .smallest { font-size: 15px; }
+            ul {
+                display:inline-block;
+                li {
+                    display:inline-block;
+                    text-decoration:none;
+                    font-size:24px;
+                    padding:8px 12px;
+                    margin:4px;
+                    border:1px solid #aaa;
+                    box-shadow:1px 1px 4px 2px #222;
+                    background:darken(#363377, 15%);
+                    opacity:0.8;
+                    transition:color 200ms;
+                    cursor:pointer;
+                    &.smaller { font-size:18px; }
+                    &.smallest { font-size:15px; }
+                    &:hover {
+                        color:#222;
+                        border:1px solid #222;
+                        background:lighten(#363377, 15%);
+                    }
+                }
+            }
         } 
     }
+    .shrunkMiddle { height:13%; }
     .project {
         height:33%;
         color:@niceBlue;
@@ -66,5 +85,17 @@ body {
             font-size:36px;
             padding:20px;
         }
+        .up {
+            float:right;
+            font-size:44px;
+            margin:14px;
+            margin-top:-64px;
+            cursor:pointer;
+            transition:200ms;
+            &:hover {
+                color:darken(#363377, 1%);
+            }
+        }
     }
+    .expandProject { height:53%; }
 }

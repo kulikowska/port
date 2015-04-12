@@ -6,7 +6,18 @@ APP
         templateUrl: 'html/content.html',
         //template: TPL.content,
         link: function($scope, $element, $attributes) {
-            $scope.tabIdx = 1;
+            $scope.middleDiv = 'middleGround';
+
+            $scope.showPort = function() {
+                if (!$scope.portfolio) {
+                    $scope.portfolio = true;
+                    $scope.middleDiv = 'shrunkMiddle';
+                }
+                else {
+                    $scope.portfolio = false;
+                    $scope.middleDiv = 'middleGround';
+                }
+            }
          }
       } 
  }])
