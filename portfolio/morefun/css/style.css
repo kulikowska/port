@@ -4,7 +4,7 @@
 }
 @font-face {
   font-family: what;
-  src: url("fonts/ostrich-sans-master/webfonts/ostrich-sans-inline-regular.woff");
+  src: url("fonts/ostrich-sans-master/webfonts/ostrich-sans-dashed.woff");
 }
 body {
   font-family: OstrichFont;
@@ -22,15 +22,21 @@ body {
   border-bottom: 1px solid #000000;
 }
 .container .imageContainer .title {
-  font-family: OstrichFont;
   text-align: center;
-  font-size: 4.3vw;
+  font-size: 48px;
   padding: 20px 10px;
+  color: black;
+  font-weight: bold;
+}
+.container .imageContainer .mailMe {
+  margin: 0px 0px 5px 0px;
+  font-size: 32px;
   color: black;
 }
 .container .middleGround,
 .container .shrunkMiddle {
   height: 33%;
+  overflow: hidden;
   border-bottom: 1px solid #000000;
   background: linear-gradient(#2d66b0, #6a9ad9, #2d66b0);
   transition: 1s ease;
@@ -44,40 +50,59 @@ body {
 .container .shrunkMiddle .centerPiece .less {
   color: #aaa;
 }
-.container .middleGround .centerPiece .smaller,
-.container .shrunkMiddle .centerPiece .smaller {
-  font-size: 18px;
-  margin: 8px;
-}
-.container .middleGround .centerPiece .smallest,
-.container .shrunkMiddle .centerPiece .smallest {
-  font-size: 15px;
-}
 .container .middleGround .centerPiece ul,
 .container .shrunkMiddle .centerPiece ul {
   display: inline-block;
+  font-size: 24px;
+}
+.container .middleGround .centerPiece ul .hidden,
+.container .shrunkMiddle .centerPiece ul .hidden {
+  opacity: 0;
+}
+.container .middleGround .centerPiece ul.smaller,
+.container .shrunkMiddle .centerPiece ul.smaller {
+  font-size: 18px;
+}
+.container .middleGround .centerPiece ul.smallest,
+.container .shrunkMiddle .centerPiece ul.smallest {
+  font-size: 15px;
+}
+.container .middleGround .centerPiece ul.shrunkUl,
+.container .shrunkMiddle .centerPiece ul.shrunkUl {
+  font-size: 17px;
+}
+.container .middleGround .centerPiece ul.evenSmaller,
+.container .shrunkMiddle .centerPiece ul.evenSmaller {
+  font-size: 15px;
+}
+.container .middleGround .centerPiece ul.evenSmallest,
+.container .shrunkMiddle .centerPiece ul.evenSmallest {
+  font-size: 13px;
+}
+.container .middleGround .centerPiece ul i,
+.container .shrunkMiddle .centerPiece ul i {
+  display: none;
+  font-size: 26px;
+  color: #222;
 }
 .container .middleGround .centerPiece ul li,
 .container .shrunkMiddle .centerPiece ul li {
   display: inline-block;
   text-decoration: none;
-  font-size: 24px;
   padding: 8px 12px;
   margin: 4px;
   border: 1px solid #aaa;
   box-shadow: 1px 1px 4px 2px #222;
   background: #1e1c41;
   opacity: 0.8;
-  transition: color 200ms;
+  transition: 200ms;
   cursor: pointer;
 }
-.container .middleGround .centerPiece ul li.smaller,
-.container .shrunkMiddle .centerPiece ul li.smaller {
-  font-size: 18px;
-}
-.container .middleGround .centerPiece ul li.smallest,
-.container .shrunkMiddle .centerPiece ul li.smallest {
-  font-size: 15px;
+@media (max-height: 200px) {
+  .container .middleGround .centerPiece ul li,
+  .container .shrunkMiddle .centerPiece ul li {
+    font-size: 14px;
+  }
 }
 .container .middleGround .centerPiece ul li:hover,
 .container .shrunkMiddle .centerPiece ul li:hover {

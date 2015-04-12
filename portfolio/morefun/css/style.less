@@ -9,7 +9,7 @@
 
 @font-face {
     font-family:what;
-    src:url("fonts/ostrich-sans-master/webfonts/ostrich-sans-inline-regular.woff")
+    src:url("fonts/ostrich-sans-master/webfonts/ostrich-sans-dashed.woff")
 }
 
 body {
@@ -22,6 +22,7 @@ body {
     font-weight:bold;
 }
 
+
 @lightBlue:#86a9d3;
 
 .container {
@@ -31,16 +32,23 @@ body {
         height:33%;
         border-bottom:@borders;
         .title {
-            font-family:OstrichFont;
+            //font-family:what;
             text-align:center;
-            font-size:4.3vw;
+            font-size:48px;
             padding:20px 10px;
+            color:black;
+            font-weight:bold;
+        }
+        .mailMe {
+            margin:0px 0px 5px 0px;
+            font-size:32px;
             color:black;
         }
     }
 
     .middleGround, .shrunkMiddle {
         height:33%;
+        overflow:hidden;
         border-bottom:@borders;
         background:linear-gradient(@niceBlue, lighten(@niceBlue, 20%), @niceBlue);
         transition:1s ease;
@@ -49,24 +57,28 @@ body {
             text-align:center;
             .smaller {  }
             .less { color:#aaa; }
-            .smaller { font-size:18px; margin:8px; }
-            .smallest { font-size: 15px; }
             ul {
                 display:inline-block;
+                font-size:24px;
+                .hidden { opacity:0; }
+                &.smaller { font-size:18px; }
+                &.smallest { font-size:15px; }
+                &.shrunkUl { font-size:17px; }
+                &.evenSmaller { font-size:15px; }
+                &.evenSmallest { font-size:13px; }
+                i { display:none; font-size:26px; color:#222; }
                 li {
                     display:inline-block;
                     text-decoration:none;
-                    font-size:24px;
                     padding:8px 12px;
                     margin:4px;
                     border:1px solid #aaa;
                     box-shadow:1px 1px 4px 2px #222;
                     background:darken(#363377, 15%);
                     opacity:0.8;
-                    transition:color 200ms;
+                    transition:200ms;
                     cursor:pointer;
-                    &.smaller { font-size:18px; }
-                    &.smallest { font-size:15px; }
+                    @media (max-height:200px) { font-size: 14px; }
                     &:hover {
                         color:#222;
                         border:1px solid #222;
