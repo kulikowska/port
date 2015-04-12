@@ -2,6 +2,10 @@
   font-family: OstrichFont;
   src: url("fonts/raleway/webfonts/raleway_thin-webfont.woff");
 }
+@font-face {
+  font-family: what;
+  src: url("fonts/ostrich-sans-master/webfonts/ostrich-sans-inline-regular.woff");
+}
 body {
   font-family: OstrichFont;
   color: #fff;
@@ -18,6 +22,7 @@ body {
   border-bottom: 1px solid #000000;
 }
 .container .imageContainer .title {
+  font-family: OstrichFont;
   text-align: center;
   font-size: 4.3vw;
   padding: 20px 10px;
