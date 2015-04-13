@@ -23,6 +23,9 @@ APP
                     $scope.portfolio = false;
                     $scope.middleDiv = 'middleGround';
                     $scope.hideEm = '';
+                    $scope.smaller = 'smaller';
+                    $scope.smallest = 'smallest';
+                    $scope.mainUl = '';
                 }
             }
          }

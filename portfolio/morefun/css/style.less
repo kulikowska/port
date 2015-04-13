@@ -53,12 +53,15 @@ body {
         background:linear-gradient(@niceBlue, lighten(@niceBlue, 20%), @niceBlue);
         transition:1s ease;
         .centerPiece {
-            padding:20px;
+            position:relative;
+            top:50%;
+            transform:translateY(-50%);
             text-align:center;
             .smaller {  }
             .less { color:#aaa; }
             ul {
                 display:inline-block;
+                padding:0;
                 font-size:24px;
                 .hidden { opacity:0; }
                 &.smaller { font-size:18px; }

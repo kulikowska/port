@@ -43,7 +43,9 @@ body {
 }
 .container .middleGround .centerPiece,
 .container .shrunkMiddle .centerPiece {
-  padding: 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   text-align: center;
 }
 .container .middleGround .centerPiece .less,
@@ -53,6 +55,7 @@ body {
 .container .middleGround .centerPiece ul,
 .container .shrunkMiddle .centerPiece ul {
   display: inline-block;
+  padding: 0;
   font-size: 24px;
 }
 .container .middleGround .centerPiece ul .hidden,
