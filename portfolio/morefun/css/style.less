@@ -48,6 +48,7 @@ body {
 
     .middleGround, .shrunkMiddle {
         height:33%;
+        min-height:130px;
         overflow:hidden;
         border-bottom:@borders;
         background:linear-gradient(@niceBlue, lighten(@niceBlue, 20%), @niceBlue);
@@ -66,9 +67,15 @@ body {
                 .hidden { opacity:0; }
                 &.smaller { font-size:18px; }
                 &.smallest { font-size:15px; }
-                &.shrunkUl { font-size:17px; }
-                &.evenSmaller { font-size:15px; }
-                &.evenSmallest { font-size:13px; }
+                &.shrunkUl { font-size:14px; }
+                &.evenSmaller { 
+                    font-size:14px;
+                    @media (max-width:325px) { display:none; }
+                }
+                &.evenSmallest { 
+                    font-size:12px;
+                    @media (max-width:630px) { display:none; }
+                }
                 i { display:none; font-size:26px; color:#222; }
                 li {
                     display:inline-block;

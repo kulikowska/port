@@ -36,6 +36,7 @@ body {
 .container .middleGround,
 .container .shrunkMiddle {
   height: 33%;
+  min-height: 130px;
   overflow: hidden;
   border-bottom: 1px solid #000000;
   background: linear-gradient(#2d66b0, #6a9ad9, #2d66b0);
@@ -72,15 +73,27 @@ body {
 }
 .container .middleGround .centerPiece ul.shrunkUl,
 .container .shrunkMiddle .centerPiece ul.shrunkUl {
-  font-size: 17px;
+  font-size: 14px;
 }
 .container .middleGround .centerPiece ul.evenSmaller,
 .container .shrunkMiddle .centerPiece ul.evenSmaller {
-  font-size: 15px;
+  font-size: 14px;
+}
+@media (max-width: 325px) {
+  .container .middleGround .centerPiece ul.evenSmaller,
+  .container .shrunkMiddle .centerPiece ul.evenSmaller {
+    display: none;
+  }
 }
 .container .middleGround .centerPiece ul.evenSmallest,
 .container .shrunkMiddle .centerPiece ul.evenSmallest {
-  font-size: 13px;
+  font-size: 12px;
+}
+@media (max-width: 630px) {
+  .container .middleGround .centerPiece ul.evenSmallest,
+  .container .shrunkMiddle .centerPiece ul.evenSmallest {
+    display: none;
+  }
 }
 .container .middleGround .centerPiece ul i,
 .container .shrunkMiddle .centerPiece ul i {
