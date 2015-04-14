@@ -65,6 +65,8 @@ body {
         @media (max-height:600px) { padding:0; }
         .centerPiece {
             position:relative;
+            max-width:930px;
+            margin:auto;
             //top:50%;
             //transform:translateY(-50%);
             text-align:center;
@@ -106,12 +108,12 @@ body {
                     background:darken(#363377, 15%);
                     opacity:0.8;
                     transition:200ms;
-                    cursor:pointer;
                     @media (max-height:200px) { font-size: 14px; }
                     &:hover {
-                        color:#222;
-                        border:1px solid #222;
-                        background:lighten(#363377, 15%);
+                        //color:#222;
+                        // border:1px solid #222;
+                        //background:lighten(#363377, 15%);
+                        opacity:1;
                     }
                 }
             }
@@ -122,7 +124,7 @@ body {
         color:@niceBlue;
         .header {
             text-align:center;
-            font-size:36px;
+            font-size:40px;
             padding:20px;
         }
         .up {
@@ -130,14 +132,55 @@ body {
             font-size:44px;
             margin:14px;
             margin-top:-64px;
-            cursor:pointer;
-            transition:200ms;
-            &:hover {
-                color:darken(#363377, 1%);
+            i {
+                transition:200ms;
+                cursor:pointer;
+                &:hover { color:darken(#363377, 1%); }
             }
         }
-        .portContent {
-            height:600px;
+        @singlePane:860px;
+        .piece {
+            font-size:18px;
+            width:29%;
+            color:#ddd;
+            background:#111;
+            box-shadow:0px 0px 4px 1px @niceBlue;
+            margin:10px;
+            text-align:center;
+            padding:10px;
+            border:1px solid #222;
+            float:left;
+            line-height:125%;
+            @media (max-width:990px) { width:45%; min-height:319px;}
+            @media (max-width:@singlePane) { width:94.5%; min-height:0px; }
+            @media (max-width:660px) { width:auto; }
+            .text {
+                @media (max-width:@singlePane) { float:right; width:55%; margin:20px 10px 0 5px; }
+                @media (max-width:730px) { width:50%; }
+                @media (max-width:660px) { float:none; width:auto; margin:0; }
+                .title { color:@niceBlue; }
+            }
+            .portalThumb {
+                height:200px;
+                width:267px;
+                background-image:url('../images/portal.png');
+                background-size:100%;
+                border:1px solid black;
+                margin:8px auto 4px;
+                @media (max-width:@singlePane) { float:left; }
+                @media (max-width:660px) { float:none; }
+            }
+            .whitespaceThumb {
+                .portalThumb;
+                background-image:url('../images/whitespace.png');
+                height:217px;
+            }
+            .koyokaiThumb{
+                .portalThumb;
+                background-image:url('../images/koyo.png');
+                height:191px;
+                width:287px;
+            }
         }
     }
     .expandProject { height:53%; }
