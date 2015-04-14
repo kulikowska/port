@@ -9,10 +9,12 @@ APP
             $scope.middleDiv = 'middleGround';
             $scope.smaller = 'smaller';
             $scope.smallest = 'smallest';
+            $scope.imageContainer = 'imageContainer';
 
             $scope.showPort = function() {
                 if (!$scope.portfolio) {
                     $scope.portfolio = true;
+                    $scope.imageContainer = 'shrunkImageContainer';
                     $scope.middleDiv = 'shrunkMiddle';
                     //$scope.hideEm = 'hidden';
                     $scope.smaller = 'evenSmaller';
@@ -22,6 +24,7 @@ APP
                 else {
                     $scope.portfolio = false;
                     $scope.middleDiv = 'middleGround';
+                    $scope.imageContainer = 'imageContainer';
                     $scope.hideEm = '';
                     $scope.smaller = 'smaller';
                     $scope.smallest = 'smallest';

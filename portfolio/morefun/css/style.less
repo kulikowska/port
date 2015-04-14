@@ -26,11 +26,12 @@ body {
 @lightBlue:#86a9d3;
 
 .container {
-    .imageContainer {
+    .imageContainer, .shrunkImageContainer {
         background-image:url('../images/bg.jpg');
         background-size:cover;
         height:33%;
         border-bottom:@borders;
+        transition:1s;
         .title {
             //font-family:what;
             text-align:center;
@@ -44,6 +45,9 @@ body {
             font-size:32px;
             color:black;
         }
+    }
+    .shrunkImageContainer {
+        height:20%;
     }
 
     .middleGround, .shrunkMiddle {
@@ -109,7 +113,6 @@ body {
     }
     .shrunkMiddle { height:13%; min-height:130px; }
     .project {
-        height:33%;
         color:@niceBlue;
         .header {
             text-align:center;

@@ -15,23 +15,30 @@ body {
   font-size: 22px;
   font-weight: bold;
 }
-.container .imageContainer {
+.container .imageContainer,
+.container .shrunkImageContainer {
   background-image: url('../images/bg.jpg');
   background-size: cover;
   height: 33%;
   border-bottom: 1px solid #000000;
+  transition: 1s;
 }
-.container .imageContainer .title {
+.container .imageContainer .title,
+.container .shrunkImageContainer .title {
   text-align: center;
   font-size: 48px;
   padding: 20px 10px;
   color: black;
   font-weight: bold;
 }
-.container .imageContainer .mailMe {
+.container .imageContainer .mailMe,
+.container .shrunkImageContainer .mailMe {
   margin: 0px 0px 5px 0px;
   font-size: 32px;
   color: black;
+}
+.container .shrunkImageContainer {
+  height: 20%;
 }
 .container .middleGround,
 .container .shrunkMiddle {
@@ -131,7 +138,6 @@ body {
   min-height: 130px;
 }
 .container .project {
-  height: 33%;
   color: #2d66b0;
 }
 .container .project .header {
