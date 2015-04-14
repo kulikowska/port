@@ -67,11 +67,14 @@ body {
                 .hidden { opacity:0; }
                 &.smaller { 
                     font-size:18px; 
-                    @media (max-width:430px) { display:none; }
+                   // @media (max-width:390px) and (max-height:575px) { display:none; }
                 }
                 &.smallest {
                     font-size:15px; 
-                    @media (max-width:745px) and (max-height:425px) { display:none; }
+                  //  @media (max-width:745px) and (max-height:425px) { display:none; }
+                  //  @media (max-width:440px) and (max-height:560px) { display:none; }
+                  //  @media (max-height:550px) { display:none; }
+                  //  @media (max-width:430px) { display:none; }
                 }
                 &.shrunkUl { font-size:15px; }
                 &.evenSmaller { 
@@ -104,7 +107,7 @@ body {
             }
         } 
     }
-    .shrunkMiddle { height:13%; }
+    .shrunkMiddle { height:13%; min-height:130px; }
     .project {
         height:33%;
         color:@niceBlue;
