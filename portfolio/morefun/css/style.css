@@ -48,6 +48,13 @@ body {
   border-bottom: 1px solid #000000;
   background: linear-gradient(#2d66b0, #6a9ad9, #2d66b0);
   transition: 1s ease;
+  transition: font-size 0s;
+}
+@media (max-width: 795px) {
+  .container .middleGround,
+  .container .shrunkMiddle {
+    padding: 0;
+  }
 }
 .container .middleGround .centerPiece,
 .container .shrunkMiddle .centerPiece {
@@ -68,15 +75,33 @@ body {
 .container .shrunkMiddle .centerPiece ul .hidden {
   opacity: 0;
 }
+@media (max-width: 755px) {
+  .container .middleGround .centerPiece ul,
+  .container .shrunkMiddle .centerPiece ul {
+    font-size: 14px;
+  }
+}
 .container .middleGround .centerPiece ul.smaller,
 .container .shrunkMiddle .centerPiece ul.smaller {
   font-size: 18px;
+}
+@media (max-width: 755px) {
+  .container .middleGround .centerPiece ul.smaller,
+  .container .shrunkMiddle .centerPiece ul.smaller {
+    font-size: 14px;
+  }
 }
 .container .middleGround .centerPiece ul.smallest,
 .container .shrunkMiddle .centerPiece ul.smallest {
   font-size: 15px;
 }
-@media (max-height: 226px) {
+@media (max-width: 755px) {
+  .container .middleGround .centerPiece ul.smallest,
+  .container .shrunkMiddle .centerPiece ul.smallest {
+    font-size: 14px;
+  }
+}
+@media (max-width: 628px) {
   .container .middleGround .centerPiece ul.smallest,
   .container .shrunkMiddle .centerPiece ul.smallest {
     display: none;
