@@ -78,7 +78,7 @@ body {
 @media (max-width: 755px) {
   .container .middleGround .centerPiece ul,
   .container .shrunkMiddle .centerPiece ul {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 .container .middleGround .centerPiece ul.smaller,
@@ -91,7 +91,7 @@ body {
     font-size: 14px;
   }
 }
-@media (max-width: 325px) {
+@media (max-width: 340px) {
   .container .middleGround .centerPiece ul.smaller,
   .container .shrunkMiddle .centerPiece ul.smaller {
     display: none;
@@ -104,7 +104,7 @@ body {
 @media (max-width: 755px) {
   .container .middleGround .centerPiece ul.smallest,
   .container .shrunkMiddle .centerPiece ul.smallest {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 @media (max-width: 628px) {
@@ -115,13 +115,13 @@ body {
 }
 .container .middleGround .centerPiece ul.shrunkUl,
 .container .shrunkMiddle .centerPiece ul.shrunkUl {
-  font-size: 14px;
+  font-size: 16px;
 }
 .container .middleGround .centerPiece ul.evenSmaller,
 .container .shrunkMiddle .centerPiece ul.evenSmaller {
   font-size: 14px;
 }
-@media (max-width: 325px) {
+@media (max-width: 340px) {
   .container .middleGround .centerPiece ul.evenSmaller,
   .container .shrunkMiddle .centerPiece ul.evenSmaller {
     display: none;
@@ -129,7 +129,7 @@ body {
 }
 .container .middleGround .centerPiece ul.evenSmallest,
 .container .shrunkMiddle .centerPiece ul.evenSmallest {
-  font-size: 14px;
+  font-size: 13px;
 }
 @media (max-width: 630px) {
   .container .middleGround .centerPiece ul.evenSmallest,
