@@ -57,6 +57,12 @@ body {
     padding: 0;
   }
 }
+@media (max-height: 600px) {
+  .container .middleGround,
+  .container .shrunkMiddle {
+    padding: 0;
+  }
+}
 .container .middleGround .centerPiece,
 .container .shrunkMiddle .centerPiece {
   position: relative;
