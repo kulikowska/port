@@ -91,6 +91,12 @@ body {
     font-size: 14px;
   }
 }
+@media (max-width: 325px) {
+  .container .middleGround .centerPiece ul.smaller,
+  .container .shrunkMiddle .centerPiece ul.smaller {
+    display: none;
+  }
+}
 .container .middleGround .centerPiece ul.smallest,
 .container .shrunkMiddle .centerPiece ul.smallest {
   font-size: 15px;
@@ -109,7 +115,7 @@ body {
 }
 .container .middleGround .centerPiece ul.shrunkUl,
 .container .shrunkMiddle .centerPiece ul.shrunkUl {
-  font-size: 15px;
+  font-size: 14px;
 }
 .container .middleGround .centerPiece ul.evenSmaller,
 .container .shrunkMiddle .centerPiece ul.evenSmaller {
