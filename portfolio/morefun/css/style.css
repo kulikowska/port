@@ -20,6 +20,7 @@ body {
   background-image: url('../images/bg.jpg');
   background-size: cover;
   height: 33%;
+  min-height: 150px;
   border-bottom: 1px solid #000000;
   transition: 1s;
 }
