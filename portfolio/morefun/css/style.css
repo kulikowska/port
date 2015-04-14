@@ -42,8 +42,8 @@ body {
 }
 .container .middleGround,
 .container .shrunkMiddle {
-  height: 33%;
-  min-height: 140px;
+  height: auto;
+  padding: 20px;
   overflow: hidden;
   border-bottom: 1px solid #000000;
   background: linear-gradient(#2d66b0, #6a9ad9, #2d66b0);
@@ -52,8 +52,6 @@ body {
 .container .middleGround .centerPiece,
 .container .shrunkMiddle .centerPiece {
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   text-align: center;
 }
 .container .middleGround .centerPiece .less,
@@ -77,6 +75,12 @@ body {
 .container .middleGround .centerPiece ul.smallest,
 .container .shrunkMiddle .centerPiece ul.smallest {
   font-size: 15px;
+}
+@media (max-height: 226px) {
+  .container .middleGround .centerPiece ul.smallest,
+  .container .shrunkMiddle .centerPiece ul.smallest {
+    display: none;
+  }
 }
 .container .middleGround .centerPiece ul.shrunkUl,
 .container .shrunkMiddle .centerPiece ul.shrunkUl {
@@ -134,8 +138,7 @@ body {
   background: #4e4aad;
 }
 .container .shrunkMiddle {
-  height: 13%;
-  min-height: 130px;
+  padding: 0;
 }
 .container .project {
   color: #2d66b0;
@@ -155,6 +158,9 @@ body {
 }
 .container .project .up:hover {
   color: #343173;
+}
+.container .project .portContent {
+  height: 600px;
 }
 .container .expandProject {
   height: 53%;
