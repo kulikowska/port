@@ -39,7 +39,7 @@ body {
   color: black;
 }
 .container .shrunkImageContainer {
-  height: 20%;
+  height: 13%;
 }
 .container .middleGround,
 .container .shrunkMiddle {
@@ -201,13 +201,10 @@ body {
 .container .project .piece {
   font-size: 18px;
   width: 29%;
-  color: #ddd;
-  background: #111;
-  box-shadow: 0px 0px 4px 1px #2d66b0;
+  color: #eee;
   margin: 10px;
   text-align: center;
   padding: 10px;
-  border: 1px solid #222;
   float: left;
   line-height: 125%;
 }
