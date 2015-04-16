@@ -22,6 +22,15 @@ body {
     font-weight:bold;
 }
 
+a { 
+    color:@niceBlue;
+    text-decoration:none;
+    transition:100ms;
+    &:hover { 
+        color:lighten(@niceBlue, 30%);
+    }
+}
+
 
 @lightBlue:#86a9d3;
 
@@ -29,7 +38,7 @@ body {
     .imageContainer, .shrunkImageContainer {
         background-image:url('../images/bg.jpg');
         background-size:cover;
-        height:33%;
+        height:29%;
         min-height:150px;
         border-bottom:@borders;
         transition:1s;
@@ -125,13 +134,13 @@ body {
         .header {
             text-align:center;
             font-size:40px;
-            padding:20px;
+            padding:30px;
         }
         .up {
             float:right;
             font-size:44px;
             margin:14px;
-            margin-top:-64px;
+            margin-top:-74px;
             i {
                 transition:200ms;
                 cursor:pointer;
@@ -140,19 +149,20 @@ body {
         }
         @singlePane:860px;
         .piece {
-            font-size:18px;
+            font-size:19px;
             width:29%;
-            color:#eee;
-            //background:#111;
-            //box-shadow:0px 0px 4px 1px @niceBlue;
-            margin:10px;
+            color:#fff;
+            min-height:360px;
+           //background:#111;
+           // box-shadow:0px 0px 4px 1px @niceBlue;
+            margin:0 10px 15px 10px;
             text-align:center;
-            padding:10px;
+            padding:0 10px 10px 10px;
             float:left;
-            line-height:125%;
+            line-height:136%;
             @media (max-width:990px) { width:45%; min-height:319px;}
             @media (max-width:@singlePane) { width:94.5%; min-height:0px; }
-            @media (max-width:660px) { width:auto; }
+            @media (max-width:660px) { width:91%;; }
             .text {
                 @media (max-width:@singlePane) { float:right; width:55%; margin:20px 10px 0 5px; }
                 @media (max-width:730px) { width:50%; }
@@ -179,6 +189,18 @@ body {
                 background-image:url('../images/koyo.png');
                 height:191px;
                 width:287px;
+            }
+            .cubeThumb {
+                .portalThumb;
+                background-image:url('../images/cube.png');
+                height:240px;
+                width:275px;
+            }
+            .oldThumb {
+                .portalThumb;
+                background-image:url('../images/oldsite.png');
+                height:240px;
+                width:275px;
             }
         }
     }

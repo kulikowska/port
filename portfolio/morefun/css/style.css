@@ -15,11 +15,19 @@ body {
   font-size: 22px;
   font-weight: bold;
 }
+a {
+  color: #2d66b0;
+  text-decoration: none;
+  transition: 100ms;
+}
+a:hover {
+  color: #93b6e3;
+}
 .container .imageContainer,
 .container .shrunkImageContainer {
   background-image: url('../images/bg.jpg');
   background-size: cover;
-  height: 33%;
+  height: 29%;
   min-height: 150px;
   border-bottom: 1px solid #000000;
   transition: 1s;
@@ -183,13 +191,13 @@ body {
 .container .project .header {
   text-align: center;
   font-size: 40px;
-  padding: 20px;
+  padding: 30px;
 }
 .container .project .up {
   float: right;
   font-size: 44px;
   margin: 14px;
-  margin-top: -64px;
+  margin-top: -74px;
 }
 .container .project .up i {
   transition: 200ms;
@@ -199,14 +207,15 @@ body {
   color: #343173;
 }
 .container .project .piece {
-  font-size: 18px;
+  font-size: 19px;
   width: 29%;
-  color: #eee;
-  margin: 10px;
+  color: #fff;
+  min-height: 360px;
+  margin: 0 10px 15px 10px;
   text-align: center;
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   float: left;
-  line-height: 125%;
+  line-height: 136%;
 }
 @media (max-width: 990px) {
   .container .project .piece {
@@ -222,7 +231,7 @@ body {
 }
 @media (max-width: 660px) {
   .container .project .piece {
-    width: auto;
+    width: 91%;
   }
 }
 @media (max-width: 860px) {
@@ -303,6 +312,48 @@ body {
 }
 @media (max-width: 660px) {
   .container .project .piece .koyokaiThumb {
+    float: none;
+  }
+}
+.container .project .piece .cubeThumb {
+  height: 200px;
+  width: 267px;
+  background-image: url('../images/portal.png');
+  background-size: 100%;
+  border: 1px solid black;
+  margin: 8px auto 4px;
+  background-image: url('../images/cube.png');
+  height: 240px;
+  width: 275px;
+}
+@media (max-width: 860px) {
+  .container .project .piece .cubeThumb {
+    float: left;
+  }
+}
+@media (max-width: 660px) {
+  .container .project .piece .cubeThumb {
+    float: none;
+  }
+}
+.container .project .piece .oldThumb {
+  height: 200px;
+  width: 267px;
+  background-image: url('../images/portal.png');
+  background-size: 100%;
+  border: 1px solid black;
+  margin: 8px auto 4px;
+  background-image: url('../images/oldsite.png');
+  height: 240px;
+  width: 275px;
+}
+@media (max-width: 860px) {
+  .container .project .piece .oldThumb {
+    float: left;
+  }
+}
+@media (max-width: 660px) {
+  .container .project .piece .oldThumb {
     float: none;
   }
 }
