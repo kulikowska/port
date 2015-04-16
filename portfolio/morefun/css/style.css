@@ -32,16 +32,27 @@ a:hover {
   border-bottom: 1px solid #000000;
   transition: 1s;
 }
-.container .imageContainer .title,
-.container .shrunkImageContainer .title {
+.container .imageContainer .textContainer,
+.container .shrunkImageContainer .textContainer {
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), #2d66a7);
+  color: #000;
+  opacity: 0.8;
+}
+.container .imageContainer .textContainer .title,
+.container .shrunkImageContainer .textContainer .title {
   text-align: center;
   font-size: 48px;
-  padding: 20px 10px;
-  color: black;
+  padding: 20px 10px 5px;
   font-weight: bold;
 }
-.container .imageContainer .mailMe,
-.container .shrunkImageContainer .mailMe {
+.container .imageContainer .textContainer .subTitle,
+.container .shrunkImageContainer .textContainer .subTitle {
+  font-size: 24px;
+  display: none;
+  text-align: center;
+}
+.container .imageContainer .textContainer .mailMe,
+.container .shrunkImageContainer .textContainer .mailMe {
   margin: 0px 0px 5px 0px;
   font-size: 32px;
   color: black;
@@ -359,4 +370,11 @@ a:hover {
 }
 .container .expandProject {
   height: 53%;
+}
+.footer {
+  width: 100%;
+  height: 75px;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), #000000);
+  position: fixed;
+  bottom: 0;
 }
