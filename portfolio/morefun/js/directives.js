@@ -13,8 +13,14 @@ APP
             $scope.footerClass = 'footer';
             
             $scope.showHideFooter = function() {
-                $scope.footerClass = 'shrunkFooter';
-                $scope.shrunkFooter = true;
+                if (!$scope.noFooter) {
+                    $scope.footerClass = 'shrunkFooter';
+                    $scope.noFooter = true;
+                }
+                else {
+                    $scope.noFooter = false;
+                    $scope.footerClass = 'footer';
+                }
             }
 
             $scope.showPort = function() {
