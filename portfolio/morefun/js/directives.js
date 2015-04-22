@@ -10,6 +10,12 @@ APP
             $scope.smaller = 'smaller';
             $scope.smallest = 'smallest';
             $scope.imageContainer = 'imageContainer';
+            $scope.footerClass = 'footer';
+            
+            $scope.showHideFooter = function() {
+                $scope.footerClass = 'shrunkFooter';
+                $scope.shrunkFooter = true;
+            }
 
             $scope.showPort = function() {
                 if (!$scope.portfolio) {
@@ -39,6 +45,16 @@ APP
         restrict: 'C',
         replace: false,
         templateUrl: 'html/projects.html',
+        //template: TPL.portfolio,
+        link: function($scope, $element, $attributes) {
+         }
+      } 
+ }])
+.directive('footer', [function() {
+    return {
+        restrict: 'C',
+        replace: false,
+        templateUrl: 'html/footer.html',
         //template: TPL.portfolio,
         link: function($scope, $element, $attributes) {
          }
