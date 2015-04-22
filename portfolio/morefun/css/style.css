@@ -253,6 +253,9 @@ a:hover {
     width: 91%;
   }
 }
+.container .project .piece .text {
+  display: none;
+}
 @media (max-width: 860px) {
   .container .project .piece .text {
     float: right;
@@ -389,6 +392,8 @@ a:hover {
   float: right;
   bottom: 0;
   color: #aaa;
+  transition: 1000ms;
+  overflow: hidden;
 }
 .footer .text,
 .shrunkFooter .text {
