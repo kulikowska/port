@@ -37,12 +37,12 @@ a:hover {
 .imageContainer .textContainer .title,
 .shrunkImageContainer .textContainer .title {
   text-align: center;
-  font-size: 48px;
-  text-shadow: 1px 1px #555;
+  font-size: 52px;
+  text-shadow: 1px 1px #222;
   padding: 20px 10px 5px;
   font-weight: bold;
 }
-@media (max-width: 455px) {
+@media (max-width: 475px) {
   .imageContainer .textContainer .title,
   .shrunkImageContainer .textContainer .title {
     font-size: 9.5vw;
