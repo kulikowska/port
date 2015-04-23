@@ -94,115 +94,105 @@ a:hover {
     padding: 0;
   }
 }
-.middleContainer .middleGround .centerPiece,
-.middleContainer .shrunkMiddle .centerPiece {
+.middleContainer .middleGround .buttonContainer,
+.middleContainer .shrunkMiddle .buttonContainer {
   position: relative;
   max-width: 930px;
   margin: auto;
   text-align: center;
 }
-.middleContainer .middleGround .centerPiece .less,
-.middleContainer .shrunkMiddle .centerPiece .less {
-  color: #aaa;
-}
-.middleContainer .middleGround .centerPiece ul,
-.middleContainer .shrunkMiddle .centerPiece ul {
+.middleContainer .middleGround .buttonContainer ul,
+.middleContainer .shrunkMiddle .buttonContainer ul {
   display: inline-block;
   padding: 0;
   font-size: 24px;
 }
-.middleContainer .middleGround .centerPiece ul .hidden,
-.middleContainer .shrunkMiddle .centerPiece ul .hidden {
+.middleContainer .middleGround .buttonContainer ul .hidden,
+.middleContainer .shrunkMiddle .buttonContainer ul .hidden {
   opacity: 0;
 }
 @media (max-width: 755px) {
-  .middleContainer .middleGround .centerPiece ul,
-  .middleContainer .shrunkMiddle .centerPiece ul {
+  .middleContainer .middleGround .buttonContainer ul,
+  .middleContainer .shrunkMiddle .buttonContainer ul {
     font-size: 16px;
   }
 }
-.middleContainer .middleGround .centerPiece ul.smaller,
-.middleContainer .shrunkMiddle .centerPiece ul.smaller {
+.middleContainer .middleGround .buttonContainer ul.smaller,
+.middleContainer .shrunkMiddle .buttonContainer ul.smaller {
   font-size: 18px;
 }
 @media (max-width: 755px) {
-  .middleContainer .middleGround .centerPiece ul.smaller,
-  .middleContainer .shrunkMiddle .centerPiece ul.smaller {
+  .middleContainer .middleGround .buttonContainer ul.smaller,
+  .middleContainer .shrunkMiddle .buttonContainer ul.smaller {
     font-size: 14px;
   }
 }
 @media (max-width: 340px) {
-  .middleContainer .middleGround .centerPiece ul.smaller,
-  .middleContainer .shrunkMiddle .centerPiece ul.smaller {
+  .middleContainer .middleGround .buttonContainer ul.smaller,
+  .middleContainer .shrunkMiddle .buttonContainer ul.smaller {
     display: none;
   }
 }
-.middleContainer .middleGround .centerPiece ul.smallest,
-.middleContainer .shrunkMiddle .centerPiece ul.smallest {
+.middleContainer .middleGround .buttonContainer ul.smallest,
+.middleContainer .shrunkMiddle .buttonContainer ul.smallest {
   font-size: 15px;
 }
 @media (max-width: 755px) {
-  .middleContainer .middleGround .centerPiece ul.smallest,
-  .middleContainer .shrunkMiddle .centerPiece ul.smallest {
+  .middleContainer .middleGround .buttonContainer ul.smallest,
+  .middleContainer .shrunkMiddle .buttonContainer ul.smallest {
     font-size: 13px;
   }
 }
 @media (max-width: 628px) {
-  .middleContainer .middleGround .centerPiece ul.smallest,
-  .middleContainer .shrunkMiddle .centerPiece ul.smallest {
+  .middleContainer .middleGround .buttonContainer ul.smallest,
+  .middleContainer .shrunkMiddle .buttonContainer ul.smallest {
     display: none;
   }
 }
-.middleContainer .middleGround .centerPiece ul.shrunkUl,
-.middleContainer .shrunkMiddle .centerPiece ul.shrunkUl {
+.middleContainer .middleGround .buttonContainer ul.shrunkUl,
+.middleContainer .shrunkMiddle .buttonContainer ul.shrunkUl {
   font-size: 16px;
 }
-.middleContainer .middleGround .centerPiece ul.evenSmaller,
-.middleContainer .shrunkMiddle .centerPiece ul.evenSmaller {
+.middleContainer .middleGround .buttonContainer ul.evenSmaller,
+.middleContainer .shrunkMiddle .buttonContainer ul.evenSmaller {
   font-size: 14px;
 }
 @media (max-width: 340px) {
-  .middleContainer .middleGround .centerPiece ul.evenSmaller,
-  .middleContainer .shrunkMiddle .centerPiece ul.evenSmaller {
+  .middleContainer .middleGround .buttonContainer ul.evenSmaller,
+  .middleContainer .shrunkMiddle .buttonContainer ul.evenSmaller {
     display: none;
   }
 }
-.middleContainer .middleGround .centerPiece ul.evenSmallest,
-.middleContainer .shrunkMiddle .centerPiece ul.evenSmallest {
+.middleContainer .middleGround .buttonContainer ul.evenSmallest,
+.middleContainer .shrunkMiddle .buttonContainer ul.evenSmallest {
   font-size: 13px;
 }
 @media (max-width: 630px) {
-  .middleContainer .middleGround .centerPiece ul.evenSmallest,
-  .middleContainer .shrunkMiddle .centerPiece ul.evenSmallest {
+  .middleContainer .middleGround .buttonContainer ul.evenSmallest,
+  .middleContainer .shrunkMiddle .buttonContainer ul.evenSmallest {
     display: none;
   }
 }
-.middleContainer .middleGround .centerPiece ul i,
-.middleContainer .shrunkMiddle .centerPiece ul i {
-  display: none;
-  font-size: 26px;
-  color: #222;
-}
-.middleContainer .middleGround .centerPiece ul li,
-.middleContainer .shrunkMiddle .centerPiece ul li {
+.middleContainer .middleGround .buttonContainer ul li,
+.middleContainer .shrunkMiddle .buttonContainer ul li {
   display: inline-block;
   text-decoration: none;
   padding: 8px 12px;
   margin: 4px;
   border: 1px solid #aaa;
   box-shadow: 1px 1px 4px 2px #222;
-  background: #1e1c41;
-  opacity: 0.8;
+  background: #23214c;
+  opacity: 0.9;
   transition: 200ms;
 }
 @media (max-height: 200px) {
-  .middleContainer .middleGround .centerPiece ul li,
-  .middleContainer .shrunkMiddle .centerPiece ul li {
+  .middleContainer .middleGround .buttonContainer ul li,
+  .middleContainer .shrunkMiddle .buttonContainer ul li {
     font-size: 14px;
   }
 }
-.middleContainer .middleGround .centerPiece ul li:hover,
-.middleContainer .shrunkMiddle .centerPiece ul li:hover {
+.middleContainer .middleGround .buttonContainer ul li:hover,
+.middleContainer .shrunkMiddle .buttonContainer ul li:hover {
   color: #222;
   border: 1px solid #222;
   background: #4e4aad;
@@ -286,13 +276,28 @@ a:hover {
 .portfolio .piece .text .title {
   color: #2d66b0;
 }
-.portfolio .piece .portalThumb {
-  height: 200px;
-  width: 267px;
-  background-image: url('../images/portal.png');
+.portfolio .piece .imgThumb {
   background-size: 100%;
   border: 1px solid black;
   margin: 8px auto 4px;
+}
+@media (max-width: 860px) {
+  .portfolio .piece .imgThumb {
+    float: left;
+  }
+}
+@media (max-width: 660px) {
+  .portfolio .piece .imgThumb {
+    float: none;
+  }
+}
+.portfolio .piece .portalThumb {
+  background-size: 100%;
+  border: 1px solid black;
+  margin: 8px auto 4px;
+  height: 200px;
+  width: 267px;
+  background-image: url('../images/portal.png');
 }
 @media (max-width: 860px) {
   .portfolio .piece .portalThumb {
@@ -305,14 +310,12 @@ a:hover {
   }
 }
 .portfolio .piece .whitespaceThumb {
-  height: 200px;
-  width: 267px;
-  background-image: url('../images/portal.png');
   background-size: 100%;
   border: 1px solid black;
   margin: 8px auto 4px;
   background-image: url('../images/whitespace.png');
   height: 217px;
+  width: 267px;
 }
 @media (max-width: 860px) {
   .portfolio .piece .whitespaceThumb {
@@ -325,9 +328,6 @@ a:hover {
   }
 }
 .portfolio .piece .koyokaiThumb {
-  height: 200px;
-  width: 267px;
-  background-image: url('../images/portal.png');
   background-size: 100%;
   border: 1px solid black;
   margin: 8px auto 4px;
@@ -346,9 +346,6 @@ a:hover {
   }
 }
 .portfolio .piece .cubeThumb {
-  height: 200px;
-  width: 267px;
-  background-image: url('../images/portal.png');
   background-size: 100%;
   border: 1px solid black;
   margin: 8px auto 4px;
@@ -367,9 +364,6 @@ a:hover {
   }
 }
 .portfolio .piece .oldThumb {
-  height: 200px;
-  width: 267px;
-  background-image: url('../images/portal.png');
   background-size: 100%;
   border: 1px solid black;
   margin: 8px auto 4px;
