@@ -34,47 +34,42 @@ a {
 
 @lightBlue:#86a9d3;
 
-    .imageContainer, .shrunkImageContainer {
-        background-image:url('../images/bg.jpg');
-        background-size:cover;
-        height:25%;
-        min-height:150px;
-        border-bottom:@borders;
-        transition:1s;
-        .textContainer {
-            background:-webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(45,102,167,0.5));
-            color:#000;
-            .title {
-                //font-family:what;
-                text-align:center;
-                font-size:48px;
-                text-shadow:1px 1px #222;
-                padding:20px 10px 5px;
-                font-weight:bold;
-                @media (max-width:455px) { font-size:9.5vw; }
-            }
-            .subTitle {
-                font-size:24px;
-                display:none;
-                text-align:center;
-            }
-            .mailMe {
-                margin:0px 0px 5px 0px;
-                font-size:32px;
-                color:black;
-                @media (max-width:455px) { font-size:7vw; }
-                transition:200ms;
-                &:hover {
-                    color:lighten(@niceBlue, 40%);
-                }
+.imageContainer, .shrunkImageContainer {
+    background-image:url('../images/bg.jpg');
+    background-size:cover;
+    height:25%;
+    min-height:150px;
+    border-bottom:@borders;
+    transition:1s;
+    .textContainer {
+        background:-webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(45,102,167,0.5));
+        color:#000;
+        .title {
+            //font-family:what;
+            text-align:center;
+            font-size:48px;
+            text-shadow:1px 1px #222;
+            padding:20px 10px 5px;
+            font-weight:bold;
+            @media (max-width:455px) { font-size:9.5vw; }
+        }
+        .mailMe {
+            margin:0px 0px 5px 0px;
+            font-size:32px;
+            color:black;
+            @media (max-width:455px) { font-size:7vw; }
+            transition:200ms;
+            &:hover {
+                color:lighten(@niceBlue, 40%);
             }
         }
     }
-    .shrunkImageContainer {
-        height:10%;
-        min-height:100px;
-    }
-
+}
+.shrunkImageContainer {
+    height:10%;
+    min-height:100px;
+}
+.middleContainer {
     .middleGround, .shrunkMiddle {
         //height:33%;
         height:auto;
@@ -144,6 +139,7 @@ a {
         } 
     }
     .shrunkMiddle { padding:0; }
+}
     .project {
         color:@niceBlue;
         .header {

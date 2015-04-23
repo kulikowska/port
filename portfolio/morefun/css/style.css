@@ -51,12 +51,6 @@ a:hover {
     font-size: 9.5vw;
   }
 }
-.imageContainer .textContainer .subTitle,
-.shrunkImageContainer .textContainer .subTitle {
-  font-size: 24px;
-  display: none;
-  text-align: center;
-}
 .imageContainer .textContainer .mailMe,
 .shrunkImageContainer .textContainer .mailMe {
   margin: 0px 0px 5px 0px;
@@ -78,8 +72,8 @@ a:hover {
   height: 10%;
   min-height: 100px;
 }
-.middleGround,
-.shrunkMiddle {
+.middleContainer .middleGround,
+.middleContainer .shrunkMiddle {
   height: auto;
   padding: 20px;
   overflow: hidden;
@@ -89,108 +83,108 @@ a:hover {
   transition: font-size 0s;
 }
 @media (max-width: 795px) {
-  .middleGround,
-  .shrunkMiddle {
+  .middleContainer .middleGround,
+  .middleContainer .shrunkMiddle {
     padding: 0;
   }
 }
 @media (max-height: 600px) {
-  .middleGround,
-  .shrunkMiddle {
+  .middleContainer .middleGround,
+  .middleContainer .shrunkMiddle {
     padding: 0;
   }
 }
-.middleGround .centerPiece,
-.shrunkMiddle .centerPiece {
+.middleContainer .middleGround .centerPiece,
+.middleContainer .shrunkMiddle .centerPiece {
   position: relative;
   max-width: 930px;
   margin: auto;
   text-align: center;
 }
-.middleGround .centerPiece .less,
-.shrunkMiddle .centerPiece .less {
+.middleContainer .middleGround .centerPiece .less,
+.middleContainer .shrunkMiddle .centerPiece .less {
   color: #aaa;
 }
-.middleGround .centerPiece ul,
-.shrunkMiddle .centerPiece ul {
+.middleContainer .middleGround .centerPiece ul,
+.middleContainer .shrunkMiddle .centerPiece ul {
   display: inline-block;
   padding: 0;
   font-size: 24px;
 }
-.middleGround .centerPiece ul .hidden,
-.shrunkMiddle .centerPiece ul .hidden {
+.middleContainer .middleGround .centerPiece ul .hidden,
+.middleContainer .shrunkMiddle .centerPiece ul .hidden {
   opacity: 0;
 }
 @media (max-width: 755px) {
-  .middleGround .centerPiece ul,
-  .shrunkMiddle .centerPiece ul {
+  .middleContainer .middleGround .centerPiece ul,
+  .middleContainer .shrunkMiddle .centerPiece ul {
     font-size: 16px;
   }
 }
-.middleGround .centerPiece ul.smaller,
-.shrunkMiddle .centerPiece ul.smaller {
+.middleContainer .middleGround .centerPiece ul.smaller,
+.middleContainer .shrunkMiddle .centerPiece ul.smaller {
   font-size: 18px;
 }
 @media (max-width: 755px) {
-  .middleGround .centerPiece ul.smaller,
-  .shrunkMiddle .centerPiece ul.smaller {
+  .middleContainer .middleGround .centerPiece ul.smaller,
+  .middleContainer .shrunkMiddle .centerPiece ul.smaller {
     font-size: 14px;
   }
 }
 @media (max-width: 340px) {
-  .middleGround .centerPiece ul.smaller,
-  .shrunkMiddle .centerPiece ul.smaller {
+  .middleContainer .middleGround .centerPiece ul.smaller,
+  .middleContainer .shrunkMiddle .centerPiece ul.smaller {
     display: none;
   }
 }
-.middleGround .centerPiece ul.smallest,
-.shrunkMiddle .centerPiece ul.smallest {
+.middleContainer .middleGround .centerPiece ul.smallest,
+.middleContainer .shrunkMiddle .centerPiece ul.smallest {
   font-size: 15px;
 }
 @media (max-width: 755px) {
-  .middleGround .centerPiece ul.smallest,
-  .shrunkMiddle .centerPiece ul.smallest {
+  .middleContainer .middleGround .centerPiece ul.smallest,
+  .middleContainer .shrunkMiddle .centerPiece ul.smallest {
     font-size: 13px;
   }
 }
 @media (max-width: 628px) {
-  .middleGround .centerPiece ul.smallest,
-  .shrunkMiddle .centerPiece ul.smallest {
+  .middleContainer .middleGround .centerPiece ul.smallest,
+  .middleContainer .shrunkMiddle .centerPiece ul.smallest {
     display: none;
   }
 }
-.middleGround .centerPiece ul.shrunkUl,
-.shrunkMiddle .centerPiece ul.shrunkUl {
+.middleContainer .middleGround .centerPiece ul.shrunkUl,
+.middleContainer .shrunkMiddle .centerPiece ul.shrunkUl {
   font-size: 16px;
 }
-.middleGround .centerPiece ul.evenSmaller,
-.shrunkMiddle .centerPiece ul.evenSmaller {
+.middleContainer .middleGround .centerPiece ul.evenSmaller,
+.middleContainer .shrunkMiddle .centerPiece ul.evenSmaller {
   font-size: 14px;
 }
 @media (max-width: 340px) {
-  .middleGround .centerPiece ul.evenSmaller,
-  .shrunkMiddle .centerPiece ul.evenSmaller {
+  .middleContainer .middleGround .centerPiece ul.evenSmaller,
+  .middleContainer .shrunkMiddle .centerPiece ul.evenSmaller {
     display: none;
   }
 }
-.middleGround .centerPiece ul.evenSmallest,
-.shrunkMiddle .centerPiece ul.evenSmallest {
+.middleContainer .middleGround .centerPiece ul.evenSmallest,
+.middleContainer .shrunkMiddle .centerPiece ul.evenSmallest {
   font-size: 13px;
 }
 @media (max-width: 630px) {
-  .middleGround .centerPiece ul.evenSmallest,
-  .shrunkMiddle .centerPiece ul.evenSmallest {
+  .middleContainer .middleGround .centerPiece ul.evenSmallest,
+  .middleContainer .shrunkMiddle .centerPiece ul.evenSmallest {
     display: none;
   }
 }
-.middleGround .centerPiece ul i,
-.shrunkMiddle .centerPiece ul i {
+.middleContainer .middleGround .centerPiece ul i,
+.middleContainer .shrunkMiddle .centerPiece ul i {
   display: none;
   font-size: 26px;
   color: #222;
 }
-.middleGround .centerPiece ul li,
-.shrunkMiddle .centerPiece ul li {
+.middleContainer .middleGround .centerPiece ul li,
+.middleContainer .shrunkMiddle .centerPiece ul li {
   display: inline-block;
   text-decoration: none;
   padding: 8px 12px;
@@ -202,18 +196,18 @@ a:hover {
   transition: 200ms;
 }
 @media (max-height: 200px) {
-  .middleGround .centerPiece ul li,
-  .shrunkMiddle .centerPiece ul li {
+  .middleContainer .middleGround .centerPiece ul li,
+  .middleContainer .shrunkMiddle .centerPiece ul li {
     font-size: 14px;
   }
 }
-.middleGround .centerPiece ul li:hover,
-.shrunkMiddle .centerPiece ul li:hover {
+.middleContainer .middleGround .centerPiece ul li:hover,
+.middleContainer .shrunkMiddle .centerPiece ul li:hover {
   color: #222;
   border: 1px solid #222;
   background: #4e4aad;
 }
-.shrunkMiddle {
+.middleContainer .shrunkMiddle {
   padding: 0;
 }
 .project {

@@ -46,6 +46,16 @@ APP
          }
       } 
  }])
+.directive('middleContainer', [function() {
+    return {
+        restrict: 'C',
+        replace: false,
+        templateUrl: 'html/middle.html',
+        //template: TPL.portfolio,
+        link: function($scope, $element, $attributes) {
+         }
+      } 
+ }])
 .directive('projects', [function() {
     return {
         restrict: 'C',
