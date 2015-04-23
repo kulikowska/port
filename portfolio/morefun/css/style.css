@@ -224,31 +224,24 @@ a:hover {
 }
 .portfolio .piece {
   font-size: 19px;
-  width: 29%;
+  width: auto;
   color: #bbd1ee;
-  min-height: 360px;
+  border: 1px solid #999;
+  box-shadow: 1px 1px 4px 2px #111;
   margin: 0 10px 15px 10px;
   text-align: center;
-  padding: 0 10px 10px 10px;
   float: left;
   line-height: 136%;
 }
-@media (max-width: 990px) {
-  .portfolio .piece {
-    width: 45%;
-    min-height: 319px;
-  }
+.portfolio .piece .portTitle {
+  width: 100%;
+  height: 34px;
+  padding: 10px 0 0;
+  font-size: 22px;
+  background: #1e1c41;
 }
-@media (max-width: 860px) {
-  .portfolio .piece {
-    width: 94.5%;
-    min-height: 0px;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .piece {
-    width: 91%;
-  }
+.portfolio .piece .text {
+  display: none;
 }
 @media (max-width: 860px) {
   .portfolio .piece .text {
@@ -274,8 +267,7 @@ a:hover {
 }
 .portfolio .piece .imgThumb {
   background-size: 100%;
-  border: 1px solid black;
-  margin: 8px auto 4px;
+  border-top: 1px solid black;
 }
 @media (max-width: 860px) {
   .portfolio .piece .imgThumb {
@@ -289,8 +281,7 @@ a:hover {
 }
 .portfolio .piece .portalThumb {
   background-size: 100%;
-  border: 1px solid black;
-  margin: 8px auto 4px;
+  border-top: 1px solid black;
   height: 200px;
   width: 267px;
   background-image: url('../images/portal.png');
@@ -307,8 +298,7 @@ a:hover {
 }
 .portfolio .piece .whitespaceThumb {
   background-size: 100%;
-  border: 1px solid black;
-  margin: 8px auto 4px;
+  border-top: 1px solid black;
   background-image: url('../images/whitespace.png');
   height: 217px;
   width: 267px;
@@ -325,8 +315,7 @@ a:hover {
 }
 .portfolio .piece .koyokaiThumb {
   background-size: 100%;
-  border: 1px solid black;
-  margin: 8px auto 4px;
+  border-top: 1px solid black;
   background-image: url('../images/koyo.png');
   height: 191px;
   width: 287px;
@@ -343,8 +332,7 @@ a:hover {
 }
 .portfolio .piece .cubeThumb {
   background-size: 100%;
-  border: 1px solid black;
-  margin: 8px auto 4px;
+  border-top: 1px solid black;
   background-image: url('../images/cube.png');
   height: 240px;
   width: 275px;
@@ -361,8 +349,7 @@ a:hover {
 }
 .portfolio .piece .oldThumb {
   background-size: 100%;
-  border: 1px solid black;
-  margin: 8px auto 4px;
+  border-top: 1px solid black;
   background-image: url('../images/oldsite.png');
   height: 240px;
   width: 275px;
