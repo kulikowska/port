@@ -130,6 +130,8 @@ a {
 }
 .portfolio {
     color:@niceBlue;
+    float:left;
+    margin-bottom:40px;
     .header {
         text-align:center;
         font-size:44px;
@@ -148,69 +150,80 @@ a {
         }
     }
     @singlePane:860px;
-    .piece {
-        font-size:19px;
-        width:auto;
-        color:lighten(@niceBlue, 40%);
-        border:1px solid #999;
-        //background:#111;
-        box-shadow:1px 1px 4px 2px #111;
-        margin:0 10px 15px 10px;
-        text-align:center;
+    .pieceWrap {
         float:left;
-        line-height:136%;
-        //@media (max-width:990px) { width:45%; min-height:319px;}
-        //@media (max-width:@singlePane) { width:94.5%; min-height:0px; }
-        //@media (max-width:660px) { width:91%;; }
-        .portTitle {
-            width:100%;
-            height:34px;
-            padding:10px 0 0;
-            font-size:22px;
-            background:darken(#363377, 15%);
-        }
-        .text {
-            display:none;
-            @media (max-width:@singlePane) { float:right; width:55%; margin:20px 10px 0 5px; }
-            @media (max-width:730px) { width:50%; }
-            @media (max-width:660px) { float:none; width:auto; margin:0; }
-            .title { color:@niceBlue; }
-        }
-        .imgThumb {
-            background-size:100%;
-            border-top:1px solid black;
-            @media (max-width:@singlePane) { float:left; }
-            @media (max-width:660px) { float:none; }
-        }
-        .portalThumb {
-            .imgThumb;
-            height:200px;
-            width:267px;
-            background-image:url('../images/portal.png');
-        }
-        .whitespaceThumb {
-            .imgThumb;
-            background-image:url('../images/whitespace.png');
-            height:217px;
-            width:267px;
-        }
-        .koyokaiThumb{
-            .imgThumb;
-            background-image:url('../images/koyo.png');
-            height:191px;
-            width:287px;
-        }
-        .cubeThumb {
-            .imgThumb;
-            background-image:url('../images/cube.png');
-            height:240px;
-            width:275px;
-        }
-        .oldThumb {
-            .imgThumb;
-            background-image:url('../images/oldsite.png');
-            height:240px;
-            width:275px;
+        height:305px;
+        .piece {
+            font-size:19px;
+            position:relative;
+            width:auto;
+            min-height:250px;
+            color:lighten(@niceBlue, 40%);
+            border:1px solid #999;
+            //background:#111;
+            box-shadow:1px 1px 4px 2px #111;
+            margin:0 10px 15px 10px;
+            text-align:center;
+            float:left;
+            line-height:136%;
+            cursor:pointer;
+            //@media (max-width:990px) { width:45%; min-height:319px;}
+            //@media (max-width:@singlePane) { width:94.5%; min-height:0px; }
+            //@media (max-width:660px) { width:91%;; }
+            &:hover .text { opacity:0.9; }
+            .portTitle {
+                width:100%;
+                height:34px;
+                padding:10px 0 0;
+                font-size:22px;
+                background:darken(#363377, 15%);
+            }
+            .text {
+                opacity:0;
+                float:left;
+                position:absolute;
+                margin-top:45px;
+                height:205px;
+                padding:10px 5px;
+                background:darken(@niceBlue, 30%);
+                transition:400ms;
+                @media (max-width:@singlePane) { float:right; width:55%; margin:20px 10px 0 5px; }
+                @media (max-width:730px) { width:50%; }
+                @media (max-width:660px) { float:none; width:auto; margin:0; }
+                .title { color:@niceBlue; }
+            }
+            .imgThumb {
+                height:225px;
+                background-size:100%;
+                border-top:1px solid black;
+                @media (max-width:@singlePane) { float:left; }
+                @media (max-width:660px) { float:none; }
+            }
+            .portalThumb {
+                .imgThumb;
+                width:300px;
+                background-image:url('../images/portal.png');
+            }
+            .whitespaceThumb {
+                .imgThumb;
+                background-image:url('../images/whitespace.png');
+                width:276px;
+            }
+            .koyokaiThumb{
+                .imgThumb;
+                background-image:url('../images/koyo.png');
+                width:340px;
+            }
+            .cubeThumb {
+                .imgThumb;
+                background-image:url('../images/cube.png');
+                width:300px;
+            }
+            .oldThumb {
+                .imgThumb;
+                background-image:url('../images/oldsite.png');
+                width:260px;
+            }
         }
     }
 }

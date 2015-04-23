@@ -198,6 +198,8 @@ a:hover {
 }
 .portfolio {
   color: #2d66b0;
+  float: left;
+  margin-bottom: 40px;
 }
 .portfolio .header {
   text-align: center;
@@ -222,9 +224,15 @@ a:hover {
 .portfolio .up i:hover {
   color: #343173;
 }
-.portfolio .piece {
+.portfolio .pieceWrap {
+  float: left;
+  height: 305px;
+}
+.portfolio .pieceWrap .piece {
   font-size: 19px;
+  position: relative;
   width: auto;
+  min-height: 250px;
   color: #bbd1ee;
   border: 1px solid #999;
   box-shadow: 1px 1px 4px 2px #111;
@@ -232,135 +240,147 @@ a:hover {
   text-align: center;
   float: left;
   line-height: 136%;
+  cursor: pointer;
 }
-.portfolio .piece .portTitle {
+.portfolio .pieceWrap .piece:hover .text {
+  opacity: 0.9;
+}
+.portfolio .pieceWrap .piece .portTitle {
   width: 100%;
   height: 34px;
   padding: 10px 0 0;
   font-size: 22px;
   background: #1e1c41;
 }
-.portfolio .piece .text {
-  display: none;
+.portfolio .pieceWrap .piece .text {
+  opacity: 0;
+  float: left;
+  position: absolute;
+  margin-top: 45px;
+  height: 205px;
+  padding: 10px 5px;
+  background: #0e1f36;
+  transition: 400ms;
 }
 @media (max-width: 860px) {
-  .portfolio .piece .text {
+  .portfolio .pieceWrap .piece .text {
     float: right;
     width: 55%;
     margin: 20px 10px 0 5px;
   }
 }
 @media (max-width: 730px) {
-  .portfolio .piece .text {
+  .portfolio .pieceWrap .piece .text {
     width: 50%;
   }
 }
 @media (max-width: 660px) {
-  .portfolio .piece .text {
+  .portfolio .pieceWrap .piece .text {
     float: none;
     width: auto;
     margin: 0;
   }
 }
-.portfolio .piece .text .title {
+.portfolio .pieceWrap .piece .text .title {
   color: #2d66b0;
 }
-.portfolio .piece .imgThumb {
+.portfolio .pieceWrap .piece .imgThumb {
+  height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
 }
 @media (max-width: 860px) {
-  .portfolio .piece .imgThumb {
+  .portfolio .pieceWrap .piece .imgThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .portfolio .piece .imgThumb {
+  .portfolio .pieceWrap .piece .imgThumb {
     float: none;
   }
 }
-.portfolio .piece .portalThumb {
+.portfolio .pieceWrap .piece .portalThumb {
+  height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
-  height: 200px;
-  width: 267px;
+  width: 300px;
   background-image: url('../images/portal.png');
 }
 @media (max-width: 860px) {
-  .portfolio .piece .portalThumb {
+  .portfolio .pieceWrap .piece .portalThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .portfolio .piece .portalThumb {
+  .portfolio .pieceWrap .piece .portalThumb {
     float: none;
   }
 }
-.portfolio .piece .whitespaceThumb {
+.portfolio .pieceWrap .piece .whitespaceThumb {
+  height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
   background-image: url('../images/whitespace.png');
-  height: 217px;
-  width: 267px;
+  width: 276px;
 }
 @media (max-width: 860px) {
-  .portfolio .piece .whitespaceThumb {
+  .portfolio .pieceWrap .piece .whitespaceThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .portfolio .piece .whitespaceThumb {
+  .portfolio .pieceWrap .piece .whitespaceThumb {
     float: none;
   }
 }
-.portfolio .piece .koyokaiThumb {
+.portfolio .pieceWrap .piece .koyokaiThumb {
+  height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
   background-image: url('../images/koyo.png');
-  height: 191px;
-  width: 287px;
+  width: 340px;
 }
 @media (max-width: 860px) {
-  .portfolio .piece .koyokaiThumb {
+  .portfolio .pieceWrap .piece .koyokaiThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .portfolio .piece .koyokaiThumb {
+  .portfolio .pieceWrap .piece .koyokaiThumb {
     float: none;
   }
 }
-.portfolio .piece .cubeThumb {
+.portfolio .pieceWrap .piece .cubeThumb {
+  height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
   background-image: url('../images/cube.png');
-  height: 240px;
-  width: 275px;
+  width: 300px;
 }
 @media (max-width: 860px) {
-  .portfolio .piece .cubeThumb {
+  .portfolio .pieceWrap .piece .cubeThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .portfolio .piece .cubeThumb {
+  .portfolio .pieceWrap .piece .cubeThumb {
     float: none;
   }
 }
-.portfolio .piece .oldThumb {
+.portfolio .pieceWrap .piece .oldThumb {
+  height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
   background-image: url('../images/oldsite.png');
-  height: 240px;
-  width: 275px;
+  width: 260px;
 }
 @media (max-width: 860px) {
-  .portfolio .piece .oldThumb {
+  .portfolio .pieceWrap .piece .oldThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .portfolio .piece .oldThumb {
+  .portfolio .pieceWrap .piece .oldThumb {
     float: none;
   }
 }
