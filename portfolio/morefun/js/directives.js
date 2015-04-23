@@ -1,5 +1,5 @@
 APP
-.directive('mainContent', [function() {
+.directive('mainHeader', [function() {
     return {
         restrict: 'C',
         replace: false,

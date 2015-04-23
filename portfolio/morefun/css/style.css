@@ -23,8 +23,8 @@ a {
 a:hover {
   color: #93b6e3;
 }
-.container .imageContainer,
-.container .shrunkImageContainer {
+.imageContainer,
+.shrunkImageContainer {
   background-image: url('../images/bg.jpg');
   background-size: cover;
   height: 25%;
@@ -32,42 +32,54 @@ a:hover {
   border-bottom: 1px solid #000000;
   transition: 1s;
 }
-.container .imageContainer .textContainer,
-.container .shrunkImageContainer .textContainer {
+.imageContainer .textContainer,
+.shrunkImageContainer .textContainer {
   background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(45, 102, 167, 0.5));
   color: #000;
 }
-.container .imageContainer .textContainer .title,
-.container .shrunkImageContainer .textContainer .title {
+.imageContainer .textContainer .title,
+.shrunkImageContainer .textContainer .title {
   text-align: center;
   font-size: 48px;
-  text-shadow: 1px 0px #444;
+  text-shadow: 1px 1px #222;
   padding: 20px 10px 5px;
   font-weight: bold;
 }
-.container .imageContainer .textContainer .subTitle,
-.container .shrunkImageContainer .textContainer .subTitle {
+@media (max-width: 455px) {
+  .imageContainer .textContainer .title,
+  .shrunkImageContainer .textContainer .title {
+    font-size: 9.5vw;
+  }
+}
+.imageContainer .textContainer .subTitle,
+.shrunkImageContainer .textContainer .subTitle {
   font-size: 24px;
   display: none;
   text-align: center;
 }
-.container .imageContainer .textContainer .mailMe,
-.container .shrunkImageContainer .textContainer .mailMe {
+.imageContainer .textContainer .mailMe,
+.shrunkImageContainer .textContainer .mailMe {
   margin: 0px 0px 5px 0px;
   font-size: 32px;
   color: black;
   transition: 200ms;
 }
-.container .imageContainer .textContainer .mailMe:hover,
-.container .shrunkImageContainer .textContainer .mailMe:hover {
-  color: #fff;
+@media (max-width: 455px) {
+  .imageContainer .textContainer .mailMe,
+  .shrunkImageContainer .textContainer .mailMe {
+    font-size: 7vw;
+  }
 }
-.container .shrunkImageContainer {
+.imageContainer .textContainer .mailMe:hover,
+.shrunkImageContainer .textContainer .mailMe:hover {
+  color: #bbd1ee;
+}
+.shrunkImageContainer {
   height: 10%;
   min-height: 100px;
 }
-.container .middleGround,
-.container .shrunkMiddle {
+.middleGround,
+.shrunkMiddle {
   height: auto;
   padding: 20px;
   overflow: hidden;
@@ -77,108 +89,108 @@ a:hover {
   transition: font-size 0s;
 }
 @media (max-width: 795px) {
-  .container .middleGround,
-  .container .shrunkMiddle {
+  .middleGround,
+  .shrunkMiddle {
     padding: 0;
   }
 }
 @media (max-height: 600px) {
-  .container .middleGround,
-  .container .shrunkMiddle {
+  .middleGround,
+  .shrunkMiddle {
     padding: 0;
   }
 }
-.container .middleGround .centerPiece,
-.container .shrunkMiddle .centerPiece {
+.middleGround .centerPiece,
+.shrunkMiddle .centerPiece {
   position: relative;
   max-width: 930px;
   margin: auto;
   text-align: center;
 }
-.container .middleGround .centerPiece .less,
-.container .shrunkMiddle .centerPiece .less {
+.middleGround .centerPiece .less,
+.shrunkMiddle .centerPiece .less {
   color: #aaa;
 }
-.container .middleGround .centerPiece ul,
-.container .shrunkMiddle .centerPiece ul {
+.middleGround .centerPiece ul,
+.shrunkMiddle .centerPiece ul {
   display: inline-block;
   padding: 0;
   font-size: 24px;
 }
-.container .middleGround .centerPiece ul .hidden,
-.container .shrunkMiddle .centerPiece ul .hidden {
+.middleGround .centerPiece ul .hidden,
+.shrunkMiddle .centerPiece ul .hidden {
   opacity: 0;
 }
 @media (max-width: 755px) {
-  .container .middleGround .centerPiece ul,
-  .container .shrunkMiddle .centerPiece ul {
+  .middleGround .centerPiece ul,
+  .shrunkMiddle .centerPiece ul {
     font-size: 16px;
   }
 }
-.container .middleGround .centerPiece ul.smaller,
-.container .shrunkMiddle .centerPiece ul.smaller {
+.middleGround .centerPiece ul.smaller,
+.shrunkMiddle .centerPiece ul.smaller {
   font-size: 18px;
 }
 @media (max-width: 755px) {
-  .container .middleGround .centerPiece ul.smaller,
-  .container .shrunkMiddle .centerPiece ul.smaller {
+  .middleGround .centerPiece ul.smaller,
+  .shrunkMiddle .centerPiece ul.smaller {
     font-size: 14px;
   }
 }
 @media (max-width: 340px) {
-  .container .middleGround .centerPiece ul.smaller,
-  .container .shrunkMiddle .centerPiece ul.smaller {
+  .middleGround .centerPiece ul.smaller,
+  .shrunkMiddle .centerPiece ul.smaller {
     display: none;
   }
 }
-.container .middleGround .centerPiece ul.smallest,
-.container .shrunkMiddle .centerPiece ul.smallest {
+.middleGround .centerPiece ul.smallest,
+.shrunkMiddle .centerPiece ul.smallest {
   font-size: 15px;
 }
 @media (max-width: 755px) {
-  .container .middleGround .centerPiece ul.smallest,
-  .container .shrunkMiddle .centerPiece ul.smallest {
+  .middleGround .centerPiece ul.smallest,
+  .shrunkMiddle .centerPiece ul.smallest {
     font-size: 13px;
   }
 }
 @media (max-width: 628px) {
-  .container .middleGround .centerPiece ul.smallest,
-  .container .shrunkMiddle .centerPiece ul.smallest {
+  .middleGround .centerPiece ul.smallest,
+  .shrunkMiddle .centerPiece ul.smallest {
     display: none;
   }
 }
-.container .middleGround .centerPiece ul.shrunkUl,
-.container .shrunkMiddle .centerPiece ul.shrunkUl {
+.middleGround .centerPiece ul.shrunkUl,
+.shrunkMiddle .centerPiece ul.shrunkUl {
   font-size: 16px;
 }
-.container .middleGround .centerPiece ul.evenSmaller,
-.container .shrunkMiddle .centerPiece ul.evenSmaller {
+.middleGround .centerPiece ul.evenSmaller,
+.shrunkMiddle .centerPiece ul.evenSmaller {
   font-size: 14px;
 }
 @media (max-width: 340px) {
-  .container .middleGround .centerPiece ul.evenSmaller,
-  .container .shrunkMiddle .centerPiece ul.evenSmaller {
+  .middleGround .centerPiece ul.evenSmaller,
+  .shrunkMiddle .centerPiece ul.evenSmaller {
     display: none;
   }
 }
-.container .middleGround .centerPiece ul.evenSmallest,
-.container .shrunkMiddle .centerPiece ul.evenSmallest {
+.middleGround .centerPiece ul.evenSmallest,
+.shrunkMiddle .centerPiece ul.evenSmallest {
   font-size: 13px;
 }
 @media (max-width: 630px) {
-  .container .middleGround .centerPiece ul.evenSmallest,
-  .container .shrunkMiddle .centerPiece ul.evenSmallest {
+  .middleGround .centerPiece ul.evenSmallest,
+  .shrunkMiddle .centerPiece ul.evenSmallest {
     display: none;
   }
 }
-.container .middleGround .centerPiece ul i,
-.container .shrunkMiddle .centerPiece ul i {
+.middleGround .centerPiece ul i,
+.shrunkMiddle .centerPiece ul i {
   display: none;
   font-size: 26px;
   color: #222;
 }
-.container .middleGround .centerPiece ul li,
-.container .shrunkMiddle .centerPiece ul li {
+.middleGround .centerPiece ul li,
+.shrunkMiddle .centerPiece ul li {
   display: inline-block;
   text-decoration: none;
   padding: 8px 12px;
@@ -190,45 +202,50 @@ a:hover {
   transition: 200ms;
 }
 @media (max-height: 200px) {
-  .container .middleGround .centerPiece ul li,
-  .container .shrunkMiddle .centerPiece ul li {
+  .middleGround .centerPiece ul li,
+  .shrunkMiddle .centerPiece ul li {
     font-size: 14px;
   }
 }
-.container .middleGround .centerPiece ul li:hover,
-.container .shrunkMiddle .centerPiece ul li:hover {
+.middleGround .centerPiece ul li:hover,
+.shrunkMiddle .centerPiece ul li:hover {
   color: #222;
   border: 1px solid #222;
   background: #4e4aad;
 }
-.container .shrunkMiddle {
+.shrunkMiddle {
   padding: 0;
 }
-.container .project {
+.project {
   color: #2d66b0;
 }
-.container .project .header {
+.project .header {
   text-align: center;
   font-size: 44px;
   padding: 30px;
 }
-.container .project .up {
+.project .up {
   float: right;
   font-size: 44px;
   margin: 14px;
   margin-top: -74px;
 }
-.container .project .up i {
+.project .up i {
   transition: 200ms;
   cursor: pointer;
 }
-.container .project .up i:hover {
+@media (max-width: 300px) {
+  .project .up i {
+    display: none;
+  }
+}
+.project .up i:hover {
   color: #343173;
 }
-.container .project .piece {
+.project .piece {
   font-size: 19px;
   width: 29%;
-  color: #fff;
+  color: #bbd1ee;
   min-height: 360px;
   margin: 0 10px 15px 10px;
   text-align: center;
@@ -237,48 +254,45 @@ a:hover {
   line-height: 136%;
 }
 @media (max-width: 990px) {
-  .container .project .piece {
+  .project .piece {
     width: 45%;
     min-height: 319px;
   }
 }
 @media (max-width: 860px) {
-  .container .project .piece {
+  .project .piece {
     width: 94.5%;
     min-height: 0px;
   }
 }
 @media (max-width: 660px) {
-  .container .project .piece {
+  .project .piece {
     width: 91%;
   }
 }
-.container .project .piece .text {
-  display: none;
-}
 @media (max-width: 860px) {
-  .container .project .piece .text {
+  .project .piece .text {
     float: right;
     width: 55%;
     margin: 20px 10px 0 5px;
   }
 }
 @media (max-width: 730px) {
-  .container .project .piece .text {
+  .project .piece .text {
     width: 50%;
   }
 }
 @media (max-width: 660px) {
-  .container .project .piece .text {
+  .project .piece .text {
     float: none;
     width: auto;
     margin: 0;
   }
 }
-.container .project .piece .text .title {
+.project .piece .text .title {
   color: #2d66b0;
 }
-.container .project .piece .portalThumb {
+.project .piece .portalThumb {
   height: 200px;
   width: 267px;
   background-image: url('../images/portal.png');
@@ -287,16 +301,16 @@ a:hover {
   margin: 8px auto 4px;
 }
 @media (max-width: 860px) {
-  .container .project .piece .portalThumb {
+  .project .piece .portalThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .container .project .piece .portalThumb {
+  .project .piece .portalThumb {
     float: none;
   }
 }
-.container .project .piece .whitespaceThumb {
+.project .piece .whitespaceThumb {
   height: 200px;
   width: 267px;
   background-image: url('../images/portal.png');
@@ -307,16 +321,16 @@ a:hover {
   height: 217px;
 }
 @media (max-width: 860px) {
-  .container .project .piece .whitespaceThumb {
+  .project .piece .whitespaceThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .container .project .piece .whitespaceThumb {
+  .project .piece .whitespaceThumb {
     float: none;
   }
 }
-.container .project .piece .koyokaiThumb {
+.project .piece .koyokaiThumb {
   height: 200px;
   width: 267px;
   background-image: url('../images/portal.png');
@@ -328,16 +342,16 @@ a:hover {
   width: 287px;
 }
 @media (max-width: 860px) {
-  .container .project .piece .koyokaiThumb {
+  .project .piece .koyokaiThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .container .project .piece .koyokaiThumb {
+  .project .piece .koyokaiThumb {
     float: none;
   }
 }
-.container .project .piece .cubeThumb {
+.project .piece .cubeThumb {
   height: 200px;
   width: 267px;
   background-image: url('../images/portal.png');
@@ -349,16 +363,16 @@ a:hover {
   width: 275px;
 }
 @media (max-width: 860px) {
-  .container .project .piece .cubeThumb {
+  .project .piece .cubeThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .container .project .piece .cubeThumb {
+  .project .piece .cubeThumb {
     float: none;
   }
 }
-.container .project .piece .oldThumb {
+.project .piece .oldThumb {
   height: 200px;
   width: 267px;
   background-image: url('../images/portal.png');
@@ -370,16 +384,16 @@ a:hover {
   width: 275px;
 }
 @media (max-width: 860px) {
-  .container .project .piece .oldThumb {
+  .project .piece .oldThumb {
     float: left;
   }
 }
 @media (max-width: 660px) {
-  .container .project .piece .oldThumb {
+  .project .piece .oldThumb {
     float: none;
   }
 }
-.container .expandProject {
+.expandProject {
   height: 53%;
 }
 .footer,
@@ -395,6 +409,12 @@ a:hover {
   transition: 1000ms;
   overflow: hidden;
 }
+@media (max-width: 570px) {
+  .footer,
+  .shrunkFooter {
+    display: none;
+  }
+}
 .footer .text,
 .shrunkFooter .text {
   text-align: center;
@@ -402,6 +422,12 @@ a:hover {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+@media (max-width: 635px) {
+  .footer .text,
+  .shrunkFooter .text {
+    font-size: 2.5vw;
+  }
 }
 .footer .text i,
 .shrunkFooter .text i {
