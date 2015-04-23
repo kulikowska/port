@@ -10,18 +10,7 @@ APP
             $scope.smaller = 'smaller';
             $scope.smallest = 'smallest';
             $scope.imageContainer = 'imageContainer';
-            $scope.footerClass = 'footer';
             
-            $scope.showHideFooter = function() {
-                if (!$scope.noFooter) {
-                    $scope.footerClass = 'shrunkFooter';
-                    $scope.noFooter = true;
-                }
-                else {
-                    $scope.noFooter = false;
-                    $scope.footerClass = 'footer';
-                }
-            }
 
             $scope.showPort = function() {
                 if (!$scope.portfolio) {
@@ -56,23 +45,35 @@ APP
          }
       } 
  }])
-.directive('projects', [function() {
+.directive('portfolio', [function() {
     return {
         restrict: 'C',
         replace: false,
-        templateUrl: 'html/projects.html',
+        templateUrl: 'html/portfolio.html',
         //template: TPL.portfolio,
         link: function($scope, $element, $attributes) {
          }
       } 
  }])
-.directive('footer', [function() {
+.directive('footerContainer', [function() {
     return {
         restrict: 'C',
         replace: false,
         templateUrl: 'html/footer.html',
         //template: TPL.portfolio,
         link: function($scope, $element, $attributes) {
+            $scope.footerClass = 'footer';
+
+            $scope.showHideFooter = function() {
+                if (!$scope.noFooter) {
+                    $scope.footerClass = 'shrunkFooter';
+                    $scope.noFooter = true;
+                }
+                else {
+                    $scope.noFooter = false;
+                    $scope.footerClass = 'footer';
+                }
+            }
          }
       } 
  }])
