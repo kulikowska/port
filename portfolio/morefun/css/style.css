@@ -26,18 +26,19 @@ a:hover {
   height: 25%;
   min-height: 150px;
   border-bottom: 1px solid #000000;
+  text-align: center;
   transition: 1s;
 }
 .imageContainer .textContainer,
 .shrunkImageContainer .textContainer {
-  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(45, 102, 167, 0.5));
   color: #000;
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(45, 102, 167, 0.5));
 }
 .imageContainer .textContainer .title,
 .shrunkImageContainer .textContainer .title {
   text-align: center;
   font-size: 48px;
-  text-shadow: 1px 1px #222;
+  text-shadow: 1px 1px #555;
   padding: 20px 10px 5px;
   font-weight: bold;
 }
@@ -200,11 +201,13 @@ a:hover {
   color: #2d66b0;
   float: left;
   margin-bottom: 40px;
+  text-align: center;
 }
 .portfolio .header {
   text-align: center;
   font-size: 44px;
   padding: 30px;
+  text-shadow: 2px 1px #111;
 }
 .portfolio .up {
   float: right;
@@ -225,7 +228,7 @@ a:hover {
   color: #343173;
 }
 .portfolio .pieceWrap {
-  float: left;
+  display: inline-block;
   height: 305px;
 }
 .portfolio .pieceWrap .piece {
@@ -243,7 +246,7 @@ a:hover {
   cursor: pointer;
 }
 .portfolio .pieceWrap .piece:hover .text {
-  opacity: 0.9;
+  opacity: 1;
 }
 .portfolio .pieceWrap .piece .portTitle {
   width: 100%;
@@ -254,32 +257,15 @@ a:hover {
 }
 .portfolio .pieceWrap .piece .text {
   opacity: 0;
+  font-size: 22px;
   float: left;
   position: absolute;
   margin-top: 45px;
-  height: 205px;
-  padding: 10px 5px;
-  background: #0e1f36;
+  height: 185px;
+  padding: 20px 10px;
+  background: #112;
+  color: white;
   transition: 400ms;
-}
-@media (max-width: 860px) {
-  .portfolio .pieceWrap .piece .text {
-    float: right;
-    width: 55%;
-    margin: 20px 10px 0 5px;
-  }
-}
-@media (max-width: 730px) {
-  .portfolio .pieceWrap .piece .text {
-    width: 50%;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .pieceWrap .piece .text {
-    float: none;
-    width: auto;
-    margin: 0;
-  }
 }
 .portfolio .pieceWrap .piece .text .title {
   color: #2d66b0;
