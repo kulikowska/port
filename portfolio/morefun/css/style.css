@@ -29,6 +29,13 @@ a:hover {
   text-align: center;
   transition: 1s;
 }
+@media handheld, only screen and (max-device-width: 570px) {
+  .imageContainer,
+  .shrunkImageContainer {
+    height: 18%;
+    min-height: 0px;
+  }
+}
 .imageContainer .textContainer,
 .shrunkImageContainer .textContainer {
   color: #000;
@@ -189,6 +196,12 @@ a:hover {
     font-size: 14px;
   }
 }
+@media handheld, only screen and (max-device-width: 570px) {
+  .middleContainer .middleGround .buttonContainer ul li,
+  .middleContainer .shrunkMiddle .buttonContainer ul li {
+    font-size: 14px;
+  }
+}
 .middleContainer .middleGround .buttonContainer ul li:hover,
 .middleContainer .shrunkMiddle .buttonContainer ul li:hover {
   color: #222;
@@ -215,11 +228,21 @@ a:hover {
     font-size: 9.5vw;
   }
 }
+@media handheld, only screen and (max-device-width: 570px) {
+  .portfolio .header {
+    padding: 20px 10px 10px 10px;
+  }
+}
 .portfolio .up {
   float: right;
   font-size: 44px;
   margin: 14px;
   margin-top: -74px;
+}
+@media handheld, only screen and (max-device-width: 570px) {
+  .portfolio .up {
+    display: none;
+  }
 }
 .portfolio .up i {
   transition: 200ms;
@@ -241,6 +264,16 @@ a:hover {
 .portfolio .pieceWrap {
   display: inline-block;
   height: 305px;
+}
+.portfolio .pieceWrap .textForMobile {
+  display: none;
+  color: #fff;
+  padding: 10px;
+}
+@media handheld, only screen and (max-device-width: 570px) {
+  .portfolio .pieceWrap .textForMobile {
+    display: block !important;
+  }
 }
 .portfolio .pieceWrap .piece {
   font-size: 19px;
@@ -420,6 +453,12 @@ a:hover {
     display: none;
   }
 }
+@media handheld, only screen and (max-device-width: 570px) {
+  .footer,
+  .shrunkFooter {
+    display: block;
+  }
+}
 .footer .text,
 .shrunkFooter .text {
   text-align: center;
@@ -432,6 +471,12 @@ a:hover {
   .footer .text,
   .shrunkFooter .text {
     font-size: 2.5vw;
+  }
+}
+@media handheld, only screen and (max-device-width: 570px) {
+  .footer .text,
+  .shrunkFooter .text {
+    font-size: 3.5vw;
   }
 }
 .footer .text i,
@@ -452,6 +497,12 @@ a:hover {
 .footer .shrinkExpand:hover,
 .shrunkFooter .shrinkExpand:hover {
   color: #343173;
+}
+@media handheld, only screen and (max-device-width: 570px) {
+  .footer .shrinkExpand,
+  .shrunkFooter .shrinkExpand {
+    margin-top: -15;
+  }
 }
 .shrunkFooter {
   width: 40px;
