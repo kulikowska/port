@@ -447,7 +447,7 @@ a:hover {
   transition: 1000ms;
   overflow: hidden;
 }
-@media (max-width: 570px) {
+@media (max-width: 420px) {
   .footer,
   .shrunkFooter {
     display: none;
@@ -467,10 +467,10 @@ a:hover {
   top: 50%;
   transform: translateY(-50%);
 }
-@media (max-width: 635px) {
+@media (max-width: 655px) {
   .footer .text,
   .shrunkFooter .text {
-    font-size: 2.5vw;
+    font-size: 2.4vw;
   }
 }
 @media handheld, only screen and (max-device-width: 570px) {
@@ -486,10 +486,11 @@ a:hover {
 }
 .footer .shrinkExpand,
 .shrunkFooter .shrinkExpand {
-  float: right;
   padding: 0px 10px;
-  margin-top: -8px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
   cursor: pointer;
   transition: 200ms;
   color: #2d66b0;
@@ -497,12 +498,6 @@ a:hover {
 .footer .shrinkExpand:hover,
 .shrunkFooter .shrinkExpand:hover {
   color: #343173;
-}
-@media handheld, only screen and (max-device-width: 570px) {
-  .footer .shrinkExpand,
-  .shrunkFooter .shrinkExpand {
-    margin-top: -15;
-  }
 }
 .shrunkFooter {
   width: 40px;
