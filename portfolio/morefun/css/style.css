@@ -185,7 +185,7 @@ a:hover {
   text-decoration: none;
   padding: 8px 12px;
   margin: 4px;
-  border: 1px solid #aaa;
+  border: 1px solid #777;
   box-shadow: 1px 1px 4px 2px #222;
   background: #23214c;
   opacity: 0.9;
@@ -280,7 +280,7 @@ a:hover {
   position: relative;
   width: 30.1vw;
   color: #bbd1ee;
-  border: 1px solid #999;
+  border: 1px solid #444;
   box-shadow: 1px 1px 4px 2px #111;
   margin: 0 10px 20px 10px;
   text-align: center;
