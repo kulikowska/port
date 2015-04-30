@@ -174,7 +174,7 @@ a {
         .piece {
             font-size:19px;
             position:relative;
-            width:auto;
+            width:30vw;
             min-height:250px;
             color:lighten(@niceBlue, 40%);
             border:1px solid #999;
@@ -210,38 +210,38 @@ a {
                 height:225px;
                 background-size:100%;
                 border-top:1px solid black;
-                @media (max-width:@singlePane) { float:left; }
-                @media (max-width:660px) { float:none; }
+                //@media (max-width:@singlePane) { height:322px; }
+                //@media (max-width:660px) { height:322px; width:35vw; }
             }
             .portalThumb {
                 .imgThumb;
-                width:300px;
-                background-image:url('../images/portal.png');
+                //width:300px;
+                background-image:url('../images/resizeable/portal.png');
             }
             .whitespaceThumb {
                 .imgThumb;
                 background-image:url('../images/whitespace.png');
-                width:276px;
+                //width:276px;
             }
             .koyokaiThumb{
                 .imgThumb;
-                background-image:url('../images/koyo.png');
-                width:340px;
+                background-image:url('../images/resizeable/koyo.png');
+               // width:340px;
             }
             .cubeThumb {
                 .imgThumb;
-                background-image:url('../images/cube.png');
-                width:300px;
+                background-image:url('../images/resizeable/cube.png');
+                //width:300px;
             }
             .oldThumb {
                 .imgThumb;
-                background-image:url('../images/oldsite.png');
-                width:260px;
+                background-image:url('../images/resizeable/oldsite.png');
+                //width:260px;
             }
             .alternateThumb{
                 .imgThumb;
-                background-image:url('../images/alternate.png');
-                width:282px;
+                background-image:url('../images/resizeable/alternate.png');
+                //width:282px;
             }
         }
     }

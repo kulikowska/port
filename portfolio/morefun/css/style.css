@@ -279,7 +279,7 @@ a:hover {
 .portfolio .pieceWrap .piece {
   font-size: 19px;
   position: relative;
-  width: auto;
+  width: 30vw;
   min-height: 250px;
   color: #bbd1ee;
   border: 1px solid #999;
@@ -320,117 +320,41 @@ a:hover {
   background-size: 100%;
   border-top: 1px solid black;
 }
-@media (max-width: 860px) {
-  .portfolio .pieceWrap .piece .imgThumb {
-    float: left;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .pieceWrap .piece .imgThumb {
-    float: none;
-  }
-}
 .portfolio .pieceWrap .piece .portalThumb {
   height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
-  width: 300px;
-  background-image: url('../images/portal.png');
-}
-@media (max-width: 860px) {
-  .portfolio .pieceWrap .piece .portalThumb {
-    float: left;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .pieceWrap .piece .portalThumb {
-    float: none;
-  }
+  background-image: url('../images/resizeable/portal.png');
 }
 .portfolio .pieceWrap .piece .whitespaceThumb {
   height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
   background-image: url('../images/whitespace.png');
-  width: 276px;
-}
-@media (max-width: 860px) {
-  .portfolio .pieceWrap .piece .whitespaceThumb {
-    float: left;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .pieceWrap .piece .whitespaceThumb {
-    float: none;
-  }
 }
 .portfolio .pieceWrap .piece .koyokaiThumb {
   height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
-  background-image: url('../images/koyo.png');
-  width: 340px;
-}
-@media (max-width: 860px) {
-  .portfolio .pieceWrap .piece .koyokaiThumb {
-    float: left;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .pieceWrap .piece .koyokaiThumb {
-    float: none;
-  }
+  background-image: url('../images/resizeable/koyo.png');
 }
 .portfolio .pieceWrap .piece .cubeThumb {
   height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
-  background-image: url('../images/cube.png');
-  width: 300px;
-}
-@media (max-width: 860px) {
-  .portfolio .pieceWrap .piece .cubeThumb {
-    float: left;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .pieceWrap .piece .cubeThumb {
-    float: none;
-  }
+  background-image: url('../images/resizeable/cube.png');
 }
 .portfolio .pieceWrap .piece .oldThumb {
   height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
-  background-image: url('../images/oldsite.png');
-  width: 260px;
-}
-@media (max-width: 860px) {
-  .portfolio .pieceWrap .piece .oldThumb {
-    float: left;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .pieceWrap .piece .oldThumb {
-    float: none;
-  }
+  background-image: url('../images/resizeable/oldsite.png');
 }
 .portfolio .pieceWrap .piece .alternateThumb {
   height: 225px;
   background-size: 100%;
   border-top: 1px solid black;
-  background-image: url('../images/alternate.png');
-  width: 282px;
-}
-@media (max-width: 860px) {
-  .portfolio .pieceWrap .piece .alternateThumb {
-    float: left;
-  }
-}
-@media (max-width: 660px) {
-  .portfolio .pieceWrap .piece .alternateThumb {
-    float: none;
-  }
+  background-image: url('../images/resizeable/alternate.png');
 }
 .expandProject {
   height: 53%;
