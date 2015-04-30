@@ -281,6 +281,7 @@ a:hover {
   position: relative;
   width: 30vw;
   min-height: 250px;
+  min-width: 280px;
   color: #bbd1ee;
   border: 1px solid #999;
   box-shadow: 1px 1px 4px 2px #111;
