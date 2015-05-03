@@ -400,15 +400,15 @@ a:hover {
     height: 280px;
   }
 }
-.portfolio .pieceWrap .piece .alternateThumb {
+.portfolio .pieceWrap .piece .newcoverThumb {
   height: 215px;
   background-size: cover;
   border-top: 1px solid black;
   background-repeat: no-repeat;
-  background-image: url('../images/resizeable/alternate.png');
+  background-image: url('../images/resizeable/newcover.png');
 }
 @media (max-width: 990px) {
-  .portfolio .pieceWrap .piece .alternateThumb {
+  .portfolio .pieceWrap .piece .newcoverThumb {
     height: 280px;
   }
 }
