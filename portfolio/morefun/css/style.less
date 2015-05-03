@@ -226,7 +226,7 @@ a {
             }
             .whitespaceThumb {
                 .imgThumb;
-                background-image:url('../images/whitespace.png');
+                background-image:url('../images/resizeable/whitespace.png');
                 //width:276px;
             }
             .koyokaiThumb{
@@ -276,9 +276,16 @@ a {
         transform:translateY(-50%);
         @media (max-width:655px) { font-size:2.4vw; }
         @media handheld, only screen and (max-device-width:570px) { font-size:3.5vw; }
+        a { 
+            color:#aaa;
+            &:hover { 
+                i { color:darken(#363377, 1%); }
+            }
+        }
         i { 
             color:@niceBlue;
             padding:0 4px;
+            transition:200ms;
         } 
     }
     .shrinkExpand {

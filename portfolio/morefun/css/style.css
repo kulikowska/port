@@ -357,7 +357,7 @@ a:hover {
   background-size: cover;
   border-top: 1px solid black;
   background-repeat: no-repeat;
-  background-image: url('../images/whitespace.png');
+  background-image: url('../images/resizeable/whitespace.png');
 }
 @media (max-width: 990px) {
   .portfolio .pieceWrap .piece .whitespaceThumb {
@@ -460,10 +460,19 @@ a:hover {
     font-size: 3.5vw;
   }
 }
+.footer .text a,
+.shrunkFooter .text a {
+  color: #aaa;
+}
+.footer .text a:hover i,
+.shrunkFooter .text a:hover i {
+  color: #343173;
+}
 .footer .text i,
 .shrunkFooter .text i {
   color: #2d66b0;
   padding: 0 4px;
+  transition: 200ms;
 }
 .footer .shrinkExpand,
 .shrunkFooter .shrinkExpand {
