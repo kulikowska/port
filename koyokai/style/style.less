@@ -7,11 +7,13 @@
 body { 
     background:linear-gradient(@top, @bottom);
     //background-image:url(http://static1.grsites.com/archive/textures/red/red112.jpg);
-    background-image:url(http://static1.grsites.com/archive/textures/red/red152.jpg);
+    //background-image:url(http://static1.grsites.com/archive/textures/red/red152.jpg);
     //font-family:trebuchet ms;
    font-family:tahoma, geneva, sans-serif;
     //font-family:verdana, geneva, sans-serif;
     color:#ccc;
+    padding:0;
+    margin:0;
  }
 
 a { 
@@ -23,15 +25,14 @@ a {
 .contentWrap {
     box-shadow:1px 1px 5px 3px #100;
     margin:0 auto;
-    border:1px solid black;
-    width:874px;
+    width:100%;
     ul { list-style:none; }
     .imgprop {
         height:250px;
-        width:920px;
+        width:100%;
         overflow:hidden;
         background-image:url('../images/header.jpg');
-        background-size:95%;
+        background-size:cover;
         background-position: 0 -125px;
         background-repeat:no-repeat;
     }
@@ -52,9 +53,10 @@ a {
     .dropdown {
             font-family:trebuchet ms;
             background:#350000;
-            background:linear-gradient(@ultop, @ulbottom);
-            background:-webkit-linear-gradient(@ultop, @ulbottom);
+            background:linear-gradient(@ulbottom, @ultop);
+            //background:-webkit-linear-gradient(@ultop, @ulbottom);
             height:57px;
+            text-align:center;
         nav ul {
             padding:0;
             margin:0;
@@ -73,8 +75,8 @@ a {
                 float:left;
                 text-align:center;
                 background:#350000;
-                background:linear-gradient(@ultop, @ulbottom);
-                background:-webkit-linear-gradient(@ultop, @ulbottom);
+                background:linear-gradient(@ulbottom, @ultop);
+                //background:-webkit-linear-gradient(@ultop, @ulbottom);
                 //height:50px;
                 width:120px;
                 padding:15px 22px 15px 0px;
@@ -141,7 +143,7 @@ a {
                         float:left;
                         box-shadow:0 0 4px 3px #000;
                         border:3px solid #000;
-                        width:272px;
+                        width:31.5%;
                         height:160px;
                         margin:10px 0 10px 10px;
                         background-image:url('../images/kendodude.jpg');
@@ -189,7 +191,7 @@ a {
                     //border-radius:4px;
                 }
                 .leftPane {
-                    width:170px;
+                    width:32%;
                     .leftHead {
                         .sideHead;
                         i { margin:2px; }
@@ -203,10 +205,11 @@ a {
                     }
                 }
                 .centerPane {
-                    width:492px;
+                    width:32%;
                     margin:10px 0;
                     overflow:hidden;
                     .blogPostWrap {
+                        display:none;
                         float:left;
                         margin-bottom:13px;
                         width:100%;
@@ -265,7 +268,7 @@ a {
                     }
                  }
                 .rightPane {
-                    width:170px;
+                    width:30%;
                     .rightHead {
                         .sideHead;
                         width:80px;

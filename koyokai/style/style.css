@@ -1,8 +1,9 @@
 body {
   background: linear-gradient(#250000, #450000);
-  background-image: url(http://static1.grsites.com/archive/textures/red/red152.jpg);
   font-family: tahoma, geneva, sans-serif;
   color: #ccc;
+  padding: 0;
+  margin: 0;
 }
 a {
   color: #777;
@@ -14,35 +15,34 @@ a:hover {
 .contentWrap {
   box-shadow: 1px 1px 5px 3px #100;
   margin: 0 auto;
-  border: 1px solid black;
-  width: 874px;
+  width: 100%;
 }
 .contentWrap ul {
   list-style: none;
 }
 .contentWrap .imgprop {
   height: 250px;
-  width: 920px;
+  width: 100%;
   overflow: hidden;
   background-image: url('../images/header.jpg');
-  background-size: 95%;
+  background-size: cover;
   background-position: 0 -125px;
   background-repeat: no-repeat;
 }
 .contentWrap .headerimg {
   height: 250px;
-  width: 920px;
+  width: 100%;
   overflow: hidden;
   background-image: url('../images/header.jpg');
-  background-size: 95%;
+  background-size: cover;
   background-position: 0 -125px;
   background-repeat: no-repeat;
 }
 .contentWrap .shrunk {
   height: 250px;
-  width: 920px;
+  width: 100%;
   overflow: hidden;
-  background-size: 95%;
+  background-size: cover;
   background-position: 0 -125px;
   background-repeat: no-repeat;
   transition: 1s ease;
@@ -52,10 +52,10 @@ a:hover {
 }
 .contentWrap .homeimg {
   height: 250px;
-  width: 920px;
+  width: 100%;
   overflow: hidden;
   background-image: url('../images/header.jpg');
-  background-size: 95%;
+  background-size: cover;
   background-position: 0 -125px;
   background-repeat: no-repeat;
   transition: 1s ease;
@@ -63,9 +63,9 @@ a:hover {
 .contentWrap .dropdown {
   font-family: trebuchet ms;
   background: #350000;
-  background: linear-gradient(#000000, #350000);
-  background: -webkit-linear-gradient(#000000, #350000);
+  background: linear-gradient(#350000, #000000);
   height: 57px;
+  text-align: center;
 }
 .contentWrap .dropdown nav ul {
   padding: 0;
@@ -86,8 +86,7 @@ a:hover {
   float: left;
   text-align: center;
   background: #350000;
-  background: linear-gradient(#000000, #350000);
-  background: -webkit-linear-gradient(#000000, #350000);
+  background: linear-gradient(#350000, #000000);
   width: 120px;
   padding: 15px 22px 15px 0px;
   transition: 400ms ease;
@@ -163,7 +162,7 @@ a:hover {
   float: left;
   box-shadow: 0 0 4px 3px #000;
   border: 3px solid #000;
-  width: 272px;
+  width: 31.5%;
   height: 160px;
   margin: 10px 0 10px 10px;
   background-image: url('../images/kendodude.jpg');
@@ -175,7 +174,7 @@ a:hover {
   float: left;
   box-shadow: 0 0 4px 3px #000;
   border: 3px solid #000;
-  width: 272px;
+  width: 31.5%;
   height: 160px;
   margin: 10px 0 10px 10px;
   background-image: url('../images/kendodude.jpg');
@@ -188,7 +187,7 @@ a:hover {
   float: left;
   box-shadow: 0 0 4px 3px #000;
   border: 3px solid #000;
-  width: 272px;
+  width: 31.5%;
   height: 160px;
   margin: 10px 0 10px 10px;
   background-image: url('../images/kendodude.jpg');
@@ -229,7 +228,7 @@ a:hover {
   background: #211;
 }
 .contentWrap .content .homecontent .bottomDiv .leftPane {
-  width: 170px;
+  width: 32%;
 }
 .contentWrap .content .homecontent .bottomDiv .leftPane .leftHead {
   width: 95px;
@@ -254,11 +253,12 @@ a:hover {
   color: #bbb;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane {
-  width: 492px;
+  width: 32%;
   margin: 10px 0;
   overflow: hidden;
 }
 .contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap {
+  display: none;
   float: left;
   margin-bottom: 13px;
   width: 100%;
@@ -319,7 +319,7 @@ a:hover {
   border: 1px solid #eee;
 }
 .contentWrap .content .homecontent .bottomDiv .rightPane {
-  width: 170px;
+  width: 30%;
 }
 .contentWrap .content .homecontent .bottomDiv .rightPane .rightHead {
   width: 95px;
