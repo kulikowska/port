@@ -435,6 +435,12 @@ a:hover {
     display: none;
   }
 }
+@media (max-width: 775px) {
+  .footer,
+  .shrunkFooter {
+    height: 45px;
+  }
+}
 @media handheld, only screen and (max-device-width: 570px) {
   .footer,
   .shrunkFooter {
@@ -449,10 +455,20 @@ a:hover {
   top: 50%;
   transform: translateY(-50%);
 }
-@media (max-width: 655px) {
+.footer .text #adjustOnResize,
+.shrunkFooter .text #adjustOnResize {
+  display: inline;
+}
+@media (max-width: 775px) {
+  .footer .text #adjustOnResize,
+  .shrunkFooter .text #adjustOnResize {
+    display: block;
+  }
+}
+@media (max-width: 775px) {
   .footer .text,
   .shrunkFooter .text {
-    font-size: 2.4vw;
+    font-size: 15px;
   }
 }
 @media handheld, only screen and (max-device-width: 570px) {
