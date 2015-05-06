@@ -1,22 +1,12 @@
 <div class={{middleDiv}}>
     <div class="buttonContainer">
         <ul class={{mainUl}}>
-            <li>HTML5</li>
-            <li>CSS3 {LESS}</li>
-            <li>AngularJs</li>
+            <li ng-repeat="i in ['HTML5', 'CSS3 [LESS]', 'AngularJs']">{{i}}</li>
             <ul class={{smaller}}>
-                <li> Dynamic HTML</li>
-                <li>Responsive Design</li>
-                <li>CSS Animations</li>
-                <li>JavaScript</li>
-                <li>JQuery</li>
+                <li ng-repeat="i in ['Dynamic HTML', 'Responsive Design', 'CSS Animations', 'JavaScript', 'JQuery']">{{i}}</li>
             </ul>
             <ul class={{smallest}}>
-                <li>PHP</li>
-                <li>MySQL</li>
-                <li>Three.js</li>
-                <li>Canvas</li>
-                <li>SVG</li>
+                <li ng-repeat="i in ['PHP', 'MySQL', 'Three.js', 'Canvas', 'SVG']">{{i}}</li>
             </ul>
         </ul>
     </div>
