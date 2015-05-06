@@ -5,7 +5,7 @@
 @ulbottom:#350000;
 
 body { 
-    background:linear-gradient(@top, @bottom);
+   // background:linear-gradient(@top, @bottom);
     //background-image:url(http://static1.grsites.com/archive/textures/red/red112.jpg);
     //background-image:url(http://static1.grsites.com/archive/textures/red/red152.jpg);
     //font-family:trebuchet ms;
@@ -28,12 +28,12 @@ a {
     width:100%;
     ul { list-style:none; }
     .imgprop {
-        height:250px;
+        height:300px;
         width:100%;
         overflow:hidden;
         background-image:url('../images/header.jpg');
         background-size:cover;
-        background-position: 0 -125px;
+        background-position:center;
         background-repeat:no-repeat;
     }
     .headerimg {
@@ -71,6 +71,7 @@ a {
             font-size:18px;
             padding:0 10px;
             transition: 400ms ease;
+            @media (max-width:875px) { font-size:3vw; }
             li {
                 float:left;
                 text-align:center;
@@ -125,6 +126,7 @@ a {
         transition:1s ease;
     }
     .content {
+        display:none;
         .homecontent {
             margin-top:15px;
             margin-left:-40px;
@@ -313,6 +315,7 @@ a {
         .eventscont { .tempprop; }
     }
     .footer {
+        display:none;
         width:100%;
         height:35px;
         background:#000;

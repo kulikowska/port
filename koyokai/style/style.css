@@ -1,5 +1,4 @@
 body {
-  background: linear-gradient(#250000, #450000);
   font-family: tahoma, geneva, sans-serif;
   color: #ccc;
   padding: 0;
@@ -21,29 +20,29 @@ a:hover {
   list-style: none;
 }
 .contentWrap .imgprop {
-  height: 250px;
+  height: 300px;
   width: 100%;
   overflow: hidden;
   background-image: url('../images/header.jpg');
   background-size: cover;
-  background-position: 0 -125px;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .contentWrap .headerimg {
-  height: 250px;
+  height: 300px;
   width: 100%;
   overflow: hidden;
   background-image: url('../images/header.jpg');
   background-size: cover;
-  background-position: 0 -125px;
+  background-position: center;
   background-repeat: no-repeat;
 }
 .contentWrap .shrunk {
-  height: 250px;
+  height: 300px;
   width: 100%;
   overflow: hidden;
   background-size: cover;
-  background-position: 0 -125px;
+  background-position: center;
   background-repeat: no-repeat;
   transition: 1s ease;
   height: 100px;
@@ -51,12 +50,12 @@ a:hover {
   background-image: url('../images/header.jpg');
 }
 .contentWrap .homeimg {
-  height: 250px;
+  height: 300px;
   width: 100%;
   overflow: hidden;
   background-image: url('../images/header.jpg');
   background-size: cover;
-  background-position: 0 -125px;
+  background-position: center;
   background-repeat: no-repeat;
   transition: 1s ease;
 }
@@ -81,6 +80,11 @@ a:hover {
   font-size: 18px;
   padding: 0 10px;
   transition: 400ms ease;
+}
+@media (max-width: 875px) {
+  .contentWrap .dropdown nav ul {
+    font-size: 3vw;
+  }
 }
 .contentWrap .dropdown nav ul li {
   float: left;
@@ -129,6 +133,7 @@ a:hover {
   transition: 1s ease;
 }
 .contentWrap .content {
+  display: none;
   color: #ccc;
   height: 550px;
   background: #111;
@@ -407,6 +412,7 @@ a:hover {
   padding-top: 30px;
 }
 .contentWrap .footer {
+  display: none;
   width: 100%;
   height: 35px;
   background: #000;
