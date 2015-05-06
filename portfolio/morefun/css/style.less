@@ -279,8 +279,10 @@ a {
         @media handheld, only screen and (max-device-width:570px) { font-size:3.5vw; }
         a { 
             color:#aaa;
+            transition:200ms;
             &:hover { 
-                i { color:darken(#363377, 1%); }
+                color:#fff;
+                i { color:lighten(@niceBlue, 25%); }
             }
         }
         i { 

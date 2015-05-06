@@ -464,10 +464,15 @@ a:hover {
 .footer .text a,
 .shrunkFooter .text a {
   color: #aaa;
+  transition: 200ms;
+}
+.footer .text a:hover,
+.shrunkFooter .text a:hover {
+  color: #fff;
 }
 .footer .text a:hover i,
 .shrunkFooter .text a:hover i {
-  color: #343173;
+  color: #7ea8de;
 }
 .footer .text i,
 .shrunkFooter .text i {
