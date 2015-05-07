@@ -1,0 +1,72 @@
+body {
+	background:purple;
+}
+
+.container {
+	margin:0 auto;
+	width:500px;
+	position:relative;
+	margin-top:20px;
+}
+
+.content {
+	border:2px solid white;
+	width:500px;
+	height:300px;
+}
+
+.button1 {
+	position:absolute;
+	top:80px;
+	left:50px;
+	border:1px solid white;
+	background-color:black;
+	width:105px;
+	height:105px;
+}
+
+.button2 {
+	position:absolute;
+	top:80px;
+	left:250px;
+	border:1px solid white;
+	background-color:black;
+	width:105px;
+	height:105px;
+}
+
+a:focus~.button2 {
+	display:none;
+}
+
+a:focus .button1 {
+	background:blue;
+}
+
+.tabs {
+	float:left;
+	height:100px;
+	width:100px;
+	border:1px solid white;
+	background:gray;
+}
+
+.tabs:focus {
+	background:white;
+}
+
+.content:focus {
+	background:blue;
+}
+
+.instructions {
+	position:absolute;
+	width:350px;
+	height:230px;
+	top:50px;
+	left:100px;
+	opacity:0.8;
+	background:white;
+	font-size:32px;
+}
+
