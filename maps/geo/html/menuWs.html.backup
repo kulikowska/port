@@ -1,0 +1,19 @@
+<div id="contentMenu" ng-class="active|checkActive">
+    <button ng-click="activate('box');" ng-class="box|checkActive">Box</button>
+    <button ng-click="activate('point');" ng-class="point|checkActive">Point</button>
+    <button ng-click="activate('center');" ng-class="center|checkActive">Center</button>
+    <button ng-click="activate('elevation');" ng-class="elevation|checkActive">Elevation</button>
+    <div id="options">
+        <ul><li> <span>Options</span> 
+            <ul>
+                <li>
+                    <div><label for="devCenter">Center On Device Click</label><input id="devCenter" type="checkbox" ng-model="devCenter"></input></div>
+                </li>
+                <li>
+                    <div><label for="autoOff">Menu Auto Off</label><input id="autoOff" type="checkbox" ng-model="autoOff"></input></div>
+                </li>
+            </ul>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,440 @@
+body {
+  font-family: tahoma, geneva, sans-serif;
+  color: #ccc;
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: #777;
+  transition: 200ms ease;
+}
+a:hover {
+  color: #fff;
+}
+.contentWrap {
+  box-shadow: 1px 1px 5px 3px #100;
+  margin: 0 auto;
+  width: 100%;
+}
+.contentWrap ul {
+  list-style: none;
+}
+.contentWrap .imgprop {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  background-image: url('../images/header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.contentWrap .headerimg {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  background-image: url('../images/header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.contentWrap .shrunk {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 1s ease;
+  height: 100px;
+  background-position: 0 -195px;
+  background-image: url('../images/header.jpg');
+}
+.contentWrap .homeimg {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  background-image: url('../images/header.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 1s ease;
+}
+.contentWrap .dropdown {
+  font-family: trebuchet ms;
+  background: #350000;
+  background: linear-gradient(#350000, #000000);
+  height: 57px;
+  text-align: center;
+}
+.contentWrap .dropdown nav ul {
+  padding: 0;
+  margin: 0;
+  height: 50px;
+  border-top: 1px solid #150000;
+  border-bottom: 1px solid black;
+  list-style: none;
+  color: #eee;
+  position: relative;
+  display: inline-table;
+  text-align: center;
+  font-size: 18px;
+  padding: 0 10px;
+  transition: 400ms ease;
+}
+@media (max-width: 875px) {
+  .contentWrap .dropdown nav ul {
+    font-size: 3vw;
+  }
+}
+.contentWrap .dropdown nav ul li {
+  float: left;
+  text-align: center;
+  background: #350000;
+  background: linear-gradient(#350000, #000000);
+  width: 120px;
+  padding: 15px 22px 15px 0px;
+  transition: 400ms ease;
+}
+.contentWrap .dropdown nav ul li #leafimg {
+  float: right;
+  padding-left: 16px;
+}
+.contentWrap .dropdown nav ul li.active {
+  color: maroon;
+  font-style: italic;
+}
+.contentWrap .dropdown nav ul li:hover {
+  color: #953000;
+  cursor: pointer;
+  font-size: 17px;
+}
+.contentWrap .dropdown nav ul li:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.contentWrap .dropdown nav ul ul {
+  display: none;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 500;
+}
+.contentWrap .dropdown nav ul ul li {
+  float: none;
+  position: relative;
+}
+.contentWrap .contentprop {
+  color: #ccc;
+  height: 550px;
+  background: #111;
+  opacity: 1;
+  margin-top: -15px;
+  transition: 1s ease;
+}
+.contentWrap .content {
+  display: none;
+  color: #ccc;
+  height: 550px;
+  background: #111;
+  opacity: 1;
+  margin-top: -15px;
+  transition: 1s ease;
+}
+.contentWrap .content .homecontent {
+  margin-top: 15px;
+  margin-left: -40px;
+}
+.contentWrap .content .homecontent .topDiv,
+.contentWrap .content .homecontent .bottomDiv {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100%;
+  height: 32%;
+}
+.contentWrap .content .homecontent .topDiv i,
+.contentWrap .content .homecontent .bottomDiv i {
+  color: #9b3333;
+}
+.contentWrap .content .homecontent .topDiv .photoWrap,
+.contentWrap .content .homecontent .bottomDiv .photoWrap {
+  width: 100%;
+  float: left;
+}
+.contentWrap .content .homecontent .topDiv .photoWrap .photo1,
+.contentWrap .content .homecontent .bottomDiv .photoWrap .photo1 {
+  float: left;
+  box-shadow: 0 0 4px 3px #000;
+  border: 3px solid #000;
+  width: 31.5%;
+  height: 160px;
+  margin: 10px 0 10px 10px;
+  background-image: url('../images/kendodude.jpg');
+  background-size: 100%;
+  background-position: 0;
+}
+.contentWrap .content .homecontent .topDiv .photoWrap .photo2,
+.contentWrap .content .homecontent .bottomDiv .photoWrap .photo2 {
+  float: left;
+  box-shadow: 0 0 4px 3px #000;
+  border: 3px solid #000;
+  width: 31.5%;
+  height: 160px;
+  margin: 10px 0 10px 10px;
+  background-image: url('../images/kendodude.jpg');
+  background-size: 100%;
+  background-position: 0;
+  background-image: url('../images/group.jpg');
+}
+.contentWrap .content .homecontent .topDiv .photoWrap .photo3,
+.contentWrap .content .homecontent .bottomDiv .photoWrap .photo3 {
+  float: left;
+  box-shadow: 0 0 4px 3px #000;
+  border: 3px solid #000;
+  width: 31.5%;
+  height: 160px;
+  margin: 10px 0 10px 10px;
+  background-image: url('../images/kendodude.jpg');
+  background-size: 100%;
+  background-position: 0;
+  background-image: url('../images/travisdo.jpg');
+}
+.contentWrap .content .homecontent .sideHead {
+  width: 95px;
+  margin: 0 auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.contentWrap .content .homecontent .sideInfo {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  color: #bbb;
+}
+.contentWrap .content .homecontent .divider {
+  margin: 15px auto;
+  width: 50px;
+}
+.contentWrap .content .homecontent .divider i {
+  color: #444;
+}
+.contentWrap .content .homecontent .bottomDiv {
+  height: 68%;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane,
+.contentWrap .content .homecontent .bottomDiv .centerPane,
+.contentWrap .content .homecontent .bottomDiv .rightPane {
+  padding-top: 25px;
+  float: left;
+  height: 88%;
+  margin: 10px;
+  box-shadow: 0 0 4px 4px #000;
+  background: #211;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane {
+  width: 32%;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane .leftHead {
+  width: 95px;
+  margin: 0 auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane .leftHead i {
+  margin: 2px;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane .leftHeadAffil {
+  width: 95px;
+  margin: 0 auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 110px;
+}
+.contentWrap .content .homecontent .bottomDiv .leftPane .leftInfo {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  color: #bbb;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane {
+  width: 32%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap {
+  display: none;
+  float: left;
+  margin-bottom: 13px;
+  width: 100%;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap #header {
+  font-size: 20px;
+  font-weight: bold;
+  margin: -15px 0 10px 10px;
+  text-align: center;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .title {
+  margin: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .date,
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .name {
+  float: left;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .date {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  box-shadow: 0 0 1px 2px #350000;
+  text-align: center;
+  padding-top: 2;
+  font-size: 11px;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .date .month {
+  font-size: 18px;
+  font-weight: bold;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .name {
+  margin: 0px 0 0 10px;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap .post {
+  margin: 10px 0px 0 30px;
+  float: left;
+  font-size: 13px;
+  width: 80%;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap #morePosts {
+  width: 80px;
+  height: auto;
+  border: 1px solid #999;
+  background: #111;
+  font-size: 13px;
+  margin: 0 auto;
+  font-weight: bold;
+  padding: 4px 6px;
+  text-align: center;
+  cursor: pointer;
+  color: #999;
+  transition: 400ms ease;
+}
+.contentWrap .content .homecontent .bottomDiv .centerPane .blogPostWrap #morePosts:hover {
+  color: #eee;
+  border: 1px solid #eee;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane {
+  width: 30%;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightHead {
+  width: 95px;
+  margin: 0 auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 80px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightHeadEvents {
+  width: 95px;
+  margin: 0 auto 5px;
+  font-weight: bold;
+  font-size: 15px;
+  width: 70px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo {
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  color: #bbb;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul {
+  margin-left: -55px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul li {
+  width: 200px;
+  margin-top: 2px;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul a {
+  color: #aaa;
+  text-decoration: none;
+}
+.contentWrap .content .homecontent .bottomDiv .rightPane .rightInfo ul a:hover {
+  color: white;
+}
+.contentWrap .content .depr {
+  display: none;
+}
+.contentWrap .content .about {
+  padding-top: 15px;
+}
+.contentWrap .tempprop {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand {
+  color: #ccc;
+  height: 550px;
+  background: #111;
+  opacity: 1;
+  margin-top: -15px;
+  transition: 1s ease;
+  height: 700px;
+}
+.contentWrap .contentexpand .aboutcont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand .gallerycont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand .memberscont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand .kendocont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .contentexpand .eventscont {
+  margin: 0 auto;
+  width: 200px;
+  font-size: 26px;
+  padding-top: 30px;
+}
+.contentWrap .footer {
+  display: none;
+  width: 100%;
+  height: 35px;
+  background: #000;
+  background: linear-gradient(#150000, #000000);
+  background: -webkit-linear-gradient(#150000, #000000);
+  border-top: 1px solid black;
+}
+.contentWrap .footer #facebook {
+  margin: 5px 11px;
+  color: #333;
+  font-size: 24px;
+  float: right;
+  transition: 400ms ease;
+}
+.contentWrap .footer #facebook:hover {
+  color: #999;
+}
+.contentWrap .footer #copywrite {
+  font-size: 12px;
+  width: 330px;
+  margin: 5px auto;
+}
+.contentWrap .footer #copywrite i {
+  color: maroon;
+}

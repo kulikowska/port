@@ -1,0 +1,452 @@
+body {
+    margin:0 auto;
+    width:640px;
+	margin-top:20px;
+    background:#779ecb;
+	color:white;
+    font-family:monaco;
+}
+button {
+    cursor:pointer;
+}
+
+input {
+    width:100%;
+    border:1px solid #aaa;
+    border-radius:4px;
+}
+
+#controls {
+    position:relative;
+    float:left;
+    clear:both;
+    width:100%;
+}
+
+#controls > * {
+        position:relative;
+        float:left;
+        margin:2px 2px;
+        border:1px solid black;
+        padding:4px 6px;
+        border-radius:4px;
+}
+
+#controls div  {
+    position:relative;
+    float:left;
+    margin-left:4px;
+    padding:0;
+    font-size:1.5em;
+    width:190px;
+    border:1px solid #888;
+    text-align:center;
+    font-family:monospace;
+}
+
+#wholecontainer {
+	padding:0 20px 10px 20px;
+	background:#666fd6;
+	border:3px solid #fff;
+	height:800px;
+	width:640px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+
+#vidContainer {
+    position:relative;
+    float:left;
+    width:100%;
+	margin-top:14px;
+}
+
+#activeCaption {
+    position:absolute;
+    top:20px;
+    left:25px;
+    border:none;
+    margin:-68px 0 0;
+    margin:0;
+    background:transparent;
+    color:white;
+    font-size:1.2em;
+    min-height:24px;
+    z-index:40000;
+    padding:5px;
+    border-radius:6px;
+    max-width:600px;
+    text-align:center;
+    width:auto;
+    background:#000;
+    opacity:0.6;
+}
+ 
+#playerCover {
+    background:transparent;
+    width:640px;
+    z-index:1000;
+    position:absolute;
+}
+
+video,
+.wrap {
+    margin-top:3px;
+    position:relative;
+    float:left;
+    width:100%;
+    clear:both;
+}
+.wrap > * {
+    position:relative;
+    float:left;
+}
+
+.wrap div.framePager {
+    width:607px;
+}
+
+div.framePager #frameSel {
+    position:absolute;
+    width:600px;
+    background:#eee;
+    z-index:20000;
+    border-radius:8px;
+    text-align:center;
+    padding:12px 0;
+    border: 3px solid #aaa;
+    min-height:112px;
+    max-height:128px;
+    overflow:auto;
+}
+
+.wrap #timeArgs {
+    width:100%;
+}
+
+.wrap textarea {
+    width:100%;
+    height:86px;
+    font-size:14px;
+    border-radius:5px;
+}
+
+.timeControls {
+    position:relative;
+    float:left;
+    width:100%;
+    height:28px;
+}
+
+.timeControls #rollBackVal {
+    width:100px;
+    font-size:0.7em;
+    text-align:right;
+    padding-top:8px;
+}
+.timeControls.transfer{
+    width:auto;
+    margin-left:75px;
+    height:32px;
+}
+
+.timeControls.transfer button{
+    font-size:1em;
+    background:transparent;
+    font-weight:bold;
+    border:1px solid #ddd;
+    border-radius:5px;
+
+}
+
+.timeControls.transfer #nextFrame{
+    margin-left:4px;
+}
+
+.timeControls.transfer #autoPlayBtn {
+    font-size:0.6em;
+    width:84px;
+    margin-top:8px;
+}
+
+.timeControls > * {
+    position:relative;
+    float:left;
+    font-size:0.8em;
+    margin:2px 4px;
+}
+
+.timeControls > div{
+    padding-top:4px;
+}
+
+
+.timeControls input,
+.wrap input {
+    width:80px;
+    margin-right:2px;
+}
+
+.wrap input#frameNo {
+    width:28px;
+}
+
+.wrap input[type="radio"], 
+.wrap input[type="checkbox"], 
+#controls div input[type="radio"], 
+#controls div input[type="checkbox"] {
+    width:20px !important;
+}
+
+.timeControls span {
+    font-size:0.8em
+}
+
+.timeControls div.overlap {
+    color:red;
+    font-weght:bold;
+    width:48px;
+}
+
+.frameControls {
+    margin:0 0 0 46px;
+    position:relative;
+    float:left;
+}
+
+.frameControls div {
+    margin:0 0 0  12px;
+    width:154px;
+}
+
+.frameControls > div {
+    position:relative;
+    float:left;
+}
+
+.frameControls  div.end {
+    margin:0 0px 0 172px;
+    width:198px;
+}
+
+.frameControls .inf {
+    font-size:1em;
+    margin:0px 0 0 2px;;
+    cursor:pointer;
+    background:transparent;
+    color:#f44;
+    border:none;
+}
+
+.timeControls div.both button {
+    padding:2px;
+    margin:-2px 0 0 0;
+}
+
+.frameControls div button {
+    float:left;
+    position:relative;
+    padding:0;
+    margin0;
+    font-size:0.78em;
+}
+
+div.wrapper {
+    position:relative;
+    float:right;
+    width:auto;
+    margin-top:3px;
+    border-radius:4px;
+    padding:0px 2px;
+}
+div.wrapper input {
+    width:20px;
+}
+
+input.timers {
+    font-family:monospace;
+    font-size:1.4em;
+    width:152px;
+}
+.timers {
+    border:1px solid #999;
+    border-radius:3px;
+    padding:1px;
+    background:#bbb;
+    text-align:center;
+}
+
+.timers.isIn {
+    border:1px solid green;
+    background:#9da !important;
+}
+
+.timers.isNew {
+    border:1px solid green;
+    background:#8ca !important;
+}
+
+#bigPlayButton {
+    cursor:pointer;
+    width: 100%;
+    height: 40px;
+    border: 3px dashed #aaa;
+    border-radius: 10px;
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 2em;
+    color: #000;
+    background: #eee;
+}
+
+#workArea { display:none; }
+
+#panel { 
+    margin-left:20px; 
+    position:relative;
+    float:left;
+    width:600px;
+}
+
+div.projectParams input[type="text"] { width:120px; }
+div.projectParams input[type="file"] { width:320px; }
+
+#configWrap {
+    position:relative;
+    width:640px;
+    margin:0 auto;
+    font-family: monaco;
+    height:36px;
+    float:right;
+	margin-top:20px;
+	margin-right:-20px;
+}
+
+#configWrap #subWrap {
+    position:absolute;
+    z-index:3000;
+    width:auto;
+    position:relative;
+    float:right;
+    background:#eee;
+    padding:2px;
+    margin-top:-32px;
+}
+
+#configWrap #subWrap > * {
+    position:relative;
+    float:right;
+    padding:3px;
+	color:black;
+}
+
+#configWrap #subWrap #configHead {
+    z-index:30;
+}
+
+#configWrap #subWrap input,
+#configWrap #subWrap label,
+#configWrap #subWrap select
+{
+    position:relative;
+    float:left;
+    width:auto;
+    margin:3px;
+}
+#configWrap #subWrap label { clear:left; width:196px; }
+#configWrap #configContent { display:none; float:left; margin-right:-54px; padding-left:24px; }
+
+#configWrap #subWrap input[type="file"] {
+    opacity:0.0;
+    margin:0 0 0 -244px;
+    cursor:pointer;
+    background:red;
+    z-index:20;
+}
+
+#configWrap #subWrap ul,
+#configWrap #subWrap ul > li {
+    position:relative;
+    float:left;
+    clear:both;
+    padding:0;
+    margin:0;
+}
+#configWrap #subWrap ul > li {
+    clear:both;
+}
+
+#configWrap #configContent input { 
+    font-size:1em;
+}
+
+#loadVid input, 
+#loadVid button {
+    font-size:1em;
+    border-radius:5px;
+    padding:3px;
+}
+
+#loadVid input {
+    width:164px;
+    height:20px;
+}
+
+#fileOver, #fileInput {
+    width:220px;
+    height:16px;
+    position:relative;
+    float:left;
+    padding:2px 2px 4px 2px;;
+    border:3px solid #aaa;
+    border-radius:5px;
+}
+
+.stickTop {
+    border-left:3px solid #aaa;
+    border-right:3px solid #aaa;
+    border-bottom:3px solid #aaa;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+
+#fileOver {
+    clear:both;
+    background:#aaa;
+}
+
+#fileOver.chosen {
+    background : #dfd;
+}
+
+#frameSlide {
+    position:relative;
+    float:left;
+    background: transparent;
+    height:24px;
+    width:100%;
+    overflow:hidden;
+    border:3px solid #aaa;
+    border-radius:5px;
+    margin:4px 0;
+    padding:0;
+}
+#frameSlide > div{
+    margin:0;
+    position:relative;
+    float:left;
+    text-align:center;
+    font-size:0.9em;
+    height:24px;
+    padding:4px 0 0 0;
+    background:#9da;
+}
+
+#frameSlide div.spacer{ background:#bbb; }
+#frameSlide div.inner { background:#e0ffe0; }
+#frameSlide div.outer { cursor:pointer; }
+#frameSlide div.overlap{ background:#fca; }
+#frameSlide div.overlap.cover { background:#F00; }
+
