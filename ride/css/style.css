@@ -11,6 +11,10 @@ body {
   font-family: blackout2;
   src: url("fonts/theleagueof-blackout-49991ac/webfonts/blackout_two_am-webfont.woff");
 }
+@font-face {
+  font-family: ostrich;
+  src: url("fonts/ostrich-sans-master/webfonts/ostrich-sans-rounded.woff");
+}
 .headerImg {
   position: relative;
   background-image: url('../images/highway.jpg');
@@ -30,13 +34,32 @@ body {
   color: white;
 }
 .headerImg .subTitle {
-  font-family: blackout2;
+  font-family: ostrich;
   position: absolute;
   width: 100%;
   text-align: center;
-  top: 70%;
-  transform: translateY(-50%);
-  font-size: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  padding-top: 8px;
+  font-size: 32px;
   text-shadow: 2px 2px #222;
   color: white;
+}
+.headerImg .navBar {
+  font-family: ostrich;
+  padding-top: 20px;
+  height: auto;
+  width: 100%;
+  text-align: center;
+}
+.headerImg .navBar .howItWorks,
+.headerImg .navBar .mission,
+.headerImg .navBar .signUp {
+  color: white;
+  display: inline;
+  font-size: 28px;
+  padding: 8px 8px 4px 10px;
+  margin: 1px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #ccc;
 }
