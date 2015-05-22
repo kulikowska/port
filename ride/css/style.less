@@ -3,6 +3,7 @@ body {
     padding:0;
     font-family:blackout;
 }
+@hoverColor:#1a6966;
 
 @font-face {
     font-family:blackout;
@@ -25,6 +26,8 @@ body {
     margin:0;
     padding:0;
     min-height:450px;
+    color:white;
+    box-shadow:0 0 5px 2px #000;
     .title {
         position:absolute;
         width:100%;
@@ -34,7 +37,6 @@ body {
         transform:translateY(-50%);
         font-size:100px;
         text-shadow:5px 5px #222;
-        color:white;
     }
     .subTitle {
         font-family:ostrich;
@@ -48,7 +50,6 @@ body {
         padding-top:8px;
         font-size:32px;
         text-shadow:2px 2px #222;
-        color:white;
     }
     .navBar {
         font-family:ostrich;
@@ -58,13 +59,67 @@ body {
         //background:rgba(0, 0, 0, 0.3);
         text-align:center;
         .howItWorks, .mission, .signUp {
-            color:white;
             display:inline;
             font-size:28px;
             padding:8px 8px 4px 10px;
             margin:1px;
             background:rgba(0, 0, 0, 0.6);
             border:2px solid #ccc;
+            transition:200ms;
+            cursor:pointer;
+            &:hover {
+                border:2px solid @hoverColor;
+                color:@hoverColor;
+            }
+        }
+        .login {
+            position:absolute;
+            top:21px;
+            right:2px;
+            font-size:34px;
+            transition:200ms;
+            text-shadow:1px 1px #222;
+            cursor:pointer;
+            color:lighten(@hoverColor, 15%);
+            i {
+                padding:0 10px;
+                font-size:24px;
+            }
+            &:hover {
+                color:lighten(@hoverColor, 50%);
+            }
+        }
+    }
+}
+
+.findRides {
+    min-height:200px;
+    width:100%;
+    background-image:url('http://static1.grsites.com/archive/textures/dgrey/dgrey023.gif');
+    .cities {
+        width:32vw;
+        padding:10px;
+        height:300px;
+        background-image:url("../images/toronto.jpg");
+        background-size:cover;
+    }
+    .buttonWrapper {
+        text-align:center;
+        padding-top:30px;
+        .findRide, .postRide {
+            color:@hoverColor;
+            display:inline;
+            font-size:34px;
+            padding:8px 8px 4px 10px;
+            margin:1px;
+            background:rgba(0, 0, 0, 0.6);
+            border:2px solid #000;
+            transition:200ms;
+            cursor:pointer;
+            &:hover {
+                border:2px solid #fff;
+                color:#fff;
+            }
         }
     }
 }
