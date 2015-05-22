@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: blackout;
+}
+@font-face {
+  font-family: blackout;
+  src: url("fonts/theleagueof-blackout-49991ac/webfonts/blackout_sunrise-webfont.woff");
+}
+@font-face {
+  font-family: blackout2;
+  src: url("fonts/theleagueof-blackout-49991ac/webfonts/blackout_two_am-webfont.woff");
+}
+.headerImg {
+  position: relative;
+  background-image: url('../images/highway.jpg');
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  min-height: 450px;
+}
+.headerImg .title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 100px;
+  text-shadow: 5px 5px #222;
+  color: white;
+}
+.headerImg .subTitle {
+  font-family: blackout2;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 70%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  text-shadow: 2px 2px #222;
+  color: white;
+}
