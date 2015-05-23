@@ -89,6 +89,7 @@ body {
 }
 .findRides {
   min-height: 200px;
+  height: 100%;
   width: 100%;
   background-image: url('http://static1.grsites.com/archive/textures/dgrey/dgrey023.gif');
 }
@@ -99,24 +100,50 @@ body {
   background-image: url("../images/toronto.jpg");
   background-size: cover;
 }
-.findRides .buttonWrapper {
+.findRides ul.buttonWrapper {
   text-align: center;
   padding-top: 30px;
+  margin: 0;
 }
-.findRides .buttonWrapper .findRide,
-.findRides .buttonWrapper .postRide {
+.findRides ul.buttonWrapper li#rideOffers,
+.findRides ul.buttonWrapper li#rideSearchers,
+.findRides ul.buttonWrapper li#postRide {
   color: #1a6966;
   display: inline;
   font-size: 34px;
   padding: 8px 8px 4px 10px;
   margin: 1px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   border: 2px solid #000;
   transition: 200ms;
   cursor: pointer;
 }
-.findRides .buttonWrapper .findRide:hover,
-.findRides .buttonWrapper .postRide:hover {
+.findRides ul.buttonWrapper li#rideOffers:hover,
+.findRides ul.buttonWrapper li#rideSearchers:hover,
+.findRides ul.buttonWrapper li#postRide:hover {
   border: 2px solid #fff;
   color: #fff;
+}
+.findRides ul.buttonWrapper li#rideOffers.active,
+.findRides ul.buttonWrapper li#rideSearchers.active,
+.findRides ul.buttonWrapper li#postRide.active {
+  color: white;
+}
+.findRides .contentWrap {
+  min-height: 500px;
+  width: 90%;
+  border: 2px solid #000;
+  margin: 20px auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+.findRides .contentWrap .controls {
+  border-bottom: 2px solid #000;
+  width: 100%;
+}
+.findRides .contentWrap .controls .title {
+  color: #1a6966;
+  font-family: ostrich;
+  font-size: 42px;
+  text-align: center;
+  padding: 10px 0;
 }

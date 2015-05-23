@@ -16,6 +16,9 @@ APP
         templateUrl: 'html/findRides.html',
         //template: TPL.portfolio,
         link: function($scope, $element, $attributes) {
+            $scope.tabSelect = function(idx) {
+                $scope.tabIdx = idx;
+            }
         }
       } 
  }])
@@ -51,4 +54,9 @@ APP
          }
       } 
  }])
+.filter('checkActive', function() {
+    return function(input) {
+        return input ? 'active' : '';
+    };
+})
  

@@ -94,6 +94,7 @@ body {
 
 .findRides {
     min-height:200px;
+    height:100%;
     width:100%;
     background-image:url('http://static1.grsites.com/archive/textures/dgrey/dgrey023.gif');
     .cities {
@@ -103,16 +104,17 @@ body {
         background-image:url("../images/toronto.jpg");
         background-size:cover;
     }
-    .buttonWrapper {
+    ul.buttonWrapper {
         text-align:center;
         padding-top:30px;
-        .findRide, .postRide {
+        margin:0;
+        li#rideOffers, li#rideSearchers, li#postRide {
             color:@hoverColor;
             display:inline;
             font-size:34px;
             padding:8px 8px 4px 10px;
             margin:1px;
-            background:rgba(0, 0, 0, 0.6);
+            background:rgba(0, 0, 0, 0.8);
             border:2px solid #000;
             transition:200ms;
             cursor:pointer;
@@ -120,6 +122,29 @@ body {
                 border:2px solid #fff;
                 color:#fff;
             }
+            &.active {
+                color:white;
+            }
+        }
+    }
+    .contentWrap {
+        min-height:500px;
+        width:90%;
+        border:2px solid #000;
+        margin:20px auto;
+        background:rgba(0,0,0,0.5);
+        .controls {
+            border-bottom:2px solid #000;
+            width:100%;
+            .title {
+                color:@hoverColor;
+                font-family:ostrich;
+                font-size:42px;
+                text-align:center;
+                padding:10px 0;
+            }
+        }
+        .dataWrap {
         }
     }
 }
