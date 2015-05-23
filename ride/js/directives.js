@@ -16,6 +16,7 @@ APP
         templateUrl: 'html/findRides.html',
         //template: TPL.portfolio,
         link: function($scope, $element, $attributes) {
+            $scope.tabIdx = 1;
         }
       } 
  }])

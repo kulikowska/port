@@ -44,9 +44,8 @@ body {
         width:100%;
         text-align:center;
         background:rgba(0,0,0,0.5);
-        //top:70%;
-        //transform:translateY(-50%);
-        bottom:0;
+        top:65%;
+        transform:translateY(-50%);
         padding-top:8px;
         font-size:32px;
         text-shadow:2px 2px #222;
@@ -60,15 +59,15 @@ body {
         text-align:center;
         .howItWorks, .mission, .signUp {
             display:inline;
+            box-shadow:0px 0px 5px 1px #222;
             font-size:28px;
             padding:8px 8px 4px 10px;
             margin:1px;
             background:rgba(0, 0, 0, 0.6);
-            border:2px solid #ccc;
+            border:2px solid #222;
             transition:200ms;
             cursor:pointer;
             &:hover {
-                border:2px solid @hoverColor;
                 color:@hoverColor;
             }
         }
@@ -113,14 +112,14 @@ body {
             display:inline;
             font-size:34px;
             padding:8px 8px 4px 10px;
+            box-shadow:0px 0px 5px 1px #222;
             margin:1px;
             background:rgba(0, 0, 0, 0.8);
             border:2px solid #000;
             transition:200ms;
             cursor:pointer;
             &:hover {
-                border:2px solid #fff;
-                color:#fff;
+                color:#bbb;
             }
             &.active {
                 font-family:blackout2;
@@ -128,7 +127,9 @@ body {
         }
     }
     .contentWrap {
-        display:none;
+        font-family:ostrich;
+        font-size:36px;
+        color:#fff;
         min-height:500px;
         width:90%;
         border:2px solid #000;
@@ -137,12 +138,25 @@ body {
         .controls {
             border-bottom:2px solid #000;
             width:100%;
-            .title {
-                color:@hoverColor;
-                font-family:ostrich;
-                font-size:42px;
+            padding:10px 0px;
+            .location {
                 text-align:center;
-                padding:10px 0;
+                label {
+                    margin:4px;
+                }
+                >div {
+                    display:inline;
+                    margin:4px;
+                }
+                select {
+                    width:250px;
+                    height:40px;
+                    font-size:18px;
+                    padding-left:8px;
+                    //-webkit-appearance:none;
+                    border-radius:0px;
+                    border:1px solid #fff;
+                }
             }
         }
         .dataWrap {

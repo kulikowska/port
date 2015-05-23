@@ -5,9 +5,20 @@
 </div>
 
 <div class="contentWrap">
-    <div class="controls">
-        <div ng-show="tabIdx==1" class="title">Offered Rides</div>
-    </div>
-    <div class="dataWrap">
+    <div class="offerData" ng-show="tabIdx==1">
+        <div class="controls">
+            <div class="location">
+                <div>Where:</div>
+                <select>
+                    <option value="Montreal - Toronto">Montreal - Toronto</option>
+                    <option value="Ott-To">Ottawa - Toronto</option>
+                    <option value="Toronto - Montreal">Toronto - Montreal</option>
+                    <option value="To-Ott">Toronto - Ottawa</option>
+                </select>
+                <div>When:</div>
+            </div>
+        </div>
+        <div class="dataWrap">
+        </div>
     </div>
 </div>

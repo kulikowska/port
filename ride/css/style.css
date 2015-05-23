@@ -40,7 +40,8 @@ body {
   width: 100%;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
-  bottom: 0;
+  top: 65%;
+  transform: translateY(-50%);
   padding-top: 8px;
   font-size: 32px;
   text-shadow: 2px 2px #222;
@@ -56,18 +57,18 @@ body {
 .headerImg .navBar .mission,
 .headerImg .navBar .signUp {
   display: inline;
+  box-shadow: 0px 0px 5px 1px #222;
   font-size: 28px;
   padding: 8px 8px 4px 10px;
   margin: 1px;
   background: rgba(0, 0, 0, 0.6);
-  border: 2px solid #ccc;
+  border: 2px solid #222;
   transition: 200ms;
   cursor: pointer;
 }
 .headerImg .navBar .howItWorks:hover,
 .headerImg .navBar .mission:hover,
 .headerImg .navBar .signUp:hover {
-  border: 2px solid #1a6966;
   color: #1a6966;
 }
 .headerImg .navBar .login {
@@ -111,6 +112,7 @@ body {
   display: inline;
   font-size: 34px;
   padding: 8px 8px 4px 10px;
+  box-shadow: 0px 0px 5px 1px #222;
   margin: 1px;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid #000;
@@ -120,8 +122,7 @@ body {
 .findRides .buttonWrapper .rideOffers:hover,
 .findRides .buttonWrapper .rideSearchers:hover,
 .findRides .buttonWrapper .postRide:hover {
-  border: 2px solid #fff;
-  color: #fff;
+  color: #bbb;
 }
 .findRides .buttonWrapper .rideOffers.active,
 .findRides .buttonWrapper .rideSearchers.active,
@@ -129,7 +130,9 @@ body {
   font-family: blackout2;
 }
 .findRides .contentWrap {
-  display: none;
+  font-family: ostrich;
+  font-size: 36px;
+  color: #fff;
   min-height: 500px;
   width: 90%;
   border: 2px solid #000;
@@ -139,11 +142,23 @@ body {
 .findRides .contentWrap .controls {
   border-bottom: 2px solid #000;
   width: 100%;
+  padding: 10px 0px;
 }
-.findRides .contentWrap .controls .title {
-  color: #1a6966;
-  font-family: ostrich;
-  font-size: 42px;
+.findRides .contentWrap .controls .location {
   text-align: center;
-  padding: 10px 0;
+}
+.findRides .contentWrap .controls .location label {
+  margin: 4px;
+}
+.findRides .contentWrap .controls .location > div {
+  display: inline;
+  margin: 4px;
+}
+.findRides .contentWrap .controls .location select {
+  width: 250px;
+  height: 40px;
+  font-size: 18px;
+  padding-left: 8px;
+  border-radius: 0px;
+  border: 1px solid #fff;
 }
