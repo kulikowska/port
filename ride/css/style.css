@@ -91,7 +91,7 @@ body {
   min-height: 200px;
   height: 100%;
   width: 100%;
-  background-image: url('http://static1.grsites.com/archive/textures/dgrey/dgrey023.gif');
+  background: linear-gradient(#222222, #eeeeee);
 }
 .findRides .cities {
   width: 32vw;
