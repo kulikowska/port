@@ -12,7 +12,7 @@ body {
 
 @font-face {
     font-family:blackout2;
-    src:url("fonts/theleagueof-blackout-49991ac/webfonts/blackout_two_am-webfont.woff");
+    src:url("fonts/theleagueof-blackout-49991ac/webfonts/blackout_midnight-webfont.woff");
 }
 
 @font-face {
@@ -104,11 +104,10 @@ body {
         background-image:url("../images/toronto.jpg");
         background-size:cover;
     }
-    ul.buttonWrapper {
+    .buttonWrapper {
         text-align:center;
         padding-top:30px;
-        margin:0;
-        li#rideOffers, li#rideSearchers, li#postRide {
+        .rideOffers, .rideSearchers, .postRide {
             color:@hoverColor;
             display:inline;
             font-size:34px;
@@ -123,11 +122,12 @@ body {
                 color:#fff;
             }
             &.active {
-                color:white;
+                font-family:blackout2;
             }
         }
     }
     .contentWrap {
+        display:none;
         min-height:500px;
         width:90%;
         border:2px solid #000;

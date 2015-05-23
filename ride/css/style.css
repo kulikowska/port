@@ -9,7 +9,7 @@ body {
 }
 @font-face {
   font-family: blackout2;
-  src: url("fonts/theleagueof-blackout-49991ac/webfonts/blackout_two_am-webfont.woff");
+  src: url("fonts/theleagueof-blackout-49991ac/webfonts/blackout_midnight-webfont.woff");
 }
 @font-face {
   font-family: ostrich;
@@ -100,14 +100,13 @@ body {
   background-image: url("../images/toronto.jpg");
   background-size: cover;
 }
-.findRides ul.buttonWrapper {
+.findRides .buttonWrapper {
   text-align: center;
   padding-top: 30px;
-  margin: 0;
 }
-.findRides ul.buttonWrapper li#rideOffers,
-.findRides ul.buttonWrapper li#rideSearchers,
-.findRides ul.buttonWrapper li#postRide {
+.findRides .buttonWrapper .rideOffers,
+.findRides .buttonWrapper .rideSearchers,
+.findRides .buttonWrapper .postRide {
   color: #1a6966;
   display: inline;
   font-size: 34px;
@@ -118,18 +117,19 @@ body {
   transition: 200ms;
   cursor: pointer;
 }
-.findRides ul.buttonWrapper li#rideOffers:hover,
-.findRides ul.buttonWrapper li#rideSearchers:hover,
-.findRides ul.buttonWrapper li#postRide:hover {
+.findRides .buttonWrapper .rideOffers:hover,
+.findRides .buttonWrapper .rideSearchers:hover,
+.findRides .buttonWrapper .postRide:hover {
   border: 2px solid #fff;
   color: #fff;
 }
-.findRides ul.buttonWrapper li#rideOffers.active,
-.findRides ul.buttonWrapper li#rideSearchers.active,
-.findRides ul.buttonWrapper li#postRide.active {
-  color: white;
+.findRides .buttonWrapper .rideOffers.active,
+.findRides .buttonWrapper .rideSearchers.active,
+.findRides .buttonWrapper .postRide.active {
+  font-family: blackout2;
 }
 .findRides .contentWrap {
+  display: none;
   min-height: 500px;
   width: 90%;
   border: 2px solid #000;
