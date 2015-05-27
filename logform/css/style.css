@@ -55,3 +55,22 @@ body {
   text-align: center;
   padding: 6px;
 }
+.greenBox {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  background: #adc964;
+  text-align: center;
+  vertical-align: middle;
+}
+.greenBox .yellowBox {
+  width: 75px;
+  height: 75px;
+  margin: auto;
+  border: 1px solid black;
+  background: yellow;
+  vertical-align: middle;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -56,3 +56,24 @@ body {
         }
     }
 }
+
+.greenBox {
+    width:150px;
+    height:150px;
+    border:1px solid black;
+    background:@top;
+    text-align:center;
+    vertical-align:middle;
+    .yellowBox {
+        width:75px;
+        height:75px;
+        margin:auto;
+        border:1px solid black;
+        background:yellow;
+        vertical-align:middle;
+        position:relative;
+        top:50%;
+        transform:translateY(-50%);
+        
+    }
+}
