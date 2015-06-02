@@ -39,10 +39,10 @@ body {
   position: absolute;
   width: 100%;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  top: 65%;
+  background: rgba(0, 0, 0, 0.3);
+  top: 70%;
   transform: translateY(-50%);
-  padding-top: 8px;
+  padding: 12px 0px 8px;
   font-size: 32px;
   text-shadow: 2px 2px #222;
 }
