@@ -1,0 +1,181 @@
+@font-face {
+  font-family: raleway;
+  src: url("fonts/raleway/webfonts/raleway_thin-webfont.woff");
+}
+body {
+  font-family: raleway;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  background: #222;
+  background-image: url('http://static2.grsites.com/archive/textures/ss/ss044.jpg');
+  background-image: url('http://static3.grsites.com/archive/textures/natfl/natfl222.jpg');
+  background-image: url('http://static1.grsites.com/archive/textures/multi/multi266.jpg');
+  font-size: 22px;
+  font-weight: bold;
+}
+a {
+  color: #2d66b0;
+  text-decoration: none;
+  transition: 100ms;
+}
+a:hover {
+  color: #93b6e3;
+}
+.mainHeader {
+  margin-bottom: 60px;
+}
+.darkRed {
+  background: #330000;
+}
+.red {
+  background: #790000;
+}
+.orange {
+  background: #9d4a14;
+}
+.purple {
+  background: #5a003d;
+}
+.tabContainer {
+  text-align: center;
+}
+.tabContainer .tab {
+  display: inline-block;
+  font-size: 36px;
+  padding: 14px 25px 8px;
+  margin: 10px;
+  opacity: 0.8;
+  box-shadow: 1px 1px 4px 0px #000;
+  border: 2px solid #000;
+  transition: 300ms;
+  cursor: pointer;
+}
+.tabContainer .tab:hover {
+  transform: scale(1.1);
+}
+.post {
+  width: 90%;
+  min-height: 200px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 4px 1px #000;
+  margin: 20px auto;
+}
+.post .title {
+  width: 100%;
+  padding: 10px 0px 6px;
+  text-align: center;
+  opacity: 0.7;
+  position: relative;
+}
+.post .title .date {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+.footer,
+.shrunkFooter {
+  width: 100%;
+  height: 40px;
+  background: #111;
+  border-top: 1px solid #011;
+  position: fixed;
+  float: right;
+  bottom: 0;
+  color: #aaa;
+  transition: 1000ms;
+  overflow: hidden;
+}
+@media (max-width: 420px) {
+  .footer,
+  .shrunkFooter {
+    display: none;
+  }
+}
+@media (max-width: 775px) {
+  .footer,
+  .shrunkFooter {
+    height: 45px;
+  }
+}
+@media handheld, only screen and (max-device-width: 570px) {
+  .footer,
+  .shrunkFooter {
+    display: block;
+  }
+}
+.footer .text,
+.shrunkFooter .text {
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.footer .text #adjustOnResize,
+.shrunkFooter .text #adjustOnResize {
+  display: inline;
+}
+@media (max-width: 775px) {
+  .footer .text #adjustOnResize,
+  .shrunkFooter .text #adjustOnResize {
+    display: block;
+  }
+}
+@media (max-width: 775px) {
+  .footer .text,
+  .shrunkFooter .text {
+    font-size: 15px;
+  }
+}
+@media handheld, only screen and (max-device-width: 570px) {
+  .footer .text,
+  .shrunkFooter .text {
+    font-size: 3.5vw;
+  }
+}
+.footer .text a,
+.shrunkFooter .text a {
+  color: #aaa;
+  transition: 200ms;
+}
+.footer .text a:hover,
+.shrunkFooter .text a:hover {
+  color: #fff;
+}
+.footer .text a:hover i,
+.shrunkFooter .text a:hover i {
+  color: #7ea8de;
+}
+.footer .text i,
+.shrunkFooter .text i {
+  color: #2d66b0;
+  padding: 0 4px;
+  transition: 200ms;
+}
+.footer .shrinkExpand,
+.shrunkFooter .shrinkExpand {
+  padding: 0px 10px;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 200ms;
+  color: #2d66b0;
+}
+.footer .shrinkExpand:hover,
+.shrunkFooter .shrinkExpand:hover {
+  color: #343173;
+}
+.shrunkFooter {
+  width: 40px;
+  right: 0;
+  box-shadow: none;
+  border-left: 1px solid #111;
+}
+.shrunkFooter i {
+  margin: 18px 4px;
+}
