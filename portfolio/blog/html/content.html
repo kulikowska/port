@@ -1,31 +1,41 @@
 <div class="tabContainer">
-    <div class="tab darkRed">
+    <div class="tab darkRed" ng-click="kendo=!kendo" ng-class="kendo|checkInactive">
         Kendo
     </div>
-    <div class="tab red">
+    <div class="tab red" ng-click="music=!music" ng-class="music|checkInactive">
         Music 
     </div>
-    <div class="tab orange">
+    <div class="tab orange" ng-click="code=!code" ng-class="code|checkInactive">
        Code 
     </div>
-    <div class="tab purple">
+    <div class="tab purple" ng-click="life=!life" ng-class="life|checkInactive">
        Life 
     </div>
 </div>
 
-<div class="post">
-    <div class="title darkRed">
-        I finally did it! 
+<div class="post" ng-show="!code">
+    <div class="title orange">
+        Web Fonts
         <div class="date">
-            November 23rd 2015 | Kendo
+            November 24th 2015 | Code 
+        </div>
+        <div class="icon">
+            <i class="fa fa-code"></i>
         </div>
     </div>
+    <div class="content">
+       Looking around for a nice font for this site, and I stumbled across this helpful article: </br><br>
+       <a href="http://www.creativebloq.com/typography/free-web-fonts-1131610?page=1">The 35 Greatest Free Web Fonts</a>
+    </div>
 </div>
-<div class="post">
+<div class="post" ng-show="!music">
     <div class="title red">
         Hooked on the electric guitar
         <div class="date">
             November 23rd 2015 | Music
+        </div>
+        <div class="icon">
+            <i class="fa fa-music"></i>
         </div>
     </div>
     <div class="content">
@@ -35,7 +45,7 @@
         I think my poor piano is getting jealous though.<br>
     </div>
 </div>
-<div class="post">
+<div class="post" ng-show="!life">
     <div class="title purple">
         I finally did it! 
         <div class="date">

@@ -3,7 +3,7 @@
   src: url("fonts/raleway/webfonts/raleway_thin-webfont.woff");
 }
 body {
-  font-family: raleway;
+  font-family: Josefin Sans;
   color: #fff;
   margin: 0;
   padding: 0;
@@ -15,27 +15,27 @@ body {
   font-weight: bold;
 }
 a {
-  color: #2d66b0;
-  text-decoration: none;
+  color: #6a9ad9;
   transition: 100ms;
+  font-size: 20px;
 }
 a:hover {
-  color: #93b6e3;
+  color: #bbd1ee;
 }
 .mainHeader {
   margin-bottom: 60px;
 }
 .darkRed {
-  background: #330000;
+  background: linear-gradient(#330000, #660000);
 }
 .red {
-  background: #790000;
+  background: linear-gradient(#790000, #ac0000);
 }
 .orange {
-  background: #9d4a14;
+  background: linear-gradient(#9d4a14, #ca5f1a);
 }
 .purple {
-  background: #5a003d;
+  background: linear-gradient(#5a003d, #8d0060);
 }
 .tabContainer {
   text-align: center;
@@ -54,12 +54,21 @@ a:hover {
 .tabContainer .tab:hover {
   transform: scale(1.1);
 }
+.tabContainer .tab.inactive {
+  opacity: 0.4;
+}
+.tabContainer .tab.inactive:hover {
+  opacity: 1;
+}
 .post {
   width: 90%;
-  min-height: 200px;
+  min-height: 100px;
   background: rgba(0, 0, 0, 0.8);
   box-shadow: 1px 1px 4px 1px #000;
   margin: 20px auto;
+  max-height: auto;
+  transition: 400ms;
+  opacity: 1;
 }
 .post .title {
   width: 100%;
@@ -75,12 +84,29 @@ a:hover {
   transform: translateY(-50%);
   font-size: 16px;
 }
+.post .title .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .post .content {
   padding: 20px;
   text-align: center;
   line-height: 26px;
   font-size: 18px;
   color: #ddd;
+}
+.post.ng-hide {
+  display: block !important;
+  max-height: 0px;
+  height: 0px;
+  min-height: 0px;
+  box-shadow: none;
+  opacity: 0;
+  margin: 0px auto;
+  overflow: hidden;
+  transition: 400ms;
 }
 .footer,
 .shrunkFooter {

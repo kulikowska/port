@@ -8,7 +8,9 @@
 }
 
 body {
-    font-family:raleway;
+    //font-family:raleway;
+    font-family:Josefin Sans;
+    //font-family:Signika;
     color:#fff;
     margin:0;
     padding:0;
@@ -21,28 +23,34 @@ body {
 }
 
 a { 
-    color:@niceBlue;
-    text-decoration:none;
+    color:lighten(@niceBlue, 20%);
+    //text-decoration:none;
     transition:100ms;
+    font-size:20px;
     &:hover { 
-        color:lighten(@niceBlue, 30%);
+        color:lighten(@niceBlue, 40%);
     }
 }
+
+@darkRed:#330000;
+@red:#790000;
+@orange:#9d4a14;
+@purple:#5a003d;
 
 .mainHeader {
     margin-bottom:60px;
 }
 .darkRed {
-    background:#330000;
+    background:linear-gradient(@darkRed, lighten(@darkRed, 10%));
 }
 .red {
-    background:#790000;
+    background:linear-gradient(@red, lighten(@red, 10%));
 }
 .orange {
-    background:#9d4a14;
+    background:linear-gradient(@orange, lighten(@orange, 10%));
 }
 .purple {
-    background:#5a003d;
+    background:linear-gradient(@purple, lighten(@purple, 10%));
 }
 
 .tabContainer {
@@ -60,15 +68,22 @@ a {
         &:hover {
             transform:scale(1.1);
         }
+        &.inactive {
+            opacity:0.4;
+            &:hover { opacity:1; }
+        }
     }
 }
 
 .post {
     width:90%;
-    min-height:200px;
+    min-height:100px;
     background:rgba(0,0,0,0.8);
     box-shadow:1px 1px 4px 1px #000;
     margin:20px auto;
+    max-height:auto;
+    transition:400ms;
+    opacity:1;
     .title {
         width:100%;
         padding:10px 0px 6px;;
@@ -83,6 +98,12 @@ a {
             transform:translateY(-50%);
             font-size:16px;
         }
+        .icon {
+            position:absolute;
+            left:10px;
+            top:50%;
+            transform:translateY(-50%);
+        }
     }
     .content {
         padding:20px;
@@ -91,6 +112,17 @@ a {
         font-size:18px;
         color:#ddd;
     }
+}
+.post.ng-hide {
+    display:block !important;
+    max-height:0px;
+    height:0px;
+    min-height:0px;
+    box-shadow:none;
+    opacity:0;
+    margin:0px auto;
+    overflow:hidden;
+    transition:400ms;
 }
 
 @lightBlue:#86a9d3;

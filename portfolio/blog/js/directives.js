@@ -32,3 +32,6 @@ APP
       } 
  }])
  
+.filter('checkInactive', function() {
+    return function(input) { return input ? 'inactive' : ''; };
+  })
