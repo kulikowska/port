@@ -68,27 +68,25 @@ a {
         &:hover {
             transform:scale(1.1);
         }
-        &.inactive {
-            opacity:0.4;
-            &:hover { opacity:1; }
-        }
+        &.inactive { opacity:0.4; }
+        @media (max-width:650px) { font-size:4vw; }
     }
 }
 
 .post {
     width:90%;
     min-height:100px;
-    background:rgba(0,0,0,0.8);
+    background:rgba(0,0,0,0.85);
     box-shadow:1px 1px 4px 1px #000;
     margin:20px auto;
     max-height:auto;
     transition:400ms;
     opacity:1;
+    color:#ddd;
     .title {
         width:100%;
         padding:10px 0px 6px;;
         text-align:center;
-        opacity:0.7;
         position:relative;
         .date {
             position:absolute;
@@ -97,6 +95,7 @@ a {
             top:50%;
             transform:translateY(-50%);
             font-size:16px;
+            @media (max-width:650px) { display:none; }
         }
         .icon {
             position:absolute;
@@ -109,8 +108,8 @@ a {
         padding:20px;
         text-align:center;
         line-height:26px;
-        font-size:18px;
-        color:#ddd;
+        font-size:20px;
+        color:#bbb;
     }
 }
 .post.ng-hide {

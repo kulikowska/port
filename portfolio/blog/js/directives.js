@@ -9,7 +9,7 @@ APP
          }
       } 
  }])
-.directive('footerContainer', [function() {
+.directive('footerContainerDeprr', [function() {
     return {
         restrict: 'C',
         replace: false,
