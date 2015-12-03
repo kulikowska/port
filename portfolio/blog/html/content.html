@@ -12,6 +12,60 @@
        Life 
     </div>
 </div>
+
+<div class="post" ng-show="!code">
+    <div class="title orange">
+        SQL Cheat Sheet
+        <div class="date">
+            Dec 3rd 2015 | Code 
+        </div>
+        <div class="icon">
+            <i class="fa fa-code"></i>
+        </div>
+    </div>
+    <div class="content">
+        When I was picking up MySQL last year, I built myself a little cheat sheet. While there is a lot
+        of online documentation for SQL, I find the bulk of it to be overly complicated. SQL syntax is super
+        simple and straightforward. So here are the basics: <br><br>
+
+        <h1>Getting Started</h1>
+        show databases; <br>
+        use <span class="var">[database name]</span><br>
+        show tables;<br>
+        select * from <span class="var">[table name]</span>;<br>
+
+        <h1> Databases </h1>
+        <span class="info">Create a new database</span>
+        create database <span class="var">[new database name]</span>;<br>
+        <span class="info">Delete database</span>
+        drop database <span class="var">[database name]</span>;
+
+        <h1> Tables</h1>
+        <span class="info">Create new table</span>
+        create table <span class="var"> [table name] (column1 datatype, column2 datatype)</span>;<br>
+        ex: create table users (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, username VARCHAR(25), password VARCHAR(20));<br>
+        
+        <span class="info">Replace column name </span>
+        alter table <span class="var">[table name]</span> change <span class="var">[old column name] [new column name] [data type] </span>;<br>
+        
+        <span class="info">Modify data type</span>
+        alter table <span class="var">[table name]</span> modify <span class="var">[column, datatype]</span>;<br>
+
+        <span class="info">View columns and their info (datatype, etc)</span>
+        show columns from <span class="var">tablename</span>;
+
+        <h1>Insert/Delete/Update</h1>
+        <span class="info">Insert</span>
+        insert into <span class="var">[table name] (col1, col2) </span> values <span class="var">('value for col1', 'value for col2')</span>;<br>
+
+        <span class="info">Update</span>
+        update <span class="var">[table name]</span> set <span class="var">[column name]</span> 
+        = <span class="var">'[new data]' </span> where id=<span class="var">[id]</span>;
+        <span class="info">Delete</span>
+        delete from <span class="var">[table name]</span> where id=<span class="var">[id]</span>;
+
+    </div>
+</div>
 <div class="post" ng-show="!kendo">
     <div class="title darkRed">
         The 10 Virtues of Kendo by Sasaburo Takano Sensei
