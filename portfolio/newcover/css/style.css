@@ -81,7 +81,7 @@ a:hover {
   height: 2px;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(to right, #ffffff, #86a9d3, #ffffff);
+  background: linear-gradient(to right, #fff, #86a9d3, #fff);
   float: left;
 }
 .container .contact {
@@ -140,7 +140,7 @@ a:hover {
   opacity: 0.5;
   float: left;
   width: 2px;
-  background: linear-gradient(#ffffff, #86a9d3, #ffffff);
+  background: linear-gradient(#fff, #86a9d3, #fff);
 }
 .container .projects .previews {
   width: 751px;

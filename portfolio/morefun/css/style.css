@@ -25,7 +25,7 @@ a:hover {
   background-size: cover;
   height: 25%;
   min-height: 150px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000;
   text-align: center;
   transition: 1s;
 }
@@ -84,7 +84,7 @@ a:hover {
   height: auto;
   padding: 20px;
   overflow: hidden;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #000;
   background: linear-gradient(#2d66b0, #6a9ad9, #2d66b0);
   transition: 1s ease;
   transition: font-size 0s;
@@ -358,7 +358,7 @@ a:hover {
   background-size: cover;
   border-top: 1px solid black;
   background-repeat: no-repeat;
-  background-image: url('../images/resizeable/whitespace.png');
+  background-image: url('../images/resizeable/spectrum_2.png');
 }
 @media (max-width: 990px) {
   .portfolio .pieceWrap .piece .whitespaceThumb {
