@@ -1,0 +1,91 @@
+@niceBlue:#2d66b0;
+//@borders:1px solid lighten(@niceBlue, 20%);
+@borders:1px solid #000;
+
+@font-face {
+    //font-family:raleway;
+    //src:url("fonts/raleway/webfonts/raleway_thin-webfont.woff")
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color:#fff;
+    margin:0;
+    padding:0;
+    font-size:22px;
+    background:linear-gradient(#003421, darken(#003421, 8%));
+    background:#222;
+    //background:#fff;
+}
+
+a {
+    text-decoration:none;
+    color:inherit;
+}
+
+.content {
+    z-index:0;
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    height:100%
+}
+
+.headerImg {
+    background-image:url('../images/northern_lights.jpg');
+    width:100%;
+    min-height:70%;
+    //max-height:600px;
+    background-size:cover;
+    .toolBar {
+        width:100%;
+        padding:20px 0px 27px;
+        background:fade(#0e061c, 60%);
+        background:linear-gradient(fade(#321456, 90%), fade(#321456, 30%));
+        background:linear-gradient(fade(#321456, 90%), fade(#321456, 0%));
+        color:#fff;
+        text-align:right;
+        text-shadow:1px 1px #222;
+        span {
+            margin-right:20px;
+            transition:200ms;
+            cursor:pointer;
+            &:hover {
+                color:#222;
+                transform:scale(1.2);
+            }
+        }
+    }
+}
+.projects {
+    width:100%;
+    height:40%;
+    background:#111;
+    margin-top:-75px;
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1));
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(17,17,17,1));
+    //background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,1));
+    .header {
+       padding-top:16px;
+       font-size:34px;
+       margin-left:20px;
+       text-shadow:1px 1px #000;
+    }
+}
+.aboutMe {
+    background-image:url('../images/night_sunfloweres.jpg');
+    width:100%;
+    min-height:600px;
+    background-size:cover;
+    .aboutHeader {
+       font-size:34px;
+       text-shadow:1px 1px #000;
+       width:100% -20px;
+       padding:20px 20px 20px 0px;
+       text-align:right;
+       background:rgba(0,0,0,0.5);
+    }
+}
