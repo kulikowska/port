@@ -1,0 +1,77 @@
+@font-face {
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  background: linear-gradient(#003421, #000b07);
+  background: #222;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.content {
+  z-index: 0;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  height: 100%;
+}
+.headerImg {
+  background-image: url('../images/northern_lights.jpg');
+  width: 100%;
+  min-height: 70%;
+  background-size: cover;
+}
+.headerImg .toolBar {
+  width: 100%;
+  padding: 20px 0px 27px;
+  background: rgba(14, 6, 28, 0.6);
+  background: linear-gradient(rgba(50, 20, 86, 0.9), rgba(50, 20, 86, 0.3));
+  background: linear-gradient(rgba(50, 20, 86, 0.9), rgba(50, 20, 86, 0));
+  color: #fff;
+  text-align: right;
+  text-shadow: 1px 1px #222;
+}
+.headerImg .toolBar span {
+  margin-right: 20px;
+  transition: 200ms;
+  cursor: pointer;
+}
+.headerImg .toolBar span:hover {
+  color: #222;
+  transform: scale(1.2);
+}
+.projects {
+  width: 100%;
+  height: 40%;
+  background: #111;
+  margin-top: -75px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #000000);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #111111);
+}
+.projects .header {
+  padding-top: 16px;
+  font-size: 34px;
+  margin-left: 20px;
+  text-shadow: 1px 1px #000;
+}
+.aboutMe {
+  background-image: url('../images/night_sunfloweres.jpg');
+  width: 100%;
+  min-height: 600px;
+  background-size: cover;
+}
+.aboutMe .aboutHeader {
+  font-size: 34px;
+  text-shadow: 1px 1px #000;
+  width: 100% -20px;
+  padding: 20px 20px 20px 0px;
+  text-align: right;
+  background: rgba(0, 0, 0, 0.5);
+}
