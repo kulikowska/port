@@ -1,0 +1,75 @@
+<div class="leftNav">
+    <i class="fa fa-play" ng-click="toggleLeft()" ng-class="tabId<0|checkActive"></i>
+</div>
+<div class="sliderView">
+    <div class="sliderContent" style="margin-left:{{tabId}}%">
+        <div class="projWrap">
+            <h1>
+                HTZ Spectrum
+                <span class="date">2014 - 2015</span>
+            </h1>
+            <p>
+                I joined in on the Spectrum project fairly early in its inception and took over a good portion of the front-end design. 
+                Built in AngularJs and using OpenLayers, I had a field day designing UX/UI components, 
+                implementing a variety of tools and features, and generally nurturing the entire front-end structure of this app.
+                Faced with a blank canvas in many situations, I had the opportunity to dig deep creatively, in terms of both UI and code design.
+                <br><br>
+                I can safely say I had a blast working on this project.
+            </p>
+            <div class="thumbWrap">
+                <span class="img spec1">
+                </span>
+                <span class="img spec2">
+                </span>
+                <span class="img spec3">
+                </span>
+            </div>
+        </div>
+        <div class="projWrap">
+            <h1>
+                WebRoad66
+                <span class="date">2016</span>
+            </h1>
+            <p>
+            WebRoad66 is a beacon solutions project for which I have the priveledge of building all sorts of fun tools. From infrastructure 
+            management tools, to statistics graphing, to file management, to data ingestion tools. Working again primarily with AngularJs, 
+            but this time I've also had the opportunity to do some work on the API, and wracked up a tiny bit of experience with Node.js and PostgreSQL. 
+            <br><br>
+            Due to confidentiality, I can't demo any products. However, code samples are available on request!
+            </p>
+            <div class="thumbWrap">
+                <span class="img wr2">
+                </span>
+                <span class="img wr3">
+                </span>
+                <span class="img wr4">
+                </span>
+            </div>
+        </div>
+        <div class="projWrap">
+            <h1>
+               Various 
+                <span class="date">2013 - 2015</span>
+            </h1>
+            <p> 
+                Just for fun, here are a few samples of my old websites. Fun to see how things have progressed over time :) 
+            </p>
+            <div class="thumbWrap">
+                <span class="img var1">
+                </span>
+                <span class="img var2">
+                </span>
+                <span class="img var3">
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="rightNav">
+    <i class="fa fa-play" ng-click="toggleRight()" ng-class="tabId>-200|checkActive"></i>
+</div>
+<div class="centerNav">
+    <i class="fa fa-circle" ng-class="tabId==0|checkActive" ng-click="tabId=0"></i>
+    <i class="fa fa-circle" ng-class="tabId==-100|checkActive" ng-click="tabId=-100"></i>
+    <i class="fa fa-circle" ng-class="tabId==-200|checkActive" ng-click="tabId=-200"></i>
+</div>

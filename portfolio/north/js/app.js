@@ -1,1 +1,1 @@
-var APP = angular.module('north', []);
+var APP = angular.module('north', ['duScroll']);

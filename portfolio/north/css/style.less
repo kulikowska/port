@@ -11,6 +11,9 @@ html {
     scroll-behavior:smooth;
 }
 
+@crazyBS: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+@crazyBSinput: 0 0px 2px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+
 body {
     font-family: 'Montserrat', sans-serif;
     color:#fff;
@@ -19,7 +22,6 @@ body {
     font-size:22px;
     background:linear-gradient(#003421, darken(#003421, 8%));
     background:#222;
-    //background:#fff;
 }
 
 a {
@@ -35,57 +37,302 @@ a {
 }
 
 .headerImg {
-    background-image:url('../images/northern_lights.jpg');
+    background-image:url('../images/northern_lights_cropped.jpg');
     width:100%;
-    min-height:70%;
+    min-height:55%;
     //max-height:600px;
     background-size:cover;
+    position:relative;
+    float:left;
+    text-align:center;
     .toolBar {
-        width:100%;
-        padding:20px 0px 27px;
-        background:fade(#0e061c, 60%);
-        background:linear-gradient(fade(#321456, 90%), fade(#321456, 30%));
-        background:linear-gradient(fade(#321456, 90%), fade(#321456, 0%));
-        color:#fff;
-        text-align:right;
-        text-shadow:1px 1px #222;
+        //width:100%;
+        //padding:20px 0px 27px;
+        //background:linear-gradient(fade(#321456, 90%), fade(#321456, 0%));
+        //color:#222;
+        display:inline-block;
+        text-shadow:0px -1px #000;
+        font-size:28px;
+        background:rgba(0,0,0,0.85);
+        color:#eee;
+        text-shadow:1px 1px #000;
+        box-shadow:0px 0px 5px -1px #000;
+        border-bottom-left-radius:20px;
+        border-bottom-right-radius:20px;
+        padding:20px 35px 20px 35px;
         span {
-            margin-right:20px;
             transition:200ms;
             cursor:pointer;
             &:hover {
-                color:#222;
+                color:#555;
                 transform:scale(1.2);
             }
         }
+        i {
+            margin:0px 16px;
+            color:#444;
+        }
+    }
+    .header {
+       font-size:34px;
+       text-shadow:1px 1px #000;
+       width:calc(~"100% - 40px");
+       background:rgba(0,0,0,0.5);
+       position:absolute;
+       bottom:0px;
+       text-align:left;
+       padding:20px;
     }
 }
 .projects {
     width:100%;
-    height:40%;
+    position:relative;
     background:#111;
-    margin-top:-75px;
-    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,1));
-    background:linear-gradient(rgba(0,0,0,0.5), rgba(17,17,17,1));
-    //background:linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,1));
-    .header {
-       padding-top:16px;
-       font-size:34px;
-       margin-left:20px;
-       text-shadow:1px 1px #000;
+    //background:url('http://static3.grsites.com/archive/textures/dgrey/dgrey047.jpg');
+    float:left;
+    //background:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('http://static3.grsites.com/archive/textures/dblue/dblue016.jpg');
+    background:#111;
+    .sliderView {
+        width:calc(~"100% - 100px");
+        overflow:hidden;
+        margin:0 auto;
+        .sliderContent {
+            width:300%;
+            float:left;
+            transition:500ms ease-in-out;
+            display:flex;
+            .projWrap {
+                margin:30px 10px;
+                float:left;
+                padding:20px;
+                flex:1;
+                border-radius:12px;
+                transition:800ms ease-in-out;
+                overflow:hidden;
+                background:rgba(27,27,27,0.8);
+                font-family:'Open Sans', sans-serif;
+                h1 {
+                    font-size:26px;
+                    margin:20px;
+                    .date {
+                        float:right;
+                        font-size:20px;
+                        margin-right:20px;
+                        color:lighten(#5671d3, 10%);
+                    }
+                }
+                p {
+                    width:90%;
+                    margin:10px auto 30px;
+                    font-size:20px;
+                    line-height:32px;
+                    color:#ddd;
+                }
+                .thumbWrap {
+                    display:flex;
+                    flex-wrap:wrap;
+                    width:95%;
+                    margin:0 auto;
+                    .img {
+                        width:300px;
+                        height:280px;
+                        flex-grow:1;
+                        float:left;
+                        background-size:cover;
+                        margin:10px;
+                        border-radius:1px;
+                        box-shadow:0px 0px 4px 0px #000;
+                    }
+                    .spec1 { background-image:url('../images/spectrum1.png'); }
+                    .spec2 { background-image:url('../images/spectrum3.png'); }
+                    .spec3 { background-image:url('../images/spectrum2.png'); }
+                    .wr1   { background-image:url('../images/webroad1.png'); }
+                    .wr2   { background-image:url('../images/webroad2.png'); }
+                    .wr4   { background-image:url('../images/webroad4.png'); }
+                    .wr3   { background-image:url('../images/webroad3.png'); }
+                    .var1  { background-image:url('../images/latestSite.png'); }
+                    .var2  { background-image:url('../images/oldsite.png'); }
+                    .var3  { background-image:url('../images/newcover.png'); }
+                }
+            }
+        }
+    }
+    .rightNav, .leftNav {
+        font-size:38px;
+        position:absolute;
+        right:15px;
+        top:50%;
+        background:#111;
+        i {
+            opacity:0.1;
+            transition:400ms;
+            &.active {
+                opacity:1;
+                cursor:pointer;
+            }
+        }
+    }
+    .leftNav {
+        left:15px;
+        right:inherit;
+        i {
+            transform:rotate(180deg);
+        }
+    }
+    .centerNav {
+        width:100%;
+        margin:0px 0px 40px;
+        text-align:center;
+        i {
+            font-size:34px;
+            margin:0px 6px;
+            transition:200ms;
+            text-shadow:1px 1px #222;
+            cursor:pointer;
+            &.active {
+                color:purple;
+            }
+        }
     }
 }
 .aboutMe {
     background-image:url('../images/night_sunfloweres.jpg');
     width:100%;
     min-height:600px;
+    float:left;
     background-size:cover;
+    color:#ddd;
+    position:relative;
+    transform:translateY(0);
     .aboutHeader {
        font-size:34px;
        text-shadow:1px 1px #000;
-       width:100% -20px;
+       width:calc(~"100% - 20px");
+       float:left;
        padding:20px 20px 20px 0px;
        text-align:right;
-       background:rgba(0,0,0,0.5);
+       background:rgba(0,0,0,0.7);
+    }
+    .intro {
+        margin:40px;
+        border-radius:12px;
+        background:rgba(17,17,17,0.9);
+        padding:55px;
+        font-family:'Open Sans', sans-serif;
+        float:left;
+        font-size:24px;
+        max-width:42%;
+        text-shadow:1px 1px #000;
+        line-height:34px;
+        box-shadow:0px 0px 4px 0px #000;
+        span {
+            &.red       { color:#801515; }
+            &.yellow    { color:#fff954; }
+            &.green     { color:#067500; }
+            &.blue      { color:lighten(#5671d3, 10%); font-weight:bold; }
+        }
+        .buttons {
+            width:100%;
+            float:left;
+            margin:40px 0px 0px;
+            text-align:center;
+            button {
+                outline:none;
+                font-size:18px;
+                background:transparent;
+                color:#000;
+                font-weight:bold;
+                border:none;
+                border-radius:4px;
+                box-shadow:@crazyBSinput;
+                padding:0px;
+                transition:200ms;
+                cursor:pointer;
+                margin-right:10px;
+                &:hover {
+                    opacity:0.4;
+                }
+                &.active {
+                    opacity:0.4;
+                }
+                span {
+                    padding:12px 12px;
+                    display:inline-block;
+                    background:#444;
+                    margin-left:-5px;
+                    border-top-right-radius:4px;
+                    border-bottom-right-radius:4px;
+                    //text-shadow:1px 1px #333;
+                    //color:lighten(#5671d3, 10%);
+                    &.awesome {
+                        background:#222;
+                        color:#888;
+                        border-top-left-radius:4px;
+                        border-bottom-left-radius:4px;
+                        border-top-right-radius:0px;
+                        border-bottom-right-radius:0px;
+                        padding-bottom:13px;
+                        text-shadow:none;
+                        //color:lighten(#5671d3, 10%);
+                        i {
+                            font-size:20px;
+                        }
+                    }
+                }
+            }
+        }
+        .contact {
+            font-size:18px;
+            margin-top:20px;
+            max-height:100px;
+            transition:500ms;
+            float:left;
+            text-align:center;
+            width:100%;
+            opacity:1;
+            span {
+                color:lighten(#5671d3, 10%);
+                font-weight:bold;
+            }
+        }
+        .contact.ng-hide {
+            display:block !important;
+            transition:500ms;
+            max-height:0px;
+            overflow:hidden;
+            margin-top:0px;
+            opacity:0;
+        }
+    }
+    .upNav {
+        position:fixed;
+        bottom:30px;
+        right:30px;
+        font-size:62px;
+        color:#eee;
+        color:lighten(#5671d3, 15%);
+        text-shadow:1px 1px #000;
+        cursor:pointer;
+    }
+}
+.footer {
+    float:left;
+    width:100%;
+    padding:20px 0px;
+    background:#112;
+    font-size:16px;
+    text-align:center;
+    color:#aaa;
+    font-family:'Open Sans', sans-serif;
+    i {
+        margin:0px 4px;
+    }
+    a {
+        color:#eee;
+        transition:200ms;
+        text-decoration:underline;
+        &:hover {
+            color:#555;
+        }
     }
 }
