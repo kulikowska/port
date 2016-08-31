@@ -17,6 +17,7 @@ APP
         //template: TPL.content,
         link: function($scope, $element, $attributes) {
             $scope.tabId = 0;
+
             $scope.toggleLeft = function() {
                 if ($scope.tabId < 0) {
                     $scope.tabId += 100;
@@ -29,6 +30,12 @@ APP
                     $scope.tabId -= 100;
                     console.log($scope.tabId);
                 }
+            }
+
+            $scope.selectImg = function(img) {
+                $scope.gallery = true;
+                $scope.selImg = '../images/' + img;
+                console.log($scope.selImg);
             }
          }
       } 

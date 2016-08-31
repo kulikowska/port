@@ -1,11 +1,25 @@
-<div class="leftNav">
+<div class="leftNav" ng-show="!gallery">
     <i class="fa fa-play" ng-click="toggleLeft()" ng-class="tabId<0|checkActive"></i>
 </div>
-<div class="sliderView">
+<div class="imgGallery" ng-show="gallery" ng-click="gallery=false">
+    <div class="alert">
+        <i class="fa fa-exclamation-triangle"></i>
+        Click the image anywhere to close.
+    </div>
+   <div class="selectedImg">
+        <img src="{{selImg}}"></img>
+   </div>
+</div>
+<div class="sliderView" ng-show="!gallery">
     <div class="sliderContent" style="margin-left:{{tabId}}%">
         <div class="projWrap">
             <h1>
-                HTZ Spectrum
+                <span class="clickable">
+                    <a href="http://dev.spectrum.atdi.pro/" target="_blank">
+                        HTZ Spectrum 
+                        <i class="fa fa-link"></i>
+                    </a>
+                </span>
                 <span class="date">2014 - 2015</span>
             </h1>
             <p>
@@ -17,11 +31,11 @@
                 I can safely say I had a blast working on this project.
             </p>
             <div class="thumbWrap">
-                <span class="img spec1">
+                <span class="img spec1" ng-click="selectImg('spectrum1.png')">
                 </span>
-                <span class="img spec2">
+                <span class="img spec2" ng-click="selectImg('spectrum3.png')">
                 </span>
-                <span class="img spec3">
+                <span class="img spec3" ng-click="selectImg('spectrum2.png')">
                 </span>
             </div>
         </div>
@@ -52,7 +66,11 @@
                 <span class="date">2013 - 2015</span>
             </h1>
             <p> 
-                Just for fun, here are a few samples of my old websites. Fun to see how things have progressed over time :) 
+                Just for fun, here are a few samples of my old websites. <br><br>
+                Fun to see how things have evolved over time.  <br><br>
+                Check out the <span class="purple"><a href="http://www.rubykulikowska.com/port/old/" target="_blank">purple</a></span> one, the
+                              <span class="blue"><a href="http://www.rubykulikowska.com/port/old/" target="_blank">blue</a></span> one, and the
+                              <span class="white"><a href="http://www.rubykulikowska.com/port/old2">white</a></span> one.
             </p>
             <div class="thumbWrap">
                 <span class="img var1">
@@ -65,10 +83,10 @@
         </div>
     </div>
 </div>
-<div class="rightNav">
+<div class="rightNav" ng-show="!gallery">
     <i class="fa fa-play" ng-click="toggleRight()" ng-class="tabId>-200|checkActive"></i>
 </div>
-<div class="centerNav">
+<div class="centerNav" ng-show="!gallery">
     <i class="fa fa-circle" ng-class="tabId==0|checkActive" ng-click="tabId=0"></i>
     <i class="fa fa-circle" ng-class="tabId==-100|checkActive" ng-click="tabId=-100"></i>
     <i class="fa fa-circle" ng-class="tabId==-200|checkActive" ng-click="tabId=-200"></i>
