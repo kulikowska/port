@@ -76,11 +76,12 @@ a {
   float: left;
   z-index: 100;
   padding: 30px;
+  width: calc(100% - 60px);
   border-radius: 12px;
   overflow: hidden;
   height: auto;
   max-height: 1000px;
-  transition: opacity 1000ms;
+  transition: opacity 200ms;
   opacity: 1;
 }
 .projects .imgGallery .alert {
@@ -105,8 +106,10 @@ a {
   max-width: 90%;
   max-height: 90%;
   margin: 10px auto;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
+  border: 6px solid #fff;
+  box-shadow: 0px 0px 5px -1px #555;
 }
 .projects .imgGallery.ng-hide,
 .projects .sliderView.ng-hide {
@@ -117,14 +120,14 @@ a {
   padding: 0px;
   margin: 0px;
   opacity: 0;
-  transition: opacity 1000ms;
+  transition: opacity 200ms;
 }
 .projects .sliderView {
   width: calc(100% - 100px);
   overflow: hidden;
   margin: 0 auto;
   opacity: 1;
-  transition: opacity 1000ms;
+  transition: opacity 200ms;
 }
 .projects .sliderView .sliderContent {
   width: 300%;
@@ -150,12 +153,22 @@ a {
   margin: 20px;
   color: #000;
 }
+@media (max-width: 500px) {
+  .projects .sliderView .sliderContent .projWrap h1 {
+    font-size: 22px;
+  }
+}
 .projects .sliderView .sliderContent .projWrap h1 .date {
   float: right;
   font-size: 20px;
   margin-right: 20px;
   color: #7e93de;
   color: #5a74d4;
+}
+@media (max-width: 560px) {
+  .projects .sliderView .sliderContent .projWrap h1 .date {
+    display: none;
+  }
 }
 .projects .sliderView .sliderContent .projWrap h1 .clickable {
   transition: 200ms;
@@ -320,7 +333,7 @@ a {
   color: #067500;
 }
 .aboutMe .intro span.blue {
-  color: #5a74d4;
+  color: #3178af;
   font-weight: bold;
 }
 .aboutMe .intro .buttons {
@@ -371,18 +384,24 @@ a {
 .aboutMe .intro .buttons button span.awesome i {
   font-size: 18px;
 }
+@media (max-width: 675px) {
+  .aboutMe .intro .buttons button span.text {
+    display: none;
+  }
+}
 .aboutMe .intro .contact {
   font-size: 18px;
   margin-top: 20px;
   max-height: 100px;
   transition: 500ms;
   float: left;
-  text-align: center;
   width: 100%;
+  line-height: 20px;
   opacity: 1;
 }
 .aboutMe .intro .contact span {
-  color: #7e93de;
+  color: #5a74d4;
+  color: #1b415f;
   font-weight: bold;
 }
 .aboutMe .intro .contact.ng-hide {
@@ -402,6 +421,13 @@ a {
   color: #93a4e3;
   color: #000;
   cursor: pointer;
+}
+@media (max-width: 560px) {
+  .aboutMe .upNav {
+    right: 10px;
+    bottom: 40px;
+    font-size: 40px;
+  }
 }
 .footer {
   float: left;

@@ -98,11 +98,12 @@ a {
         float:left;
         z-index:100;
         padding:30px;
+        width:calc(~"100% - 60px");
         border-radius:12px;
         overflow:hidden;
         height:auto;
         max-height:1000px;
-        transition:opacity 1000ms;
+        transition:opacity 200ms;
         opacity:1;
         .alert {
             width:100%;
@@ -127,8 +128,10 @@ a {
                 max-width:90%;
                 max-height:90%;
                 margin:10px auto;
-                border-radius:6px;
+                border-radius:12px;
                 cursor:pointer;
+                border:6px solid #fff;
+                box-shadow:0px 0px 5px -1px #555;
             }
         }
     }
@@ -140,14 +143,14 @@ a {
         padding:0px;
         margin:0px;
         opacity:0;
-        transition:opacity 1000ms;
+        transition:opacity 200ms;
     }
     .sliderView {
         width:calc(~"100% - 100px");
         overflow:hidden;
         margin:0 auto;
         opacity:1;
-        transition:opacity 1000ms;
+        transition:opacity 200ms;
         .sliderContent {
             width:300%;
             float:left;
@@ -169,12 +172,14 @@ a {
                     font-size:26px;
                     margin:20px;
                     color:#000;
+                    @media (max-width:500px) { font-size:22px }
                     .date {
                         float:right;
                         font-size:20px;
                         margin-right:20px;
                         color:lighten(#5671d3, 10%);
                         color:lighten(#5671d3, 1%);
+                        @media (max-width:560px) { display:none; }
                     }
                     .clickable {
                         transition:200ms;
@@ -311,7 +316,7 @@ a {
             &.red       { color:#801515; }
             &.yellow    { color:#fff954; }
             &.green     { color:#067500; }
-            &.blue      { color:lighten(#5671d3, 1%); font-weight:bold; }
+            &.blue      { color:lighten(@coolBlue, 20%); font-weight:bold; }
         }
         .buttons {
             width:100%;
@@ -361,6 +366,9 @@ a {
                             font-size:18px;
                         }
                     }
+                    &.text {
+                        @media(max-width:675px) { display:none; }
+                    }
                 }
             }
         }
@@ -370,11 +378,12 @@ a {
             max-height:100px;
             transition:500ms;
             float:left;
-            text-align:center;
             width:100%;
+            line-height:20px;
             opacity:1;
             span {
-                color:lighten(#5671d3, 10%);
+                color:lighten(#5671d3, 1%);
+                color:@coolBlue;
                 font-weight:bold;
             }
         }
@@ -396,6 +405,7 @@ a {
         color:lighten(#5671d3, 15%);
         color:#000;
         cursor:pointer;
+        @media (max-width:560px) { right:10px; bottom:40px; font-size:40px }
     }
 }
 .footer {
