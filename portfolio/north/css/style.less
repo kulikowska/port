@@ -38,8 +38,8 @@ a {
 }
 
 .headerImg {
-    background-image:url('../images/northern_lights_cropped.jpg');
-    background-image:url('../images/waterfall.jpg');
+    //background-image:url('../images/waterfall.jpg');
+    background-image:url('../images/waterfall-progressive.jpg');
     width:100%;
     min-height:55%;
     //max-height:600px;
@@ -223,9 +223,9 @@ a {
                         box-shadow:0px 0px 4px 0px #000;
                         cursor:pointer;
                     }
-                    .spec1 { background-image:url('../images/spectrum1.png'); }
-                    .spec2 { background-image:url('../images/spectrum3.png'); }
-                    .spec3 { background-image:url('../images/spectrum2.png'); }
+                    .spec1 { background-image:url('../images/spectrum1-prog.jpg'); }
+                    .spec2 { background-image:url('../images/spectrum3-prog.jpg'); }
+                    .spec3 { background-image:url('../images/spectrum2-prog.jpg'); }
                     .wr1   { background-image:url('../images/webroad1.png'); }
                     .wr2   { background-image:url('../images/webroad2.png'); }
                     .wr4   { background-image:url('../images/webroad4.png'); }
@@ -277,8 +277,8 @@ a {
     }
 }
 .aboutMe {
-    background-image:url('../images/night_sunfloweres.jpg');
-    background-image:url('../images/waterfall2.jpg');
+    //background-image:url('../images/waterfall2.jpg');
+    background-image:url('../images/waterfall2-progressive.jpg');
     width:100%;
     min-height:600px;
     float:left;
@@ -287,6 +287,14 @@ a {
     position:relative;
     transform:translateY(0);
     text-align:left;
+    &:after {
+        opacity:0.5;
+        position:absolute;
+        bottom:0;
+        right:0;
+        left:0;
+        top:0;
+    }
     .aboutHeader {
        font-size:34px;
        width:calc(~"100% - 20px");
@@ -297,26 +305,32 @@ a {
        background:rgba(255,255,255,0.8);
     }
     .intro {
+        //margin:120px auto 35px;
         margin:40px;
         border-radius:6px;
         //background:rgba(17,17,17,0.9);
+        overflow:hidden;
         padding:55px;
         font-family:'Open Sans', sans-serif;
-        float:left;
         font-size:22px;
         max-width:42%;
+        float:left;
         //text-shadow:1px 1px #000;
         line-height:28px;
         //box-shadow:0px 0px 4px 0px #000;
         box-shadow:0px 0px 2px 0px #aaa;
         color:#000;
         background:rgba(255,255,255,0.85);
-        background:linear-gradient(rgba(255,255,255,0.95), fade(#afd7f6, 95%));
+        background:linear-gradient(rgba(255,255,255,0.95), fade(lighten(#afd7f6, 5%), 95%));
+        color:lighten(@coolBlue, 20%); 
+        color:#000;
+        position:relative;
         span {
             &.red       { color:#801515; }
             &.yellow    { color:#fff954; }
             &.green     { color:#067500; }
             &.blue      { color:lighten(@coolBlue, 20%); font-weight:bold; }
+            //&.blue      { color:black; font-weight:bold; }
         }
         .buttons {
             width:100%;

@@ -23,8 +23,7 @@ a {
   height: 100%;
 }
 .headerImg {
-  background-image: url('../images/northern_lights_cropped.jpg');
-  background-image: url('../images/waterfall.jpg');
+  background-image: url('../images/waterfall-progressive.jpg');
   width: 100%;
   min-height: 55%;
   background-size: cover;
@@ -218,13 +217,13 @@ a {
   cursor: pointer;
 }
 .projects .sliderView .sliderContent .projWrap .thumbWrap .spec1 {
-  background-image: url('../images/spectrum1.png');
+  background-image: url('../images/spectrum1-prog.jpg');
 }
 .projects .sliderView .sliderContent .projWrap .thumbWrap .spec2 {
-  background-image: url('../images/spectrum3.png');
+  background-image: url('../images/spectrum3-prog.jpg');
 }
 .projects .sliderView .sliderContent .projWrap .thumbWrap .spec3 {
-  background-image: url('../images/spectrum2.png');
+  background-image: url('../images/spectrum2-prog.jpg');
 }
 .projects .sliderView .sliderContent .projWrap .thumbWrap .wr1 {
   background-image: url('../images/webroad1.png');
@@ -289,8 +288,7 @@ a {
   color: purple;
 }
 .aboutMe {
-  background-image: url('../images/night_sunfloweres.jpg');
-  background-image: url('../images/waterfall2.jpg');
+  background-image: url('../images/waterfall2-progressive.jpg');
   width: 100%;
   min-height: 600px;
   float: left;
@@ -299,6 +297,14 @@ a {
   position: relative;
   transform: translateY(0);
   text-align: left;
+}
+.aboutMe:after {
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
 }
 .aboutMe .aboutHeader {
   font-size: 34px;
@@ -312,16 +318,19 @@ a {
 .aboutMe .intro {
   margin: 40px;
   border-radius: 6px;
+  overflow: hidden;
   padding: 55px;
   font-family: 'Open Sans', sans-serif;
-  float: left;
   font-size: 22px;
   max-width: 42%;
+  float: left;
   line-height: 28px;
   box-shadow: 0px 0px 2px 0px #aaa;
-  color: #000;
   background: rgba(255, 255, 255, 0.85);
-  background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(175, 215, 246, 0.95));
+  background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(198, 226, 249, 0.95));
+  color: #3178af;
+  color: #000;
+  position: relative;
 }
 .aboutMe .intro span.red {
   color: #801515;
