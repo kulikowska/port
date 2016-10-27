@@ -1,10 +1,51 @@
-<div class={{imageContainer}}>
-    <div class="textContainer">
-        <div class="title">Ruby Kulikowska
-            <a href="mailto:rubykulikowska@gmail.com"><span class="mailMe"><i class="fa fa-envelope"></i></span></a>
+<div class="headerImg">
+    <div class="toolBar" id="top">
+        <a href="#projects" du-smooth-scroll duration="500"><span> Projects </span></a>
+        <i class="fa fa-moon-o"></i>
+        <a href="#about" du-smooth-scroll duration="800"><span> About </span></a>
+    </div>
+    <div class="header" id="projects">
+       <i class="fa fa-lightbulb-o"></i>
+        Projects
+    </div>
+</div>
+
+<div class="projects"></div>
+
+<div class="aboutMe" id="about">
+    <div class="aboutHeader">
+        About Me
+        <i class="fa fa-certificate"></i>
+    </div>
+
+    <div class="intro">
+        Hi, my name's <span class="blue">Ruby</span>. I'm a <span class="blue">front end web developer</span>.<br><br>
+
+        I write a lot of <span class="blue">AngularJs</span>, <span class="blue">CSS3</span> and <span class="blue">HTML5</span>.<br><br>
+
+        I like to use <span class="blue">LESS</span> as my CSS preprocessor. <br><br>
+
+        I wouldn't quite call myself full stack, but I've nosed around in <span class="blue">PHP</span>,<span class="blue"> Node.js</span>,<span class="blue"> MySQL</span>, and <span class="blue"> PostgreSQL</span>.<br>
+        <div class="buttons">
+            <a a href="https://www.linkedin.com/in/ruby-kulikowska-49746693?trk=hp-identity-photo" target="_blank">
+                <button>
+                    <span class="awesome"><i class="fa fa-linkedin"></i></span>
+                    <span class="text">LinkedIn</span>
+                </button>
+            </a>
+            <button ng-click="contact=!contact" ng-class="contact|checkActive">
+                <span class="awesome"><i class="fa fa-envelope"></i></span>
+                <span class="text">Contact</span>
+            </button>
+        </div>
+        <div class="contact" ng-show="contact">
+            I'm based mostly in Montreal, but sometimes I hit the road. <br><br>
+            Drop me a line at: <span><a href="mailto:rubykulikowska@gmail.com">rubykulikowska@gmail.com</a></span>
         </div>
     </div>
 </div>
-<div class="middleContainer"></div>
-<div class="portfolio"></div>
-<div class="footerContainer"></div>
+
+<div class="footer">
+    <i class="fa fa-camera"></i>Photos courtesy of <a href="https://www.flickr.com/photos/anieto2k">Andrés Nieto Porras</a>
+    <span class="upNav" href="#top" du-smooth-scroll duration="1000"><i class="fa fa-arrow-circle-up"></i></span>
+</div>

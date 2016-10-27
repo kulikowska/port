@@ -16,6 +16,53 @@ a {
   text-decoration: none;
   color: inherit;
 }
+button {
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  padding: 0px;
+  transition: 200ms;
+  cursor: pointer;
+  margin-right: 10px;
+}
+button:hover {
+  opacity: 0.4;
+}
+button.active {
+  opacity: 0.4;
+}
+button span {
+  padding: 12px 12px;
+  display: inline-block;
+  background: #fff;
+  margin-left: -5px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+button span.awesome {
+  background: #222;
+  background: #fff;
+  color: #1b415f;
+  background: #97c1e2;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  text-shadow: none;
+}
+button span.awesome i {
+  font-size: 18px;
+}
+@media (max-width: 675px) {
+  button span.text {
+    display: none;
+  }
+}
 .content {
   z-index: 0;
   -webkit-transition: -webkit-transform 0.6s ease-in-out;
@@ -193,58 +240,59 @@ a {
   font-size: 22px;
   text-decoration: underline;
 }
-.projects .sliderView .sliderContent .projWrap p .purple {
-  color: #9c5fb3;
-}
-.projects .sliderView .sliderContent .projWrap p .blue {
-  color: #7b90b5;
-}
 .projects .sliderView .sliderContent .projWrap .thumbWrap {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 95%;
   margin: 0 auto;
 }
-.projects .sliderView .sliderContent .projWrap .thumbWrap .img {
-  width: 300px;
-  height: 280px;
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap {
   flex-grow: 1;
-  float: left;
-  background-size: cover;
   margin: 10px;
-  border-radius: 1px;
-  box-shadow: 0px 0px 4px 0px #000;
+  text-align: center;
+  /*
+                        .spec1 { background-image:url('../images/spectrum1-prog.jpg'); }
+                        .spec2 { background-image:url('../images/spectrum3-prog.jpg'); }
+                        .spec3 { background-image:url('../images/spectrum2-prog.jpg'); }
+                        .wr1   { background-image:url('../images/webroad1.png'); }
+                        .wr2   { background-image:url('../images/webroad2.png'); }
+                        .wr4   { background-image:url('../images/webroad4.png'); }
+                        .wr3   { background-image:url('../images/webroad3.png'); }
+                        .var1  { background-image:url('../images/latestSite.png'); }
+                        .var2  { background-image:url('../images/oldsite.png'); }
+                        .var3  { background-image:url('../images/newcover.png'); }
+                        */
+}
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap img {
+  width: 100%;
+  max-height: auto;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px 0px #555;
   cursor: pointer;
 }
-.projects .sliderView .sliderContent .projWrap .thumbWrap .spec1 {
-  background-image: url('../images/spectrum1-prog.jpg');
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap button {
+  margin: 20px 0px 0px;
+  display: inline-block;
 }
-.projects .sliderView .sliderContent .projWrap .thumbWrap .spec2 {
-  background-image: url('../images/spectrum3-prog.jpg');
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap button span {
+  margin-top: -1px;
 }
-.projects .sliderView .sliderContent .projWrap .thumbWrap .spec3 {
-  background-image: url('../images/spectrum2-prog.jpg');
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap button span.awesome {
+  background: transparent;
+  color: #000;
+  padding: 12px 14px 12px 16px;
 }
-.projects .sliderView .sliderContent .projWrap .thumbWrap .wr1 {
-  background-image: url('../images/webroad1.png');
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap button span.text {
+  font-size: 14px;
 }
-.projects .sliderView .sliderContent .projWrap .thumbWrap .wr2 {
-  background-image: url('../images/webroad2.png');
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap .blue {
+  background: #7b90b5;
 }
-.projects .sliderView .sliderContent .projWrap .thumbWrap .wr4 {
-  background-image: url('../images/webroad4.png');
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap .purple {
+  background: #9c5fb3;
 }
-.projects .sliderView .sliderContent .projWrap .thumbWrap .wr3 {
-  background-image: url('../images/webroad3.png');
-}
-.projects .sliderView .sliderContent .projWrap .thumbWrap .var1 {
-  background-image: url('../images/latestSite.png');
-}
-.projects .sliderView .sliderContent .projWrap .thumbWrap .var2 {
-  background-image: url('../images/oldsite.png');
-}
-.projects .sliderView .sliderContent .projWrap .thumbWrap .var3 {
-  background-image: url('../images/newcover.png');
+.projects .sliderView .sliderContent .projWrap .thumbWrap .imgWrap .white {
+  background: #eee;
 }
 .projects .rightNav,
 .projects .leftNav {
@@ -350,53 +398,6 @@ a {
   float: left;
   margin: 40px 0px 0px;
   text-align: center;
-}
-.aboutMe .intro .buttons button {
-  outline: none;
-  font-size: 16px;
-  background: transparent;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
-  padding: 0px;
-  transition: 200ms;
-  cursor: pointer;
-  margin-right: 10px;
-}
-.aboutMe .intro .buttons button:hover {
-  opacity: 0.4;
-}
-.aboutMe .intro .buttons button.active {
-  opacity: 0.4;
-}
-.aboutMe .intro .buttons button span {
-  padding: 12px 12px;
-  display: inline-block;
-  background: #fff;
-  margin-left: -5px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-.aboutMe .intro .buttons button span.awesome {
-  background: #222;
-  background: #fff;
-  color: #1b415f;
-  background: #97c1e2;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  text-shadow: none;
-}
-.aboutMe .intro .buttons button span.awesome i {
-  font-size: 18px;
-}
-@media (max-width: 675px) {
-  .aboutMe .intro .buttons button span.text {
-    display: none;
-  }
 }
 .aboutMe .intro .contact {
   font-size: 18px;

@@ -1,5 +1,5 @@
 APP
-.directive('mainHeader', [function() {
+.directive('content', [function() {
     return {
         restrict: 'C',
         replace: false,
@@ -9,69 +9,39 @@ APP
          }
       } 
  }])
-.directive('middleContainer', [function() {
+.directive('projects', [function() {
     return {
         restrict: 'C',
         replace: false,
-        templateUrl: 'html/middle.html',
-        //template: TPL.portfolio,
+        templateUrl: 'html/projects.html',
+        //template: TPL.content,
         link: function($scope, $element, $attributes) {
-            $scope.middleDiv = 'middleGround';
-            $scope.smaller = 'smaller';
-            $scope.smallest = 'smallest';
-            $scope.imageContainer = 'imageContainer';
+            $scope.tabId = 0;
 
-            $scope.showPort = function() {
-                if (!$scope.portfolio) {
-                    $scope.portfolio = true;
-                    $scope.imageContainer = 'shrunkImageContainer';
-                    $scope.middleDiv = 'shrunkMiddle';
-                    $scope.smaller = 'evenSmaller';
-                    $scope.smallest = 'evenSmallest';
-                    $scope.mainUl = 'shrunkUl';
+            $scope.toggleLeft = function() {
+                if ($scope.tabId < 0) {
+                    $scope.tabId += 100;
+                    console.log($scope.tabId);
                 }
-                else {
-                    $scope.portfolio = false;
-                    $scope.middleDiv = 'middleGround';
-                    $scope.imageContainer = 'imageContainer';
-                    $scope.smaller = 'smaller';
-                    $scope.smallest = 'smallest';
-                    $scope.mainUl = '';
+            }
+
+            $scope.toggleRight = function() {
+                if ($scope.tabId > -200) {
+                    $scope.tabId -= 100;
+                    console.log($scope.tabId);
                 }
+            }
+
+            $scope.selectImg = function(img) {
+                $scope.gallery = true;
+                $scope.selImg = '../images/' + img;
+                console.log($scope.selImg);
             }
          }
       } 
  }])
-.directive('portfolio', [function() {
-    return {
-        restrict: 'C',
-        replace: false,
-        templateUrl: 'html/portfolio.html',
-        //template: TPL.portfolio,
-        link: function($scope, $element, $attributes) {
-         }
-      } 
- }])
-.directive('footerContainer', [function() {
-    return {
-        restrict: 'C',
-        replace: false,
-        templateUrl: 'html/footer.html',
-        //template: TPL.portfolio,
-        link: function($scope, $element, $attributes) {
-            $scope.footerClass = 'footer';
-
-            $scope.showHideFooter = function() {
-                if (!$scope.noFooter) {
-                    $scope.footerClass = 'shrunkFooter';
-                    $scope.noFooter = true;
-                }
-                else {
-                    $scope.noFooter = false;
-                    $scope.footerClass = 'footer';
-                }
-            }
-         }
-      } 
- }])
- 
+ .filter('checkActive', function() {
+    return function(input) {
+        return input ? 'active' : '';
+    };
+})

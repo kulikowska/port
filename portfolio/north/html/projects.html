@@ -1,7 +1,7 @@
 <div class="leftNav" ng-show="!gallery">
     <i class="fa fa-play" ng-click="toggleLeft()" ng-class="tabId<0|checkActive"></i>
 </div>
-<div class="imgGallery" ng-show="gallery" ng-click="gallery=false">
+<div class="imgGallery" ng-show="gallery" ng-click="gallery=false" id="gallery">
     <div class="alert">
         <i class="fa fa-exclamation-triangle"></i>
         Click the image anywhere to close.
@@ -14,12 +14,7 @@
     <div class="sliderContent" style="margin-left:{{tabId}}%">
         <div class="projWrap">
             <h1>
-                <span class="clickable">
-                    <a href="http://dev.spectrum.atdi.pro/" target="_blank">
-                        HTZ Spectrum 
-                        <i class="fa fa-link"></i>
-                    </a>
-                </span>
+                HTZ Spectrum 
                 <span class="date">2014 - 2015</span>
             </h1>
             <p>
@@ -31,12 +26,15 @@
                 I can safely say I had a blast working on this project.
             </p>
             <div class="thumbWrap">
-                <a class="img spec1" ng-click="selectImg('spectrum1-prog.jpg')" href="#projects" du-smooth-scroll duration="500">
-                </a>
-                <a class="img spec3" ng-click="selectImg('spectrum2-prog.jpg')" href="#projects" du-smooth-scroll duration="500">
-                </a>
-                <a class="img spec2" ng-click="selectImg('spectrum3-prog.jpg')" href="#projects" du-smooth-scroll duration="500">
-                </a>
+                <div class="imgWrap" ng-click="selectImg('spectrum1-prog.jpg')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/spectrum1-prog.jpg" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('spectrum3-prog.jpg')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/spectrum3-prog.jpg" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('spectrum2-prog.jpg')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/spectrum2-prog.jpg"> 
+                </div>
             </div>
         </div>
         <div class="projWrap">
@@ -52,12 +50,20 @@
             Due to confidentiality, I can't demo any products. However, code samples are available on request!
             </p>
             <div class="thumbWrap">
-                <a class="img wr1" ng-click="selectImg('webroad1.png')" href="#projects" du-smooth-scroll duration="500">
-                </a>
-                <a class="img wr3" ng-click="selectImg('webroad3.png')" href="#projects" du-smooth-scroll duration="500">
-                </a>
-                <a class="img wr4" ng-click="selectImg('webroad4.png')" href="#projects" du-smooth-scroll duration="500">
-                </a>
+                <div class="imgWrap" ng-click="selectImg('webroad1.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/webroad1.png" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('webroad3.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/webroad3.png" />
+                </div>
+                <!--
+                <div class="imgWrap" ng-click="selectImg('webroad4.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/webroad4.png" />
+                </div>
+                !-->
+                <div class="imgWrap" ng-click="selectImg('webroad7.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/webroad7.png" />
+                </div>
             </div>
         </div>
         <div class="projWrap">
@@ -66,19 +72,44 @@
                 <span class="date">2013 - 2015</span>
             </h1>
             <p> 
-                Just for fun, here are a few samples of my old websites. <br><br>
-                Fun to see how things have evolved over time.  <br><br>
-                Check out the <span class="blue"><a href="http://www.rubykulikowska.com/firstresp/" target="_blank">blue</a></span> one, the
-                              <span class="purple"><a href="http://www.rubykulikowska.com/port/old/" target="_blank">purple</a></span> one, and the
-                              <span class="white"><a href="http://www.rubykulikowska.com/port/old2" target="_blank">white</a></span> one.
+                <br>
+                Just for kicks, here are a few samples of my old websites. <br><br>
+                Neat to see how things have evolved over time.  <br><br>
+                <!--
+                Check out the <span class="blue">blue</a></span> one, the
+                              <span class="purple">purple</a></span> one, and the
+                              <span class="white">white</a></span> one.
+              --!>
+              Note: only the blue one is responsive/mobile friendly.
             </p>
             <div class="thumbWrap">
-                <a class="img var1" ng-click="selectImg('latestSite.png')" href="#projects" du-smooth-scroll duration="500">
-                </a>
-                <a class="img var2" ng-click="selectImg('oldsite.png')" href="#projects" du-smooth-scroll duration="500">
-                </a>
-                <a class="img var3" ng-click="selectImg('newcover.png')" href="#projects" du-smooth-scroll duration="500">
-                </a>
+                <div class="imgWrap">
+                    <img src="../images/latestSite.png" ng-click="selectImg('latestSite.png')" href="#gallery" du-smooth-scroll duration="500" />
+                    <a href="http://www.rubykulikowska.com/firstresp/" target="_blank">
+                        <button class="blue">
+                            <span class="awesome"><i class="fa fa-link"></i></span>
+                            <span class="text">Go to Site!</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="imgWrap">
+                    <img src="../images/oldsite.png" ng-click="selectImg('oldsite.png')" href="#gallery" du-smooth-scroll duration="500" />
+                    <a href="http://www.rubykulikowska.com/port/old/" target="_blank">
+                        <button class="purple">
+                            <span class="awesome"><i class="fa fa-link"></i></span>
+                            <span class="text">Go to Site!</span>
+                        </button>
+                    </a>
+                </div>
+                <div class="imgWrap">
+                    <img src="../images/newcover.png" ng-click="selectImg('newcover.png')" href="#gallery" du-smooth-scroll duration="500" />
+                    <a href="http://www.rubykulikowska.com/port/old2" target="_blank">
+                        <button class="white">
+                            <span class="awesome"><i class="fa fa-link"></i></span>
+                            <span class="text">Go to Site!</span>
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

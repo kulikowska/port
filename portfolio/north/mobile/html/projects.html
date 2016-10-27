@@ -1,62 +1,129 @@
-<div class="websites">
-    <div class="header">Websites</div>
-    <div class="awesome">
-        <i class="fa fa-globe"></i>
-        <i class="fa fa-globe"></i>
-        <i class="fa fa-globe"></i>
+<div class="leftNav" ng-show="!gallery">
+    <i class="fa fa-play" ng-click="toggleLeft()" ng-class="tabId<0|checkActive"></i>
+</div>
+<div class="imgGallery" ng-show="gallery" ng-click="gallery=false">
+    <div class="alert">
+        <i class="fa fa-exclamation-triangle"></i>
+        Click the image anywhere to close.
     </div>
-    <div class="eachOne">
-        <div class="title"><a href='http://www.rubykulikowska.com/port/koyokai/koyokai'>Koyokai</a></div>
-        A work in progress for a kendo club in Michigan. Simlple Angular design and
-        fun colours and images. 
-    </div>
-    <div class="eachOne">
-        <div class="title"><a href='http://www.rubykulikowska.com/port/old'>Old Home Page</a></div>
-        The old design of rubykulikowska.com. Lightweight, colourful, if not a little goofy. 
+   <div class="selectedImg">
+        <img src="{{selImg}}"></img>
+   </div>
+</div>
+<div class="sliderView" ng-show="!gallery">
+    <div class="sliderContent" style="margin-left:{{tabId}}%">
+        <div class="projWrap">
+            <h1>
+                <span class="clickable">
+                    <a href="http://dev.spectrum.atdi.pro/" target="_blank">
+                        HTZ Spectrum 
+                        <i class="fa fa-link"></i>
+                    </a>
+                </span>
+                <span class="date">2014 - 2015</span>
+            </h1>
+            <p>
+                I joined in on the Spectrum project fairly early in its inception and took over a good portion of the front-end design. 
+                Built in AngularJs and using OpenLayers, I had a field day designing UX/UI components, 
+                implementing a variety of tools and features, and generally nurturing the entire front-end structure of this app.
+                Faced with a blank canvas in many situations, I had the opportunity to dig deep creatively, in terms of both UI and code design.
+                <br><br>
+                I can safely say I had a blast working on this project.
+            </p>
+            <div class="thumbWrap">
+                <!--
+                <a class="img spec1" ng-click="selectImg('spectrum1-prog.jpg')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+                <a class="img spec3" ng-click="selectImg('spectrum2-prog.jpg')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+                <a class="img spec2" ng-click="selectImg('spectrum3-prog.jpg')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+                !-->
+                <div class="imgWrap" ng-click="selectImg('spectrum1-prog.jpg')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/spectrum1-prog.jpg" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('spectrum3-prog.jpg')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/spectrum3-prog.jpg" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('spectrum2-prog.jpg')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/spectrum2-prog.jpg"> 
+                </div>
+            </div>
+        </div>
+        <div class="projWrap">
+            <h1>
+                WebRoad66
+                <span class="date">2016</span>
+            </h1>
+            <p>
+            WebRoad66 is a beacon solutions project for which I have the priveledge of building all sorts of fun tools. From infrastructure 
+            management tools, to statistics graphing, to file management, to data ingestion tools. Working again primarily with AngularJs, 
+            but this time I've also had the opportunity to do some work on the API, and wracked up a tiny bit of experience with Node.js and PostgreSQL. 
+            <br><br>
+            Due to confidentiality, I can't demo any products. However, code samples are available on request!
+            </p>
+            <div class="thumbWrap">
+                <div class="imgWrap" ng-click="selectImg('webroad1.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/webroad1.png" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('webroad3.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/webroad3.png" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('webroad4.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/webroad4.png" />
+                </div>
+                <!--
+                <a class="img wr1" ng-click="selectImg('webroad1.png')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+                <a class="img wr3" ng-click="selectImg('webroad3.png')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+                <a class="img wr4" ng-click="selectImg('webroad4.png')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+                !-->
+            </div>
+        </div>
+        <div class="projWrap">
+            <h1>
+               Various 
+                <span class="date">2013 - 2015</span>
+            </h1>
+            <p> 
+                Just for kicks, here are a few samples of my old websites. <br><br>
+                Fun to see how things have evolved over time.  <br><br>
+                Check out the <span class="blue"><a href="http://www.rubykulikowska.com/firstresp/" target="_blank">blue</a></span> one, the
+                              <span class="purple"><a href="http://www.rubykulikowska.com/port/old/" target="_blank">purple</a></span> one, and the
+                              <span class="white"><a href="http://www.rubykulikowska.com/port/old2" target="_blank">white</a></span> one.
+                <br><br>
+                Note: only the blue one is responsive/mobile friendly
+                <br><br>
+            </p>
+            <div class="thumbWrap">
+                <div class="imgWrap" ng-click="selectImg('latestSite.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/latestSite.png" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('oldsite.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/oldsite.png" />
+                </div>
+                <div class="imgWrap" ng-click="selectImg('newcover.png')" href="#gallery" du-smooth-scroll duration="500">
+                    <img src="../images/newcover.png" />
+                </div>
+<!--
+                <a class="img var1" ng-click="selectImg('latestSite.png')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+                <a class="img var2" ng-click="selectImg('oldsite.png')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+                <a class="img var3" ng-click="selectImg('newcover.png')" href="#projects" du-smooth-scroll duration="500">
+                </a>
+--!>
+            </div>
+        </div>
     </div>
 </div>
-
-<div class="divideVert"></div>
-
-<div class="apps">
-    <div class="header">Applications</div>
-    <div class="awesome">
-        <i class="fa fa-plug"></i>
-        <i class="fa fa-plug"></i>
-        <i class="fa fa-plug"></i>
-    </div>
-    <div class="eachOne">
-        <div class="title"><a href="http://188.165.228.47/mvportal/">MvPortal</a></div>
-        A data application I designed and coded in Angular.
-    </div>
-    <div class="eachOne">
-        <div class="title"><a href="http://188.165.228.47/tvws/">Whitespace</a></div>
-        An application I contributed to, mostly CSS/HTML design, including the adaptive CSS.
-        I also helped out with some of the Angular tasks.
-    </div>
+<div class="rightNav" ng-show="!gallery">
+    <i class="fa fa-play" ng-click="toggleRight()" ng-class="tabId>-200|checkActive"></i>
 </div>
-
-<div class="divideVert"></div>
-
-<div class="misc">
-    <div class="header">Just For Fun</div>
-    <div class="awesome">
-        <i class="fa fa-paw"></i>
-        <i class="fa fa-paw"></i>
-        <i class="fa fa-paw"></i>
-    </div>
-    <div class="eachOne">
-        <div class="title"><a href="http://www.rubykulikowska.com/port/threejs/testThree.html">Three.js Cube</a></div>
-        I was playing around with Three.js and I built this little cube.
-    </div>
-    <div class="eachOne">
-        <i class="fa fa-spinner"></i>
-    </div>
-</div>
-<div class="previews">
-    <a href='http://www.rubykulikowska.com/port/koyokai/koyokai'><div class="koyoImg"><div>Koyokai</div></div></a>
-    <a href='http://www.rubykulikowska.com/port/old'><div class="oldImg"><div>Home Page</div></div></a>
-    <a href="http://188.165.228.47/mvportal/"><div class="portal"><div>MvPortal</div></div></a>
-    <a href="http://188.165.228.47/tvws/"><div class="whitespace"><div>Whitespace</div></div></a>
-    <a href="http://www.rubykulikowska.com/port/threejs/testThree.html"><div class="cube"><div>Three.js Cube</div></div></a>
+<div class="centerNav" ng-show="!gallery">
+    <i class="fa fa-circle" ng-class="tabId==0|checkActive" ng-click="tabId=0"></i>
+    <i class="fa fa-circle" ng-class="tabId==-100|checkActive" ng-click="tabId=-100"></i>
+    <i class="fa fa-circle" ng-class="tabId==-200|checkActive" ng-click="tabId=-200"></i>
 </div>

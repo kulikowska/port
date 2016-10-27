@@ -37,6 +37,7 @@ APP
                 $scope.selImg = '../images/' + img;
                 console.log($scope.selImg);
             }
+
          }
       } 
  }])
