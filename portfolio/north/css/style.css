@@ -48,12 +48,13 @@ button span.awesome {
   background: #222;
   background: #fff;
   color: #1b415f;
-  background: #97c1e2;
+  background: #3178af;
+  color: #fff;
+  text-shadow: 1px 1px #000;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  text-shadow: none;
 }
 button span.awesome i {
   font-size: 18px;
@@ -351,7 +352,6 @@ button span.awesome i {
   background-image: url('../images/waterfall2-progressive.jpg');
   background-image: url('../images/hotairballoon.jpg');
   width: 100%;
-  min-height: 600px;
   float: left;
   background-size: cover;
   color: #ddd;
@@ -383,7 +383,8 @@ button span.awesome i {
   overflow: hidden;
   padding: 55px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
+  color: #444;
   max-width: 49%;
   text-align: center;
   line-height: 28px;
@@ -391,7 +392,6 @@ button span.awesome i {
   background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(198, 226, 249, 0.95));
   background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(198, 226, 249, 0.8));
   background: rgba(255, 255, 255, 0.8);
-  color: #000;
   position: relative;
 }
 .aboutMe .intro span.red {
@@ -406,6 +406,11 @@ button span.awesome i {
 .aboutMe .intro span.blue {
   color: #3178af;
   font-weight: bold;
+}
+.aboutMe .intro span.blue {
+  color: #000;
+  font-weight: bold;
+  font-size: 22px;
 }
 .aboutMe .intro .buttons {
   width: 100%;
