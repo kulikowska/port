@@ -118,7 +118,16 @@
     <i class="fa fa-play" ng-click="toggleRight()" ng-class="tabId>-200|checkActive"></i>
 </div>
 <div class="centerNav" ng-show="!gallery">
-    <i class="fa fa-circle" ng-class="tabId==0|checkActive" ng-click="tabId=0"></i>
-    <i class="fa fa-circle" ng-class="tabId==-100|checkActive" ng-click="tabId=-100"></i>
-    <i class="fa fa-circle" ng-class="tabId==-200|checkActive" ng-click="tabId=-200"></i>
+    <span class="fa-stack fa-lg" ng-click="tabId=0">
+        <i class="fa fa-circle fa-stack-2x" ng-class="tabId==0|checkActive"></i>
+        <i class="fa fa-bolt fa-stack-1x" ng-show="tabId==0"></i>
+    </span>
+    <span class="fa-stack fa-lg" ng-click="tabId=-100">
+        <i class="fa fa-circle fa-stack-2x" ng-class="tabId==-100|checkActive"></i>
+        <i class="fa fa-bolt fa-stack-1x" ng-show="tabId==-100"></i>
+    </span>
+    <span class="fa-stack fa-lg" ng-click="tabId=-200">
+        <i class="fa fa-circle fa-stack-2x" ng-class="tabId==-200|checkActive"></i>
+        <i class="fa fa-bolt fa-stack-1x" ng-show="tabId==-200"></i>
+    </span>
 </div>

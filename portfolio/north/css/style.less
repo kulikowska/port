@@ -215,6 +215,7 @@ button {
                 overflow:hidden;
                 background:rgba(27,27,27,0.8);
                 background:rgba(27,27,27,0.1);
+                background-image:url('../images/greyBg.jpg');
                 font-family:'Open Sans', sans-serif;
                 h1 {
                     font-size:26px;
@@ -332,13 +333,24 @@ button {
         margin:0px 0px 40px;
         text-align:center;
         i {
-            font-size:34px;
+            font-size:50px;
             margin:0px 6px;
-            transition:200ms;
+            transition:300ms;
             cursor:pointer;
             color:#111;
             &.active {
-                color:purple;
+                color:#363377;
+            }
+            &.fa-stack-1x {
+                font-size:20px;
+                margin-top:-2px;
+                color:#fff;
+                text-shadow:1px 1px #000;
+            }
+            &.fa-stack-1x.ng-hide {
+                display:block !important;
+                font-size:0px;
+                transition:300ms;
             }
         }
     }
@@ -346,8 +358,7 @@ button {
 .aboutMe {
     //background-image:url('../images/waterfall2.jpg');
     background-image:url('../images/waterfall2-progressive.jpg');
-    //background-image:url('../images/coolpic3.jpg');
-   // background-image:url('../images/coolpic1.jpg');
+    background-image:url('../images/hotairballoon.jpg');
     width:100%;
     min-height:600px;
     float:left;
@@ -372,26 +383,27 @@ button {
        padding:20px 0px 20px 20px;
        background:rgba(0,0,0,0.7);
        background:rgba(255,255,255,0.8);
+       background:rgba(255,255,255,0.6);
     }
     .intro {
-        //margin:120px auto 35px;
-        margin:40px;
+        margin:120px auto 35px;
+        //margin:40px;
         border-radius:6px;
         //background:rgba(17,17,17,0.9);
         overflow:hidden;
         padding:55px;
         font-family:'Open Sans', sans-serif;
         font-size:22px;
-        max-width:42%;
-        float:left;
+        max-width:49%;
+        text-align:center;
+        //float:left;
         //text-shadow:1px 1px #000;
         line-height:28px;
         //box-shadow:0px 0px 4px 0px #000;
-        box-shadow:0px 0px 2px 0px #aaa;
-        color:#000;
-        background:rgba(255,255,255,0.85);
+        box-shadow:0px 0px 2px 0px #ddd;
         background:linear-gradient(rgba(255,255,255,0.95), fade(lighten(#afd7f6, 5%), 95%));
-        color:lighten(@coolBlue, 20%); 
+        background:linear-gradient(rgba(255,255,255,0.85), fade(lighten(#afd7f6, 5%), 80%));
+        background:rgba(255,255,255,0.8);
         color:#000;
         position:relative;
         span {
@@ -399,6 +411,7 @@ button {
             &.yellow    { color:#fff954; }
             &.green     { color:#067500; }
             &.blue      { color:lighten(@coolBlue, 20%); font-weight:bold; }
+            //&.blue      { color:lighten(#313975, 15%); font-weight:bold;; }
             //&.blue      { color:black; font-weight:bold; }
         }
         .buttons {
@@ -435,11 +448,15 @@ button {
         position:fixed;
         bottom:30px;
         right:30px;
-        font-size:62px;
-        color:#eee;
-        color:lighten(#5671d3, 15%);
-        color:#000;
+        font-size:26px;
+        color:#fff;
         cursor:pointer;
+        text-shadow:1px 1px #000;
+        .fa-stack-1x {
+            color:lighten(#313975, 1%);
+            font-size:40px;
+            text-shadow:1px 1px #000;
+        }
         @media (max-width:560px) { right:10px; bottom:40px; font-size:40px }
     }
 }
@@ -448,6 +465,8 @@ button {
     width:100%;
     padding:20px 0px;
     background:@coolBlue;
+    background:#313975;
+    background:linear-gradient(#313975, darken(#313975, 10%));
     font-size:16px;
     text-align:center;
     color:#222;

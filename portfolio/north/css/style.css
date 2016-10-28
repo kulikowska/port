@@ -192,6 +192,7 @@ button span.awesome i {
   overflow: hidden;
   background: rgba(27, 27, 27, 0.8);
   background: rgba(27, 27, 27, 0.1);
+  background-image: url('../images/greyBg.jpg');
   font-family: 'Open Sans', sans-serif;
 }
 .projects .sliderView .sliderContent .projWrap h1 {
@@ -326,17 +327,29 @@ button span.awesome i {
   text-align: center;
 }
 .projects .centerNav i {
-  font-size: 34px;
+  font-size: 50px;
   margin: 0px 6px;
-  transition: 200ms;
+  transition: 300ms;
   cursor: pointer;
   color: #111;
 }
 .projects .centerNav i.active {
-  color: purple;
+  color: #363377;
+}
+.projects .centerNav i.fa-stack-1x {
+  font-size: 20px;
+  margin-top: -2px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+}
+.projects .centerNav i.fa-stack-1x.ng-hide {
+  display: block !important;
+  font-size: 0px;
+  transition: 300ms;
 }
 .aboutMe {
   background-image: url('../images/waterfall2-progressive.jpg');
+  background-image: url('../images/hotairballoon.jpg');
   width: 100%;
   min-height: 600px;
   float: left;
@@ -362,21 +375,22 @@ button span.awesome i {
   padding: 20px 0px 20px 20px;
   background: rgba(0, 0, 0, 0.7);
   background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.6);
 }
 .aboutMe .intro {
-  margin: 40px;
+  margin: 120px auto 35px;
   border-radius: 6px;
   overflow: hidden;
   padding: 55px;
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
-  max-width: 42%;
-  float: left;
+  max-width: 49%;
+  text-align: center;
   line-height: 28px;
-  box-shadow: 0px 0px 2px 0px #aaa;
-  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 0px 2px 0px #ddd;
   background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(198, 226, 249, 0.95));
-  color: #3178af;
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(198, 226, 249, 0.8));
+  background: rgba(255, 255, 255, 0.8);
   color: #000;
   position: relative;
 }
@@ -426,11 +440,15 @@ button span.awesome i {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  font-size: 62px;
-  color: #eee;
-  color: #93a4e3;
-  color: #000;
+  font-size: 26px;
+  color: #fff;
   cursor: pointer;
+  text-shadow: 1px 1px #000;
+}
+.aboutMe .upNav .fa-stack-1x {
+  color: #333b79;
+  font-size: 40px;
+  text-shadow: 1px 1px #000;
 }
 @media (max-width: 560px) {
   .aboutMe .upNav {
@@ -444,6 +462,8 @@ button span.awesome i {
   width: 100%;
   padding: 20px 0px;
   background: #1b415f;
+  background: #313975;
+  background: linear-gradient(#313975, #222751);
   font-size: 16px;
   text-align: center;
   color: #222;
