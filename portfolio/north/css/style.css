@@ -45,9 +45,6 @@ button span {
   border-bottom-right-radius: 4px;
 }
 button span.awesome {
-  background: #222;
-  background: #fff;
-  color: #1b415f;
   background: #3178af;
   color: #fff;
   text-shadow: 1px 1px #000;
@@ -353,6 +350,7 @@ button span.awesome i {
   background-image: url('../images/hotairballoon.jpg');
   width: 100%;
   float: left;
+  padding-bottom: 50px;
   background-size: cover;
   color: #ddd;
   position: relative;
@@ -443,17 +441,17 @@ button span.awesome i {
 }
 .aboutMe .upNav {
   position: fixed;
-  bottom: 30px;
+  bottom: 80px;
   right: 30px;
   font-size: 26px;
-  color: #fff;
   cursor: pointer;
-  text-shadow: 1px 1px #000;
+  color: #333b79;
+  text-shadow: 0px 0px 3px #fff;
+  color: #fff;
 }
 .aboutMe .upNav .fa-stack-1x {
-  color: #333b79;
   font-size: 40px;
-  text-shadow: 1px 1px #000;
+  color: #3178af;
 }
 @media (max-width: 560px) {
   .aboutMe .upNav {
@@ -465,14 +463,14 @@ button span.awesome i {
 .footer {
   float: left;
   width: 100%;
-  padding: 20px 0px;
-  background: #1b415f;
-  background: #313975;
+  padding: 15px 0px;
+  position: absolute;
+  bottom: 0;
   background: linear-gradient(#313975, #222751);
-  font-size: 16px;
+  font-size: 15px;
+  background: rgba(17, 17, 17, 0.6);
   text-align: center;
-  color: #222;
-  color: #aaa;
+  color: #eee;
   font-family: 'Open Sans', sans-serif;
 }
 .footer i {
