@@ -11,13 +11,17 @@ body {
     //font-family:raleway;
     font-family:Josefin Sans;
     //font-family:Signika;
+    //font-family:PT sans, sans-serif;
+    //font-family:Mirza, cursive;
+    //font-family:Source Sans Pro, sans-serif;
     color:#fff;
     margin:0;
     padding:0;
     background:#222;
     background-image:url('http://static2.grsites.com/archive/textures/ss/ss044.jpg');
     background-image:url('http://static3.grsites.com/archive/textures/natfl/natfl222.jpg');
-    background-image:url('http://static1.grsites.com/archive/textures/multi/multi266.jpg');
+    background-image:url('http://static4.grsites.com/archive/textures/dgrey/dgrey048.jpg');
+    //background-image:url('http://static1.grsites.com/archive/textures/multi/multi266.jpg');
     font-size:22px;
     font-weight:bold;
 }
@@ -32,13 +36,36 @@ a {
     }
 }
 
+.header {
+    width:100%;
+    min-height:75%;
+    float:left;
+    background-size:cover;
+    background-image:url('../images/northern_lights_cropped.jpg');
+    position:relative;
+    margin-bottom:-60px;
+    margin-top:-50px;
+    .overLay {
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        background:linear-gradient(fade(#000, 1%), fade(#000, 100%));
+    }
+}
+
 @darkRed:#330000;
 @red:#790000;
 @orange:#9d4a14;
 @purple:#5a003d;
 
-.mainHeader {
-    margin-bottom:60px;
+@red: #241858;
+@darkRed: #152C55;
+@orange:#134a52;
+
+mainHeader {
+   // margin-bottom:60px;
 }
 .darkRed {
     background:linear-gradient(@darkRed, lighten(@darkRed, 10%));
@@ -55,11 +82,21 @@ a {
 
 .tabContainer {
     text-align:center;
+    float:left;
+    display:flex;
+    width:100%;
+    background:#111;
+    border-top:1px solid #222;
+    border-bottom:1px solid #222;
+    //padding:10px 0px;
+    margin-bottom:30px;
+    position:absolute;
     .tab {
         display:inline-block;
         font-size:36px;
+        flex-grow:1;
         padding:14px 25px 8px;
-        margin:10px;
+        //margin:10px;
         opacity:0.8;
         box-shadow:1px 1px 4px 0px #000;
         border:2px solid #000;
@@ -81,11 +118,13 @@ a {
     margin:20px auto;
     max-height:auto;
     transition:400ms;
+    overflow:hidden;
     opacity:1;
     color:#ddd;
+    background:fade(#222, 90%);
     .title {
         width:100%;
-        padding:10px 0px 6px;;
+        padding:20px 0px 15px;
         text-align:center;
         position:relative;
         .date {
@@ -105,11 +144,11 @@ a {
         }
     }
     .content {
-        padding:20px;
+        padding:40px;
         text-align:center;
         line-height:26px;
         font-size:20px;
-        color:#bbb;
+        color:#ddd;
         h1 {
             font-size:28px;
             font-weight:bold;
